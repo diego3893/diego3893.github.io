@@ -1,61 +1,167 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>Diego&#39;s Blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="renderer" content="webkit">
-    <meta http-equiv="Cache-Control" content="no-siteapp"/>
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css">
-    <link rel="stylesheet" href="media/css/post.css">
-    <link rel="stylesheet" href="media/live2d/css/live2d.css" />
-    
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<meta HTTP-EQUIV="expires" CONTENT="0"> 
+<title>关于 | Diego&#39;s Blog</title>	
+
+<link rel="stylesheet" href="https://diego3893.github.io/styles/main.css">
+<script type="text/javascript">
+function getCSS()
+{
+        datetoday = new Date();
+        timenow=datetoday.getTime();
+        datetoday.setTime(timenow);
+        thehour = datetoday.getHours();
+
+        if (thehour<8时)
+
+            display = "https://diego3893.github.io/media/css/night.css";
+
+       else if (thehour>18时)
+
+            display = "https://diego3893.github.io/media/css/night.css";   
+
+        else if (thehour>8时)
+           
+            display = "https://diego3893.github.io/media/css/day.css";
+
+        else if (thehour<18时)
+
+            display = "https://diego3893.github.io/media/css/day.css";
+      
+
+var css = '<';
+        css+='link rel="stylesheet" href='+display+' \/';
+        css+='>';
+        document.write(css);
+}
+</script>
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+<link href="https://at.alicdn.com/t/font_1306644_jwtuc2zzbrd.css" rel="stylesheet" />
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<script type='text/javascript' src='https://diego3893.github.io/media/scripts/script.js'></script>
+<link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
+  <script src="https://cdn.bootcss.com/wow/1.1.2/wow.min.js"></script>
+  <script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script>wow=new WOW({boxClass:'wow',animateClass:'animated',offset:0,mobile:true,live:true});wow.init();</script>
+
+<script type="text/javascript">
+window.onload=getCSS();
+</script>
+
+
+ 	
 </head>
-<body class=" mdui-appbar-with-toolbar  mdui-theme-primary-pink mdui-theme-accent-pink">
-<header class="mdui-toolbar mdui-color-pink mdui-appbar-fixed mdui-appbar-scroll-toolbar-hide" style="z-index: 1000">
-    <a href="javascript:;" mdui-drawer="{target: '#left-drawer',overlay:true}" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
-    <span class="mdui-typo-title">Diego&#39;s Blog</span>
-    <div class="mdui-toolbar-spacer"></div>
-<!--    <a href="javascript:history.go(0);" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
-    <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">more_vert</i></a>
-</header>
+<body class="post-template-default single single-post postid-70 single-format-standard">
+    <div id="wrapper">
+        
+			
+		<header id="header" class="site-header" 
+		
+		>
+			<div class="site-branding">
+									<h1 class="site-title"><a href="https://diego3893.github.io" rel="home">Diego&#39;s Blog</a></h1>
+										
+					<h2 class="site-description">Stay hungry, Stay foolish</h2>
+										
+							</div>
+			<nav id="nav-wrapper">
+				<div class="container">
+					<div class="nav-toggle">
+						<div class="bars">
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<ul id="" class="dove">
+		 
+     			
+<li>
+	 
+	<a  href="/"> 首页</a></li>
+	
+    
+     			
+<li>
+	 
+	<a  href="/archives"> 归档</a></li>
+	
+    
+     			
+<li>
+	 
+	<a  href="/tags"> 标签</a></li>
+	
+    
+     			
+<li>
+	 
+	<a  href="/post/about"> 关于</a></li>
+	
+    
 
-<div class="mdui-drawer mdui-color-white mdui-drawer-full-height mdui-drawer-close" id="left-drawer">
-    <ul class="mdui-list">
-        <li class="mdui-subheader">菜单</li>
-        
-        <li class="mdui-list-item mdui-ripple">
-            <a href="/" class="mdui-list-item-content">首页</a>
-        </li>
-        
-        <li class="mdui-list-item mdui-ripple">
-            <a href="/archives" class="mdui-list-item-content">归档</a>
-        </li>
-        
-        <li class="mdui-list-item mdui-ripple">
-            <a href="/tags" class="mdui-list-item-content">标签</a>
-        </li>
-        
-        <li class="mdui-list-item mdui-ripple">
-            <a href="/post/about" class="mdui-list-item-content">关于</a>
-        </li>
-        
-    </ul>
-</div>
+</ul>
+</li>		
+		
+</ul>				</div>
+			</nav>
+						<div class="jingge">
 
-<div id="content" class="site-content">
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
-            <article id="post-1270" class="post-1270 post type-post status-publish format-standard hentry category-90 category-129 tag-149">
-                <header class="entry-header">
-                    <h1 class="entry-title">关于</h1>
-                    <p class="entry-census">发布于 2019-01-25</p>
-                    <hr>
-                </header>
-                <div class="neko">
-                    <blockquote>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        </header>
+
+		<div id="content" class="container">
+			<div class="row">
+	<div class="col-md-8 site-main">
+				
+<article id="post-70" class="post-70 post type-post status-publish format-standard hentry category-5 tag-10 tag-9 tag-11">
+
+	
+	                      
+		<div class="entry-content">
+			<h1 class="wow swing entry-title">关于</h1>
+<div class="entry-meta">
+<div class="wow bounce">
+	<i class="iconfont icon-rili"> <time class="lately-a" datetime="2019-01-25 19:09:48" itemprop="datePublished" pubdate="">2019-01-25</time></i>
+	          </div>
+			
+</span>
+													 
+		</div>
+                  
+			<div class="wow slideInLeft entry-summary song">
+				<blockquote>
 <p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
 </blockquote>
 <h2 id="关于本站">🏠 关于本站</h2>
@@ -63,25 +169,35 @@
 <h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
 <h2 id="联系我呀">📬 联系我呀</h2>
 
-                </div>
-            </article>
-        </main>
-    </div>
-    <div class="doc-footer-nav mdui-color-theme">
-        <div class="mdui-container">
-            <div class="mdui-row">
-                
-                <div class="mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left"></div>
-                
-                
-                <div class="mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left"></div>
-                
-            </div>
-        </div>
-    </div>
-    <br>
-    
+							</div>
+	<div class="wow bounceInDown vt-post-tags">
+ 
+					</div>						
+<nav class="navigation3 post-navigation3" role="navigation">
+		
+		<div class="nav-links3">
+      
+		 
+		</div>
+	</nav>
+	<div class="wow rollIn author-info" style="visibility: visible; animation-name: rollIn;">
+	<div class="author-avatar pull-left"><img src="https://diego3893.github.io/images/avatar.png" ></div>
+ 
+	<div class="author-description"><div class="author-title"><div class="author-link" rel="author">Diego</div></div>
+
+
+	<p class="author-bio">不一定出类拔萃，但一定与众不同</p></div></div>
+	
+		</div>
+		
+ 
+		
+</article>
+
+<div id="marlin_lite_about_widget-2" class="wow bounceInUp widget marlin_lite_about_widget" data-wow-delay="0.1s">
+		
         
+          
             <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
@@ -89,93 +205,224 @@
 
 <script>
 
-    var gitalk = new Gitalk({
-        clientID: '0cb92ddda132fbb0036c',
-        clientSecret: '33b4ecece90c2c5e9092bbf6273e7846bf3d35e6',
-        repo: 'blog-comment',
-        owner: 'diego3893',
-        admin: ['diego3893'],
-        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false  // Facebook-like distraction free mode
-    })
+  var gitalk = new Gitalk({
+    clientID: '0cb92ddda132fbb0036c',
+    clientSecret: '33b4ecece90c2c5e9092bbf6273e7846bf3d35e6',
+    repo: 'blog-comment',
+    owner: 'diego3893',
+    admin: ['diego3893'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
 
-    gitalk.render('gitalk-container')
+  gitalk.render('gitalk-container')
 
 </script>
 
+          
+          
         
+		<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://diego3893.github.io/media/scripts/Valine.min.js'></script>
 
-        
-    
-    <div class="comment"></div>
-</div>
-<footer class="mdui-container footer ">
-    <div class="head_card-offset"></div>
-    <div class="mdui-row mdui-row-gapless">
-        <div class="k-container">
-            <img width="100%" src="/media/img/skirt.png">
-        </div>
-    </div>
-
-    <div class="site-info">
-        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-    </div>
-</footer>
-<div id="landlord" style="left:5px;bottom:0px;">
-    <div class="message" style="opacity:0"></div>
-    <canvas id="live2d" width="500" height="560" class="live2d"></canvas>
-    <div class="live_talk_input_body">
-        <div class="live_talk_input_name_body">
-            <input name="name" type="text" class="live_talk_name white_input" id="AIuserName" autocomplete="off" placeholder="你的名字" />
-        </div>
-        <div class="live_talk_input_text_body">
-            <input name="talk" type="text" class="live_talk_talk white_input" id="AIuserText" autocomplete="off" placeholder="要和我聊什么呀？"/>
-            <button type="button" class="live_talk_send_btn" id="talk_send">发送</button>
-        </div>
-    </div>
-    <input name="live_talk" id="live_talk" value="1" type="hidden" />
-    <div class="live_ico_box">
-        <div class="live_ico_item type_info" id="showInfoBtn"></div>
-        <div class="live_ico_item type_talk" id="showTalkBtn"></div>
-        <div class="live_ico_item type_music" id="musicButton"></div>
-        <div class="live_ico_item type_youdu" id="youduButton"></div>
-        <div class="live_ico_item type_quit" id="hideButton"></div>
-        <input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
-        <audio src="" style="display:none;" id="live2d_bgm" data-bgm="0" preload="none"></audio>
-        <input name="live2dBGM" value="https://img.apa70.com/123.mp3" type="hidden">
-        <input name="live2dBGM" value="https://img.apa70.com/123.mp3" type="hidden">
-        <input id="duType" value="douqilai,l2d_caihong" type="hidden">
-    </div>
-</div>
-<div id="open_live2d">召唤伊斯特瓦尔</div>
+<div class="comment"></div>
 <script>
-    var message_Path = '/media/live2d/';//资源目录，如果目录不对请更改
-    var talkAPI = "";//如果有类似图灵机器人的聊天接口请填写接口路径
+        new Valine({
+            // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+            av: AV, 
+            el: '.comment',
+            lang: 'zh-cn',
+            
+            
+      emoticon_list: ["吐.png","喷血.png","狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","中指.png","尴尬.png","瞅你.png","想一想.png","中枪.png","得意.png","肿包.png","扇耳光.png","亲亲.png","惊喜.png","脸红.png","无所谓.png","便便.png","愤怒.png","蜡烛.png","献黄瓜.png","内伤.png","投降.png","观察.png","看不见.png","击掌.png","抠鼻.png","邪恶.png","看热闹.png","口水.png","抽烟.png","锁眉.png","装大款.png","吐舌.png","无奈.png","长草.png","赞一个.png","呲牙.png","无语.png","阴暗.png","不出所料.png","咽气.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png","黑线.png","喜极而泣.png","喷水.png","深思.png","鼓掌.png","暗地观察.png"],
+     	
+      	
+          
+        });
+    </script> 
+
+
+   
+  
+ 
+
+		</div>
+
+			</div>
+			
+
+
+<div class="tocc col l3 hide-on-med-and-down">
+	
+        <div class="toc-widget">
+			
+            <div class="toc-title"></div>
+			
+            <div id="toc-content">
+			
+			
+			</div>
+        </div>
+    </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.5.0/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '.entry-summary',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('.entry-summary').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>										 
+
+ 
+       
+
+
+			</div>
+		</div>
+
+		
+		 	<footer id="colophon" class="site-footer">
+
+			<div class="container">
+	
+				<div class="copyright">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a><br>Theme:   <a href="https://github.com/shanbufun/gridea-theme-pan" target="_blank" title="Pan"><span>Pan</span></a>.  by <a href="https://shanbu.fun/" target="_blank"  title="山卜方" >Shanbufun</a></div>		
+			</div>
+		
+		</footer>
+
+</div>
+
+<script src="https://cdn.bootcss.com/fitvids/1.2.0/jquery.fitvids.min.js"></script>
+<script type='text/javascript' src='https://diego3893.github.io/media/scripts/marlin-scripts.js'></script>
+ <script src="//tokinx.github.io/lately/lately.min.js"></script>
+  <script>jQuery(document).ready(function(){$.lately({'target':'.lately-a,.lately-b,.lately-c'})});</script>
+  <style type="text/css">a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-propety: background-color;
+    display: none;
+}
+
+a.back_to_top span {
+    color: #888;
+}
+
+a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf;
+}
+
+a.back_to_top:hover span {
+    color: #555;
+}
+
+@media print, screen and (max-width: 580px) {
+    .back_to_top {
+        display: none !important;
+    }
+}
+
+
+
+</style><a id="back_to_top" href="#" class="back_to_top"><span><i class="iconfont icon-xiangshang"></i></span>
+</a>
+
+
+<script>$(document).ready((function(_this) {
+  return function() {
+    var bt;
+    bt = $('#back_to_top');
+    if ($(document).width() > 480) {
+      $(window).scroll(function() {
+        var st;
+        st = $(window).scrollTop();
+        if (st > 30) {
+          return bt.css('display', 'block');
+        } else {
+          return bt.css('display', 'none');
+        }
+      });
+      return bt.click(function() {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 800);
+        return false;
+      });
+    }
+  };
+})(this));
 </script>
-<!--<script src="/media/js/jquery-3.3.1.min.js"></script>-->
-<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<script type="text/javascript" src="/media/live2d/js/live2d.js"></script>
-<script type="text/javascript" src="/media/live2d/js/message.js"></script>
+
+		<script data-no-instant>
+    (function ($) {
+        $.extend({
+            adamsOverload: function () {
+                $('.navigation:eq(0)').remove();
+                $("").attr("rel" , "external");
+                $("a[rel='external'],a[rel='external nofollow']").attr("target","_blank");
+                $("a.vi").attr("rel" , "");
+                $.viewImage({
+                    'target'  : 'img',
+                    'exclude' : '.vsmile-icons img,.gallery img',
+                    'delay'   : 300
+                });
+                $.lately({
+                    'target' : '.commentmetadata a,.infos time,.post-list time'
+                });
+                prettyPrint();
+                
+                $('ul.links li a').each(function(){
+                    if($(this).parent().find('.bg').length==0){
+                        $(this).parent().append('<!---<div class="bg" style="background-image:url(https://c3.glgoo.top/s2/favicons?domain='+$(this).attr("href")+')"></div>--->')
+                    }
+                });
+            }
+        });
+    })(jQuery);
+    jQuery.adamsOverload();
+</script>
 
 </body>
-<script src="//cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-    $('.comment').bind('DOMNodeInserted',()=>{
-        $('.comment').unbind()
-
-        $('.vbtn').addClass(' mdui-btn mdui-color-theme-accent mdui-ripple')
-    })
-
-    let valine = new Valine({
-        el: '.comment',
-        
-        
-        
-        path: window.location.pathname,
-        pageSize: 30,
-        avatar:'mm',
-        notify:true
-    })
-</script>
 </html>

@@ -1,165 +1,328 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>Diego&#39;s Blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="renderer" content="webkit">
-    <meta http-equiv="Cache-Control" content="no-siteapp"/>
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css">
-    <link rel="stylesheet" href="media/live2d/css/live2d.css" />
-    
-</head>
-<body class=" mdui-appbar-with-toolbar  mdui-theme-primary-pink mdui-theme-accent-pink">
-<header class="mdui-toolbar mdui-color-pink mdui-appbar-fixed mdui-appbar-scroll-toolbar-hide" style="z-index: 1000">
-    <a href="javascript:;" mdui-drawer="{target: '#left-drawer',overlay:true}" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
-    <span class="mdui-typo-title">Diego&#39;s Blog</span>
-    <div class="mdui-toolbar-spacer"></div>
-<!--    <a href="javascript:history.go(0);" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
-    <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">more_vert</i></a>
-</header>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<meta HTTP-EQUIV="expires" CONTENT="0"> 
+<title>Diego&#39;s Blog</title>	
 
-<div class="mdui-drawer mdui-color-white mdui-drawer-full-height mdui-drawer-close" id="left-drawer">
-    <ul class="mdui-list">
-        <li class="mdui-subheader">菜单</li>
-        
-        <li class="mdui-list-item mdui-ripple">
-            <a href="/" class="mdui-list-item-content">首页</a>
-        </li>
-        
-        <li class="mdui-list-item mdui-ripple">
-            <a href="/archives" class="mdui-list-item-content">归档</a>
-        </li>
-        
-        <li class="mdui-list-item mdui-ripple">
-            <a href="/tags" class="mdui-list-item-content">标签</a>
-        </li>
-        
-        <li class="mdui-list-item mdui-ripple">
-            <a href="/post/about" class="mdui-list-item-content">关于</a>
-        </li>
-        
-    </ul>
-</div>
+<link rel="stylesheet" href="https://diego3893.github.io/styles/main.css">
+<script type="text/javascript">
+function getCSS()
+{
+        datetoday = new Date();
+        timenow=datetoday.getTime();
+        datetoday.setTime(timenow);
+        thehour = datetoday.getHours();
 
-<div class="mdui-container">
-    <div class="mdui-row">
-        <div class="mdui-col-md-10 mdui-col-offset-md-1 ">
-            
-            
-                <div class="mdui-typo-display-1 mdui-m-b-2 mdui-m-l-1">
-                    <div class="mdui-row">
-                        <div class="mdui-col-xs-12">2020</div>
-                    </div>
-                    <div class="mdui-row">
-                        
-                        
-                            <div class="mdui-col-xs-6 mdui-p-a-1">
-                                <div class="mdui-card">
-                                    <div class="mdui-card-media">
-                                        <img width=536px height=300px src=" https://cdn.luogu.com.cn/upload/image_hosting/71v1r7jk.png"/>
-                                        <div class="mdui-card-primary">
-                                            <div class="mdui-card-primary-title">并查集</div>
-                                            <div class="mdui-card-primary-subtitle">2020-02-27</div>
-                                        </div>
-                                    </div>
-                                    <div class="mdui-card-actions" style="float:right;">
-                                        <a href="https://diego3893.github.io/post/bing-cha-ji/" class="mdui-btn mdui-color-theme-accent mdui-ripple">点击查看</a>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                        
-                        
-                        
-                    </div>
-                </div>
-            
-                <div class="mdui-typo-display-1 mdui-m-b-2 mdui-m-l-1">
-                    <div class="mdui-row">
-                        <div class="mdui-col-xs-12">2018</div>
-                    </div>
-                    <div class="mdui-row">
-                        
-                        
-                        
-                        
-                            <div class="mdui-col-xs-6 mdui-p-a-1">
-                                <div class="mdui-card">
-                                    <div class="mdui-card-media">
-                                        <img width=536px height=300px src=" https://diego3893.github.io/post-images/hello-gridea.png"/>
-                                        <div class="mdui-card-primary">
-                                            <div class="mdui-card-primary-title">Hello Gridea</div>
-                                            <div class="mdui-card-primary-subtitle">2018-12-12</div>
-                                        </div>
-                                    </div>
-                                    <div class="mdui-card-actions" style="float:right;">
-                                        <a href="https://diego3893.github.io/post/hello-gridea/" class="mdui-btn mdui-color-theme-accent mdui-ripple">点击查看</a>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                        
-                    </div>
-                </div>
-            
-        </div>
-    </div>
-    <div class="mdui-row">
-        
+        if (thehour<8时)
 
-    </div>
-</div>
-<footer class="mdui-container footer ">
-    <div class="head_card-offset"></div>
-    <div class="mdui-row mdui-row-gapless">
-        <div class="k-container">
-            <img width="100%" src="/media/img/skirt.png">
-        </div>
-    </div>
+            display = "https://diego3893.github.io/media/css/night.css";
 
-    <div class="site-info">
-        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-    </div>
-</footer>
-<div id="landlord" style="left:5px;bottom:0px;">
-    <div class="message" style="opacity:0"></div>
-    <canvas id="live2d" width="500" height="560" class="live2d"></canvas>
-    <div class="live_talk_input_body">
-        <div class="live_talk_input_name_body">
-            <input name="name" type="text" class="live_talk_name white_input" id="AIuserName" autocomplete="off" placeholder="你的名字" />
-        </div>
-        <div class="live_talk_input_text_body">
-            <input name="talk" type="text" class="live_talk_talk white_input" id="AIuserText" autocomplete="off" placeholder="要和我聊什么呀？"/>
-            <button type="button" class="live_talk_send_btn" id="talk_send">发送</button>
-        </div>
-    </div>
-    <input name="live_talk" id="live_talk" value="1" type="hidden" />
-    <div class="live_ico_box">
-        <div class="live_ico_item type_info" id="showInfoBtn"></div>
-        <div class="live_ico_item type_talk" id="showTalkBtn"></div>
-        <div class="live_ico_item type_music" id="musicButton"></div>
-        <div class="live_ico_item type_youdu" id="youduButton"></div>
-        <div class="live_ico_item type_quit" id="hideButton"></div>
-        <input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
-        <audio src="" style="display:none;" id="live2d_bgm" data-bgm="0" preload="none"></audio>
-        <input name="live2dBGM" value="https://img.apa70.com/123.mp3" type="hidden">
-        <input name="live2dBGM" value="https://img.apa70.com/123.mp3" type="hidden">
-        <input id="duType" value="douqilai,l2d_caihong" type="hidden">
-    </div>
-</div>
-<div id="open_live2d">召唤伊斯特瓦尔</div>
-<script>
-    var message_Path = '/media/live2d/';//资源目录，如果目录不对请更改
-    var talkAPI = "";//如果有类似图灵机器人的聊天接口请填写接口路径
+       else if (thehour>18时)
+
+            display = "https://diego3893.github.io/media/css/night.css";   
+
+        else if (thehour>8时)
+           
+            display = "https://diego3893.github.io/media/css/day.css";
+
+        else if (thehour<18时)
+
+            display = "https://diego3893.github.io/media/css/day.css";
+      
+
+var css = '<';
+        css+='link rel="stylesheet" href='+display+' \/';
+        css+='>';
+        document.write(css);
+}
 </script>
-<!--<script src="/media/js/jquery-3.3.1.min.js"></script>-->
-<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<script type="text/javascript" src="/media/live2d/js/live2d.js"></script>
-<script type="text/javascript" src="/media/live2d/js/message.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+<link href="https://at.alicdn.com/t/font_1306644_jwtuc2zzbrd.css" rel="stylesheet" />
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<script type='text/javascript' src='https://diego3893.github.io/media/scripts/script.js'></script>
+<link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
+  <script src="https://cdn.bootcss.com/wow/1.1.2/wow.min.js"></script>
+  <script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script>wow=new WOW({boxClass:'wow',animateClass:'animated',offset:0,mobile:true,live:true});wow.init();</script>
 
+<script type="text/javascript">
+window.onload=getCSS();
+</script>
+
+
+</head>
+<body class="post-template-default single single-post postid-70 single-format-standard">
+    <div id="wrapper">
+   
+			<header id="header" class="site-header" >
+			<div class="site-branding">
+									<h1 class="site-title"><a href="https://diego3893.github.io" rel="home">Diego&#39;s Blog</a></h1>
+										
+					<h2 class="site-description">Stay hungry, Stay foolish</h2>
+										
+							</div>
+			<nav id="nav-wrapper">
+				<div class="container">
+					<div class="nav-toggle">
+						<div class="bars">
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<ul class="dove">
+		 
+     			
+<li>
+	 
+	<a  href="/"> 首页</a></li>
+	
+    
+     			
+<li>
+	 
+	<a  href="/archives"> 归档</a></li>
+	
+    
+     			
+<li>
+	 
+	<a  href="/tags"> 标签</a></li>
+	
+    
+     			
+<li>
+	 
+	<a  href="/post/about"> 关于</a></li>
+	
+    
+
+</ul>
+</li>		
+		
+</ul>				</div>
+			</nav>
+
+<div class="jingge">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        </header>
+
+		<div id="content" class="container">
+			<div class="row">
+	<div class="col-md-8 site-main" id="archives">
+					
+
+	<div class="wow bounceInLeft" id="archives-tags">
+        <h3>标签云</h3>
+
+               <a class="itags" href="https://diego3893.github.io/tag/Gr5YErY6j/">提高组笔记</a>
+               
+               <a class="itags" href="https://diego3893.github.io/tag/4X9N1ZDzg/">Gridea</a>
+                           
+                        </div>
+
+
+    <div class="wow bounceInRight" id="archives-content">
+        <br>
+		
+
+                <div class="archive-title" >
+					
+            <div class="archives" >
+				 
+                <h3>2020</h3>
+					
+					 
+      
+                                    <div class="brick">
+                        <a href="https://diego3893.github.io/post/bing-cha-ji/">
+                            <span class="time">2020-02-27</span> 并查集                        </a>
+                    </div>
+                            
+                             
+      
+                             
+							
+                <h3>2018</h3>
+					
+					 
+      
+                             
+      
+                                    <div class="brick">
+                        <a href="https://diego3893.github.io/post/hello-gridea/">
+                            <span class="time">2018-12-12</span> Hello Gridea                        </a>
+                    </div>
+                            
+                             
+								
+                            </div>
+																	   
+																   
+        </div>
+               
+        
+
+            </div>
+		
+		
+			</div>
+        
+<nav class="navigation pagination" role="navigation">
+		
+			
+	</nav>	
+
+			</div><!-- #end row-->
+		</div><!-- #end container-->
+
+		
+		 	<footer id="colophon" class="site-footer">
+
+			<div class="container">
+	
+				<div class="copyright">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a><br>Theme:   <a href="https://github.com/shanbufun/gridea-theme-pan" target="_blank" title="Pan"><span>Pan</span></a>.  by <a href="https://shanbu.fun/" target="_blank"  title="山卜方" >Shanbufun</a></div>		
+			</div>
+		
+		</footer>
+
+</div>
+
+<script src="https://cdn.bootcss.com/fitvids/1.2.0/jquery.fitvids.min.js"></script>
+<script type='text/javascript' src='https://diego3893.github.io/media/scripts/marlin-scripts.js'></script>
+ <script src="//tokinx.github.io/lately/lately.min.js"></script>
+  <script>jQuery(document).ready(function(){$.lately({'target':'.lately-a,.lately-b,.lately-c'})});</script>
+  <style type="text/css">a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-propety: background-color;
+    display: none;
+}
+
+a.back_to_top span {
+    color: #888;
+}
+
+a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf;
+}
+
+a.back_to_top:hover span {
+    color: #555;
+}
+
+@media print, screen and (max-width: 580px) {
+    .back_to_top {
+        display: none !important;
+    }
+}
+
+
+
+</style><a id="back_to_top" href="#" class="back_to_top"><span><i class="iconfont icon-xiangshang"></i></span>
+</a>
+
+
+<script>$(document).ready((function(_this) {
+  return function() {
+    var bt;
+    bt = $('#back_to_top');
+    if ($(document).width() > 480) {
+      $(window).scroll(function() {
+        var st;
+        st = $(window).scrollTop();
+        if (st > 30) {
+          return bt.css('display', 'block');
+        } else {
+          return bt.css('display', 'none');
+        }
+      });
+      return bt.click(function() {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 800);
+        return false;
+      });
+    }
+  };
+})(this));
+</script>
+
+		<script type="text/javascript">
+//点击加载更多
+jQuery(document).ready(function($) {
+    //点击下一页的链接(即那个a标签)
+    $(' .next').click(function() {
+        $this = $(this);
+        $this.addClass('loading').text('正在努力加载'); //给a标签加载一个loading的class属性，用来添加加载效果
+        var href = $this.attr('href'); //获取下一页的链接地址
+        if (href != undefined) { //如果地址存在
+            $.ajax({ //发起ajax请求
+                url: href,
+                //请求的地址就是下一页的链接
+                type: 'get',
+                //请求类型是get
+                error: function(request) {
+                    //如果发生错误怎么处理
+                },
+                success: function(data) { //请求成功
+                    $this.removeClass('loading').text('点击查看更多'); //移除loading属性
+                    var $res = $(data).find('.time-section '); //从数据中挑出文章数据，请根据实际情况更改
+                    $('.archives').append($res.fadeIn(500)); //将数据加载加进posts-loop的标签中。
+                    var newhref = $(data).find(' .next').attr('href'); //找出新的下一页链接
+                    if (newhref != undefined) {
+                        $('.next').attr('href', newhref);
+                    } else {
+                        $('.next').remove(); //如果没有下一页了，隐藏
+                    }
+                }
+            });
+        }
+        return false;
+    });
+});
+</script>
 </body>
-<script src="//cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
 </html>
