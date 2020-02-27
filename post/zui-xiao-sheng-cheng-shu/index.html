@@ -3,7 +3,7 @@
         <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
         <meta charset="utf-8">
         <meta name="referrer" content="never">
-        <title>并查集 | Diego&#39;s Blog</title>
+        <title>最小生成树 | Diego&#39;s Blog</title>
         <link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.11.1/katex.min.css">
         <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://diego3893.github.io/styles/main.css">
@@ -17,7 +17,7 @@
 
     </head>
     <body class="mdui-theme-primary-purple mdui-theme-accent-purple">
-        <header class="index-img mdui-m-b-3"  style="background-image: url(https://s2.ax1x.com/2020/02/27/3wfMy6.jpg);" >
+        <header class="index-img mdui-m-b-3"  style="background-image: url(https://s2.ax1x.com/2020/02/27/30NM2d.jpg);" >
                           <button class="mdui-btn  mdui-btn-icon mdui-btn-dense mdui-color-theme-500 mdui-ripple yinying mdui-m-t-1 mdui-m-l-1" mdui-menu="{target: '#demo-attr-cascade'}"><i class="mdui-icon material-icons">&#xe5d2;</i></button>
                 <ul class="mdui-menu" id="demo-attr-cascade">
                 
@@ -44,104 +44,163 @@
                 <div class="mdui-row">
                         <div class="mdui-col-md-8 mdui-col-offset-md-2 ">
                          <article class="mdui-shadow-10 mdui-p-a-2 post-list">
-                           <div class="mdui-typo-display-1 mdui-m-b-3">并查集</div>
+                           <div class="mdui-typo-display-1 mdui-m-b-3">最小生成树</div>
                            <a  class="index-list-biaoqian ">2020-02-27</a>
-                           <div class="mdui-typo mdui-m-t-3 post-neirong"><h1 id="技巧">技巧</h1>
-<p>可以不用一下代码初始化与找根</p>
-<pre><code class="language-cpp">for(int i=1; i&lt;=n; ++i)
-    f[i] = i;
-
-int getf(int x)
-{
-    if(f[x] == x)
-        return x;
-    return f[x] = getf(f[x]);
-}
-</code></pre>
-<h2 id="简化后">简化后</h2>
-<pre><code class="language-cpp">int getf(int x)
-{
-    if(f[x]!=0 &amp;&amp; f[x]!=x)
-        return f[x] = getf(f[x]);
-    return x;
-}
-</code></pre>
-<hr>
-<h1 id="原理">原理</h1>
+                           <div class="mdui-typo mdui-m-t-3 post-neirong"><h1 id="kruskal">Kruskal</h1>
+<h2 id="原理">原理</h2>
 <blockquote>
-<p>以递归压缩路径———getf<br>
-合并路径——将节点编号变为根节点编号</p>
+<p><strong>以边来求</strong></p>
 <blockquote>
-<p>根相同，则在同一个子集</p>
+<p>排序实现</p>
 </blockquote>
 </blockquote>
-<p><strong>模版</strong> <em>并查集</em></p>
-<pre><code class="language-cpp">#include &lt;cstdio&gt;
+<blockquote>
+<p>依次检查边是否处于联通块中</p>
+<blockquote>
+<p><a href="https://diego3893.github.io/post/bing-cha-ji/" title="我的另一篇文章">并查集</a> 实现</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>以保证图连通且路径总权值最小</p>
+<p>时间复杂度: O(M log M)</p>
+</blockquote>
+<h3 id="优化">优化</h3>
+<pre><code class="language-cpp">if(k == n-1)
+    break;
+</code></pre>
+<p>其中<em>k</em>为已选边数，<em>n</em>为点数，因为为连通的<mark>树</mark>, 所以<code>边数=点数-1</code></p>
+<h2 id="模版">模版</h2>
+<pre><code class="language-cpp">#include&lt;cstdio&gt;
+#include&lt;algorithm&gt;
 using namespace std;
-int getf(int);
 void merge(int, int);
-inline int fread();
-int n, m, f[20002] = {}, q;
+int getf(int);
+void add_edge(int, int, int);
+int f[1002] = {}, edge_num = 0, n, m;
+struct node{
+	int u, v, w;
+}edge[100002];
+bool cmp(const node&amp;, const node&amp;);
+
 int main()
 {
-	n = fread();
-	m = fread();
-	int a, b;
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+	int a, b, c;
 	for(int i=1; i&lt;=m; ++i)
 	{
-		a = fread();
-		b = fread();
-		merge(a, b);
+		scanf(&quot;%d%d%d&quot;, &amp;a, &amp;b, &amp;c);
+		add_edge(a, b, c);
 	}
-	q = fread();
-	for(int i=1; i&lt;=q; ++i)
+	sort(edge+1, edge+edge_num+1, cmp);
+	int ans = -0x7ffffff, k = 0;
+	int flag = 0;
+	for(int i=1; i&lt;=m; ++i)
 	{
-		a = fread();
-		b = fread();
-		int t1 = getf(a), t2 = getf(b);
-		if(t1 == t2)
-			printf(&quot;Yes\n&quot;);
-		else
-			printf(&quot;No\n&quot;);
+		int t1 = getf(edge[i].u), t2 = getf(edge[i].v);
+		if(t1 != t2)
+		{
+			merge(t1, t2);
+			if(ans &lt; edge[i].w)
+				ans = edge[i].w;
+			++k;
+		}
+		if(k == n-1)
+		{
+			flag = 1;
+			break;
+		}
 	}
+	if(!flag)
+		printf(&quot;-1&quot;);
+	else
+		printf(&quot;%d&quot;, ans);
 	return 0;
 }
-int getf(int v)
+
+bool cmp(const node &amp;a, const node &amp;b)
 {
-	if(f[x]!=x &amp;&amp; f[x]!=0)
-        return f[x] = getf(f[x]);
-    return x;
+	return a.w &lt; b.w;
 }
-void merge(int v, int u) 
+void add_edge(int a, int b, int c)
 {
-	int t1, t2;
-	t1 = getf(v);
-	t2 = getf(u);
+	edge[++edge_num].u = a;
+	edge[edge_num].v = b;
+	edge[edge_num].w = c;
+	return;
+}
+void merge(int x, int y)
+{
+	int t1 = getf(x), t2 = getf(y);
 	if(t1 != t2)
 		f[t2] = t1;
 	return;
 }
-inline int fread()
+int getf(int x)
 {
-    int x=0,f=1;
-    char ch=getchar();
-    while(ch&lt;'0'||ch&gt;'9'){
-        if(ch=='-')
-            f=-1;
-        ch=getchar();
-    }
-    while(ch&gt;='0'&amp;&amp;ch&lt;='9'){
-        x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48);
-        ch=getchar();
-    }
-    return x*f;
+	if(f[x]!=x &amp;&amp; f[x]!=0)
+		return f[x] = getf(f[x]);
+	return x;
 }
 </code></pre>
+<h2 id="代码题目-传送门">代码题目 <a href="https://www.luogu.com.cn/problem/P1111" title="洛谷P1111">传送门</a></h2>
+<h1 id="prim">Prim</h1>
+<h2 id="原理-2">原理</h2>
+<blockquote>
+<p>类似<mark>Dijkstra</mark>的<strong>松弛</strong>， 依次将白点变为蓝点</p>
+<blockquote>
+<p>需要一个数组<strong>打标记</strong>，用<em>k</em>记录最小出边（初始化<code>k = -1</code>)</p>
+</blockquote>
+<p>每次将dis数组更新为当前节点的所有出边的权值<br>
+找拥有最小权值的出边<em>k</em><br>
+打标记<code>book[k] = 1;</code><br>
+以<em>k</em>节点重复第一步</p>
+<p>求和dis数组，即为最短路径和<br>
+时间复杂度：O(N^2)</p>
+</blockquote>
+<h2 id="模版-2">模版</h2>
+<pre><code class="language-cpp">#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+using namespace std;
+int g[102][102];
+int minn[102];
+int book[102] = {};
+int main()
+{
+	int n;
+	scanf(&quot;%d&quot;, &amp;n);
+	for(int i=1; i&lt;=n; ++i)
+		for(int j=1; j&lt;=n; ++j)
+			scanf(&quot;%d&quot;, &amp;g[i][j]);
+	memset(minn, 0x7f, sizeof(minn));
+	minn[1] = 0;
+	memset(book, 0, sizeof(book));
+	for(int i=1; i&lt;=n; ++i)
+	{
+		int k = 0;
+		for(int j=1; j&lt;=n; ++j)
+			if(!book[j] &amp;&amp; (minn[j]&lt;minn[k]))
+				k = j;
+		book[k] = 1;
+		for(int j=1; j&lt;=n; ++j)
+			if(!book[j] &amp;&amp; (g[k][j]&lt;minn[j]))
+				minn[j] = g[k][j];
+	}
+	int ans = 0;
+	for(int i=1; i&lt;=n; ++i)
+		ans += minn[i];
+	printf(&quot;%d&quot;, ans);
+	return 0;
+}
+</code></pre>
+<h2 id="代码题目传送门">代码题目<a href="http://ybt.ssoier.cn:8088/problem_show.php?pid=1349" title="一本通1349">传送门</a></h2>
+<p>#选择<br>
+<strong>Prim</strong>适合<mark>稠密图</mark>，<strong>Kruskal</strong>适合<mark>稀疏图</mark></p>
+<p>本蒟蒻小声BB：<s>最小生成树其实不难</s>  欢迎来我的<a href="https://diego3893.github.io/" title="Diego's Blog">博客</a></p>
 </div>
                               <div class="mdui-divider mdui-m-t-3"></div>
                               <div class="mdui-row-xs-2 mdui-m-t-2">
-  <div class="mdui-col"> <div class="mdui-text-left"><a href="https://diego3893.github.io/post/zui-xiao-sheng-cheng-shu/">最小生成树</a></div></div>
- <div class="mdui-col"><div class="mdui-text-right "><a href="https://diego3893.github.io/post/hello-gridea/">Hello Gridea</a></div> </div>
+  <div class="mdui-col"> </div>
+ <div class="mdui-col"><div class="mdui-text-right "><a href="https://diego3893.github.io/post/bing-cha-ji/">并查集</a></div> </div>
                                 </div>
                                 <div class="mdui-divider mdui-m-t-2"></div>
    
@@ -199,12 +258,24 @@ inline int fread()
                          </article>
                  <div class="toc-container mdui-float-right">
                 <ul class="markdownIt-TOC">
-<li><a href="#%E6%8A%80%E5%B7%A7">技巧</a>
+<li><a href="#kruskal">Kruskal</a>
 <ul>
-<li><a href="#%E7%AE%80%E5%8C%96%E5%90%8E">简化后</a></li>
+<li><a href="#%E5%8E%9F%E7%90%86">原理</a>
+<ul>
+<li><a href="#%E4%BC%98%E5%8C%96">优化</a></li>
 </ul>
 </li>
-<li><a href="#%E5%8E%9F%E7%90%86">原理</a></li>
+<li><a href="#%E6%A8%A1%E7%89%88">模版</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81%E9%A2%98%E7%9B%AE-%E4%BC%A0%E9%80%81%E9%97%A8">代码题目 传送门</a></li>
+</ul>
+</li>
+<li><a href="#prim">Prim</a>
+<ul>
+<li><a href="#%E5%8E%9F%E7%90%86-2">原理</a></li>
+<li><a href="#%E6%A8%A1%E7%89%88-2">模版</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81%E9%A2%98%E7%9B%AE%E4%BC%A0%E9%80%81%E9%97%A8">代码题目传送门</a></li>
+</ul>
+</li>
 </ul>
 
               </div>
