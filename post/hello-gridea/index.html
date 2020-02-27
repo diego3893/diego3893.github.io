@@ -1,169 +1,147 @@
-
-<!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
- <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
-<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
-<meta HTTP-EQUIV="expires" CONTENT="0"> 
-<title>Hello Gridea | Diego&#39;s Blog</title>	
+  <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<title>Hello Gridea | Diego&#39;s Blog</title>
+<link rel="shortcut icon" href="https://diego3893.github.io/favicon.ico?v=1582805386560">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://diego3893.github.io/styles/main.css" type='text/css' media='all'>
 
-<link rel="stylesheet" href="https://diego3893.github.io/styles/main.css">
-<script type="text/javascript">
-function getCSS()
-{
-        datetoday = new Date();
-        timenow=datetoday.getTime();
-        datetoday.setTime(timenow);
-        thehour = datetoday.getHours();
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
-        if (thehour<8时)
-
-            display = "https://diego3893.github.io/media/css/night.css";
-
-       else if (thehour>18时)
-
-            display = "https://diego3893.github.io/media/css/night.css";   
-
-        else if (thehour>8时)
-           
-            display = "https://diego3893.github.io/media/css/day.css";
-
-        else if (thehour<18时)
-
-            display = "https://diego3893.github.io/media/css/day.css";
-      
-
-var css = '<';
-        css+='link rel="stylesheet" href='+display+' \/';
-        css+='>';
-        document.write(css);
-}
-</script>
-<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
-<link href="https://at.alicdn.com/t/font_1306644_jwtuc2zzbrd.css" rel="stylesheet" />
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<script type='text/javascript' src='https://diego3893.github.io/media/scripts/script.js'></script>
-<link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
-  <script src="https://cdn.bootcss.com/wow/1.1.2/wow.min.js"></script>
-  <script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <script>wow=new WOW({boxClass:'wow',animateClass:'animated',offset:0,mobile:true,live:true});wow.init();</script>
-
-<script type="text/javascript">
-window.onload=getCSS();
-</script>
 
 
- 	
+
 </head>
-<body class="post-template-default single single-post postid-70 single-format-standard">
-    <div id="wrapper">
+<body class="home blog ct-body standard">
+<div id="overflow-container" class="overflow-container">
+  <a class="skip-content" href="#main">Skip to content</a>
+  <header id="site-header" class="site-header" role="banner">
+    <div class='top-navigation top-navigation-important'>
+        <div class='container'>
+            <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+                <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fa fa-plus"></i></button>
+                <div class="menu">
+                    <ul id="menu-secondary-items" class="menu-secondary-items">
+                        
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://diego3893.github.io/tag/Gr5YErY6j/">提高组笔记</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://diego3893.github.io/tag/4X9N1ZDzg/">Gridea</a>
+                        </li>
+                            
+                        
+                    </ul>
+                </div>
+            </div>
+            <ul class="social-media-icons">
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="title-info" class="title-info">
+            <div id='site-title' class='site-title'>
+                <a href="https://diego3893.github.io">  Diego&#39;s Blog </a>
+            </div>
+        </div>
+        <button id="toggle-navigation" class="toggle-navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+        <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+            <p class="site-description">Stay hungry, Stay foolish</p>
+            <div class="menu">
+                <ul id="menu-primary-items" class="menu-primary-items">
+                     
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/">首页</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/archives">归档</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/tags">标签</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/post/about">关于</a>
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</header>
+
+
+  <div id="main" class="main" role="main">
+    <div id="loop-container" class="loop-container">
+      <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
         
-			
-		<header id="header" class="site-header" 
-		
-		style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url(https://diego3893.github.io/post-images/hello-gridea.png)"
-		
-		>
-			<div class="site-branding">
-									<h1 class="site-title"><a href="https://diego3893.github.io" rel="home">Diego&#39;s Blog</a></h1>
-										
-					<h2 class="site-description">Stay hungry, Stay foolish</h2>
-										
-							</div>
-			<nav id="nav-wrapper">
-				<div class="container">
-					<div class="nav-toggle">
-						<div class="bars">
-							<div class="bar"></div>
-							<div class="bar"></div>
-							<div class="bar"></div>
-						</div>
-					</div>
-					<div class="clear"></div>
-					<ul id="" class="dove">
-		 
-     			
-<li>
-	 
-	<a  href="/"> 首页</a></li>
-	
-    
-     			
-<li>
-	 
-	<a  href="/archives"> 归档</a></li>
-	
-    
-     			
-<li>
-	 
-	<a  href="/tags"> 标签</a></li>
-	
-    
-     			
-<li>
-	 
-	<a  href="/post/about"> 关于</a></li>
-	
-    
+          <div class='featured-image lazy lazy-bg-image' data-background="https://diego3893.github.io/post-images/hello-gridea.png">
+          </div>
+        
 
-</ul>
-</li>		
-		
-</ul>				</div>
-			</nav>
-						<div class="jingge">
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        </header>
-
-		<div id="content" class="container">
-			<div class="row">
-	<div class="col-md-8 site-main">
-				
-<article id="post-70" class="post-70 post type-post status-publish format-standard hentry category-5 tag-10 tag-9 tag-11">
-
-	
-	                      
-		<div class="entry-content">
-			<h1 class="wow swing entry-title">Hello Gridea</h1>
-<div class="entry-meta">
-<div class="wow bounce">
-	<i class="iconfont icon-rili"> <time class="lately-a" datetime="2018-12-12 00:00:00" itemprop="datePublished" pubdate="">2018-12-12</time></i>
-	          </div>
-			
-</span>
-													 
-		</div>
-                  
-			<div class="wow slideInLeft entry-summary song">
-				<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+        <div class="entry-meta">
+          <span class="date">· 2018-12-12 ·</span> <span> / </span>
+          <span class="author">
+            <a href="https://diego3893.github.io" title="" rel="author"> Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></a>
+          </span>
+          
+            <span class="category">
+                    <span> / </span>
+                    <a href="https://diego3893.github.io/tag/4X9N1ZDzg/">Gridea</a>
+                </span>
+          
+        </div>
+        <div class='entry-header'>
+          <h1 class='entry-title'>Hello Gridea</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
 ✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
 <!-- more -->
 <p><a href="https://github.com/getgridea/gridea">Github</a><br>
@@ -185,37 +163,59 @@ window.onload=getCSS();
 <p>尽情发挥你的才华吧！</p>
 <p>😘 Enjoy~</p>
 
-							</div>
-	<div class="wow bounceInDown vt-post-tags">
- 
-				<a href="https://diego3893.github.io/tag/4X9N1ZDzg/" rel="tag">Gridea</a>	
-				 
-					</div>						
-<nav class="navigation3 post-navigation3" role="navigation">
-		
-		<div class="nav-links3">
-      
-		<div class="wow bounceInLeft nav-previous3"><a href="https://diego3893.github.io/post/bing-cha-ji/" rel="prev"> 并查集</a></div>
-		 
-		 
-		</div>
-	</nav>
-	<div class="wow rollIn author-info" style="visibility: visible; animation-name: rollIn;">
-	<div class="author-avatar pull-left"><img src="https://diego3893.github.io/images/avatar.png" ></div>
- 
-	<div class="author-description"><div class="author-title"><div class="author-link" rel="author">Diego</div></div>
-
-
-	<p class="author-bio">不一定出类拔萃，但一定与众不同</p></div></div>
-	
-		</div>
-		
- 
-		
-</article>
-
-<div id="marlin_lite_about_widget-2" class="wow bounceInUp widget marlin_lite_about_widget" data-wow-delay="0.1s">
-		
+            </article>
+          </div>
+          <div class='entry-meta-bottom'>
+            <div class="entry-categories">
+              <p>
+                <span>Categories</span>
+                
+                  
+                    
+                  <a href="https://diego3893.github.io/tag/Gr5YErY6j/" title="View all posts in 提高组笔记">提高组笔记</a>
+                    
+                    
+                    
+                  <a href="https://diego3893.github.io/tag/4X9N1ZDzg/" title="View all posts in Gridea">Gridea</a>
+                    
+                    
+              </p>
+            </div>
+            <div class="entry-tags">
+              <p><span>Tags</span>
+              </p>
+            </div>
+          </div>
+          <div class="author-meta">
+            <div class="author">
+              <img alt='' src="https://diego3893.github.io/images/avatar.png?v=1582805386560" class='avatar avatar-72 photo' height='72' width='72'>
+              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://diego3893.github.io'>Diego</a> </span>
+            </div>
+            <div class="bio">
+              <p>不一定出类拔萃，但一定与众不同</p>
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            </div>
+          </div>
+        </div>
+          
+      </div>
+      <section id="comments" class="comments">
         
           
             <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
@@ -226,12 +226,12 @@ window.onload=getCSS();
 <script>
 
   var gitalk = new Gitalk({
-    clientID: '',
-    clientSecret: '',
-    repo: '',
-    owner: '',
-    admin: [''],
-    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    clientID: '0cb92ddda132fbb0036c',
+    clientSecret: '33b4ecece90c2c5e9092bbf6273e7846bf3d35e6',
+    repo: 'blog-comment',
+    owner: 'diego3893',
+    admin: ['diego3893'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
     distractionFreeMode: false  // Facebook-like distraction free mode
   })
 
@@ -240,209 +240,54 @@ window.onload=getCSS();
 </script>
 
           
+
           
         
-		<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='https://diego3893.github.io/media/scripts/Valine.min.js'></script>
-
-<div class="comment"></div>
-<script>
-        new Valine({
-            // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
-            av: AV, 
-            el: '.comment',
-            lang: 'zh-cn',
-            
-            
-      emoticon_list: ["吐.png","喷血.png","狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","中指.png","尴尬.png","瞅你.png","想一想.png","中枪.png","得意.png","肿包.png","扇耳光.png","亲亲.png","惊喜.png","脸红.png","无所谓.png","便便.png","愤怒.png","蜡烛.png","献黄瓜.png","内伤.png","投降.png","观察.png","看不见.png","击掌.png","抠鼻.png","邪恶.png","看热闹.png","口水.png","抽烟.png","锁眉.png","装大款.png","吐舌.png","无奈.png","长草.png","赞一个.png","呲牙.png","无语.png","阴暗.png","不出所料.png","咽气.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png","黑线.png","喜极而泣.png","喷水.png","深思.png","鼓掌.png","暗地观察.png"],
-     	
-      	
-          
-        });
-    </script> 
-
-
-   
-  
- 
-
-		</div>
-
-			</div>
-			
-
-
-<div class="tocc col l3 hide-on-med-and-down">
-	
-        <div class="toc-widget">
-			
-            <div class="toc-title"></div>
-			
-            <div id="toc-content">
-			
-			
-			</div>
+      </section>
+    </div>
+  </div>
+  <footer id="site-footer" class="site-footer" role="contentinfo">
+    <h1>
+        <a href="https://diego3893.github.io"> Diego&#39;s Blog </a>
+    </h1>
+    <p class="site-description">Stay hungry, Stay foolish</p>
+    <div id="menu-footer" class="menu-container menu-footer" role="navigation">
+        <div class="menu">
+            <ul id="menu-footer-items" class="menu-footer-items">
+            </ul>
         </div>
     </div>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.5.0/tocbot.min.js"></script>
+    <ul class="social-media-icons">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </ul>
+    <div class="design-credit">
+        <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
+    </div>
+</footer>
 <script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '.entry-summary',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
-            headingSelector: 'h2, h3, h4'
-        });
-
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
-
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('.entry-summary').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
-
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
-    });
-</script>										 
-
- 
-       
-
-
-			</div>
-		</div>
-
-		
-		 	<footer id="colophon" class="site-footer">
-
-			<div class="container">
-	
-				<div class="copyright">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a><br>Theme:   <a href="https://github.com/shanbufun/gridea-theme-pan" target="_blank" title="Pan"><span>Pan</span></a>.  by <a href="https://shanbu.fun/" target="_blank"  title="山卜方" >Shanbufun</a></div>		
-			</div>
-		
-		</footer>
+    hljs.initHighlightingOnLoad()
+</script>
+<script src="https://diego3893.github.io/media/scripts/lib/jquery.min.js"></script>
+<script src="https://diego3893.github.io/media/scripts/lib/jquerymigrate.js"></script>
+<script src="https://diego3893.github.io/media/scripts/lib/production.min.js"></script>
 
 </div>
-
-<script src="https://cdn.bootcss.com/fitvids/1.2.0/jquery.fitvids.min.js"></script>
-<script type='text/javascript' src='https://diego3893.github.io/media/scripts/marlin-scripts.js'></script>
- <script src="//tokinx.github.io/lately/lately.min.js"></script>
-  <script>jQuery(document).ready(function(){$.lately({'target':'.lately-a,.lately-b,.lately-c'})});</script>
-  <style type="text/css">a.back_to_top {
-    text-decoration: none;
-    position: fixed;
-    bottom: 40px;
-    right: 30px;
-    background: #f0f0f0;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    line-height: 36px;
-    font-size: 18px;
-    text-align: center;
-    transition-duration: .5s;
-    transition-propety: background-color;
-    display: none;
-}
-
-a.back_to_top span {
-    color: #888;
-}
-
-a.back_to_top:hover {
-    cursor: pointer;
-    background: #dfdfdf;
-}
-
-a.back_to_top:hover span {
-    color: #555;
-}
-
-@media print, screen and (max-width: 580px) {
-    .back_to_top {
-        display: none !important;
-    }
-}
-
-
-
-</style><a id="back_to_top" href="#" class="back_to_top"><span><i class="iconfont icon-xiangshang"></i></span>
-</a>
-
-
-<script>$(document).ready((function(_this) {
-  return function() {
-    var bt;
-    bt = $('#back_to_top');
-    if ($(document).width() > 480) {
-      $(window).scroll(function() {
-        var st;
-        st = $(window).scrollTop();
-        if (st > 30) {
-          return bt.css('display', 'block');
-        } else {
-          return bt.css('display', 'none');
-        }
-      });
-      return bt.click(function() {
-        $('body,html').animate({
-          scrollTop: 0
-        }, 800);
-        return false;
-      });
-    }
-  };
-})(this));
-</script>
-
-		<script data-no-instant>
-    (function ($) {
-        $.extend({
-            adamsOverload: function () {
-                $('.navigation:eq(0)').remove();
-                $("").attr("rel" , "external");
-                $("a[rel='external'],a[rel='external nofollow']").attr("target","_blank");
-                $("a.vi").attr("rel" , "");
-                $.viewImage({
-                    'target'  : 'img',
-                    'exclude' : '.vsmile-icons img,.gallery img',
-                    'delay'   : 300
-                });
-                $.lately({
-                    'target' : '.commentmetadata a,.infos time,.post-list time'
-                });
-                prettyPrint();
-                
-                $('ul.links li a').each(function(){
-                    if($(this).parent().find('.bg').length==0){
-                        $(this).parent().append('<!---<div class="bg" style="background-image:url(https://c3.glgoo.top/s2/favicons?domain='+$(this).attr("href")+')"></div>--->')
-                    }
-                });
-            }
-        });
-    })(jQuery);
-    jQuery.adamsOverload();
-</script>
-
 </body>
 </html>
+
