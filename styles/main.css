@@ -3188,3 +3188,7 @@ ul {
     .index-list-img{background-image: url(https://s2.ax1x.com/2020/02/28/30TjLn.jpg);}
     .archives-img{ background-image: url(https://s2.ax1x.com/2020/02/28/30oXE6.jpg);}
     
+      .v {
+        display: none;
+      }
+    

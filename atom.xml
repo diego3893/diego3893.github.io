@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://diego3893.github.io</id>
     <title>Diego&apos;s Blog</title>
-    <updated>2020-02-28T04:22:16.939Z</updated>
+    <updated>2020-02-28T11:12:24.432Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://diego3893.github.io"/>
     <link rel="self" href="https://diego3893.github.io/atom.xml"/>
@@ -106,12 +106,13 @@ Description可以<strong>不填</strong><br>
 <p>将网盘资源中的<em>gridea-themes</em>解压，把里面的每个单文件夹（如song、jia、lin等）放入<mark>站点源文件夹</mark>中<strong>如下图</strong><br>
 <img src="https://s2.ax1x.com/2020/02/28/3BsK9P.jpg" alt="theme" loading="lazy"><br>
 <img src="https://s2.ax1x.com/2020/02/28/3Bsnht.jpg" alt="theme0" loading="lazy"><br>
-重启后就可以选择主题了 <s>我使用的是佳</s></p>
+重启gridea后就可以选择主题了 <s>我使用的是佳</s></p>
 <h2 id="43-评论设置">4.3 评论设置</h2>
 <h3 id="431-新建一个仓库">4.3.1 新建一个仓库</h3>
 <p>设置默认，命名为blog-comment</p>
-<h3 id="432进入github账户的开发者设置">4.3.2进入github账户的<strong>开发者设置</strong></h3>
-<p><img src="https://s2.ax1x.com/2020/02/28/3By18x.jpg" alt="comment" loading="lazy"><br>
+<h3 id="432-新建gitalk-app">4.3.2 新建Gitalk App</h3>
+<p>进入github账户的<strong>开发者设置</strong><br>
+<img src="https://s2.ax1x.com/2020/02/28/3By18x.jpg" alt="comment" loading="lazy"><br>
 新建App，设置如下<br>
 <img src="https://s2.ax1x.com/2020/02/28/3BcN4A.jpg" alt="comment0" loading="lazy"><br>
 保存两行代码<br>
