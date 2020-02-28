@@ -3,7 +3,7 @@
         <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
         <meta charset="utf-8">
         <meta name="referrer" content="never">
-        <title>二分查找 | Diego&#39;s Blog</title>
+        <title>快速幂 | Diego&#39;s Blog</title>
         <link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.11.1/katex.min.css">
         <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://diego3893.github.io/styles/main.css">
@@ -17,7 +17,7 @@
 
     </head>
     <body class="mdui-theme-primary-purple mdui-theme-accent-purple">
-        <header class="index-img mdui-m-b-3"  style="background-image: url(https://s2.ax1x.com/2020/02/28/3rex7d.jpg);" >
+        <header class="index-img mdui-m-b-3"  style="background-image: url(https://s2.ax1x.com/2020/02/28/3r1xYQ.jpg);" >
                           <button class="mdui-btn  mdui-btn-icon mdui-btn-dense mdui-color-theme-500 mdui-ripple yinying mdui-m-t-1 mdui-m-l-1" mdui-menu="{target: '#demo-attr-cascade'}"><i class="mdui-icon material-icons">&#xe5d2;</i></button>
                 <ul class="mdui-menu" id="demo-attr-cascade">
                 
@@ -44,18 +44,47 @@
                 <div class="mdui-row">
                         <div class="mdui-col-md-8 mdui-col-offset-md-2 ">
                          <article class="mdui-shadow-10 mdui-p-a-2 post-list">
-                           <div class="mdui-typo-display-1 mdui-m-b-3">二分查找</div>
+                           <div class="mdui-typo-display-1 mdui-m-b-3">快速幂</div>
                            <a  class="index-list-biaoqian ">2020-02-28</a>
                            <div class="mdui-typo mdui-m-t-3 post-neirong"><h1 id="原理">原理</h1>
-<p>简单，不阐述</p>
-<hr>
+<blockquote>
+<p>在指数b大于0时：</p>
+<blockquote>
+<p>若b为奇数，先将ans单独乘以底数a并mod m， 再将底数平方并mod m<br>
+若b为偶数，将底数平方并mod m</p>
+</blockquote>
+<p>b右移一位，即b/2<br>
+数学理解很简单，位运算参考<a href="https://jingyan.baidu.com/article/1612d5008ff5b7e20f1eee4c.html">这个</a></p>
+</blockquote>
 <h1 id="模版">模版</h1>
-<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2020/02/28/3rmptI.jpg" alt="code" loading="lazy"></figure>
+<pre><code class="language-cpp">#include&lt;cstdio&gt;
+using namespace std;
+typedef long long ll;
+ll qpower(ll, ll, ll);
+int main()
+{
+	ll a, b, m;
+	scanf(&quot;%lld%lld%lld&quot;, &amp;a, &amp;b, &amp;m);
+	printf(&quot;%lld&quot;, qpower(a, b, m));
+ } 
+ll qpower(ll a, ll b, ll m)
+{
+	ll ans = 1, res = a;
+	while(b &gt; 0)
+	{
+		if(b &amp; 1)
+			ans = ans*res%m;
+		res = res*res%m;
+		b &gt;&gt;= 1;
+	}
+	return ans;
+}
+</code></pre>
 </div>
                               <div class="mdui-divider mdui-m-t-3"></div>
                               <div class="mdui-row-xs-2 mdui-m-t-2">
-  <div class="mdui-col"> <div class="mdui-text-left"><a href="https://diego3893.github.io/post/kuai-su-mi/">快速幂</a></div></div>
- <div class="mdui-col"><div class="mdui-text-right "><a href="https://diego3893.github.io/post/dui-pai-xu/">堆排序</a></div> </div>
+  <div class="mdui-col"> </div>
+ <div class="mdui-col"><div class="mdui-text-right "><a href="https://diego3893.github.io/post/er-fen-cha-zhao/">二分查找</a></div> </div>
                                 </div>
                                 <div class="mdui-divider mdui-m-t-2"></div>
    
