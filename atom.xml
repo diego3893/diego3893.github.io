@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://diego3893.github.io</id>
     <title>Diego&apos;s Blog</title>
-    <updated>2020-02-28T00:04:08.278Z</updated>
+    <updated>2020-02-28T00:16:56.058Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://diego3893.github.io"/>
     <link rel="self" href="https://diego3893.github.io/atom.xml"/>
@@ -163,8 +163,8 @@ int main()
 }
 </code></pre>
 <h2 id="代码题目传送门">代码题目<a href="http://ybt.ssoier.cn:8088/problem_show.php?pid=1349" title="一本通1349">传送门</a></h2>
-<p>#选择<br>
-<strong>Prim</strong>适合<mark>稠密图</mark>，<strong>Kruskal</strong>适合<mark>稀疏图</mark></p>
+<h1 id="选择">选择</h1>
+<p><strong>Prim</strong>适合<mark>稠密图</mark>，<strong>Kruskal</strong>适合<mark>稀疏图</mark></p>
 <p>本蒟蒻小声BB：<s>最小生成树其实不难</s>  欢迎来我的<a href="https://diego3893.github.io/" title="Diego's Blog">博客</a></p>
 ]]></content>
     </entry>
