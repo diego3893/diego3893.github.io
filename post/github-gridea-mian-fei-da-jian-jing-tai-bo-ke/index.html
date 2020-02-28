@@ -1,0 +1,313 @@
+<html>
+      <head>
+        <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
+        <meta charset="utf-8">
+        <meta name="referrer" content="never">
+        <title>github + Gridea免费搭建静态博客 | Diego&#39;s Blog</title>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.11.1/katex.min.css">
+        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://diego3893.github.io/styles/main.css">
+          <script src="https://diego3893.github.io/media/scripts/mdui.min.js"></script>
+        <link rel="stylesheet" href="https://at.alicdn.com/t/font_1306644_jwtuc2zzbrd.css">
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Ma+Shan+Zheng&display=swap" rel="stylesheet">
+        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+        <script src="https://diego3893.github.io/media/scripts/script.js"></script>
+        <script >hljs.initHighlightingOnLoad();</script>
+        
+
+    </head>
+    <body class="mdui-theme-primary-purple mdui-theme-accent-purple">
+        <header class="index-img mdui-m-b-3" >
+                          <button class="mdui-btn  mdui-btn-icon mdui-btn-dense mdui-color-theme-500 mdui-ripple yinying mdui-m-t-1 mdui-m-l-1" mdui-menu="{target: '#demo-attr-cascade'}"><i class="mdui-icon material-icons">&#xe5d2;</i></button>
+                <ul class="mdui-menu" id="demo-attr-cascade">
+                
+                        <li class="mdui-menu-item">
+                          <a href="/" class="mdui-ripple">首页</a>
+                        </li>
+                
+                        <li class="mdui-menu-item">
+                          <a href="/archives" class="mdui-ripple">归档</a>
+                        </li>
+                
+                        <li class="mdui-menu-item">
+                          <a href="/tags" class="mdui-ripple">标签</a>
+                        </li>
+                
+                        <li class="mdui-menu-item">
+                          <a href="/post/about" class="mdui-ripple">关于</a>
+                        </li>
+                
+                      </ul>
+
+        </header>
+        <div class="mdui-container post">
+                <div class="mdui-row">
+                        <div class="mdui-col-md-8 mdui-col-offset-md-2 ">
+                         <article class="mdui-shadow-10 mdui-p-a-2 post-list">
+                           <div class="mdui-typo-display-1 mdui-m-b-3">github + Gridea免费搭建静态博客</div>
+                           <a  class="index-list-biaoqian ">2020-02-28</a>
+                           <div class="mdui-typo mdui-m-t-3 post-neirong"><h1 id="0-gridea的优缺点">0 Gridea的优缺点</h1>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>使用简单</li>
+<li>零成本</li>
+<li>无需代码配置</li>
+<li>界面美观</li>
+<li>离线编辑，在线同步</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>
+<p>新软件没有详细说明 <s>（所以需要看我的博客）</s></p>
+<hr>
+<h1 id="1-准备工作">1 准备工作</h1>
+<h2 id="安装git可选和gridea">安装git（可选）和Gridea</h2>
+</li>
+</ul>
+<ul>
+<li>
+<p>可以从官网安装：</p>
+<blockquote>
+<p><a href="https://git-scm.com/downloads" title="git下载地址">git</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://gridea.dev" title="gridea下载地址">Gridea</a></p>
+</blockquote>
+</li>
+<li>
+<p>可以从百度网盘安装</p>
+<blockquote>
+<p><a href="https://pan.baidu.com/s/1nTCfBIsZqMGD8tokXiEdYQ" title="网盘资源">网盘资源</a><br>
+<mark>提取码：ck6t</mark></p>
+<blockquote>
+<p>有git、gridea安装包和gridea主题  <em><strong>（仅限win）</strong></em></p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h1 id="2-安装软件">2 安装软件</h1>
+<h2 id="21-安装git可选">2.1 安装git（可选）</h2>
+<p>参考<a href="https://blog.csdn.net/qq_32786873/article/details/80570783" title="git安装教程">这个</a></p>
+<h2 id="22-安装gridea">2.2 安装Gridea</h2>
+<p>双击exe，选择全用户安装（第一个选项），然后一路<em>下一步</em>即可</p>
+<hr>
+<h1 id="3-搭建网站">3 搭建网站</h1>
+<h2 id="30-加速github">3.0 加速github</h2>
+<p>参考<a href="https://blog.csdn.net/qianglei6077/article/details/90051554" title="win10加速">这个</a><br>
+<em>无法保存hosts</em><a href="https://jingyan.baidu.com/article/9113f81b49ed2f2b3214c7fa.html%22%E6%B7%BB%E5%8A%A0%E6%9D%83%E9%99%90%22">解决办法</a></p>
+<h2 id="31注册github有账号者略过">3.1注册github（有账号者略过）</h2>
+<p>进入<a href="https://github.com">github</a><br>
+具体步骤和其他注册方式无太大区别，此处不再赘述</p>
+<h2 id="32-创建仓库">3.2 创建仓库</h2>
+<p>点击<strong>New repository</strong><br>
+<img src="https://s2.ax1x.com/2020/02/28/3BGwZT.jpg" alt="creat" loading="lazy"><br>
+<mark>Repository name</mark>填写<em>用户名.github.io</em><br>
+<code>e.g. 用户名为kkk， 则Repository name填写kkk.github.io</code><br>
+Description可以<strong>不填</strong><br>
+其余设置参照下图，然后点击<em>Create repository</em><br>
+<img src="https://s2.ax1x.com/2020/02/28/3BJo7T.jpg" alt="creat0" loading="lazy"></p>
+<h2 id="33-获取token">3.3 获取token</h2>
+<ul>
+<li>进入用户设置<br>
+<img src="https://s2.ax1x.com/2020/02/28/3BNR9e.jpg" alt="token0" loading="lazy"></li>
+<li>进入开发者设置<br>
+<img src="https://s2.ax1x.com/2020/02/28/3BUk34.jpg" alt="token1" loading="lazy"></li>
+<li>选择最后一项，然后新建一个token<br>
+<img src="https://s2.ax1x.com/2020/02/28/3BU524.jpg" alt="token2" loading="lazy"></li>
+<li>Note随便填，只勾选repo权限<br>
+<img src="https://s2.ax1x.com/2020/02/28/3BaiZt.jpg" alt="token3" loading="lazy"></li>
+<li>点击页面最下方的绿色按钮<em>Generate token</em></li>
+<li>你会得到一长串编码，<mark>把它保存下来</mark>，因为 <em><strong>以后你再也见不到它了</strong></em><br>
+<img src="https://s2.ax1x.com/2020/02/28/3BdNh8.jpg" alt="token4" loading="lazy"></li>
+</ul>
+<hr>
+<h1 id="4-gridea设置博客">4 gridea设置博客</h1>
+<h2 id="41-将博客同步至网页">4.1 将博客同步至网页</h2>
+<p>在<strong>远程</strong>中设置如图<br>
+<img src="https://s2.ax1x.com/2020/02/28/3B0q6e.jpg" alt="setting" loading="lazy"><br>
+点击<strong>保存</strong>，点击<strong>检测远程连接</strong></p>
+<blockquote>
+<p>如果失败请检查设置信息是否正确<br>
+若一切正确但无法连接，参考<a href="https://yeming.site/post/gridea_help/">这篇文章</a><br>
+然后点击左下角的<strong>同步</strong></p>
+</blockquote>
+<h2 id="42-主题美化">4.2 主题美化</h2>
+<p>将网盘资源中的<em>gridea-themes</em>解压，把里面的每个单文件夹（如song、jia、lin等）放入<mark>站点源文件夹</mark>中<strong>如下图</strong><br>
+<img src="https://s2.ax1x.com/2020/02/28/3BsK9P.jpg" alt="theme" loading="lazy"><br>
+<img src="https://s2.ax1x.com/2020/02/28/3Bsnht.jpg" alt="theme0" loading="lazy"><br>
+重启后就可以选择主题了 <s>我使用的是佳</s></p>
+<h2 id="43-评论设置">4.3 评论设置</h2>
+<h3 id="431-新建一个仓库">4.3.1 新建一个仓库</h3>
+<p>设置默认，命名为blog-comment</p>
+<h3 id="432进入github账户的开发者设置">4.3.2进入github账户的<strong>开发者设置</strong></h3>
+<p><img src="https://s2.ax1x.com/2020/02/28/3By18x.jpg" alt="comment" loading="lazy"><br>
+新建App，设置如下<br>
+<img src="https://s2.ax1x.com/2020/02/28/3BcN4A.jpg" alt="comment0" loading="lazy"><br>
+保存两行代码<br>
+<img src="https://s2.ax1x.com/2020/02/28/3BctNd.jpg" alt="comment1" loading="lazy"></p>
+<h3 id="433-连接至博客">4.3.3 连接至博客</h3>
+<p>设置如下：<br>
+<img src="https://s2.ax1x.com/2020/02/28/3BgExP.jpg" alt="blog" loading="lazy"><br>
+<code>每篇文章都需要初始化评论，新文章评论区github登陆</code></p>
+<hr>
+<h1 id="5-编辑博文">5 编辑博文</h1>
+<p>使用markdown编辑，语法自行百度，不再介绍<br>
+<mark>这个应用不会自动同步，需要点击同步按钮</mark></p>
+<hr>
+<p>感谢阅读本蒟蒻的博客，如有问题请在下方评论<br>
+欢迎参观我的<a href="https://diego3893.github.io">博客</a></p>
+</div>
+                              <div class="mdui-divider mdui-m-t-3"></div>
+                              <div class="mdui-row-xs-2 mdui-m-t-2">
+  <div class="mdui-col"> </div>
+ <div class="mdui-col"><div class="mdui-text-right "><a href="https://diego3893.github.io/post/zui-xiao-sheng-cheng-shu/">最小生成树</a></div> </div>
+                                </div>
+                                <div class="mdui-divider mdui-m-t-2"></div>
+   
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '0cb92ddda132fbb0036c',
+    clientSecret: '33b4ecece90c2c5e9092bbf6273e7846bf3d35e6',
+    repo: 'blog-comment',
+    owner: 'diego3893',
+    admin: ['diego3893'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+ <script src="https://diego3893.github.io/media/scripts/Valine.min.js"></script>
+ <div class="comment"></div>
+
+<script>
+      new Valine({
+            el: '.comment',
+
+
+
+            path: window.location.pathname,
+            pageSize: 30,
+            avatar:'mm', 
+       })
+
+    </script> 
+<script>
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+           if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+              clearInterval(checkExist);
+           }
+        }, 100);
+    }
+</script>
+                         </article>
+                 <div class="toc-container mdui-float-right">
+                <ul class="markdownIt-TOC">
+<li><a href="#0-gridea%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9">0 Gridea的优缺点</a></li>
+<li><a href="#1-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">1 准备工作</a>
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85git%E5%8F%AF%E9%80%89%E5%92%8Cgridea">安装git（可选）和Gridea</a></li>
+</ul>
+</li>
+<li><a href="#2-%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6">2 安装软件</a>
+<ul>
+<li><a href="#21-%E5%AE%89%E8%A3%85git%E5%8F%AF%E9%80%89">2.1 安装git（可选）</a></li>
+<li><a href="#22-%E5%AE%89%E8%A3%85gridea">2.2 安装Gridea</a></li>
+</ul>
+</li>
+<li><a href="#3-%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99">3 搭建网站</a>
+<ul>
+<li><a href="#30-%E5%8A%A0%E9%80%9Fgithub">3.0 加速github</a></li>
+<li><a href="#31%E6%B3%A8%E5%86%8Cgithub%E6%9C%89%E8%B4%A6%E5%8F%B7%E8%80%85%E7%95%A5%E8%BF%87">3.1注册github（有账号者略过）</a></li>
+<li><a href="#32-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93">3.2 创建仓库</a></li>
+<li><a href="#33-%E8%8E%B7%E5%8F%96token">3.3 获取token</a></li>
+</ul>
+</li>
+<li><a href="#4-gridea%E8%AE%BE%E7%BD%AE%E5%8D%9A%E5%AE%A2">4 gridea设置博客</a>
+<ul>
+<li><a href="#41-%E5%B0%86%E5%8D%9A%E5%AE%A2%E5%90%8C%E6%AD%A5%E8%87%B3%E7%BD%91%E9%A1%B5">4.1 将博客同步至网页</a></li>
+<li><a href="#42-%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96">4.2 主题美化</a></li>
+<li><a href="#43-%E8%AF%84%E8%AE%BA%E8%AE%BE%E7%BD%AE">4.3 评论设置</a>
+<ul>
+<li><a href="#431-%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E4%BB%93%E5%BA%93">4.3.1 新建一个仓库</a></li>
+<li><a href="#432%E8%BF%9B%E5%85%A5github%E8%B4%A6%E6%88%B7%E7%9A%84%E5%BC%80%E5%8F%91%E8%80%85%E8%AE%BE%E7%BD%AE">4.3.2进入github账户的<strong>开发者设置</strong></a></li>
+<li><a href="#433-%E8%BF%9E%E6%8E%A5%E8%87%B3%E5%8D%9A%E5%AE%A2">4.3.3 连接至博客</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#5-%E7%BC%96%E8%BE%91%E5%8D%9A%E6%96%87">5 编辑博文</a></li>
+</ul>
+
+              </div>
+
+                        </div>
+                 </div>
+          
+        </div>
+        <script data-no-instant>
+    (function ($) {
+        $.extend({
+            adamsOverload: function () {
+                $.viewImage({
+                    'target'  : '.post-neirong img',
+                    'exclude' : '.vsmile-icons img , .song-links-item img',
+                    'delay'   : 300
+                });
+            }
+        });
+    })(jQuery);
+    jQuery.adamsOverload();
+</script>
+        <footer class="footer mdui-m-t-5 mdui-text-center">
+               <nav class="social-links">
+                      <ul>
+                      
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                      </ul>
+                    </nav>
+                  <div class="copyright">
+                      <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
+                  </div>
+              </footer>
+    </body>
+</html>
