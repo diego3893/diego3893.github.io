@@ -1,0 +1,274 @@
+<html>
+      <head>
+        <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
+        <meta charset="utf-8">
+        <meta name="referrer" content="never">
+        <title>堆排序 | Diego&#39;s Blog</title>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.11.1/katex.min.css">
+        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://diego3893.github.io/styles/main.css">
+          <script src="https://diego3893.github.io/media/scripts/mdui.min.js"></script>
+        <link rel="stylesheet" href="https://at.alicdn.com/t/font_1306644_jwtuc2zzbrd.css">
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Ma+Shan+Zheng&display=swap" rel="stylesheet">
+        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+        <script src="https://diego3893.github.io/media/scripts/script.js"></script>
+        <script >hljs.initHighlightingOnLoad();</script>
+        
+
+    </head>
+    <body class="mdui-theme-primary-purple mdui-theme-accent-purple">
+        <header class="index-img mdui-m-b-3" >
+                          <button class="mdui-btn  mdui-btn-icon mdui-btn-dense mdui-color-theme-500 mdui-ripple yinying mdui-m-t-1 mdui-m-l-1" mdui-menu="{target: '#demo-attr-cascade'}"><i class="mdui-icon material-icons">&#xe5d2;</i></button>
+                <ul class="mdui-menu" id="demo-attr-cascade">
+                
+                        <li class="mdui-menu-item">
+                          <a href="/" class="mdui-ripple">首页</a>
+                        </li>
+                
+                        <li class="mdui-menu-item">
+                          <a href="/archives" class="mdui-ripple">归档</a>
+                        </li>
+                
+                        <li class="mdui-menu-item">
+                          <a href="/tags" class="mdui-ripple">标签</a>
+                        </li>
+                
+                        <li class="mdui-menu-item">
+                          <a href="/post/about" class="mdui-ripple">关于</a>
+                        </li>
+                
+                      </ul>
+
+        </header>
+        <div class="mdui-container post">
+                <div class="mdui-row">
+                        <div class="mdui-col-md-8 mdui-col-offset-md-2 ">
+                         <article class="mdui-shadow-10 mdui-p-a-2 post-list">
+                           <div class="mdui-typo-display-1 mdui-m-b-3">堆排序</div>
+                           <a  class="index-list-biaoqian ">2020-02-28</a>
+                           <div class="mdui-typo mdui-m-t-3 post-neirong"><p>堆分为<mark>大根堆</mark>，<mark>小根堆</mark><br>
+本文以<strong>大根堆</strong>为例</p>
+<hr>
+<h1 id="原理">原理</h1>
+<blockquote>
+<p>一个数组存储整个序列</p>
+<blockquote>
+<p>下标为k的数左孩子为2k+1, 右孩子为2k+2</p>
+</blockquote>
+<p>保持每个子树的根值大于它孩子的值</p>
+<p>对每一个非叶子节点进行排序<br>
+将整棵树的根节点（序列最大值）放到正在进行排序的末尾i<br>
+对0~i-1的序列继续排序<br>
+<code>数组模拟的完全二叉树</code></p>
+</blockquote>
+<hr>
+<h1 id="模版">模版</h1>
+<h2 id="手动模拟">手动模拟</h2>
+<pre><code class="language-cpp">#include&lt;cstdio&gt;
+#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+
+void adjust(int arr[], int len, int index)
+{
+    int left = 2*index + 1;
+    int right = 2*index + 2;
+    int maxIdx = index;
+    if(left&lt;len &amp;&amp; arr[left] &gt; arr[maxIdx]) maxIdx = left;
+    if(right&lt;len &amp;&amp; arr[right] &gt; arr[maxIdx]) maxIdx = right;  // maxIdx是3个数中最大数的下标
+    if(maxIdx != index)                 // 如果maxIdx的值有更新
+    {
+        swap(arr[maxIdx], arr[index]);
+        adjust(arr, len, maxIdx);       // 递归调整其他不满足堆性质的部分
+    }
+
+}
+void heapSort(int arr[], int size)
+{
+    for(int i=size/2 - 1; i &gt;= 0; i--)  // 对每一个非叶结点进行堆调整(从最后一个非叶结点开始)
+    {
+        adjust(arr, size, i);
+    }
+    for(int i = size - 1; i &gt;= 1; i--)
+    {
+        swap(arr[0], arr[i]);           // 将当前最大的放置到数组末尾
+        adjust(arr, i, 0);              // 将未完成排序的部分继续进行堆排序
+    }
+}
+
+int main()
+{
+    int array[8] = {8, 1, 14, 3, 21, 5, 7, 10};
+    heapSort(array, 8);
+    for(int i=0; i&lt;8; ++i)
+    	cout&lt;&lt;array[i]&lt;&lt;' ';
+    return 0;
+}
+</code></pre>
+<h2 id="stl">STL</h2>
+<pre><code class="language-cpp">#include&lt;cstdio&gt;
+#include&lt;queue&gt;
+using namespace std;
+int n,x,ans;
+priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt; &gt;q;
+int main()
+{
+	int n, x, ans = 0;
+    scanf(&quot;%d&quot;, &amp;n); 
+    for(int i=1;i&lt;=n;i++) 
+	{
+		scanf(&quot;%d&quot;, &amp;x);
+		q.push(x);
+	}
+    while(q.size()&gt;=2)
+	{
+        int a=q.top(); 
+		q.pop();
+        int b=q.top(); 
+		q.pop();
+        ans += a+b;
+        q.push(a+b);
+    }
+    printf(&quot;%d&quot;, ans);
+    return 0;
+}
+</code></pre>
+<p>代码题目<a href="http://ybt.ssoier.cn:8088/problem_show.php?pid=1369">传送门</a></p>
+<h3 id="注意">注意</h3>
+<ul>
+<li>不使用<code>#include&lt;vector&gt;</code>头文件</li>
+<li>greater是序列升序，less是序列降序</li>
+<li>声明语句最后的两个 <mark>&gt; &gt;</mark> 要有一个<strong>空格</strong></li>
+</ul>
+</div>
+                              <div class="mdui-divider mdui-m-t-3"></div>
+                              <div class="mdui-row-xs-2 mdui-m-t-2">
+  <div class="mdui-col"> </div>
+ <div class="mdui-col"><div class="mdui-text-right "><a href="https://diego3893.github.io/post/github-gridea-mian-fei-da-jian-jing-tai-bo-ke/">github + Gridea免费搭建静态博客</a></div> </div>
+                                </div>
+                                <div class="mdui-divider mdui-m-t-2"></div>
+   
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '0cb92ddda132fbb0036c',
+    clientSecret: '33b4ecece90c2c5e9092bbf6273e7846bf3d35e6',
+    repo: 'blog-comment',
+    owner: 'diego3893',
+    admin: ['diego3893'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+ <script src="https://diego3893.github.io/media/scripts/Valine.min.js"></script>
+ <div class="comment"></div>
+
+<script>
+      new Valine({
+            el: '.comment',
+
+
+
+            path: window.location.pathname,
+            pageSize: 30,
+            avatar:'mm', 
+       })
+
+    </script> 
+<script>
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+           if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+              clearInterval(checkExist);
+           }
+        }, 100);
+    }
+</script>
+                         </article>
+                 <div class="toc-container mdui-float-right">
+                <ul class="markdownIt-TOC">
+<li><a href="#%E5%8E%9F%E7%90%86">原理</a></li>
+<li><a href="#%E6%A8%A1%E7%89%88">模版</a>
+<ul>
+<li><a href="#%E6%89%8B%E5%8A%A8%E6%A8%A1%E6%8B%9F">手动模拟</a></li>
+<li><a href="#stl">STL</a>
+<ul>
+<li><a href="#%E6%B3%A8%E6%84%8F">注意</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+
+                        </div>
+                 </div>
+          
+        </div>
+        <script data-no-instant>
+    (function ($) {
+        $.extend({
+            adamsOverload: function () {
+                $.viewImage({
+                    'target'  : '.post-neirong img',
+                    'exclude' : '.vsmile-icons img , .song-links-item img',
+                    'delay'   : 300
+                });
+            }
+        });
+    })(jQuery);
+    jQuery.adamsOverload();
+</script>
+        <footer class="footer mdui-m-t-5 mdui-text-center">
+               <nav class="social-links">
+                      <ul>
+                      
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                      </ul>
+                    </nav>
+                  <div class="copyright">
+                      <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
+                  </div>
+              </footer>
+    </body>
+</html>
