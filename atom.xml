@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://diego3893.github.io</id>
     <title>Diego&apos;s Blog</title>
-    <updated>2020-02-29T13:38:17.829Z</updated>
+    <updated>2020-02-29T14:23:18.063Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://diego3893.github.io"/>
     <link rel="self" href="https://diego3893.github.io/atom.xml"/>
@@ -10,6 +10,21 @@
     <logo>https://diego3893.github.io/images/avatar.png</logo>
     <icon>https://diego3893.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Diego&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[STL合集]]></title>
+        <id>https://diego3893.github.io/post/stl-he-ji/</id>
+        <link href="https://diego3893.github.io/post/stl-he-ji/">
+        </link>
+        <updated>2020-02-29T14:09:51.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2020/02/29/3618js.png" alt="1" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://s2.ax1x.com/2020/02/29/361d4U.png" alt="2" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://s2.ax1x.com/2020/02/29/361YBq.png" alt="3" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://s2.ax1x.com/2020/02/29/361UEV.png" alt="4" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://s2.ax1x.com/2020/02/29/361aNT.png" alt="5" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="https://s2.ax1x.com/2020/02/29/361B34.png" alt="6" loading="lazy"></figure>
+<p>也可以参考<a href="https://blog.csdn.net/shenaisi/article/details/81545418">这个</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[c++快读（数字）]]></title>
         <id>https://diego3893.github.io/post/ckuai-du-shu-zi/</id>

@@ -3,7 +3,7 @@
         <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
         <meta charset="utf-8">
         <meta name="referrer" content="never">
-        <title>c++快读（数字） | Diego&#39;s Blog</title>
+        <title>STL合集 | Diego&#39;s Blog</title>
         <link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.11.1/katex.min.css">
         <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://diego3893.github.io/styles/main.css">
@@ -17,7 +17,7 @@
 
     </head>
     <body class="mdui-theme-primary-purple mdui-theme-accent-purple">
-        <header class="index-img mdui-m-b-3"  style="background-image: url(https://s2.ax1x.com/2020/02/29/36SwE6.jpg);" >
+        <header class="index-img mdui-m-b-3"  style="background-image: url(https://s2.ax1x.com/2020/02/29/36FuDJ.jpg);" >
                           <button class="mdui-btn  mdui-btn-icon mdui-btn-dense mdui-color-theme-500 mdui-ripple yinying mdui-m-t-1 mdui-m-l-1" mdui-menu="{target: '#demo-attr-cascade'}"><i class="mdui-icon material-icons">&#xe5d2;</i></button>
                 <ul class="mdui-menu" id="demo-attr-cascade">
                 
@@ -44,44 +44,20 @@
                 <div class="mdui-row">
                         <div class="mdui-col-md-8 mdui-col-offset-md-2 ">
                          <article class="mdui-shadow-10 mdui-p-a-2 post-list">
-                           <div class="mdui-typo-display-1 mdui-m-b-3">c++快读（数字）</div>
+                           <div class="mdui-typo-display-1 mdui-m-b-3">STL合集</div>
                            <a  class="index-list-biaoqian ">2020-02-29</a>
-                           <div class="mdui-typo mdui-m-t-3 post-neirong"><h1 id="代码">代码</h1>
-<pre><code class="language-cpp">inline int fread()
-{
-    int x=0,f=1;
-    char ch=getchar();
-    while(ch&lt;'0'||ch&gt;'9'){
-        if(ch=='-')
-            f=-1;
-        ch=getchar();
-    }
-    while(ch&gt;='0'&amp;&amp;ch&lt;='9'){
-        x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48);
-        ch=getchar();
-    }
-    return x*f;
-}
-</code></pre>
-<hr>
-<h1 id="原理">原理</h1>
-<blockquote>
-<p>getchar()比scanf()快</p>
-<p>f判断正负</p>
-</blockquote>
-<blockquote>
-<p>重点在<code>x = (x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48)</code><br>
-<code>x&lt;&lt;1</code>= <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>∗</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">x*2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>， <code>x&lt;&lt;3</code>= <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>∗</mo><mn>2</mn><mo>∗</mo><mn>2</mn><mo>∗</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">x*2*2*2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span></p>
-<blockquote>
-<p><code>(x&lt;&lt;1)+(x&lt;&lt;3) = x*10</code></p>
-</blockquote>
-<p>ch^48=ch-'0'</p>
-</blockquote>
+                           <div class="mdui-typo mdui-m-t-3 post-neirong"><figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2020/02/29/3618js.png" alt="1" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://s2.ax1x.com/2020/02/29/361d4U.png" alt="2" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://s2.ax1x.com/2020/02/29/361YBq.png" alt="3" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://s2.ax1x.com/2020/02/29/361UEV.png" alt="4" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://s2.ax1x.com/2020/02/29/361aNT.png" alt="5" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="https://s2.ax1x.com/2020/02/29/361B34.png" alt="6" loading="lazy"></figure>
+<p>也可以参考<a href="https://blog.csdn.net/shenaisi/article/details/81545418">这个</a></p>
 </div>
                               <div class="mdui-divider mdui-m-t-3"></div>
                               <div class="mdui-row-xs-2 mdui-m-t-2">
-  <div class="mdui-col"> <div class="mdui-text-left"><a href="https://diego3893.github.io/post/stl-he-ji/">STL合集</a></div></div>
- <div class="mdui-col"><div class="mdui-text-right "><a href="https://diego3893.github.io/post/cban-win-xp/">c++版WIN XP ??!</a></div> </div>
+  <div class="mdui-col"> </div>
+ <div class="mdui-col"><div class="mdui-text-right "><a href="https://diego3893.github.io/post/ckuai-du-shu-zi/">c++快读（数字）</a></div> </div>
                                 </div>
                                 <div class="mdui-divider mdui-m-t-2"></div>
    
@@ -138,11 +114,7 @@
 </script>
                          </article>
                  <div class="toc-container mdui-float-right">
-                <ul class="markdownIt-TOC">
-<li><a href="#%E4%BB%A3%E7%A0%81">代码</a></li>
-<li><a href="#%E5%8E%9F%E7%90%86">原理</a></li>
-</ul>
-
+                
               </div>
 
                         </div>
