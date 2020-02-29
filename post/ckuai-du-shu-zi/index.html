@@ -3,7 +3,7 @@
         <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
         <meta charset="utf-8">
         <meta name="referrer" content="never">
-        <title>快速幂 | Diego&#39;s Blog</title>
+        <title>c++快读（数字） | Diego&#39;s Blog</title>
         <link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.11.1/katex.min.css">
         <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://diego3893.github.io/styles/main.css">
@@ -17,7 +17,7 @@
 
     </head>
     <body class="mdui-theme-primary-purple mdui-theme-accent-purple">
-        <header class="index-img mdui-m-b-3"  style="background-image: url(https://s2.ax1x.com/2020/02/28/3r1xYQ.jpg);" >
+        <header class="index-img mdui-m-b-3" >
                           <button class="mdui-btn  mdui-btn-icon mdui-btn-dense mdui-color-theme-500 mdui-ripple yinying mdui-m-t-1 mdui-m-l-1" mdui-menu="{target: '#demo-attr-cascade'}"><i class="mdui-icon material-icons">&#xe5d2;</i></button>
                 <ul class="mdui-menu" id="demo-attr-cascade">
                 
@@ -44,48 +44,44 @@
                 <div class="mdui-row">
                         <div class="mdui-col-md-8 mdui-col-offset-md-2 ">
                          <article class="mdui-shadow-10 mdui-p-a-2 post-list">
-                           <div class="mdui-typo-display-1 mdui-m-b-3">快速幂</div>
-                           <a  class="index-list-biaoqian ">2020-02-28</a>
-                           <div class="mdui-typo mdui-m-t-3 post-neirong"><h1 id="原理">原理</h1>
-<blockquote>
-<p>在指数b大于0时：</p>
-<blockquote>
-<p>若b为奇数，先将ans单独乘以底数a并mod m， 再将底数平方并mod m<br>
-若b为偶数，将底数平方并mod m</p>
-</blockquote>
-<p>b右移一位，即b/2<br>
-时间复杂度：O(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">logn</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span></span></span></span>)<br>
-数学理解很简单，位运算参考<a href="https://jingyan.baidu.com/article/1612d5008ff5b7e20f1eee4c.html">这个</a></p>
-</blockquote>
-<h1 id="模版">模版</h1>
-<pre><code class="language-cpp">#include&lt;cstdio&gt;
-using namespace std;
-typedef long long ll;
-ll qpower(ll, ll, ll);
-int main()
+                           <div class="mdui-typo-display-1 mdui-m-b-3">c++快读（数字）</div>
+                           <a  class="index-list-biaoqian ">2020-02-29</a>
+                           <div class="mdui-typo mdui-m-t-3 post-neirong"><h1 id="代码">代码</h1>
+<pre><code class="language-cpp">inline int fread()
 {
-	ll a, b, m;
-	scanf(&quot;%lld%lld%lld&quot;, &amp;a, &amp;b, &amp;m);
-	printf(&quot;%lld&quot;, qpower(a, b, m));
- } 
-ll qpower(ll a, ll b, ll m)
-{
-	ll ans = 1, res = a;
-	while(b &gt; 0)
-	{
-		if(b &amp; 1)
-			ans = ans*res%m;
-		res = res*res%m;
-		b &gt;&gt;= 1;
-	}
-	return ans;
+    int x=0,f=1;
+    char ch=getchar();
+    while(ch&lt;'0'||ch&gt;'9'){
+        if(ch=='-')
+            f=-1;
+        ch=getchar();
+    }
+    while(ch&gt;='0'&amp;&amp;ch&lt;='9'){
+        x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48);
+        ch=getchar();
+    }
+    return x*f;
 }
 </code></pre>
+<hr>
+<h1 id="原理">原理</h1>
+<blockquote>
+<p>getchar()比scanf()快</p>
+<p>f判断正负</p>
+</blockquote>
+<blockquote>
+<p>重点在<code>x = (x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48)</code><br>
+<code>x&lt;&lt;1</code>= <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>∗</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">x*2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>， <code>x&lt;&lt;3</code>= <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>∗</mo><mn>2</mn><mo>∗</mo><mn>2</mn><mo>∗</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">x*2*2*2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span></p>
+<blockquote>
+<p><code>(x&lt;&lt;1)+(x&lt;&lt;3) = x*10</code></p>
+</blockquote>
+<p>ch^48=ch-'0'</p>
+</blockquote>
 </div>
                               <div class="mdui-divider mdui-m-t-3"></div>
                               <div class="mdui-row-xs-2 mdui-m-t-2">
-  <div class="mdui-col"> <div class="mdui-text-left"><a href="https://diego3893.github.io/post/cban-win-xp/">c++版WIN XP ??!</a></div></div>
- <div class="mdui-col"><div class="mdui-text-right "><a href="https://diego3893.github.io/post/er-fen-cha-zhao/">二分查找</a></div> </div>
+  <div class="mdui-col"> </div>
+ <div class="mdui-col"><div class="mdui-text-right "><a href="https://diego3893.github.io/post/cban-win-xp/">c++版WIN XP ??!</a></div> </div>
                                 </div>
                                 <div class="mdui-divider mdui-m-t-2"></div>
    
@@ -143,8 +139,8 @@ ll qpower(ll a, ll b, ll m)
                          </article>
                  <div class="toc-container mdui-float-right">
                 <ul class="markdownIt-TOC">
+<li><a href="#%E4%BB%A3%E7%A0%81">代码</a></li>
 <li><a href="#%E5%8E%9F%E7%90%86">原理</a></li>
-<li><a href="#%E6%A8%A1%E7%89%88">模版</a></li>
 </ul>
 
               </div>
