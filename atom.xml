@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://diego3893.github.io</id>
     <title>Diego&apos;s Blog</title>
-    <updated>2020-03-01T12:49:22.562Z</updated>
+    <updated>2020-03-01T13:32:49.500Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://diego3893.github.io"/>
     <link rel="self" href="https://diego3893.github.io/atom.xml"/>
@@ -10,6 +10,294 @@
     <logo>https://diego3893.github.io/images/avatar.png</logo>
     <icon>https://diego3893.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Diego&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[最短路径]]></title>
+        <id>https://diego3893.github.io/post/zui-duan-lu-jing/</id>
+        <link href="https://diego3893.github.io/post/zui-duan-lu-jing/">
+        </link>
+        <updated>2020-03-01T12:47:08.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="floyd-warshall">Floyd-Warshall</h1>
+<h2 id="原理">原理</h2>
+<blockquote>
+<p>分别枚举起始点i，中转点k，目标点j<br>
+如果<code>e[i][k]+e[k][j] &lt; e[i][j]</code><br>
+更新<code>e[i][j]</code>的值</p>
+</blockquote>
+<blockquote>
+<p><mark>中转点</mark>枚举在最外层</p>
+</blockquote>
+<h2 id="模版">模版</h2>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+#include&lt;cstdio&gt;
+#include&lt;algorithm&gt;
+#include&lt;cmath&gt;
+#define N 100 
+#define INF 0x7fffff
+using namespace std;
+int main()
+{
+	int g[N][N] = {};
+	for(int i=0; i&lt;=N; ++i)
+		for(int j=0; j&lt;=N; ++j)
+			if(i != j)
+				g[i][j] = INF;
+			else
+				g[i][j] = 0;
+	int n, m;
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+	int u, v, w;
+	for(int i=0; i&lt;m; ++i)
+	{
+		scanf(&quot;%d%d%d&quot;, &amp;u, &amp;v, &amp;w);
+		g[u][v] = w;
+	}
+	for(int k=1; k&lt;=n; ++k)
+		for(int i=1; i&lt;=n; ++i)
+			for(int j=1; j&lt;=n; ++j)
+				g[i][j] = min(g[i][j], g[i][k]+g[k][j]);
+	printf(&quot;%d&quot;, g[1][n]);
+	return 0;
+}
+</code></pre>
+<hr>
+<h1 id="dijkstra">Dijkstra</h1>
+<h2 id="原理-2">原理</h2>
+<p>假设起点为1号节点</p>
+<blockquote>
+<p>初始化1号节点的出边权值至dis数组（估计值）<br>
+找当前dis中最小边权（确定值）（假设为2号节点）<br>
+以2号节点的出边边权更新dis数组，若<code>e[2][i]+dis[2] &lt; dis[i]</code>，就更新<code>dis[i]</code><br>
+以此类推，进行<strong>松弛</strong></p>
+</blockquote>
+<blockquote>
+<p>每次找离源点最近的点，然后依次进行扩展<br>
+用book数组进行标记是否使用</p>
+</blockquote>
+<h2 id="模版-2">模版</h2>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+#include&lt;cstdio&gt;
+#include&lt;algorithm&gt;
+#include&lt;cmath&gt;
+#define N 100
+#define INF 0x7ffff
+using namespace std;
+int main()
+{
+	int e[N][N], dis[N], book[N];
+	int n, m;
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+	for(int i=1; i&lt;=n; ++i)
+		for(int j=1; j&lt;=n; ++j)
+			if(i == j)
+				e[i][j] = 0;
+			else
+				e[i][j] = INF;
+	int u, v, w;
+	for(int i=1; i&lt;=m; ++i)
+	{
+		scanf(&quot;%d%d%d&quot;, &amp;u, &amp;v, &amp;w);
+		e[u][v] = w;
+	}
+	for(int i=1; i&lt;=n; ++i)
+		dis[i] = e[1][i];
+	memset(book, 0, sizeof(book));
+	book[1] = 1;
+	int minn = INF, k;
+	for(int i=1; i&lt;=n; ++i)
+	{
+		minn = INF;
+		for(int j=1; j&lt;=n; ++j)
+			if(!book[j] &amp;&amp; dis[j]&lt;minn)
+			{
+				minn = dis[j];
+				k = j;
+			}
+		book[k] = 1;
+		for(int j=1; j&lt;=n; ++j)
+			if(e[k][j]&lt;INF)
+				dis[j] = min(dis[j], dis[k]+e[k][j]);
+	}
+	for(int i=1; i&lt;=n; ++i)
+		printf(&quot;%d &quot;, dis[i]);
+	return 0;
+}
+
+</code></pre>
+<hr>
+<h1 id="bellman-ford">Bellman-Ford</h1>
+<h2 id="原理-3">原理</h2>
+<blockquote>
+<p>进行n-1轮松弛（详见Dijkstra）<br>
+<s>没啥好说的</s></p>
+</blockquote>
+<h2 id="模版-3">模版</h2>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+#include&lt;cstdio&gt;
+#include&lt;algorithm&gt;
+#include&lt;cmath&gt;
+#define N 100
+#define INF 0x7ffff
+using namespace std;
+int main()
+{
+	int dis[N], n, m, u[N], v[N], w[N];
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+	for(int i=1; i&lt;=m; ++i)
+		scanf(&quot;%d%d%d&quot;, &amp;u[i], &amp;v[i], &amp;w[i]);
+	for(int i=1; i&lt;=n; ++i)
+		dis[i] = INF;
+	dis[1] = 0;
+	int check = 0;  //检查dis是否改变
+	for(int i=1; i&lt;=n-1; ++i)
+	{
+		check = 0;
+		for(int j=1; j&lt;=n; ++j)
+			if(dis[v[j]] &gt; dis[u[j]]+w[j])
+			{
+				dis[v[j]] = dis[u[j]]+w[j];
+				check = 1;
+			}
+		if(!check)  //优化
+			break;
+	}
+	int flag = 0;
+	for(int i=1; i&lt;=m; ++i)
+		if(dis[v[i]] &gt; dis[u[i]]+w[i])
+			flag = 1;
+	if(flag)
+		printf(&quot;有负权回路&quot;);
+	else
+		for(int i=1; i&lt;=n; ++i)
+			printf(&quot;%d &quot;, dis[i]);
+	return 0;
+}
+</code></pre>
+<hr>
+<h1 id="spfa">SPFA</h1>
+<h2 id="原理-4">原理</h2>
+<blockquote>
+<p>用队列优化的Bellman-Ford<br>
+思想差不多（Bellman-Ford+BFS）<br>
+不用像BFS一样打标记</p>
+</blockquote>
+<h2 id="模版邻接表">模版（邻接表）</h2>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+#include&lt;cstdio&gt;
+#include&lt;algorithm&gt;
+#include&lt;cmath&gt;
+#define N 100
+#define INF 0x7ffff
+
+using namespace std;
+int main()
+{
+	int n, m;
+	int u[N], v[N], w[N];
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+	int first[n+1], next[m+1];
+	int dis[N] = {}, book[N] = {}, que[N] = {}, head = 1, tail = 1;
+	for(int i=1; i&lt;=n; ++i)
+		dis[i] = INF;
+	dis[1] = 0;
+	for(int i=1; i&lt;=n; ++i)
+		first[i] = -1;
+	for(int i=1; i&lt;=m; ++i)
+	{
+		scanf(&quot;%d%d%d&quot;, &amp;u[i], &amp;v[i], &amp;w[i]);
+		next[i] = first[u[i]];
+		first[u[i]] = i;
+	}
+	que[tail++] = 1;
+	book[1] = 1;
+	int k;
+	while(head &lt; tail)
+	{
+		k = first[que[head]];
+		while(k != -1)
+		{
+			if(dis[v[k]] &gt; dis[u[k]]+w[k])
+			{
+				dis[v[k]] = dis[u[k]]+w[k];
+				if(book[v[k]] == 0)
+				{
+					que[tail++] = v[k];
+					book[v[k]] = 1;
+				}
+			}
+			k = next[k];
+		}
+		book[que[head]] = 0;
+		head++;
+	}
+	for(int i=1; i&lt;=n; ++i)
+		printf(&quot;%d &quot;, dis[i]);
+	return 0;
+}
+
+</code></pre>
+<hr>
+<h1 id="算法比较">算法比较</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Floyd-Warshall</th>
+<th style="text-align:center">Dijkstra</th>
+<th style="text-align:center">Bellman-Ford</th>
+<th style="text-align:center">SPFA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">空间复杂度</td>
+<td style="text-align:center">O(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>N</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">N^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>)</td>
+<td style="text-align:center">O(M)</td>
+<td style="text-align:center">O(M)</td>
+<td style="text-align:center">O(M)</td>
+</tr>
+<tr>
+<td style="text-align:center">时间复杂度</td>
+<td style="text-align:center">O(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>N</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">N^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span>)</td>
+<td style="text-align:center">O((M+N)logN)</td>
+<td style="text-align:center">O(NM)</td>
+<td style="text-align:center">最坏也是O(NM)</td>
+</tr>
+<tr>
+<td style="text-align:center">适用情况</td>
+<td style="text-align:center">稠密图，与顶点关系密切</td>
+<td style="text-align:center">稠密图，与顶点关系密切</td>
+<td style="text-align:center">稀疏图，与边关系密切</td>
+<td style="text-align:center">稀疏图，与边关系密切</td>
+</tr>
+<tr>
+<td style="text-align:center">负权</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">Y</td>
+</tr>
+<tr>
+<td style="text-align:center">负权边</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">Y</td>
+</tr>
+<tr>
+<td style="text-align:center">负权回路判定</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">Y</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[STL合集]]></title>
         <id>https://diego3893.github.io/post/stl-he-ji/</id>
@@ -1409,38 +1697,6 @@ inline int fread()
     return x*f;
 }
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://diego3893.github.io/post/hello-gridea/</id>
-        <link href="https://diego3893.github.io/post/hello-gridea/">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
 ]]></content>
     </entry>
 </feed>
