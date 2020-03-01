@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://diego3893.github.io</id>
     <title>Diego&apos;s Blog</title>
-    <updated>2020-03-01T13:32:49.500Z</updated>
+    <updated>2020-03-01T13:50:48.561Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://diego3893.github.io"/>
     <link rel="self" href="https://diego3893.github.io/atom.xml"/>
@@ -10,6 +10,94 @@
     <logo>https://diego3893.github.io/images/avatar.png</logo>
     <icon>https://diego3893.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Diego&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[图的存储]]></title>
+        <id>https://diego3893.github.io/post/tu-de-cun-chu/</id>
+        <link href="https://diego3893.github.io/post/tu-de-cun-chu/">
+        </link>
+        <updated>2020-03-01T13:33:09.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="邻接矩阵">邻接矩阵</h1>
+<p><s>简单，不讲</s></p>
+<blockquote>
+<p><code>g[i][j]</code>表示从i到j的边权</p>
+</blockquote>
+<hr>
+<h1 id="邻接表数组">邻接表（数组）</h1>
+<blockquote>
+<p>u, v, w记录边的信息<br>
+first初始化-1，表示没有边<br>
+first[u[i]]保存u[i]的第一条边编号，next[i]存储<em>编号为i的边</em>的下一条边的编号</p>
+</blockquote>
+<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2020/03/01/32lNxe.jpg" alt="如图" loading="lazy"></figure>
+<h2 id="模版">模版</h2>
+<h3 id="无向图">无向图</h3>
+<pre><code class="language-cpp">#include&lt;cstdio&gt;
+#define N 100
+using namespace std;
+int main()
+{
+    int m;
+    scanf(&quot;%d&quot;, &amp;m);
+    int first[N*2], next[N*2];
+    for(int i=0; i&lt;N; ++i)
+    	first[i] = -1;
+    int u[N*2], v[N*2], w[N*2];
+    for(int i=1; i&lt;=m*2; i+=2)
+    {
+    	scanf(&quot;%d%d%d&quot;, &amp;u[i], &amp;v[i], &amp;w[i]);
+    	u[i+1] = v[i];
+    	v[i+1] = u[i];
+    	w[i+1] = w[i];
+    	next[i] = first[u[i]];
+    	first[u[i]] = i;
+    	next[i+1] = first[u[i+1]];
+    	first[u[i+1]] = i+1;
+	}
+	int k;
+	for(int i=1; i&lt;=m*2; ++i)
+	{
+		k = first[i];
+		while(k != -1)
+		{
+			printf(&quot;%d %d %d\n&quot;, u[k], v[k], w[k]);
+			k = next[k];
+		}
+	}	
+    return 0;
+}
+</code></pre>
+<h3 id="有向图">有向图</h3>
+<pre><code class="language-cpp">#include&lt;cstdio&gt;
+using namespace std;
+int main()
+{
+    int m, n;
+    scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+    int first[n+1], next[m+1];
+    for(int i=0; i&lt;N; ++i)
+    	first[i] = -1;
+    int u[m+1], v[m+1], w[m+1];
+    for(int i=1; i&lt;=m; ++i)
+    {
+    	scanf(&quot;%d%d%d&quot;, &amp;u[i], &amp;v[i], &amp;w[i]);
+    	next[i] = first[u[i]];
+        first[u[i]] = i;
+	}
+	int k;
+	for(int i=1; i&lt;=n; ++i)
+	{
+		k = first[i];
+		while(k != -1)
+		{
+			printf(&quot;%d %d %d\n&quot;, u[k], v[k], w[k]);
+			k = next[k];
+		}
+	}	
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[最短路径]]></title>
         <id>https://diego3893.github.io/post/zui-duan-lu-jing/</id>
@@ -181,7 +269,7 @@ int main()
 <blockquote>
 <p>用队列优化的Bellman-Ford<br>
 思想差不多（Bellman-Ford+BFS）<br>
-不用像BFS一样打标记</p>
+<em><strong>不用像BFS一样打标记（敲黑板）</strong></em></p>
 </blockquote>
 <h2 id="模版邻接表">模版（邻接表）</h2>
 <pre><code class="language-cpp">#include&lt;iostream&gt;
@@ -1598,105 +1686,6 @@ int main()
 <h1 id="选择">选择</h1>
 <p><strong>Prim</strong>适合<mark>稠密图</mark>，<strong>Kruskal</strong>适合<mark>稀疏图</mark></p>
 <p>本蒟蒻小声BB：<s>最小生成树其实不难</s>  欢迎来我的<a href="https://diego3893.github.io/" title="Diego's Blog">博客</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[并查集]]></title>
-        <id>https://diego3893.github.io/post/bing-cha-ji/</id>
-        <link href="https://diego3893.github.io/post/bing-cha-ji/">
-        </link>
-        <updated>2020-02-27T01:02:38.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="技巧">技巧</h1>
-<p>可以不用一下代码初始化与找根</p>
-<pre><code class="language-cpp">for(int i=1; i&lt;=n; ++i)
-    f[i] = i;
-
-int getf(int x)
-{
-    if(f[x] == x)
-        return x;
-    return f[x] = getf(f[x]);
-}
-</code></pre>
-<h2 id="简化后">简化后</h2>
-<pre><code class="language-cpp">int getf(int x)
-{
-    if(f[x]!=0 &amp;&amp; f[x]!=x)
-        return f[x] = getf(f[x]);
-    return x;
-}
-</code></pre>
-<hr>
-<h1 id="原理">原理</h1>
-<blockquote>
-<p>以递归压缩路径———getf<br>
-合并路径——将节点编号变为根节点编号</p>
-<blockquote>
-<p>根相同，则在同一个子集</p>
-</blockquote>
-</blockquote>
-<p><strong>模版</strong> <em>并查集</em></p>
-<pre><code class="language-cpp">#include &lt;cstdio&gt;
-using namespace std;
-int getf(int);
-void merge(int, int);
-inline int fread();
-int n, m, f[20002] = {}, q;
-int main()
-{
-	n = fread();
-	m = fread();
-	int a, b;
-	for(int i=1; i&lt;=m; ++i)
-	{
-		a = fread();
-		b = fread();
-		merge(a, b);
-	}
-	q = fread();
-	for(int i=1; i&lt;=q; ++i)
-	{
-		a = fread();
-		b = fread();
-		int t1 = getf(a), t2 = getf(b);
-		if(t1 == t2)
-			printf(&quot;Yes\n&quot;);
-		else
-			printf(&quot;No\n&quot;);
-	}
-	return 0;
-}
-int getf(int x)
-{
-	if(f[x]!=x &amp;&amp; f[x]!=0)
-        return f[x] = getf(f[x]);
-    return x;
-}
-void merge(int v, int u) 
-{
-	int t1, t2;
-	t1 = getf(v);
-	t2 = getf(u);
-	if(t1 != t2)
-		f[t2] = t1;
-	return;
-}
-inline int fread()
-{
-    int x=0,f=1;
-    char ch=getchar();
-    while(ch&lt;'0'||ch&gt;'9'){
-        if(ch=='-')
-            f=-1;
-        ch=getchar();
-    }
-    while(ch&gt;='0'&amp;&amp;ch&lt;='9'){
-        x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48);
-        ch=getchar();
-    }
-    return x*f;
-}
-</code></pre>
 ]]></content>
     </entry>
 </feed>
