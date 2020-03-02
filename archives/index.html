@@ -1,277 +1,309 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
+       <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta name="referrer" content="never">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="kveln">
+  <title>归档 | Diego&#39;s Blog</title>
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="https://diego3893.github.io/media/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!--  <link href="https://diego3893.github.io/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+  <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link rel="alternate" type="application/rss+xml" title="归档 | Diego&#39;s Blog » Feed" href="https://diego3893.github.io/atom.xml">
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+  <link href="https://diego3893.github.io/styles/main.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+  <!-- <script src="https://diego3893.github.io/media/scripts/jquery.min.js"></script> -->
+  <script>hljs.initHighlightingOnLoad();</script>
+  
 
-<title>文章归档 | Diego&#39;s Blog</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://diego3893.github.io/favicon.ico?v=1583126670235">
-<link rel="stylesheet" href="https://diego3893.github.io/styles/main.css">
-
-
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-
-
-    <meta name="description" content="Stay hungry, Stay foolish">
   </head>
   <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://diego3893.github.io">
-        <img src="https://diego3893.github.io/images/avatar.png?v=1583126670235" class="site-logo">
-        <h1 class="site-title">Diego&#39;s Blog</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
+  	<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://diego3893.github.io">Diego&#39;s Blog</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/">首页</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/archives">归档</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/tags">标签</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/post/about">关于</a>
+              
+          </li>
+          
+        </ul>
       </div>
     </div>
-    <div>
-      
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <div class="site-description">
-      Stay hungry, Stay foolish
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://diego3893.github.io/atom.xml" target="_blank">RSS</a>
-    </div>
-  </div>
-</div>
-
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          
-
-          <h2 class="archives-title">文章归档</h2>
-          <div class="archives-container">
-            
-              <h2 class="year" data-aos="fade-in" data-aos-delay="500">2020</h2>
-              
-                
-                  <article class="post">
-                    <a href="https://diego3893.github.io/post/tu-de-cun-chu/">
-                      <h2 class="post-title">
-                        图的存储
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://diego3893.github.io/post/zui-duan-lu-jing/">
-                      <h2 class="post-title">
-                        最短路径
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://diego3893.github.io/post/stl-he-ji/">
-                      <h2 class="post-title">
-                        STL合集
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://diego3893.github.io/post/ckuai-du-shu-zi/">
-                      <h2 class="post-title">
-                        c++快读（数字）
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://diego3893.github.io/post/cban-win-xp/">
-                      <h2 class="post-title">
-                        c++版WIN XP ??!
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://diego3893.github.io/post/kuai-su-mi/">
-                      <h2 class="post-title">
-                        快速幂
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://diego3893.github.io/post/er-fen-cha-zhao/">
-                      <h2 class="post-title">
-                        二分查找
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://diego3893.github.io/post/dui-pai-xu/">
-                      <h2 class="post-title">
-                        堆排序
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://diego3893.github.io/post/github-gridea-mian-fei-da-jian-jing-tai-bo-ke/">
-                      <h2 class="post-title">
-                        github + Gridea免费搭建静态博客
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://diego3893.github.io/post/zui-xiao-sheng-cheng-shu/">
-                      <h2 class="post-title">
-                        最小生成树
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://diego3893.github.io/post/bing-cha-ji/">
-                      <h2 class="post-title">
-                        并查集
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-              
-            
-              <h2 class="year" data-aos="fade-in" data-aos-delay="500">2018</h2>
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-                  <article class="post">
-                    <a href="https://diego3893.github.io/post/hello-gridea/">
-                      <h2 class="post-title">
-                        Hello Gridea
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-            
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://diego3893.github.io/media/images/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1 class="tag-tl">Archives</h1>
           </div>
-
-          <div class="pagination-container">
-  
-  
-</div>
-
         </div>
       </div>
     </div>
+  </header>
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        
+      
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-archives">
+    <h2 class="year">2020</h2>
+    
+                
+        <a href="https://diego3893.github.io/post/tu-de-cun-chu/" class="post">
+          <h2 class="post-title Archives">
+            图的存储
+          </h2>
+          <div class="time post-meta">2020-03-01</div>
+        </a>
+  
+                    
+                
+        <a href="https://diego3893.github.io/post/zui-duan-lu-jing/" class="post">
+          <h2 class="post-title Archives">
+            最短路径
+          </h2>
+          <div class="time post-meta">2020-03-01</div>
+        </a>
+  
+                    
+                
+        <a href="https://diego3893.github.io/post/stl-he-ji/" class="post">
+          <h2 class="post-title Archives">
+            STL合集
+          </h2>
+          <div class="time post-meta">2020-02-29</div>
+        </a>
+  
+                    
+                
+        <a href="https://diego3893.github.io/post/ckuai-du-shu-zi/" class="post">
+          <h2 class="post-title Archives">
+            c++快读（数字）
+          </h2>
+          <div class="time post-meta">2020-02-29</div>
+        </a>
+  
+                    
+                
+        <a href="https://diego3893.github.io/post/cban-win-xp/" class="post">
+          <h2 class="post-title Archives">
+            c++版WIN XP ??!
+          </h2>
+          <div class="time post-meta">2020-02-28</div>
+        </a>
+  
+                    
+                
+        <a href="https://diego3893.github.io/post/kuai-su-mi/" class="post">
+          <h2 class="post-title Archives">
+            快速幂
+          </h2>
+          <div class="time post-meta">2020-02-28</div>
+        </a>
+  
+                    
+                
+        <a href="https://diego3893.github.io/post/er-fen-cha-zhao/" class="post">
+          <h2 class="post-title Archives">
+            二分查找
+          </h2>
+          <div class="time post-meta">2020-02-28</div>
+        </a>
+  
+                    
+                
+        <a href="https://diego3893.github.io/post/dui-pai-xu/" class="post">
+          <h2 class="post-title Archives">
+            堆排序
+          </h2>
+          <div class="time post-meta">2020-02-28</div>
+        </a>
+  
+                    
+                
+        <a href="https://diego3893.github.io/post/github-gridea-mian-fei-da-jian-jing-tai-bo-ke/" class="post">
+          <h2 class="post-title Archives">
+            github + Gridea免费搭建静态博客
+          </h2>
+          <div class="time post-meta">2020-02-28</div>
+        </a>
+  
+                    
+                
+        <a href="https://diego3893.github.io/post/zui-xiao-sheng-cheng-shu/" class="post">
+          <h2 class="post-title Archives">
+            最小生成树
+          </h2>
+          <div class="time post-meta">2020-02-27</div>
+        </a>
+  
+                    
+                
+        <a href="https://diego3893.github.io/post/bing-cha-ji/" class="post">
+          <h2 class="post-title Archives">
+            并查集
+          </h2>
+          <div class="time post-meta">2020-02-27</div>
+        </a>
+  
+                    
+                
+                    
+        </div>
+        </div>
+        
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-archives">
+    <h2 class="year">2018</h2>
+    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+        <a href="https://diego3893.github.io/post/hello-gridea/" class="post">
+          <h2 class="post-title Archives">
+            Hello Gridea
+          </h2>
+          <div class="time post-meta">2018-12-12</div>
+        </a>
+  
+                    
+        </div>
+        </div>
+        
+      </div>
+    </div>
+  </article>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script type="application/javascript">
 
-AOS.init();
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
-
-</script>
-
-
-
-
-
-
+ <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item">
+              <a href="https://diego3893.github.io/atom.xml" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+              </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy;<span>Diego&#39;s Blog</span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+        </div>
+      </div>
+    </div>
+   </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://diego3893.github.io/media/scripts/bootstrap.bundle.min.js"></script> -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+  <!-- <script src="https://diego3893.github.io/media/scripts/clean-blog.min.js"></script> -->
+  <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+  <style type="text/css">a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and(max-width:580px){.back_to_top{display:none!important}}</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function(_this) {
+    return function() {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function() {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function() {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+          800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
   </body>
 </html>
