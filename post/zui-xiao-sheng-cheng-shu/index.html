@@ -1,109 +1,191 @@
-<!DOCTYPE html>
 <html>
-  <head>
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta content="yes" name="apple-mobile-web-app-capable" />
-  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
-  <meta name="referrer" content="never">
-  <meta name="keywords" content="">
-  <meta name="description" content="">
-  <meta name="author" content="kveln">
-  <title>最小生成树 | Diego&#39;s Blog</title>
-  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <!-- <link href="https://diego3893.github.io/media/css/bootstrap.min.css" rel="stylesheet"> -->
-  <!--  <link href="https://diego3893.github.io/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
-  <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <link rel="alternate" type="application/rss+xml" title="最小生成树 | Diego&#39;s Blog » Feed" href="https://diego3893.github.io/atom.xml">
-  <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
-  <link href="https://diego3893.github.io/styles/main.css" rel="stylesheet">
-  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
-  <!-- <script src="https://diego3893.github.io/media/scripts/jquery.min.js"></script> -->
-  <script>hljs.initHighlightingOnLoad();</script>
-  
+<head>
+  <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<title>最小生成树 | Diego&#39;s Blog</title>
+<link rel="shortcut icon" href="https://diego3893.github.io/favicon.ico?v=1583127501604">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://diego3893.github.io/styles/main.css" type='text/css' media='all'>
 
-    <meta property="og:description" content="最小生成树"/>
-    <meta property="og:url" content="https://diego3893.github.io/post/zui-xiao-sheng-cheng-shu/"/>
-    <meta property="og:locale" content="zh-CN"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:site_name" content="Diego&#39;s Blog"/>
-  </head>
-  <body>
-  	<!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand" href="https://diego3893.github.io">Diego&#39;s Blog</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          
-          <li class="nav-item">
-              
-              <a class="nav-link" href="/">首页</a>
-              
-          </li>
-          
-          <li class="nav-item">
-              
-              <a class="nav-link" href="/archives">归档</a>
-              
-          </li>
-          
-          <li class="nav-item">
-              
-              <a class="nav-link" href="/tags">标签</a>
-              
-          </li>
-          
-          <li class="nav-item">
-              
-              <a class="nav-link" href="/post/about">关于</a>
-              
-          </li>
-          
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- Page Header -->
-  <header class="masthead" style="background-image: url('https://diego3893.github.io/media/images/home-bg.jpg')">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="post-heading">
-          	<span class="tags">
-          	 
-            <a href="https://diego3893.github.io/tag/dJ3WAsaqR/" class="tag">算法</a>
-            
-            <a href="https://diego3893.github.io/tag/Hc21XFSes/" class="tag">图/树论</a>
-            
-            <a href="https://diego3893.github.io/tag/Gr5YErY6j/" class="tag">提高组笔记</a>
-            
-        </span>
-            <h1>最小生成树</h1>
-            <span class="meta">
-            	Posted on
-              2020-02-27，4 min read
-            </span>
-          </div>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+
+
+</head>
+<body class="home blog ct-body standard">
+<div id="overflow-container" class="overflow-container">
+  <a class="skip-content" href="#main">Skip to content</a>
+  <header id="site-header" class="site-header" role="banner">
+    <div class='top-navigation top-navigation-important'>
+        <div class='container'>
+            <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+                <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fa fa-plus"></i></button>
+                <div class="menu">
+                    <ul id="menu-secondary-items" class="menu-secondary-items">
+                        
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://diego3893.github.io/tag/Hc21XFSes/">图/树论</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://diego3893.github.io/tag/4-8y6NRl-/">数据结构</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://diego3893.github.io/tag/Gr5YErY6j/">提高组笔记</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://diego3893.github.io/tag/dJ3WAsaqR/">算法</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://diego3893.github.io/tag/c3jkatgC-/">STL</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://diego3893.github.io/tag/bunbgwXDf/">趣味</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://diego3893.github.io/tag/Nnc60LLfD/">数学</a>
+                        </li>
+                            
+                        
+                            
+                        
+                            
+                        
+                    </ul>
+                </div>
+            </div>
+            <ul class="social-media-icons">
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
         </div>
-      </div>
     </div>
-  </header>
 
-  <!-- Post Content -->
-  <article>
     <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <h1 id="kruskal">Kruskal</h1>
+        <div id="title-info" class="title-info">
+            <div id='site-title' class='site-title'>
+                <a href="https://diego3893.github.io">  Diego&#39;s Blog </a>
+            </div>
+        </div>
+        <button id="toggle-navigation" class="toggle-navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+        <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+            <p class="site-description">Stay hungry, Stay foolish</p>
+            <div class="menu">
+                <ul id="menu-primary-items" class="menu-primary-items">
+                     
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/">首页</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/archives">归档</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/tags">标签</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/post/about">关于</a>
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</header>
+
+
+  <div id="main" class="main" role="main">
+    <div id="loop-container" class="loop-container">
+      <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
+        
+          <div class='featured-image lazy lazy-bg-image' data-background="https://s2.ax1x.com/2020/02/27/30NM2d.jpg">
+          </div>
+        
+
+        <div class="entry-meta">
+          <span class="date">· 2020-02-27 ·</span> <span> / </span>
+          <span class="author">
+            <a href="https://diego3893.github.io" title="" rel="author"> Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></a>
+          </span>
+          
+            <span class="category">
+                    <span> / </span>
+                    <a href="https://diego3893.github.io/tag/dJ3WAsaqR/">算法</a>
+                </span>
+          
+            <span class="category">
+                    <span> / </span>
+                    <a href="https://diego3893.github.io/tag/Hc21XFSes/">图/树论</a>
+                </span>
+          
+            <span class="category">
+                    <span> / </span>
+                    <a href="https://diego3893.github.io/tag/Gr5YErY6j/">提高组笔记</a>
+                </span>
+          
+        </div>
+        <div class='entry-header'>
+          <h1 class='entry-title'>最小生成树</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              <h1 id="kruskal">Kruskal</h1>
 <h2 id="原理">原理</h2>
 <blockquote>
 <p><strong>以边来求</strong></p>
@@ -256,110 +338,166 @@ int main()
 <p><strong>Prim</strong>适合<mark>稠密图</mark>，<strong>Kruskal</strong>适合<mark>稀疏图</mark></p>
 <p>本蒟蒻小声BB：<s>最小生成树其实不难</s>  欢迎来我的<a href="https://diego3893.github.io/" title="Diego's Blog">博客</a></p>
 
+            </article>
+          </div>
+          <div class='entry-meta-bottom'>
+            <div class="entry-categories">
+              <p>
+                <span>Categories</span>
+                
+                  
+                    
+                  <a href="https://diego3893.github.io/tag/Hc21XFSes/" title="View all posts in 图/树论">图/树论</a>
+                    
+                    
+                    
+                  <a href="https://diego3893.github.io/tag/4-8y6NRl-/" title="View all posts in 数据结构">数据结构</a>
+                    
+                    
+                    
+                  <a href="https://diego3893.github.io/tag/Gr5YErY6j/" title="View all posts in 提高组笔记">提高组笔记</a>
+                    
+                    
+                    
+                  <a href="https://diego3893.github.io/tag/dJ3WAsaqR/" title="View all posts in 算法">算法</a>
+                    
+                    
+                    
+                  <a href="https://diego3893.github.io/tag/c3jkatgC-/" title="View all posts in STL">STL</a>
+                    
+                    
+                    
+                  <a href="https://diego3893.github.io/tag/bunbgwXDf/" title="View all posts in 趣味">趣味</a>
+                    
+                    
+                    
+                  <a href="https://diego3893.github.io/tag/Nnc60LLfD/" title="View all posts in 数学">数学</a>
+                    
+                    
+                    
+                  <a href="https://diego3893.github.io/tag/h6HytAKAH/" title="View all posts in 折腾笔记">折腾笔记</a>
+                    
+                    
+                    
+                  <a href="https://diego3893.github.io/tag/4X9N1ZDzg/" title="View all posts in Gridea">Gridea</a>
+                    
+                    
+              </p>
+            </div>
+            <div class="entry-tags">
+              <p><span>Tags</span>
+              </p>
+            </div>
+          </div>
+          <div class="author-meta">
+            <div class="author">
+              <img alt='' src="https://diego3893.github.io/images/avatar.png?v=1583127501604" class='avatar avatar-72 photo' height='72' width='72'>
+              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://diego3893.github.io'>Diego</a> </span>
+            </div>
+            <div class="bio">
+              <p>不一定出类拔萃，但一定与众不同</p>
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            </div>
+          </div>
+        </div>
           
-          <p class="next-post">下一篇：
-            <a href="https://diego3893.github.io/post/bing-cha-ji/">
-              <span class="post-title">
-                并查集&rarr;
-              </span>
-            </a>
-          </p>
+            <nav class="navigation pagination" role="navigation">
+              <h2 class="screen-reader-text">Posts navigation</h2>
+              <div class="nav-links">
+                <a class="next page-numbers" href="https://diego3893.github.io/post/bing-cha-ji/">下一篇->并查集</a>
+              </div>
+            </nav>
+          
+      </div>
+      <section id="comments" class="comments">
         
-        <div class="comment">
-          
           
             <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
 <div id="gitalk-container"></div>
+
 <script>
+
   var gitalk = new Gitalk({
     clientID: '0cb92ddda132fbb0036c',
     clientSecret: '33b4ecece90c2c5e9092bbf6273e7846bf3d35e6',
     repo: 'blog-comment',
     owner: 'diego3893',
     admin: ['diego3893'],
-    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    id: location.pathname,      // Ensure uniqueness and length less than 50
     distractionFreeMode: false  // Facebook-like distraction free mode
   })
+
   gitalk.render('gitalk-container')
+
 </script>
 
           
+
           
         
-        </div>
-      </div>
+      </section>
     </div>
-  </article>
- <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <ul class="list-inline text-center">
-            
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-              <li class="list-inline-item">
-              <a href="https://diego3893.github.io/atom.xml" target="_blank">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-              </li>
-          </ul>
-          <p class="copyright text-muted">Copyright &copy;<span>Diego&#39;s Blog</span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+  </div>
+  <footer id="site-footer" class="site-footer" role="contentinfo">
+    <h1>
+        <a href="https://diego3893.github.io"> Diego&#39;s Blog </a>
+    </h1>
+    <p class="site-description">Stay hungry, Stay foolish</p>
+    <div id="menu-footer" class="menu-container menu-footer" role="navigation">
+        <div class="menu">
+            <ul id="menu-footer-items" class="menu-footer-items">
+            </ul>
         </div>
-      </div>
     </div>
-   </footer>
-  <!-- Bootstrap core JavaScript -->
-  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-  <!-- <script src="https://diego3893.github.io/media/scripts/bootstrap.bundle.min.js"></script> -->
-  <!-- Bootstrap core JavaScript -->
-  <script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
-  <!-- <script src="https://diego3893.github.io/media/scripts/clean-blog.min.js"></script> -->
-  <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
-  <style type="text/css">a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and(max-width:580px){.back_to_top{display:none!important}}</style>
-<a id="back_to_top" href="#" class="back_to_top">
-  <span>▲</span></a>
-<script>$(document).ready((function(_this) {
-    return function() {
-      var bt;
-      bt = $('#back_to_top');
-      if ($(document).width() > 480) {
-        $(window).scroll(function() {
-          var st;
-          st = $(window).scrollTop();
-          if (st > 30) {
-            return bt.css('display', 'block')
-          } else {
-            return bt.css('display', 'none')
-          }
-        });
-        return bt.click(function() {
-          $('body,html').animate({
-            scrollTop: 0
-          },
-          800);
-          return false
-        })
-      }
-    }
-  })(this));</script>
-  </body>
+    <ul class="social-media-icons">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </ul>
+    <div class="design-credit">
+        <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
+    </div>
+</footer>
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+<script src="https://diego3893.github.io/media/scripts/lib/jquery.min.js"></script>
+<script src="https://diego3893.github.io/media/scripts/lib/jquerymigrate.js"></script>
+<script src="https://diego3893.github.io/media/scripts/lib/production.min.js"></script>
+
+</div>
+</body>
 </html>
 
