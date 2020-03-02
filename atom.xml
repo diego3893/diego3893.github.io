@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://diego3893.github.io</id>
     <title>Diego&apos;s Blog</title>
-    <updated>2020-03-02T05:46:24.876Z</updated>
+    <updated>2020-03-02T05:52:34.337Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://diego3893.github.io"/>
     <link rel="self" href="https://diego3893.github.io/atom.xml"/>
@@ -1505,7 +1505,7 @@ Description可以<strong>不填</strong><br>
 <p>将网盘资源中的<em>gridea-themes</em>解压，把里面的每个单文件夹（如song、jia、lin等）放入<mark>站点源文件夹</mark>中<strong>如下图</strong><br>
 <img src="https://s2.ax1x.com/2020/02/28/3BsK9P.jpg" alt="theme" loading="lazy"><br>
 <img src="https://s2.ax1x.com/2020/02/28/3Bsnht.jpg" alt="theme0" loading="lazy"><br>
-重启gridea后就可以选择主题了 <s>我使用的是佳</s></p>
+重启gridea后就可以选择主题了 <s>我使用的是Chic</s></p>
 <h2 id="43-评论设置">4.3 评论设置</h2>
 <h3 id="431-新建一个仓库">4.3.1 新建一个仓库</h3>
 <p>设置默认，命名为blog-comment</p>
