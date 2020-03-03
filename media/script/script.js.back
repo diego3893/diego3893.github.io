@@ -40,38 +40,8 @@ function hitokoto() {
     xhr.send();
 }
 
-function scroll() {
-    /* scroll */
-    let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-    window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
-
-        mainNavLinks.forEach((link, index) => {
-            let section = document.getElementById(decodeURI(link.hash).substring(1));
-            let nextSection = null
-            if (mainNavLinks[index + 1]) {
-                nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-            }
-            if (section.offsetTop <= fromTop) {
-                if (nextSection) {
-                    if (nextSection.offsetTop > fromTop) {
-                        link.classList.add("current");
-                    } else {
-                        link.classList.remove("current");
-                    }
-                } else {
-                    link.classList.add("current");
-                }
-            } else {
-                link.classList.remove("current");
-            }
-        });
-    });
-}
-
 function loadlive2d() {
-    //const home_Path = document.getElementById('home_path').innerHTML + '/media/live2d/tororo/assets/tororo.model_';
-    //const home_Path = 'https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic@latest/assets/media/live2d/tororo/assets/tororo.model_';
+    const home_Path = document.getElementById('home_path').innerHTML + '/media/live2d/tororo/assets/tororo.model_';
     var currentTheme = window.localStorage && window.localStorage.getItem('theme');
     const superSample_ = 2.0;
     const opacityDefault_ = 1;
@@ -86,6 +56,7 @@ function loadlive2d() {
     const motion_ = true;
     const config_light = {
         tagMode: false,
+        debug: false,
         model: {
             jsonPath: home_Path + `light.json`,
         },
@@ -106,11 +77,11 @@ function loadlive2d() {
             opacityDefault: opacityDefault_,
             opacityOnHover: opacityOnHover_,
         },
-        log: false,
-        debug: false
+        log: false
     };
     const config_dark = {
         tagMode: false,
+        debug: false,
         model: {
             jsonPath: home_Path + `dark.json`,
         },
@@ -131,8 +102,7 @@ function loadlive2d() {
             opacityDefault: opacityDefault_,
             opacityOnHover: opacityOnHover_,
         },
-        log: false,
-        debug: false
+        log: false
     };
     $("#live2d-widget").remove();
     if (currentTheme == "dark") {
@@ -142,6 +112,56 @@ function loadlive2d() {
     }
 }
 
+function getStar() {
+    var star = document.getElementById("star");
+    var star_count = 0;
+    var url = "https://api.github.com/users/ITJoker233/repos?page=";
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', url);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            var data = JSON.parse(xhr.responseText);
+            for (var i = 0; i < data.length; i++) {
+                if (data[i]['name'] == "Gridea-theme-Chic") {
+                    star_count = data[i]['stargazers_count'];
+                    for (var j = 0; j < parseInt(star_count) + 1; j++) {
+                        setTimeout(setTimeout(star.innerHTML = j.toString(), 500), 100);
+                    }
+                    break;
+                }
+            }
+        }
+    }
+    xhr.send();
+}
+
+function CheckVersion() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', 'https://api.github.com/repos/ITJoker233/Gridea-theme-Chic/releases/latest');
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            var data = JSON.parse(xhr.responseText);
+            var version = document.getElementById('version').innerText.trim();
+            var update = document.getElementById('update').innerText.trim();
+            var hitokoto = document.getElementById('hitokoto');
+            var patt = new RegExp("重要更新");
+            if (update == "on") {
+                if (version == "") {
+                    hitokoto.innerText = "因为新版本特性,请重新点击下主题->自定义配置->保存 或参考最新的README.md";
+                }
+                if (data.tag_name != version) {
+                    console.log("🎉Current Theme Version: " + version);
+                    hitokoto.innerText = "请及时更新当前版本为：" + version + " 最新版本为：" + data.tag_name;
+                } else
+                    console.log("\n %c 🎉 Current Theme Version: " + version + " Latest Version: " + data.tag_name + "\n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;", );
+            } else if ((update == "off") && patt.test(data.body)) {
+                console.log("🎉Current Theme Version: " + version);
+                hitokoto.innerText = "有重大更新，请及时更新当前版本为：" + version + " 最新版本为：" + data.tag_name;
+            }
+        }
+    }
+    xhr.send();
+}
 
 function getStyle(element, attr) {
     return window.getComputedStyle ? window.getComputedStyle(element, null)[attr] : element.currentStyle[attr];
