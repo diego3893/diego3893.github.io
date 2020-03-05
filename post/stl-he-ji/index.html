@@ -125,13 +125,13 @@
                     
             </ul>
         </nav>
-        <form id="gridea-search-form" class="searchform" data-update="1583382240903" action="/search/index.html">
+        <form id="gridea-search-form" class="searchform" data-update="1583382421532" action="/search/index.html">
             <i class="memory memory-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
     </div>
     <div id="mobile-menu">
-        <form id="gridea-search-form" class="mobile-searchform" data-update="1583382240903" action="/search/index.html">
+        <form id="gridea-search-form" class="mobile-searchform" data-update="1583382421532" action="/search/index.html">
             <i class="memory memory-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
@@ -204,7 +204,7 @@
                                                     <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
-                                            <img alt="Diego&#39;s Blog" src="https://diego3893.github.io/images/avatar.png?v=1583382240903" srcset="https://diego3893.github.io/images/avatar.png?v=1583382240903" class="avatar avatar-100 photo" width="100" height="100">
+                                            <img alt="Diego&#39;s Blog" src="https://diego3893.github.io/images/avatar.png?v=1583382421532" srcset="https://diego3893.github.io/images/avatar.png?v=1583382421532" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://diego3893.github.io" title="由Diego&#39;s Blog发布" rel="author">Diego&#39;s Blog<i class="memory memory-certify"></i></a></span>
                                             <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2020-02-29</span>
                                         </div>
@@ -264,8 +264,8 @@
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
                 <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/stl-he-ji/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://diego3893.github.io/post/stl-he-ji/&sharesource=qzone&title=STL合集&pics=https://diego3893.github.io/images/avatar.png?v=1583382240903&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://diego3893.github.io/post/stl-he-ji/&sharesource=weibo&title=STL合集 + " - " + &pic="https://diego3893.github.io/images/avatar.png?v=1583382240903"><i class="fa fa-weibo "></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://diego3893.github.io/post/stl-he-ji/&sharesource=qzone&title=STL合集&pics=https://diego3893.github.io/images/avatar.png?v=1583382421532&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://diego3893.github.io/post/stl-he-ji/&sharesource=weibo&title=STL合集 + " - " + &pic="https://diego3893.github.io/images/avatar.png?v=1583382421532"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                     
@@ -354,6 +354,19 @@
                     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
                     <div id="player"></div>
                     
+                        <li class="lite-item">
+                            <header class="lite-item-header">
+                                <h3 class="sidebar-default-icon lite-item-title">
+                                    &#x1F3B5;&#x97F3;&#x4E50;
+                                </h3>
+                            </header>
+                            <div class="textwidget">
+                                <p>
+                                    <div id="player_box"></div>
+                                </p>
+                            </div>
+                        </li>
+                        
                             <script>
                                 function LoadPlayer() {
                                     var music_array = [];
@@ -388,8 +401,7 @@
                                     
                                     
                                     const ap = new APlayer({
-                                        container: document.getElementById('player'),
-                                        fixed: true,
+                                        container: document.getElementById('player_box'),
                                         audio: music_array
                                     });
                                     
@@ -458,7 +470,7 @@
                     </a>
     </div>
     <div id='UpdateTime' style='display:none'>
-        1583382240903
+        1583382421532
     </div>
     <script>
         var titleTime;

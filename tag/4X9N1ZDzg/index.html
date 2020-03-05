@@ -125,13 +125,13 @@
                     
             </ul>
         </nav>
-        <form id="gridea-search-form" class="searchform" data-update="1583382240903" action="/search/index.html">
+        <form id="gridea-search-form" class="searchform" data-update="1583382421532" action="/search/index.html">
             <i class="memory memory-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
     </div>
     <div id="mobile-menu">
-        <form id="gridea-search-form" class="mobile-searchform" data-update="1583382240903" action="/search/index.html">
+        <form id="gridea-search-form" class="mobile-searchform" data-update="1583382421532" action="/search/index.html">
             <i class="memory memory-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
@@ -308,6 +308,19 @@
                     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
                     <div id="player"></div>
                     
+                        <li class="lite-item">
+                            <header class="lite-item-header">
+                                <h3 class="sidebar-default-icon lite-item-title">
+                                    &#x1F3B5;&#x97F3;&#x4E50;
+                                </h3>
+                            </header>
+                            <div class="textwidget">
+                                <p>
+                                    <div id="player_box"></div>
+                                </p>
+                            </div>
+                        </li>
+                        
                             <script>
                                 function LoadPlayer() {
                                     var music_array = [];
@@ -342,8 +355,7 @@
                                     
                                     
                                     const ap = new APlayer({
-                                        container: document.getElementById('player'),
-                                        fixed: true,
+                                        container: document.getElementById('player_box'),
                                         audio: music_array
                                     });
                                     
@@ -411,7 +423,7 @@
                     </a>
     </div>
     <div id='UpdateTime' style='display:none'>
-        1583382240903
+        1583382421532
     </div>
     <script>
         var titleTime;
