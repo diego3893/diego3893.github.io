@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://diego3893.github.io</id>
     <title>Diego&apos;s Blog</title>
-    <updated>2020-03-05T12:40:07.601Z</updated>
+    <updated>2020-03-05T12:45:17.086Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://diego3893.github.io"/>
     <link rel="self" href="https://diego3893.github.io/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2020, Diego&apos;s Blog</rights>
     <entry>
         <title type="html"><![CDATA[Gridea静态博客使用CNAME以及相关配置]]></title>
-        <id>https://diego3893.github.io/post/gridea-jing-tai-bo-ke-shi-yong-cname-yi-ji-xiang-guan-pei-zhi</id>
-        <link href="https://diego3893.github.io/post/gridea-jing-tai-bo-ke-shi-yong-cname-yi-ji-xiang-guan-pei-zhi">
+        <id>https://diego3893.github.io/post/gridea-jing-tai-bo-ke-shi-yong-cname-yi-ji-xiang-guan-pei-zhi/</id>
+        <link href="https://diego3893.github.io/post/gridea-jing-tai-bo-ke-shi-yong-cname-yi-ji-xiang-guan-pei-zhi/">
         </link>
         <updated>2020-03-05T00:14:44.000Z</updated>
         <content type="html"><![CDATA[<h1 id="0-准备工作">0 准备工作</h1>
@@ -73,8 +73,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[图的存储]]></title>
-        <id>https://diego3893.github.io/post/tu-de-cun-chu</id>
-        <link href="https://diego3893.github.io/post/tu-de-cun-chu">
+        <id>https://diego3893.github.io/post/tu-de-cun-chu/</id>
+        <link href="https://diego3893.github.io/post/tu-de-cun-chu/">
         </link>
         <updated>2020-03-01T13:33:09.000Z</updated>
         <content type="html"><![CDATA[<h1 id="邻接矩阵">邻接矩阵</h1>
@@ -161,8 +161,8 @@ int main()
     </entry>
     <entry>
         <title type="html"><![CDATA[最短路径]]></title>
-        <id>https://diego3893.github.io/post/zui-duan-lu-jing</id>
-        <link href="https://diego3893.github.io/post/zui-duan-lu-jing">
+        <id>https://diego3893.github.io/post/zui-duan-lu-jing/</id>
+        <link href="https://diego3893.github.io/post/zui-duan-lu-jing/">
         </link>
         <updated>2020-03-01T12:47:08.000Z</updated>
         <content type="html"><![CDATA[<h1 id="floyd-warshall">Floyd-Warshall</h1>
@@ -450,8 +450,8 @@ int main()
     </entry>
     <entry>
         <title type="html"><![CDATA[STL合集]]></title>
-        <id>https://diego3893.github.io/post/stl-he-ji</id>
-        <link href="https://diego3893.github.io/post/stl-he-ji">
+        <id>https://diego3893.github.io/post/stl-he-ji/</id>
+        <link href="https://diego3893.github.io/post/stl-he-ji/">
         </link>
         <updated>2020-02-29T14:09:51.000Z</updated>
         <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2020/02/29/3618js.png" alt="1" loading="lazy"></figure>
@@ -465,8 +465,8 @@ int main()
     </entry>
     <entry>
         <title type="html"><![CDATA[c++快读（数字）]]></title>
-        <id>https://diego3893.github.io/post/ckuai-du-shu-zi</id>
-        <link href="https://diego3893.github.io/post/ckuai-du-shu-zi">
+        <id>https://diego3893.github.io/post/ckuai-du-shu-zi/</id>
+        <link href="https://diego3893.github.io/post/ckuai-du-shu-zi/">
         </link>
         <updated>2020-02-29T12:46:26.000Z</updated>
         <content type="html"><![CDATA[<h1 id="代码">代码</h1>
@@ -504,8 +504,8 @@ int main()
     </entry>
     <entry>
         <title type="html"><![CDATA[c++版WIN XP ??!]]></title>
-        <id>https://diego3893.github.io/post/cban-win-xp</id>
-        <link href="https://diego3893.github.io/post/cban-win-xp">
+        <id>https://diego3893.github.io/post/cban-win-xp/</id>
+        <link href="https://diego3893.github.io/post/cban-win-xp/">
         </link>
         <updated>2020-02-28T13:32:16.000Z</updated>
         <content type="html"><![CDATA[<p><code>转载自某位B站大神，如有侵权请联系邮箱：3013006997@qq.com</code></p>
@@ -1313,8 +1313,8 @@ int main()
     </entry>
     <entry>
         <title type="html"><![CDATA[快速幂]]></title>
-        <id>https://diego3893.github.io/post/kuai-su-mi</id>
-        <link href="https://diego3893.github.io/post/kuai-su-mi">
+        <id>https://diego3893.github.io/post/kuai-su-mi/</id>
+        <link href="https://diego3893.github.io/post/kuai-su-mi/">
         </link>
         <updated>2020-02-28T13:06:50.000Z</updated>
         <content type="html"><![CDATA[<h1 id="原理">原理</h1>
@@ -1356,8 +1356,8 @@ ll qpower(ll a, ll b, ll m)
     </entry>
     <entry>
         <title type="html"><![CDATA[二分查找]]></title>
-        <id>https://diego3893.github.io/post/er-fen-cha-zhao</id>
-        <link href="https://diego3893.github.io/post/er-fen-cha-zhao">
+        <id>https://diego3893.github.io/post/er-fen-cha-zhao/</id>
+        <link href="https://diego3893.github.io/post/er-fen-cha-zhao/">
         </link>
         <updated>2020-02-28T12:19:37.000Z</updated>
         <content type="html"><![CDATA[<h1 id="原理">原理</h1>
@@ -1369,8 +1369,8 @@ ll qpower(ll a, ll b, ll m)
     </entry>
     <entry>
         <title type="html"><![CDATA[堆排序]]></title>
-        <id>https://diego3893.github.io/post/dui-pai-xu</id>
-        <link href="https://diego3893.github.io/post/dui-pai-xu">
+        <id>https://diego3893.github.io/post/dui-pai-xu/</id>
+        <link href="https://diego3893.github.io/post/dui-pai-xu/">
         </link>
         <updated>2020-02-28T11:14:25.000Z</updated>
         <content type="html"><![CDATA[<p>堆分为<mark>大根堆</mark>，<mark>小根堆</mark><br>
@@ -1472,8 +1472,8 @@ int main()
     </entry>
     <entry>
         <title type="html"><![CDATA[github + Gridea免费搭建静态博客]]></title>
-        <id>https://diego3893.github.io/post/github-gridea-mian-fei-da-jian-jing-tai-bo-ke</id>
-        <link href="https://diego3893.github.io/post/github-gridea-mian-fei-da-jian-jing-tai-bo-ke">
+        <id>https://diego3893.github.io/post/github-gridea-mian-fei-da-jian-jing-tai-bo-ke/</id>
+        <link href="https://diego3893.github.io/post/github-gridea-mian-fei-da-jian-jing-tai-bo-ke/">
         </link>
         <updated>2020-02-28T01:39:07.000Z</updated>
         <content type="html"><![CDATA[<h1 id="0-gridea的优缺点">0 Gridea的优缺点</h1>
