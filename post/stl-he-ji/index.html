@@ -19,7 +19,7 @@
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 <meta name="author" content="Diego&#39;s Blog">
 <meta name="description" content="Stay hungry, Stay foolish">
-<meta name="keywords" content="OIer,蒟蒻,沉迷学习">
+<meta name="keywords" content="">
 <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/jquery@3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.12/CDN/js/Card/prism.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.12/CDN/css/Card/prism.min.css" />
@@ -69,9 +69,20 @@
                             opacity: 1;
                         }
                         
+                        #span {
+                            font-size: 14px;
+                        }
+                        
                         #span_btn:hover {
                             color: #fff;
-                            background: linear-gradient( rgb(138, 160, 255) 30%, rgb(90, 140, 250) 70%);
+                            background: #0092eeee;
+                            /*linear-gradient( rgb(138, 160, 255) 30%, rgb(90, 140, 250) 70%);*/
+                        }
+                        
+                        .link_a:hover {
+                            margin-top: 10px;
+                            font-size: larger;
+                            transition: all .3s ease;
                         }
                         
                         html {
@@ -125,13 +136,13 @@
                     
             </ul>
         </nav>
-        <form id="gridea-search-form" class="searchform" data-update="1583384615371" action="/search/index.html">
+        <form id="gridea-search-form" class="searchform" data-update="1583385138704" action="/search/index.html">
             <i class="memory memory-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
     </div>
     <div id="mobile-menu">
-        <form id="gridea-search-form" class="mobile-searchform" data-update="1583384615371" action="/search/index.html">
+        <form id="gridea-search-form" class="mobile-searchform" data-update="1583385138704" action="/search/index.html">
             <i class="memory memory-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
@@ -204,7 +215,7 @@
                                                     <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
-                                            <img alt="Diego&#39;s Blog" src="https://diego3893.github.io/images/avatar.png?v=1583384615371" srcset="https://diego3893.github.io/images/avatar.png?v=1583384615371" class="avatar avatar-100 photo" width="100" height="100">
+                                            <img alt="Diego&#39;s Blog" src="https://diego3893.github.io/images/avatar.png?v=1583385138704" srcset="https://diego3893.github.io/images/avatar.png?v=1583385138704" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://diego3893.github.io" title="由Diego&#39;s Blog发布" rel="author">Diego&#39;s Blog<i class="memory memory-certify"></i></a></span>
                                             <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2020-02-29</span>
                                         </div>
@@ -243,19 +254,35 @@
                         </div>
                     </article>
                 </div>
+                <style>
+                    .prev:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                    
+                    .next:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                </style>
                 <div class="lite-item nearby-article">
                     
-                        <div class="nearby-article-left">
-                            <span><a class="prev" rel="prev" href="https://diego3893.github.io/post/zui-duan-lu-jing/">
-                                ← 最短路径
-                            </a></span>
+                        <div class="nearby-article-left" style="padding: 10px;">
+                            <a class="prev" rel="prev" href="https://diego3893.github.io/post/zui-duan-lu-jing/">
+                                <i class="fa fa-chevron-left"></i>
+                                最短路径
+                            </a>
                         </div>
                         
                             
-                                <div class="nearby-article-right">
-                                    <span><a class="next" rel="next" href="https://diego3893.github.io/post/ckuai-du-shu-zi/">
-                                        c++快读（数字） →
-                                    </a></span>
+                                <div class="nearby-article-right" style="padding: 10px;">
+                                    <a class="next" rel="next" href="https://diego3893.github.io/post/ckuai-du-shu-zi/">
+                                        c++快读（数字）<i class="fa fa-chevron-right"></i>
+                                    </a>
                                 </div>
                                 
                 </div>
@@ -264,8 +291,8 @@
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
                 <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/stl-he-ji/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://diego3893.github.io/post/stl-he-ji/&sharesource=qzone&title=STL合集&pics=https://diego3893.github.io/images/avatar.png?v=1583384615371&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://diego3893.github.io/post/stl-he-ji/&sharesource=weibo&title=STL合集 + " - " + &pic="https://diego3893.github.io/images/avatar.png?v=1583384615371"><i class="fa fa-weibo "></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://diego3893.github.io/post/stl-he-ji/&sharesource=qzone&title=STL合集&pics=https://diego3893.github.io/images/avatar.png?v=1583385138704&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://diego3893.github.io/post/stl-he-ji/&sharesource=weibo&title=STL合集 + " - " + &pic="https://diego3893.github.io/images/avatar.png?v=1583385138704"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                     
@@ -312,39 +339,39 @@
                     <div class="textwidget">
                         
                             <a href="https://diego3893.github.io/tag/h6HytAKAH/" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
-                                <i class="fa fa-tags" aria-hidden="true">&nbsp;折腾笔记</i>
+                                <i class="fa fa-tags" aria-hidden="true">折腾笔记</i>
                             </a>
                             
                             <a href="https://diego3893.github.io/tag/4X9N1ZDzg/" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
-                                <i class="fa fa-tags" aria-hidden="true">&nbsp;Gridea</i>
+                                <i class="fa fa-tags" aria-hidden="true">Gridea</i>
                             </a>
                             
                             <a href="https://diego3893.github.io/tag/Hc21XFSes/" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
-                                <i class="fa fa-tags" aria-hidden="true">&nbsp;图/树论</i>
+                                <i class="fa fa-tags" aria-hidden="true">图/树论</i>
                             </a>
                             
                             <a href="https://diego3893.github.io/tag/4-8y6NRl-/" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
-                                <i class="fa fa-tags" aria-hidden="true">&nbsp;数据结构</i>
+                                <i class="fa fa-tags" aria-hidden="true">数据结构</i>
                             </a>
                             
                             <a href="https://diego3893.github.io/tag/Gr5YErY6j/" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
-                                <i class="fa fa-tags" aria-hidden="true">&nbsp;提高组笔记</i>
+                                <i class="fa fa-tags" aria-hidden="true">提高组笔记</i>
                             </a>
                             
                             <a href="https://diego3893.github.io/tag/dJ3WAsaqR/" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
-                                <i class="fa fa-tags" aria-hidden="true">&nbsp;算法</i>
+                                <i class="fa fa-tags" aria-hidden="true">算法</i>
                             </a>
                             
                             <a href="https://diego3893.github.io/tag/c3jkatgC-/" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
-                                <i class="fa fa-tags" aria-hidden="true">&nbsp;STL</i>
+                                <i class="fa fa-tags" aria-hidden="true">STL</i>
                             </a>
                             
                             <a href="https://diego3893.github.io/tag/bunbgwXDf/" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
-                                <i class="fa fa-tags" aria-hidden="true">&nbsp;趣味</i>
+                                <i class="fa fa-tags" aria-hidden="true">趣味</i>
                             </a>
                             
                             <a href="https://diego3893.github.io/tag/Nnc60LLfD/" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
-                                <i class="fa fa-tags" aria-hidden="true">&nbsp;数学</i>
+                                <i class="fa fa-tags" aria-hidden="true">数学</i>
                             </a>
                             
                     </div>
@@ -372,31 +399,10 @@
                                     var music_array = [];
                                     
                                     music_array.push({
-                                        name: 'Sold Out',
-                                        url: ' http://music.163.com/song/media/outer/url?id=31010566.mp3',
-                                        artist: 'Hawk Nelson',
-                                        cover: 'https://s2.ax1x.com/2020/03/02/3RRXAs.jpg',
-                                    });
-                                    
-                                    music_array.push({
-                                        name: 'Señorita',
-                                        url: 'http://music.163.com/song/media/outer/url?id=1373168742.mp3',
-                                        artist: 'Shawn Mendes / Camila Cabello',
-                                        cover: 'https://s2.ax1x.com/2020/03/03/3hZL6J.jpg',
-                                    });
-                                    
-                                    music_array.push({
-                                        name: 'Into You',
-                                        url: 'http://music.163.com/song/media/outer/url?id=523042017.mp3',
-                                        artist: 'Matisse &amp; Sadko / Hanne Mjøen',
-                                        cover: 'https://s2.ax1x.com/2020/03/03/3heru9.jpg',
-                                    });
-                                    
-                                    music_array.push({
-                                        name: 'Wolves',
-                                        url: 'http://music.163.com/song/media/outer/url?id=515269424.mp3',
-                                        artist: 'Selena Gomez / Marshmello',
-                                        cover: 'https://s2.ax1x.com/2020/03/03/3heHEt.jpg',
+                                        name: '',
+                                        url: '',
+                                        artist: '',
+                                        cover: '',
                                     });
                                     
                                     
@@ -433,12 +439,12 @@
                                                         <div class="textwidget">
                                                             
                                                                 
-                                                                    <p><span id="span_btn" style="font-size: 14px;" onclick="javascript:top.location='https://blog.itjoker.cn'">
+                                                                    <p><span id="span_btn" class="link_a" onclick="javascript:top.location='https://blog.itjoker.cn'">
                                         ITJoker -
                                             ITJoker&#39;s Blog
                                 </span></p>
                                                                     
-                                                                    <p><span id="span_btn" style="font-size: 14px;" onclick="javascript:top.location='http://acg17.com'">
+                                                                    <p><span id="span_btn" class="link_a" onclick="javascript:top.location='http://acg17.com'">
                                         ACG17 -
                                             日常找图
                                 </span></p>
@@ -454,23 +460,30 @@
 <footer id="foot">
     <a id="back-to-top" href="#"><i class="memory memory-top"></i></a>
     <div class="copyright">
-        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a><br>
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
             
-                    &#x7248;&#x6743;&#x6240;&#x6709; &copy;
-                    <span class="my-face"><script>
+                <div style="font-size:12px">已经建站 <b id='build_time'></b></div>
+                <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/time.min.js"></script>
+                <script>
+                    setInterval(show_date_time, 1000, '2020-02-26');
+                </script>
+                
+                    
+                            &#x7248;&#x6743;&#x6240;&#x6709; &copy;
+                            <span class="my-face"><script>
                         var date = new Date();
                         document.write("" + date.getFullYear());
                     </script>
                    </span>
-                    <a href="https://diego3893.github.io">
-                        Diego&#39;s Blog
-                    </a>&nbsp;|&nbsp;Powered by
-                    <a href="https://coding.net" target="_blank">
-                        Coding.net
-                    </a>
+                            <a href="https://diego3893.github.io">
+                                Diego&#39;s Blog
+                            </a>&nbsp;|&nbsp;Powered by
+                            <a href="https://coding.net" target="_blank">
+                                Coding.net
+                            </a>
     </div>
     <div id='UpdateTime' style='display:none'>
-        1583384615371
+        1583385138704
     </div>
     <script>
         var titleTime;
