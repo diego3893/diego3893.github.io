@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://diego3893.github.io</id>
     <title>Diego&apos;s Blog</title>
-    <updated>2020-03-04T15:35:56.335Z</updated>
+    <updated>2020-03-05T01:52:12.174Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://diego3893.github.io"/>
     <link rel="self" href="https://diego3893.github.io/atom.xml"/>
@@ -10,6 +10,67 @@
     <logo>https://diego3893.github.io/images/avatar.png</logo>
     <icon>https://diego3893.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Diego&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Gridea静态博客使用CNAME以及相关配置]]></title>
+        <id>https://diego3893.github.io/post/gridea-jing-tai-bo-ke-shi-yong-cname-yi-ji-xiang-guan-pei-zhi/</id>
+        <link href="https://diego3893.github.io/post/gridea-jing-tai-bo-ke-shi-yong-cname-yi-ji-xiang-guan-pei-zhi/">
+        </link>
+        <updated>2020-03-05T00:14:44.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="0-准备工作">0 准备工作</h1>
+<p>注册域名使用<a href="https://cloud.tencent.com/">腾讯云</a><br>
+加速以及https配置使用<a href="https://www.cloudflare.com/">cloudflare</a></p>
+<hr>
+<h1 id="1-注册域名">1 注册域名</h1>
+<h2 id="11-注册">1.1 注册</h2>
+<p>进入<a href="https://dnspod.cloud.tencent.com/">腾讯云</a>注册域名<br>
+<s>购买过程不说，非常简单</s><br>
+支付完成后，进入<a href="https://console.cloud.tencent.com/domain">管理页面</a></p>
+<ul>
+<li>如果<em>服务状态</em>显示未实名认证，请立即实名认证</li>
+<li>认证完成后，<em>服务状态</em>会显示<strong>正常</strong></li>
+<li></li>
+<li>备案不管它</li>
+</ul>
+<h2 id="12-解析">1.2 解析</h2>
+<p>进入<strong>解析</strong>页面<br>
+<img src="https://s2.ax1x.com/2020/03/05/3Tawon.jpg" alt="CNAME" loading="lazy"><br>
+添加两条解析记录，配置如图 <strong>（记录值为username.github.io，即博客地址）</strong></p>
+<h2 id="13-cname绑定">1.3 CNAME绑定</h2>
+<h3 id="131-github绑定">1.3.1 github绑定</h3>
+<p>在<em>custom domain</em>中填入域名<br>
+<img src="https://s2.ax1x.com/2020/03/05/3TdZYq.jpg" alt="N" loading="lazy"></p>
+<h3 id="132-gridea绑定">1.3.2 Gridea绑定</h3>
+<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2020/03/05/3TaHyD.jpg" alt="C" loading="lazy"></figure>
+<hr>
+<h1 id="2-在cloudflare中添加域名并启用cdn">2 在cloudflare中添加域名并启用CDN</h1>
+<p>看这篇<a href="http://www.fangyuba.com/news/dynamic/197.htm">教程</a><br>
+<strong>注</strong>：腾讯云修改DNS如下<br>
+<img src="https://s2.ax1x.com/2020/03/05/3TUNU1.jpg" alt="DNS1" loading="lazy"><br>
+<img src="https://s2.ax1x.com/2020/03/05/3TUtER.jpg" alt="DNS2" loading="lazy"></p>
+<hr>
+<h1 id="3-在cloudflare中配置https">3 在cloudflare中配置https</h1>
+<h2 id="31-添加一条a记录">3.1 添加一条A记录</h2>
+<p>在DNS目录下<br>
+<img src="https://s2.ax1x.com/2020/03/05/3Tw02V.jpg" alt="settings" loading="lazy"><br>
+确保是这两条（IPv4获取方式自行百度，cmd使用ping）</p>
+<h2 id="32-打开https">3.2 打开https</h2>
+<p>设置为Flexible<br>
+<img src="https://s2.ax1x.com/2020/03/05/3Twbad.jpg" alt="F" loading="lazy"><br>
+打开<em>always use https</em><br>
+<img src="https://s2.ax1x.com/2020/03/05/3TwHVH.jpg" alt="U" loading="lazy"></p>
+<h2 id="33-设置page-rules">3.3 设置Page Rules</h2>
+<p><img src="https://s2.ax1x.com/2020/03/05/3T0ySP.jpg" alt="PR" loading="lazy"><br>
+网址分别为<code>http://yourdomain/*</code>和<code>http://yourdomain/</code><br>
+<img src="https://s2.ax1x.com/2020/03/05/3TBFmD.jpg" alt="P" loading="lazy"></p>
+<hr>
+<p>如果一切正常的话，应该会有以下：<br>
+<img src="https://s2.ax1x.com/2020/03/05/3TDSEQ.jpg" alt="Active" loading="lazy"></p>
+<p>有问题请在下方评论或发邮件询问我</p>
+<blockquote>
+<p>3013006997@qq.com</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[图的存储]]></title>
         <id>https://diego3893.github.io/post/tu-de-cun-chu/</id>
@@ -1527,166 +1588,6 @@ Description可以<strong>不填</strong><br>
 <hr>
 <p>感谢阅读本蒟蒻的博客，如有问题请在下方评论<br>
 欢迎参观我的<a href="https://diego3893.github.io">博客</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[最小生成树]]></title>
-        <id>https://diego3893.github.io/post/zui-xiao-sheng-cheng-shu/</id>
-        <link href="https://diego3893.github.io/post/zui-xiao-sheng-cheng-shu/">
-        </link>
-        <updated>2020-02-27T12:35:57.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="kruskal">Kruskal</h1>
-<h2 id="原理">原理</h2>
-<blockquote>
-<p><strong>以边来求</strong></p>
-<blockquote>
-<p>排序实现</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>依次检查边是否处于联通块中</p>
-<blockquote>
-<p><a href="https://diego3893.github.io/post/bing-cha-ji/" title="我的另一篇文章">并查集</a> 实现</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>以保证图连通且路径总权值最小</p>
-<p>时间复杂度: O(M log M)</p>
-</blockquote>
-<h3 id="优化">优化</h3>
-<pre><code class="language-cpp">if(k == n-1)
-    break;
-</code></pre>
-<p>其中<em>k</em>为已选边数，<em>n</em>为点数，因为为连通的<mark>树</mark>, 所以<code>边数=点数-1</code></p>
-<h2 id="模版">模版</h2>
-<pre><code class="language-cpp">#include&lt;cstdio&gt;
-#include&lt;algorithm&gt;
-using namespace std;
-void merge(int, int);
-int getf(int);
-void add_edge(int, int, int);
-int f[1002] = {}, edge_num = 0, n, m;
-struct node{
-	int u, v, w;
-}edge[100002];
-bool cmp(const node&amp;, const node&amp;);
-
-int main()
-{
-	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
-	int a, b, c;
-	for(int i=1; i&lt;=m; ++i)
-	{
-		scanf(&quot;%d%d%d&quot;, &amp;a, &amp;b, &amp;c);
-		add_edge(a, b, c);
-	}
-	sort(edge+1, edge+edge_num+1, cmp);
-	int ans = -0x7ffffff, k = 0;
-	int flag = 0;
-	for(int i=1; i&lt;=m; ++i)
-	{
-		int t1 = getf(edge[i].u), t2 = getf(edge[i].v);
-		if(t1 != t2)
-		{
-			merge(t1, t2);
-			if(ans &lt; edge[i].w)
-				ans = edge[i].w;
-			++k;
-		}
-		if(k == n-1)
-		{
-			flag = 1;
-			break;
-		}
-	}
-	if(!flag)
-		printf(&quot;-1&quot;);
-	else
-		printf(&quot;%d&quot;, ans);
-	return 0;
-}
-
-bool cmp(const node &amp;a, const node &amp;b)
-{
-	return a.w &lt; b.w;
-}
-void add_edge(int a, int b, int c)
-{
-	edge[++edge_num].u = a;
-	edge[edge_num].v = b;
-	edge[edge_num].w = c;
-	return;
-}
-void merge(int x, int y)
-{
-	int t1 = getf(x), t2 = getf(y);
-	if(t1 != t2)
-		f[t2] = t1;
-	return;
-}
-int getf(int x)
-{
-	if(f[x]!=x &amp;&amp; f[x]!=0)
-		return f[x] = getf(f[x]);
-	return x;
-}
-</code></pre>
-<p>代码题目 <a href="https://www.luogu.com.cn/problem/P1111" title="洛谷P1111">传送门</a></p>
-<hr>
-<h1 id="prim">Prim</h1>
-<h2 id="原理-2">原理</h2>
-<blockquote>
-<p>类似<mark>Dijkstra</mark>的<strong>松弛</strong>， 依次将白点变为蓝点</p>
-<blockquote>
-<p>需要一个数组<strong>打标记</strong>，用<em>k</em>记录最小出边（初始化<code>k = -1</code>)</p>
-</blockquote>
-<p>每次将dis数组更新为当前节点的所有出边的权值<br>
-找拥有最小权值的出边<em>k</em><br>
-打标记<code>book[k] = 1;</code><br>
-以<em>k</em>节点重复第一步</p>
-<p>求和dis数组，即为最短路径和<br>
-时间复杂度：O(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>N</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">N^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>)</p>
-</blockquote>
-<h2 id="模版-2">模版</h2>
-<pre><code class="language-cpp">#include&lt;cstdio&gt;
-#include&lt;cstring&gt;
-using namespace std;
-int g[102][102];
-int minn[102];
-int book[102] = {};
-int main()
-{
-	int n;
-	scanf(&quot;%d&quot;, &amp;n);
-	for(int i=1; i&lt;=n; ++i)
-		for(int j=1; j&lt;=n; ++j)
-			scanf(&quot;%d&quot;, &amp;g[i][j]);
-	memset(minn, 0x7f, sizeof(minn));
-	minn[1] = 0;
-	memset(book, 0, sizeof(book));
-	for(int i=1; i&lt;=n; ++i)
-	{
-		int k = 0;
-		for(int j=1; j&lt;=n; ++j)
-			if(!book[j] &amp;&amp; (minn[j]&lt;minn[k]))
-				k = j;
-		book[k] = 1;
-		for(int j=1; j&lt;=n; ++j)
-			if(!book[j] &amp;&amp; (g[k][j]&lt;minn[j]))
-				minn[j] = g[k][j];
-	}
-	int ans = 0;
-	for(int i=1; i&lt;=n; ++i)
-		ans += minn[i];
-	printf(&quot;%d&quot;, ans);
-	return 0;
-}
-</code></pre>
-<p>代码题目<a href="http://ybt.ssoier.cn:8088/problem_show.php?pid=1349" title="一本通1349">传送门</a></p>
-<hr>
-<h1 id="选择">选择</h1>
-<p><strong>Prim</strong>适合<mark>稠密图</mark>，<strong>Kruskal</strong>适合<mark>稀疏图</mark></p>
-<p>本蒟蒻小声BB：<s>最小生成树其实不难</s>  欢迎来我的<a href="https://diego3893.github.io/" title="Diego's Blog">博客</a></p>
 ]]></content>
     </entry>
 </feed>
