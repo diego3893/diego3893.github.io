@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://diego3893.github.io</id>
     <title>Diego&apos;s Blog</title>
-    <updated>2020-03-07T05:27:14.776Z</updated>
+    <updated>2020-03-07T15:02:30.893Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://diego3893.github.io"/>
     <link rel="self" href="https://diego3893.github.io/atom.xml"/>
@@ -10,6 +10,122 @@
     <logo>https://diego3893.github.io/images/avatar.png</logo>
     <icon>https://diego3893.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Diego&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[树状数组]]></title>
+        <id>https://diego3893.github.io/post/shu-zhuang-shu-zu/</id>
+        <link href="https://diego3893.github.io/post/shu-zhuang-shu-zu/">
+        </link>
+        <updated>2020-03-07T13:48:06.000Z</updated>
+        <content type="html"><![CDATA[<p><s>这是比较让我这个蒟蒻绝望的东西（以后可能一直这样）</s></p>
+<h1 id="原理">原理</h1>
+<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2020/03/07/3jRuE4.png" alt="tree" loading="lazy"></figure>
+<blockquote>
+<p>形态如图</p>
+</blockquote>
+<blockquote>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>x</mi></msub><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mi>x</mi><mo>−</mo><msup><mn>2</mn><mi>k</mi></msup><mo>+</mo><mn>1</mn></mrow><mrow><mi>x</mi><mo>−</mo><msup><mn>2</mn><mi>k</mi></msup><mo>+</mo><mi>x</mi></mrow></msubsup><msub><mi>A</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">C_x = \sum_{i=x-2^k+1}^{x-2^k+x}A_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.509861em;vertical-align:-0.35804100000000005em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1518199999999998em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">=</span><span class="mord mathdefault mtight">x</span><span class="mbin mtight">−</span><span class="mord mtight"><span class="mord mtight">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7820285714285713em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">x</span><span class="mbin mtight">−</span><span class="mord mtight"><span class="mord mtight">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9270285714285713em;"><span style="top:-2.931em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span><span class="mbin mtight">+</span><span class="mord mathdefault mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.35804100000000005em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">2^k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span></span></span>为区间最小二次幂，即<code>lowbit(x)</code></p>
+<blockquote>
+<p>e.g. <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>8</mn><msub><mo>)</mo><mn>1</mn></msub><mn>0</mn><mo>=</mo><mo>(</mo><mn>1000</mn><msub><mo>)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">(8)_10 = (1000)_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">8</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>w</mi><mi>b</mi><mi>i</mi><mi>t</mi><mo>(</mo><mn>8</mn><mo>)</mo><mo>=</mo><msup><mn>2</mn><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">lowbit(8) = 2^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault">b</span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mord">8</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span><br>
+e.g. <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>10</mn><msub><mo>)</mo><mn>1</mn></msub><mn>0</mn><mo>=</mo><mo>(</mo><mn>1010</mn><msub><mo>)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">(10)_10 = (1010)_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">0</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">0</span><span class="mord">1</span><span class="mord">0</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>w</mi><mi>b</mi><mi>i</mi><mi>t</mi><mo>(</mo><mn>10</mn><mo>)</mo><mo>=</mo><msup><mn>2</mn><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">lowbit(10) = 2^1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault">b</span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mord">1</span><span class="mord">0</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>以区间的方式存储，可以方便的求和、维护（前缀和等）</p>
+</blockquote>
+<blockquote>
+<p>lowbit的<strong>位运算</strong><br>
+因为是求最小二次幂<br>
+所以是<code>(~x+1)&amp;x</code>，即<code>(-x)&amp;x</code></p>
+</blockquote>
+<hr>
+<h1 id="核心代码">核心代码</h1>
+<pre><code class="language-cpp">//维护|构建
+void build(int x)
+{
+    while(x &lt;= N)
+    {
+        c[x] += a[x];
+        x += lowbit(x);
+    }
+}
+
+//求和
+int sum(int x)
+{
+    int res = 0;
+    while(x &gt; 0)
+    {
+        res += c[x];
+        x -= lowbit(x);
+    }
+    return res;
+}
+
+//求最小二次幂
+int lowbit(int x)
+{
+    return (-x) &amp; x;
+}
+</code></pre>
+<hr>
+<h1 id="模版">模版</h1>
+<pre><code class="language-cpp">#include&lt;cstdio&gt;
+#include&lt;algorithm&gt;
+#include&lt;cstring&gt;
+#define Maxn 15000+10
+#define Maxc 32000+10
+using namespace std;
+struct node{
+	int x, y;
+}p[Maxn];
+int n, m = 32001;
+int c[Maxc], ans[Maxc];
+int lowbit(int);
+void build(int, int);
+int sum(int);
+int main()
+{
+	scanf(&quot;%d&quot;, &amp;n);
+	for(int i=1; i&lt;=n; ++i)
+		scanf(&quot;%d%d&quot;, &amp;p[i].x, &amp;p[i].y);
+	for(int i=1; i&lt;=n; ++i)
+	{
+		int u = p[i].x+1;  //树状数组无法维护下标0
+		int w = sum(u);
+		build(u, 1);
+		++ans[w];
+	}
+	for(int i=0; i&lt;n; ++i)
+		printf(&quot;%d\n&quot;, ans[i]);
+	return 0;
+}
+int lowbit(int x)
+{
+	return (-x) &amp; x;
+}
+void build(int x, int y)
+{
+	while(x &lt;= m) //x范围不定，直接计算到最大
+	{
+		c[x] += y;
+		x += lowbit(x);
+	}
+}
+int sum(int x)
+{
+	int res = 0;
+	while(x &gt; 0)
+	{
+		res += c[x];
+		x -= lowbit(x);
+	}
+	return res;
+}
+</code></pre>
+<p>题目<a href="http://ybt.ssoier.cn:8088/problem_show.php?pid=1536">传送门</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Gridea静态博客使用CNAME以及相关配置]]></title>
         <id>https://diego3893.github.io/post/gridea-jing-tai-bo-ke-shi-yong-cname-yi-ji-xiang-guan-pei-zhi/</id>
@@ -1471,127 +1587,6 @@ int main()
 <li>greater是序列升序，less是序列降序</li>
 <li>声明语句最后的两个 <mark>&gt; &gt;</mark> 要有一个<strong>空格</strong></li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[github + Gridea免费搭建静态博客]]></title>
-        <id>https://diego3893.github.io/post/github-gridea-mian-fei-da-jian-jing-tai-bo-ke/</id>
-        <link href="https://diego3893.github.io/post/github-gridea-mian-fei-da-jian-jing-tai-bo-ke/">
-        </link>
-        <updated>2020-02-28T01:39:07.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="0-gridea的优缺点">0 Gridea的优缺点</h1>
-<p><strong>优点</strong>：</p>
-<ul>
-<li>使用简单</li>
-<li>零成本</li>
-<li>无需代码配置</li>
-<li>界面美观</li>
-<li>离线编辑，在线同步</li>
-</ul>
-<p><strong>缺点</strong>：</p>
-<ul>
-<li>
-<p>新软件没有详细说明 <s>（所以需要看我的博客）</s></p>
-<hr>
-<h1 id="1-准备工作">1 准备工作</h1>
-<h2 id="安装git可选和gridea">安装git（可选）和Gridea</h2>
-</li>
-</ul>
-<ul>
-<li>
-<p>可以从官网安装：</p>
-<blockquote>
-<p><a href="https://git-scm.com/downloads" title="git下载地址">git</a></p>
-</blockquote>
-<blockquote>
-<p><a href="https://gridea.dev" title="gridea下载地址">Gridea</a></p>
-</blockquote>
-</li>
-<li>
-<p>可以从百度网盘安装</p>
-<blockquote>
-<p><a href="https://pan.baidu.com/s/1nTCfBIsZqMGD8tokXiEdYQ" title="网盘资源">网盘资源</a><br>
-<mark>提取码：ck6t</mark></p>
-<blockquote>
-<p>有git、gridea安装包和gridea主题  <em><strong>（仅限win）</strong></em></p>
-</blockquote>
-</blockquote>
-</li>
-</ul>
-<hr>
-<h1 id="2-安装软件">2 安装软件</h1>
-<h2 id="21-安装git可选">2.1 安装git（可选）</h2>
-<p>参考<a href="https://blog.csdn.net/qq_32786873/article/details/80570783" title="git安装教程">这个</a></p>
-<h2 id="22-安装gridea">2.2 安装Gridea</h2>
-<p>双击exe，选择全用户安装（第一个选项），然后一路<em>下一步</em>即可</p>
-<hr>
-<h1 id="3-搭建网站">3 搭建网站</h1>
-<h2 id="30-加速github">3.0 加速github</h2>
-<p>参考<a href="https://blog.csdn.net/qianglei6077/article/details/90051554" title="win10加速">这个</a><br>
-<em>无法保存hosts</em><a href="https://jingyan.baidu.com/article/9113f81b49ed2f2b3214c7fa.html%22%E6%B7%BB%E5%8A%A0%E6%9D%83%E9%99%90%22">解决办法</a></p>
-<h2 id="31注册github有账号者略过">3.1注册github（有账号者略过）</h2>
-<p>进入<a href="https://github.com">github</a><br>
-具体步骤和其他注册方式无太大区别，此处不再赘述</p>
-<h2 id="32-创建仓库">3.2 创建仓库</h2>
-<p>点击<strong>New repository</strong><br>
-<img src="https://s2.ax1x.com/2020/02/28/3BGwZT.jpg" alt="creat" loading="lazy"><br>
-<mark>Repository name</mark>填写<em>用户名.github.io</em><br>
-<code>e.g. 用户名为kkk， 则Repository name填写kkk.github.io</code><br>
-Description可以<strong>不填</strong><br>
-其余设置参照下图，然后点击<em>Create repository</em><br>
-<img src="https://s2.ax1x.com/2020/02/28/3BJo7T.jpg" alt="creat0" loading="lazy"></p>
-<h2 id="33-获取token">3.3 获取token</h2>
-<ul>
-<li>进入用户设置<br>
-<img src="https://s2.ax1x.com/2020/02/28/3BNR9e.jpg" alt="token0" loading="lazy"></li>
-<li>进入开发者设置<br>
-<img src="https://s2.ax1x.com/2020/02/28/3BUk34.jpg" alt="token1" loading="lazy"></li>
-<li>选择最后一项，然后新建一个token<br>
-<img src="https://s2.ax1x.com/2020/02/28/3BU524.jpg" alt="token2" loading="lazy"></li>
-<li>Note随便填，只勾选repo权限<br>
-<img src="https://s2.ax1x.com/2020/02/28/3BaiZt.jpg" alt="token3" loading="lazy"></li>
-<li>点击页面最下方的绿色按钮<em>Generate token</em></li>
-<li>你会得到一长串编码，<mark>把它保存下来</mark>，因为 <em><strong>以后你再也见不到它了</strong></em><br>
-<img src="https://s2.ax1x.com/2020/02/28/3BdNh8.jpg" alt="token4" loading="lazy"></li>
-</ul>
-<hr>
-<h1 id="4-gridea设置博客">4 gridea设置博客</h1>
-<h2 id="41-将博客同步至网页">4.1 将博客同步至网页</h2>
-<p>在<strong>远程</strong>中设置如图<br>
-<img src="https://s2.ax1x.com/2020/02/28/3B0q6e.jpg" alt="setting" loading="lazy"><br>
-点击<strong>保存</strong>，点击<strong>检测远程连接</strong></p>
-<blockquote>
-<p>如果失败请检查设置信息是否正确<br>
-若一切正确但无法连接，参考<a href="https://yeming.site/post/gridea_help/">这篇文章</a><br>
-然后点击左下角的<strong>同步</strong></p>
-</blockquote>
-<h2 id="42-主题美化">4.2 主题美化</h2>
-<p>将网盘资源中的<em>gridea-themes</em>解压，把里面的每个单文件夹（如song、jia、lin等）放入<mark>站点源文件夹</mark>中<strong>如下图</strong><br>
-<img src="https://s2.ax1x.com/2020/02/28/3BsK9P.jpg" alt="theme" loading="lazy"><br>
-<img src="https://s2.ax1x.com/2020/02/28/3Bsnht.jpg" alt="theme0" loading="lazy"><br>
-重启gridea后就可以选择主题了 <s>我使用的是Chic</s></p>
-<h2 id="43-评论设置">4.3 评论设置</h2>
-<h3 id="431-新建一个仓库">4.3.1 新建一个仓库</h3>
-<p>设置默认，命名为blog-comment</p>
-<h3 id="432-新建gitalk-app">4.3.2 新建Gitalk App</h3>
-<p>进入github账户的<strong>开发者设置</strong><br>
-<img src="https://s2.ax1x.com/2020/02/28/3By18x.jpg" alt="comment" loading="lazy"><br>
-新建App，设置如下<br>
-<img src="https://s2.ax1x.com/2020/02/28/3BcN4A.jpg" alt="comment0" loading="lazy"><br>
-保存两行代码<br>
-<img src="https://s2.ax1x.com/2020/02/28/3BctNd.jpg" alt="comment1" loading="lazy"></p>
-<h3 id="433-连接至博客">4.3.3 连接至博客</h3>
-<p>设置如下：<br>
-<img src="https://s2.ax1x.com/2020/02/28/3BgExP.jpg" alt="blog" loading="lazy"><br>
-<code>每篇文章都需要初始化评论，新文章评论区github登陆</code></p>
-<hr>
-<h1 id="5-编辑博文">5 编辑博文</h1>
-<p>使用markdown编辑，语法<a href="https://www.jianshu.com/p/q81RER">参考</a><br>
-<mark>这个应用不会自动同步，需要点击同步按钮</mark></p>
-<hr>
-<p>如果想配置自己的域名，可以移步至<a href="https://diego.plus/post/gridea-jing-tai-bo-ke-shi-yong-cname-yi-ji-xiang-guan-pei-zhi/">我的这篇博客</a><br>
-感谢阅读本蒟蒻的博客，如有问题请在下方评论<br>
-欢迎参观我的<a href="https://diego3893.github.io">博客</a></p>
 ]]></content>
     </entry>
 </feed>
