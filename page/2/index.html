@@ -31,8 +31,8 @@
 <!--<script async src="https://diego3893.github.io/media/js/script.min.js"></script>-->
 <!--<link rel="stylesheet" href="https://diego3893.github.io/media/css/main.min.css" />-->
 <link rel="stylesheet" href="https://diego3893.github.io/styles/main.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.10/CDN/css/Card/main.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/css/Card/iconfont.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.20/CDN/css/Card/main.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.19/CDN/css/Card/iconfont.css" />
 <!--link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_410989_wuhl0k5ojvf.css" /-->
 <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/love.min.js"></script>
@@ -56,12 +56,17 @@
             </script>
             
                     <style>
-                        .memory-certify {
+                        .Card-certify {
                             color: #0091e4 !important;
                         }
                         
                         #foot {
                             color: #000;
+                        }
+                        
+                        #menu-item:hover {
+                            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+                            border-bottom-color: rgba(0, 0, 0, .6);
                         }
                         
                         .lite-item,
@@ -97,38 +102,38 @@
 <body>
     <header id="header">
     <div id="pc-menu">
-        <a id="menu-bar" class="memory memory-menu"></a>
+        <a id="menu-bar" class="Card Card-menu"></a>
         <a id="menu-title" href="https://diego3893.github.io">
             Diego&#39;s Blog
         </a>
         <nav id="menu-main" class="menu-main">
             <ul>
                 
-                    <li id="menu-item-7" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7">
+                    <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7">
                         <a href="/">
                             首页
                         </a>
                     </li>
                     
-                    <li id="menu-item-7" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7">
+                    <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7">
                         <a href="/archives">
                             归档
                         </a>
                     </li>
                     
-                    <li id="menu-item-7" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7">
+                    <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7">
                         <a href="/tags">
                             标签
                         </a>
                     </li>
                     
-                    <li id="menu-item-7" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7">
+                    <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7">
                         <a href="/post/about">
                             关于
                         </a>
                     </li>
                     
-                    <li id="menu-item-7" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7">
+                    <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7">
                         <a href="/friends">
                             友链
                         </a>
@@ -136,14 +141,14 @@
                     
             </ul>
         </nav>
-        <form id="gridea-search-form" class="searchform" data-update="1583753409434" action="/search/index.html">
-            <i class="memory memory-search"></i>
+        <form id="gridea-search-form" class="searchform" data-update="1583764336340" action="/search/index.html">
+            <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
     </div>
     <div id="mobile-menu">
-        <form id="gridea-search-form" class="mobile-searchform" data-update="1583753409434" action="/search/index.html">
-            <i class="memory memory-search"></i>
+        <form id="gridea-search-form" class="mobile-searchform" data-update="1583764336340" action="/search/index.html">
+            <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
         <nav class="menu">
@@ -190,10 +195,10 @@
                         <div class="card-bg"></div>
                         <div class="card-info">
                             
-                                <img alt="Diego&#39;s Blog" src="https://s2.ax1x.com/2020/03/06/3qk4Hg.jpg" srcset="https://s2.ax1x.com/2020/03/06/3qk4Hg.jpg " class="avatar" width="100" height="100">
+                                <img alt="Diego&#39;s Blog" src="https://s2.ax1x.com/2020/03/06/3qk4Hg.jpg" srcset="https://s2.ax1x.com/2020/03/06/3qk4Hg.jpg " class="avatar" style="height: 100px;">
                                 
                                         <span class="card-info-block card-info-name">Diego&#39;s Blog&nbsp;<i
-                                class="memory memory-certify"></i></span>
+                                class="Card Card-certify"></i></span>
                                         <span>Stay hungry, Stay foolish</span>
                         </div>
                         <div class="catch-me">
@@ -224,7 +229,7 @@
                                                         
                                                             
                                                                 
-                                                                    <a data-content="bilibili" data-balloon-pos="up" target="_blank" href="https://space.bilibili.com/454077332"><i class="memory memory-bilibili"></i></a>
+                                                                    <a data-content="bilibili" data-balloon-pos="up" target="_blank" href="https://space.bilibili.com/454077332"><i class="Card Card-bilibili"></i></a>
                                                                     
                                                                         
                                                                 
@@ -248,7 +253,7 @@
                         
                                 <span class="post-type-author">
                     Diego&#39;s Blog
-                    <i class="memory memory-certify"></i><span class="publish-time"> - <i class="fa fa-calendar"
+                    <i class="Card Card-certify"></i><span class="publish-time"> - <i class="fa fa-calendar"
                             aria-hidden="true"></i> 2020-02-28</span>
                                 </span>
                                 <h3 class="post-type-title">
@@ -296,10 +301,10 @@
             </div>
             <div class="post-footer">
                 <span id="span_btn" style="text-align: center;" onclick="javascript:top.location='https://diego3893.github.io/post/dui-pai-xu/'">
-                    <i class="memory memory-more-o"></i> &#x9605;&#x8BFB;
+                    <i class="Card Card-more-o"></i> &#x9605;&#x8BFB;
                 </span>
                 <span id="span_btn" style="text-align: center;" onclick="javascript:window.open('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/dui-pai-xu/')">
-                    <i class=" memory memory-share "></i> &#x4E8C;&#x7EF4;&#x7801;&#x5206;&#x4EAB;
+                    <i class=" Card Card-share "></i> &#x4E8C;&#x7EF4;&#x7801;&#x5206;&#x4EAB;
                 </span>
             </div>
         </article>
@@ -314,7 +319,7 @@
                         
                                 <span class="post-type-author">
                     Diego&#39;s Blog
-                    <i class="memory memory-certify"></i><span class="publish-time"> - <i class="fa fa-calendar"
+                    <i class="Card Card-certify"></i><span class="publish-time"> - <i class="fa fa-calendar"
                             aria-hidden="true"></i> 2020-02-27</span>
                                 </span>
                                 <h3 class="post-type-title">
@@ -362,10 +367,10 @@
             </div>
             <div class="post-footer">
                 <span id="span_btn" style="text-align: center;" onclick="javascript:top.location='https://diego3893.github.io/post/zui-xiao-sheng-cheng-shu/'">
-                    <i class="memory memory-more-o"></i> &#x9605;&#x8BFB;
+                    <i class="Card Card-more-o"></i> &#x9605;&#x8BFB;
                 </span>
                 <span id="span_btn" style="text-align: center;" onclick="javascript:window.open('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/zui-xiao-sheng-cheng-shu/')">
-                    <i class=" memory memory-share "></i> &#x4E8C;&#x7EF4;&#x7801;&#x5206;&#x4EAB;
+                    <i class=" Card Card-share "></i> &#x4E8C;&#x7EF4;&#x7801;&#x5206;&#x4EAB;
                 </span>
             </div>
         </article>
@@ -380,7 +385,7 @@
                         
                                 <span class="post-type-author">
                     Diego&#39;s Blog
-                    <i class="memory memory-certify"></i><span class="publish-time"> - <i class="fa fa-calendar"
+                    <i class="Card Card-certify"></i><span class="publish-time"> - <i class="fa fa-calendar"
                             aria-hidden="true"></i> 2020-02-27</span>
                                 </span>
                                 <h3 class="post-type-title">
@@ -428,10 +433,10 @@
             </div>
             <div class="post-footer">
                 <span id="span_btn" style="text-align: center;" onclick="javascript:top.location='https://diego3893.github.io/post/bing-cha-ji/'">
-                    <i class="memory memory-more-o"></i> &#x9605;&#x8BFB;
+                    <i class="Card Card-more-o"></i> &#x9605;&#x8BFB;
                 </span>
                 <span id="span_btn" style="text-align: center;" onclick="javascript:window.open('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/bing-cha-ji/')">
-                    <i class=" memory memory-share "></i> &#x4E8C;&#x7EF4;&#x7801;&#x5206;&#x4EAB;
+                    <i class=" Card Card-share "></i> &#x4E8C;&#x7EF4;&#x7801;&#x5206;&#x4EAB;
                 </span>
             </div>
         </article>
@@ -446,7 +451,7 @@
                         
                                 <span class="post-type-author">
                     Diego&#39;s Blog
-                    <i class="memory memory-certify"></i><span class="publish-time"> - <i class="fa fa-calendar"
+                    <i class="Card Card-certify"></i><span class="publish-time"> - <i class="fa fa-calendar"
                             aria-hidden="true"></i> 2018-12-12</span>
                                 </span>
                                 <h3 class="post-type-title">
@@ -482,10 +487,10 @@
             </div>
             <div class="post-footer">
                 <span id="span_btn" style="text-align: center;" onclick="javascript:top.location='https://diego3893.github.io/post/hello-gridea/'">
-                    <i class="memory memory-more-o"></i> &#x9605;&#x8BFB;
+                    <i class="Card Card-more-o"></i> &#x9605;&#x8BFB;
                 </span>
                 <span id="span_btn" style="text-align: center;" onclick="javascript:window.open('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/hello-gridea/')">
-                    <i class=" memory memory-share "></i> &#x4E8C;&#x7EF4;&#x7801;&#x5206;&#x4EAB;
+                    <i class=" Card Card-share "></i> &#x4E8C;&#x7EF4;&#x7801;&#x5206;&#x4EAB;
                 </span>
             </div>
         </article>
@@ -506,7 +511,7 @@
         
             <li class="lite-item">
                 <header class="lite-item-header">
-                    <h3 class="sidebar-default-icon lite-item-title"><i class="memory memory-hitokoto"></i>&nbsp;&#x4E00;&#x8A00;</h3>
+                    <h3 class="sidebar-default-icon lite-item-title"><i class="Card Card-hitokoto"></i>&nbsp;&#x4E00;&#x8A00;</h3>
                 </header>
                 <div class="textwidget">
                     <p>
@@ -517,7 +522,7 @@
             
                 <li class="lite-item">
                     <header class="lite-item-header">
-                        <h3 class="sidebar-default-icon lite-item-title"><i class="memory memory-tags">&#x6807;&#x7B7E;</i></h3>
+                        <h3 class="sidebar-default-icon lite-item-title"><i class="Card Card-tags">&#x6807;&#x7B7E;</i></h3>
                     </header>
                     <div class="textwidget">
                         
@@ -582,28 +587,28 @@
                                     var music_array = [];
                                     
                                     music_array.push({
-                                        name: 'Wolves',
-                                        url: 'http://music.163.com/song/media/outer/url?id=515269424.mp3',
+                                        name: 'Wolves ',
+                                        url: 'http://music.163.com/song/media/outer/url?id=515269424.mp3 ',
                                         artist: 'Selena Gomez / Marshmello',
-                                        cover: 'https://s2.ax1x.com/2020/03/03/3heHEt.jpg',
+                                        cover: 'https://s2.ax1x.com/2020/03/03/3heHEt.jpg ',
                                     });
                                     
                                     music_array.push({
-                                        name: 'Into You ',
+                                        name: 'Into You  ',
                                         url: 'http://music.163.com/song/media/outer/url?id=523042017.mp3 ',
                                         artist: 'Matisse &amp; Sadko / Hanne Mjøen',
-                                        cover: 'https://s2.ax1x.com/2020/03/03/3heru9.jpg ',
+                                        cover: ' https://s2.ax1x.com/2020/03/03/3heru9.jpg  ',
                                     });
                                     
                                     music_array.push({
                                         name: 'Señorita ',
-                                        url: 'http://music.163.com/song/media/outer/url?id=1373168742.mp3 ',
+                                        url: 'http://music.163.com/song/media/outer/url?id=1373168742.mp3  ',
                                         artist: 'Shawn Mendes / Camila Cabello',
-                                        cover: 'https://s2.ax1x.com/2020/03/03/3hZL6J.jpg ',
+                                        cover: 'https://s2.ax1x.com/2020/03/03/3hZL6J.jpg  ',
                                     });
                                     
                                     music_array.push({
-                                        name: 'Sold Out',
+                                        name: 'Sold Out ',
                                         url: 'http://music.163.com/song/media/outer/url?id=31010566.mp3 ',
                                         artist: 'Hawk Nelson',
                                         cover: 'https://s2.ax1x.com/2020/03/02/3RRXAs.jpg  ',
@@ -643,30 +648,30 @@
                                                         <div class="textwidget">
                                                             
                                                                 
-                                                                    <p><span id="span_btn" class="link_a" onclick="javascript:top.location='https://blog.itjoker.cn'">
-                                        ITJoker -
+                                                                    <p><a href="https://blog.itjoker.cn" alt="ITJoker "><span id="span_btn" class="link_a" onclick="javascript:top.location='https://blog.itjoker.cn'">
+                                                                        ITJoker -
                                             ITJoker&#39;s Blog
-                                </span></p>
+                                </span></a></p>
                                                                     
-                                                                    <p><span id="span_btn" class="link_a" onclick="javascript:top.location='http://acg17.com'">
-                                        ACG17 -
+                                                                    <p><a href="http://acg17.com " alt="ACG17 "><span id="span_btn" class="link_a" onclick="javascript:top.location='http://acg17.com '">
+                                                                        ACG17 -
                                             日常找图
-                                </span></p>
+                                </span></a></p>
                                                                     
-                                                                    <p><span id="span_btn" class="link_a" onclick="javascript:top.location='https://www.wubin.design'">
-                                        BruceWu -
+                                                                    <p><a href="https://www.wubin.design" alt="BruceWu   "><span id="span_btn" class="link_a" onclick="javascript:top.location='https://www.wubin.design'">
+                                                                        BruceWu   -
                                             UX Design一枚
-                                </span></p>
+                                </span></a></p>
                                                                     
-                                                                    <p><span id="span_btn" class="link_a" onclick="javascript:top.location='https://tangkaichuan.cn'">
-                                        I&#39;m KT -
+                                                                    <p><a href="https://tangkaichuan.cn " alt="I&#39;m KT  "><span id="span_btn" class="link_a" onclick="javascript:top.location='https://tangkaichuan.cn '">
+                                                                        I&#39;m KT  -
                                             Keep Coding and Writing
-                                </span></p>
+                                </span></a></p>
                                                                     
-                                                                    <p><span id="span_btn" class="link_a" onclick="javascript:top.location='https://winterstarhu.github.io'">
-                                        WinterStar&#39;s Blog -
+                                                                    <p><a href="https://winterstarhu.github.io " alt="WinterStar&#39;s Blog  "><span id="span_btn" class="link_a" onclick="javascript:top.location='https://winterstarhu.github.io '">
+                                                                        WinterStar&#39;s Blog  -
                                             分享一些学习或生活上的东西
-                                </span></p>
+                                </span></a></p>
                                                                     
                                                                         
                                                         </div>
@@ -677,7 +682,7 @@
         </div>
 </body>
 <footer id="foot">
-    <a id="back-to-top" href="#"><i class="memory memory-top"></i></a>
+    <a id="back-to-top" href="#"><i class="Card Card-top"></i></a>
     <div class="copyright">
         Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> & <a href="https://github.com/diego3893/diego3893.github.io" target="_blank" > Diego </a>
             
@@ -702,7 +707,7 @@
                             </a>
     </div>
     <div id='UpdateTime' style='display:none'>
-        1583753409434
+        1583764336340
     </div>
     <script>
         var titleTime;

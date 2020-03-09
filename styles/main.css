@@ -183,12 +183,12 @@
 }
 .reward .reward-code {
   position: absolute;
-  top: -230px;
+  top: -215px;
   left: 50%;
   display: none;
   width: 350px;
   height: 200px;
-  margin-left: -195px;
+  margin-left: -180px;
   padding: 15px;
   border: 1px solid #e6e6e6;
   background: #fff;
