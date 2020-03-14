@@ -217,18 +217,16 @@
                     <article class="post post-type real-post">
                         <header class="post-type-header">
                             
-                                <div class="thumbnail-link" style="background-image: url('https://s2.ax1x.com/2020/02/27/30NM2d.jpg')"></div>
+                                <div class="thumbnail-link" style="background-image: url('https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/1.png')"></div>
                                 
                                         <div class="thumbnail-shadow">
                                             <h1 class="post-title">
-                                                最小生成树
+                                                哈希算法
                                             </h1>
                                             <div class="post-info">
                                                 <span class="post-category"><i class="Card Card-novel"></i>
                                         
                                             <a href="https://diego3893.github.io/tag/dJ3WAsaqR/" rel="category">算法</a>
-                                            
-                                            <a href="https://diego3893.github.io/tag/Hc21XFSes/" rel="category">图/树论</a>
                                             
                                             <a href="https://diego3893.github.io/tag/Gr5YErY6j/" rel="category">提高组笔记</a>
                                             
@@ -241,170 +239,104 @@
                                                     </span>&nbsp;•&nbsp;
 
                                                     <span class="post-readtime">阅读时间:
-                                            <a href="#">3.3分</a></span>
+                                            <a href="#">2.2分</a></span>
                                                     <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
                                             <img alt="Diego&#39;s Blog" src="https://diego3893.github.io/images/avatar.png?v=1584189711364" srcset="https://diego3893.github.io/images/avatar.png?v=1584189711364" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://diego3893.github.io" title="由Diego&#39;s Blog发布" rel="author">Diego&#39;s Blog<i class="Card Card-certify"></i></a></span>
-                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2020-02-27</span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2020-03-14</span>
                                         </div>
                         </header>
                         <div class="post-main post-type-main">
                             <div class="post-content">
                                 <div class="post-content-real">
-                                    <h1 id="kruskal">Kruskal</h1>
+                                    <p>对数据进行处理，方便<strong>匹配</strong></p>
+<h1 id="整数">整数</h1>
 <h2 id="原理">原理</h2>
 <blockquote>
-<p><strong>以边来求</strong></p>
-<blockquote>
-<p>排序实现</p>
+<p>用hash操作，将数作为数组下标存储<br>
+照搬原话：<code>大数化小，小数化了（不变）</code><br>
+hash冲突：1.线性 2.链式结构</p>
 </blockquote>
-</blockquote>
-<blockquote>
-<p>依次检查边是否处于联通块中</p>
-<blockquote>
-<p><a href="https://diego3893.github.io/post/bing-cha-ji/" title="我的另一篇文章">并查集</a> 实现</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>以保证图连通且路径总权值最小</p>
-<p>时间复杂度: O(M log M)</p>
-</blockquote>
-<h3 id="优化">优化</h3>
-<pre><code class="language-cpp">if(k == n-1)
-    break;
-</code></pre>
-<p>其中<em>k</em>为已选边数，<em>n</em>为点数，因为为连通的<mark>树</mark>, 所以<code>边数=点数-1</code></p>
-<h2 id="模版">模版</h2>
-<pre><code class="language-cpp">#include&lt;cstdio&gt;
-#include&lt;algorithm&gt;
-using namespace std;
-void merge(int, int);
-int getf(int);
-void add_edge(int, int, int);
-int f[1002] = {}, edge_num = 0, n, m;
-struct node{
-	int u, v, w;
-}edge[100002];
-bool cmp(const node&amp;, const node&amp;);
-
-int main()
+<h2 id="线性伪代码">线性伪代码：</h2>
+<pre><code class="language-cpp">int k = x/m;
+int p = flag[k];
+while(1)
 {
-	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
-	int a, b, c;
-	for(int i=1; i&lt;=m; ++i)
-	{
-		scanf(&quot;%d%d%d&quot;, &amp;a, &amp;b, &amp;c);
-		add_edge(a, b, c);
-	}
-	sort(edge+1, edge+edge_num+1, cmp);
-	int ans = -0x7ffffff, k = 0;
-	int flag = 0;
-	for(int i=1; i&lt;=m; ++i)
-	{
-		int t1 = getf(edge[i].u), t2 = getf(edge[i].v);
-		if(t1 != t2)
-		{
-			merge(t1, t2);
-			if(ans &lt; edge[i].w)
-				ans = edge[i].w;
-			++k;
-		}
-		if(k == n-1)
-		{
-			flag = 1;
-			break;
-		}
-	}
-	if(!flag)
-		printf(&quot;-1&quot;);
-	else
-		printf(&quot;%d&quot;, ans);
-	return 0;
+if(hash[p]==x)
+{
+printf(&quot;%d&quot;,hash[p]);
+break;
 }
-
-bool cmp(const node &amp;a, const node &amp;b)
+if(hash[p]==0)
 {
-	return a.w &lt; b.w;
+hash[p]=x;
+break;
 }
-void add_edge(int a, int b, int c)
-{
-	edge[++edge_num].u = a;
-	edge[edge_num].v = b;
-	edge[edge_num].w = c;
-	return;
-}
-void merge(int x, int y)
-{
-	int t1 = getf(x), t2 = getf(y);
-	if(t1 != t2)
-		f[t2] = t1;
-	return;
-}
-int getf(int x)
-{
-	if(f[x]!=x &amp;&amp; f[x]!=0)
-		return f[x] = getf(f[x]);
-	return x;
+if(hash[p]!=x&amp;&amp;hash[p]!=0)
+++p;
 }
 </code></pre>
-<p>代码题目 <a href="https://www.luogu.com.cn/problem/P1111" title="洛谷P1111">传送门</a></p>
 <hr>
-<h1 id="prim">Prim</h1>
+<h1 id="字符串重点">字符串（重点）</h1>
 <h2 id="原理-2">原理</h2>
 <blockquote>
-<p>类似<mark>Dijkstra</mark>的<strong>松弛</strong>， 依次将白点变为蓝点</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mi>A</mi><mi>S</mi><msub><mi>H</mi><mi>C</mi></msub><mo>=</mo><mo>(</mo><msub><mi>C</mi><mn>1</mn></msub><mo>∗</mo><msup><mi>b</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>∗</mo><msup><mi>b</mi><mrow><mi>m</mi><mo>−</mo><mn>2</mn></mrow></msup><mo>+</mo><mo>…</mo><mo>…</mo><mo>+</mo><msub><mi>C</mi><mi>m</mi></msub><mo>∗</mo><msup><mi>b</mi><mn>0</mn></msup><mo>)</mo><mi>m</mi><mi>o</mi><mi>d</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">HASH_C = (C_1*b^{m-1}+C_2*b^{m-2}+ …… +C_m*b^0) mod h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">C</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">m</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">m</span><span class="mbin mtight">−</span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord mathdefault">m</span><span class="mord mathdefault">o</span><span class="mord mathdefault">d</span><span class="mord mathdefault">h</span></span></span></span><strong>b，h互质</strong><br>
+字符处理：映射</p>
 <blockquote>
-<p>需要一个数组<strong>打标记</strong>，用<em>k</em>记录最小出边（初始化<code>k = -1</code>)</p>
+<p>A-&gt;1,B-&gt;2,……,a-&gt;27,b-&gt;28</p>
 </blockquote>
-<p>每次将dis数组更新为当前节点的所有出边的权值<br>
-找拥有最小权值的出边<em>k</em><br>
-打标记<code>book[k] = 1;</code><br>
-以<em>k</em>节点重复第一步</p>
-<p>求和dis数组，即为最短路径和<br>
-时间复杂度：O(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>N</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">N^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>)</p>
 </blockquote>
-<h2 id="模版-2">模版</h2>
+<blockquote>
+<p>匹配一段字符串：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mi>A</mi><mi>S</mi><msub><mi>H</mi><mi>D</mi></msub><mo>=</mo><mi>H</mi><mi>A</mi><mi>S</mi><msub><mi>H</mi><mrow><mi>C</mi><mo separator="true">,</mo><mi>k</mi><mo>+</mo><mi>l</mi><mi>e</mi><mi>n</mi><mi>D</mi></mrow></msub><mo>−</mo><mi>H</mi><mi>A</mi><mi>S</mi><msub><mi>H</mi><mrow><mi>C</mi><mo separator="true">,</mo><mi>k</mi></mrow></msub><mo>∗</mo><msup><mi>b</mi><mrow><mi>l</mi><mi>e</mi><mi>n</mi><mi>D</mi></mrow></msup></mrow><annotation encoding="application/x-tex">HASH_D = HASH_{C,k+lenD}-HASH_{C,k}*b^{lenD}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">D</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">C</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mbin mtight">+</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">e</span><span class="mord mathdefault mtight">n</span><span class="mord mathdefault mtight" style="margin-right:0.02778em;">D</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">C</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">e</span><span class="mord mathdefault mtight">n</span><span class="mord mathdefault mtight" style="margin-right:0.02778em;">D</span></span></span></span></span></span></span></span></span></span></span></span></p>
+<blockquote>
+<p><strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mi>A</mi><mi>S</mi><msub><mi>H</mi><mrow><mi>C</mi><mo separator="true">,</mo><mi>k</mi></mrow></msub></mrow><annotation encoding="application/x-tex">HASH_{C,k}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">C</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>表示字符串C前k个字符的哈希值</strong></p>
+<blockquote>
+<p>乘以lenD原因如图，自行理解：<br>
+<img src="https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/%E4%B9%98%E4%BB%A5lenD%E7%9A%84%E5%8E%9F%E5%9B%A0.png" alt="image" loading="lazy"></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="同余">同余</h2>
+<p>(a+b) mod c = (a mod c + b mod c) mod c<br>
+ab mod c = (a mod c * b mod c) mod c</p>
+<h2 id="模版">模版</h2>
+<p>求T组大写字符串中s1在s2中出现了几次：</p>
 <pre><code class="language-cpp">#include&lt;cstdio&gt;
 #include&lt;cstring&gt;
 using namespace std;
-int g[102][102];
-int minn[102];
-int book[102] = {};
+typedef unsigned long long ULL;
+ULL power[1000002];
+ULL T, b = 2;
+char s1[10002], s2[1000002];
+ULL sum[1000002], s;
 int main()
 {
-	int n;
-	scanf(&quot;%d&quot;, &amp;n);
-	for(int i=1; i&lt;=n; ++i)
-		for(int j=1; j&lt;=n; ++j)
-			scanf(&quot;%d&quot;, &amp;g[i][j]);
-	memset(minn, 0x7f, sizeof(minn));
-	minn[1] = 0;
-	memset(book, 0, sizeof(book));
-	for(int i=1; i&lt;=n; ++i)
+	power[0] = 1;
+	for(int i=1; i&lt;1000000; ++i)
+		power[i] = power[i-1]*b;
+	scanf(&quot;%lld&quot;, &amp;T);
+	while(T--)
 	{
-		int k = 0;
-		for(int j=1; j&lt;=n; ++j)
-			if(!book[j] &amp;&amp; (minn[j]&lt;minn[k]))
-				k = j;
-		book[k] = 1;
-		for(int j=1; j&lt;=n; ++j)
-			if(!book[j] &amp;&amp; (g[k][j]&lt;minn[j]))
-				minn[j] = g[k][j];
+		scanf(&quot;%s%s&quot;, s1+1, s2+1);
+		int n = strlen(s1+1), m = strlen(s2+1);
+		sum[0] = 0;
+		for(int i=1; i&lt;=m; ++i)
+			sum[i] = sum[i-1]*b+(ULL)(s2[i]-'A'+1);
+		s = 0;
+		for(int i=1; i&lt;=n; ++i)
+			s = s*b+(ULL)(s1[i]-'A'+1);
+		int ans = 0;
+		for(int i=0; i&lt;=m-n; ++i)
+			if(s==sum[i+n]-sum[i]*power[n])
+				++ans;
+		printf(&quot;%d\n&quot;, ans);
+		
 	}
-	int ans = 0;
-	for(int i=1; i&lt;=n; ++i)
-		ans += minn[i];
-	printf(&quot;%d&quot;, ans);
 	return 0;
 }
 </code></pre>
-<p>代码题目<a href="http://ybt.ssoier.cn:8088/problem_show.php?pid=1349" title="一本通1349">传送门</a></p>
-<hr>
-<h1 id="选择">选择</h1>
-<p><strong>Prim</strong>适合<mark>稠密图</mark>，<strong>Kruskal</strong>适合<mark>稀疏图</mark></p>
-<p>本蒟蒻小声BB：<s>最小生成树其实不难</s>  欢迎来我的<a href="https://diego3893.github.io/" title="Diego's Blog">博客</a></p>
 
                                 </div>
                             </div>
@@ -422,8 +354,8 @@ int main()
                             <div class="post-copyright">
                                 作者:
                                 Diego&#39;s Blog<br>永久链接:
-                                    <a href="https://diego3893.github.io/post/zui-xiao-sheng-cheng-shu/" title="最小生成树">
-                                        https://diego3893.github.io/post/zui-xiao-sheng-cheng-shu/
+                                    <a href="https://diego3893.github.io/post/ha-xi-suan-fa/" title="哈希算法">
+                                        https://diego3893.github.io/post/ha-xi-suan-fa/
                                     </a><br> 协议: MIT License
                             </div>
                         </div>
@@ -446,17 +378,10 @@ int main()
                 </style>
                 <div class="lite-item nearby-article">
                     
-                        <div class="nearby-article-left" style="padding: 10px;">
-                            <a class="prev" rel="prev" href="https://diego3893.github.io/post/github-gridea-mian-fei-da-jian-jing-tai-bo-ke/">
-                                <i class="fa fa-chevron-left"></i>
-                                github + Gridea免费搭建静态博客
-                            </a>
-                        </div>
-                        
                             
                                 <div class="nearby-article-right" style="padding: 10px;">
-                                    <a class="next" rel="next" href="https://diego3893.github.io/post/bing-cha-ji/">
-                                        并查集<i class="fa fa-chevron-right"></i>
+                                    <a class="next" rel="next" href="https://diego3893.github.io/post/mian-fei-cdn/">
+                                        免费CDN<i class="fa fa-chevron-right"></i>
                                     </a>
                                 </div>
                                 
@@ -465,9 +390,9 @@ int main()
                 <span style="margin-right:15px">
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
-                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/zui-xiao-sheng-cheng-shu/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://diego3893.github.io/post/zui-xiao-sheng-cheng-shu/&sharesource=qzone&title=最小生成树&pics=https://diego3893.github.io/images/avatar.png?v=1584189711364&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://diego3893.github.io/post/zui-xiao-sheng-cheng-shu/&sharesource=weibo&title=最小生成树 + " - " + &pic="https://diego3893.github.io/images/avatar.png?v=1584189711364"><i class="fa fa-weibo "></i></a>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/ha-xi-suan-fa/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://diego3893.github.io/post/ha-xi-suan-fa/&sharesource=qzone&title=哈希算法&pics=https://diego3893.github.io/images/avatar.png?v=1584189711364&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://diego3893.github.io/post/ha-xi-suan-fa/&sharesource=weibo&title=哈希算法 + " - " + &pic="https://diego3893.github.io/images/avatar.png?v=1584189711364"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             
