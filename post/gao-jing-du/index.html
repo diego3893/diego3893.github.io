@@ -217,16 +217,16 @@
                     <article class="post post-type real-post">
                         <header class="post-type-header">
                             
-                                <div class="thumbnail-link" style="background-image: url('https://s2.ax1x.com/2020/02/28/3r1xYQ.jpg')"></div>
-                                
+                                    <div class="thumbnail-link" style="background-color: transparent;"></div>
+                                    
                                         <div class="thumbnail-shadow">
                                             <h1 class="post-title">
-                                                快速幂
+                                                高精度
                                             </h1>
                                             <div class="post-info">
                                                 <span class="post-category"><i class="Card Card-novel"></i>
                                         
-                                            <a href="https://diego3893.github.io/tag/Nnc60LLfD/" rel="category">数学</a>
+                                            <a href="https://diego3893.github.io/tag/a9JlscXkj/" rel="category">字符串</a>
                                             
                                             <a href="https://diego3893.github.io/tag/dJ3WAsaqR/" rel="category">算法</a>
                                             
@@ -241,53 +241,83 @@
                                                     </span>&nbsp;•&nbsp;
 
                                                     <span class="post-readtime">阅读时间:
-                                            <a href="#">0.8分</a></span>
+                                            <a href="#">1.5分</a></span>
                                                     <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
                                             <img alt="Diego&#39;s Blog" src="https://diego3893.github.io/images/avatar.png?v=1584192161056" srcset="https://diego3893.github.io/images/avatar.png?v=1584192161056" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://diego3893.github.io" title="由Diego&#39;s Blog发布" rel="author">Diego&#39;s Blog<i class="Card Card-certify"></i></a></span>
-                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2020-02-28</span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2020-03-14</span>
                                         </div>
                         </header>
                         <div class="post-main post-type-main">
                             <div class="post-content">
                                 <div class="post-content-real">
-                                    <h1 id="原理">原理</h1>
-<blockquote>
-<p>在指数b大于0时：</p>
-<blockquote>
-<p>若b为奇数，先将ans单独乘以底数a并mod m， 再将底数平方并mod m<br>
-若b为偶数，将底数平方并mod m</p>
-</blockquote>
-<p>b右移一位，即b/2<br>
-时间复杂度：O(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">logn</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span></span></span></span>)<br>
-数学理解很简单，位运算参考<a href="https://jingyan.baidu.com/article/1612d5008ff5b7e20f1eee4c.html">这个</a></p>
-</blockquote>
-<h1 id="模版">模版</h1>
+                                    <h1 id="原理竖式计算">原理：竖式计算</h1>
+<h1 id="加减法">加/减法</h1>
+<h2 id="模版加减差不多">模版（加，减差不多）</h2>
 <pre><code class="language-cpp">#include&lt;cstdio&gt;
+#include&lt;iostream&gt;
+#include&lt;cstring&gt;
 using namespace std;
-typedef long long ll;
-ll qpower(ll, ll, ll);
+struct sd{
+	int d[300], len;
+}a, b;
+sd read_num();
+sd Plus(sd, sd);
+void print(sd);
 int main()
 {
-	ll a, b, m;
-	scanf(&quot;%lld%lld%lld&quot;, &amp;a, &amp;b, &amp;m);
-	printf(&quot;%lld&quot;, qpower(a, b, m));
- } 
-ll qpower(ll a, ll b, ll m)
+	a = read_num(), b = read_num();
+	a = Plus(a, b);
+	print(a);
+	return 0;
+}
+sd read_num()
 {
-	ll ans = 1, res = a;
-	while(b &gt; 0)
+	sd x;
+	memset(x.d, 0, sizeof(x.d));
+	char s[300];
+	cin &gt;&gt; s;
+	x.len = strlen(s);
+	int k = 0;
+	for(int i=x.len-1; i&gt;=0; --i)
+		x.d[k++] = s[i]-'0';
+	return x;
+}
+sd Plus(sd x, sd y)
+{
+	sd t;
+	memset(t.d, 0, sizeof(t.d));
+	int len = x.len&gt;y.len?x.len:y.len;
+	//printf(&quot;%d\n&quot;, len);
+	for(int i=0; i&lt;len; ++i)
 	{
-		if(b &amp; 1)
-			ans = ans*res%m;
-		res = res*res%m;
-		b &gt;&gt;= 1;
+		//printf(&quot;%d %d\n&quot;, x.d[i], y.d[i]);
+		t.d[i] += x.d[i]+y.d[i];
+		//printf(&quot;%d &quot;, (int)t.d[i]);
+		t.d[i+1] = t.d[i]/10;
+		//printf(&quot;%d &quot;, (int)t.d[i+1]);
+		t.d[i] = t.d[i]%10;
+		//printf(&quot;%d\n&quot;, (int)t.d[i]);
 	}
-	return ans;
+	if(t.d[len] &gt; 0)
+		t.len = len+1;
+	else
+		t.len = len;
+	return t;
+}
+void print(sd x)
+{
+	for(int i=x.len-1; i&gt;=0; --i)
+		printf(&quot;%d&quot;, (int)x.d[i]);
+	return;
 }
 </code></pre>
+<hr>
+<h1 id="乘法">乘法</h1>
+<hr>
+<p>#除法</p>
 
                                 </div>
                             </div>
@@ -305,8 +335,8 @@ ll qpower(ll a, ll b, ll m)
                             <div class="post-copyright">
                                 作者:
                                 Diego&#39;s Blog<br>永久链接:
-                                    <a href="https://diego3893.github.io/post/kuai-su-mi/" title="快速幂">
-                                        https://diego3893.github.io/post/kuai-su-mi/
+                                    <a href="https://diego3893.github.io/post/gao-jing-du/" title="高精度">
+                                        https://diego3893.github.io/post/gao-jing-du/
                                     </a><br> 协议: MIT License
                             </div>
                         </div>
@@ -329,17 +359,10 @@ ll qpower(ll a, ll b, ll m)
                 </style>
                 <div class="lite-item nearby-article">
                     
-                        <div class="nearby-article-left" style="padding: 10px;">
-                            <a class="prev" rel="prev" href="https://diego3893.github.io/post/cban-win-xp/">
-                                <i class="fa fa-chevron-left"></i>
-                                c++版WIN XP ??!
-                            </a>
-                        </div>
-                        
                             
                                 <div class="nearby-article-right" style="padding: 10px;">
-                                    <a class="next" rel="next" href="https://diego3893.github.io/post/er-fen-cha-zhao/">
-                                        二分查找<i class="fa fa-chevron-right"></i>
+                                    <a class="next" rel="next" href="https://diego3893.github.io/post/ha-xi-suan-fa/">
+                                        哈希算法<i class="fa fa-chevron-right"></i>
                                     </a>
                                 </div>
                                 
@@ -348,9 +371,9 @@ ll qpower(ll a, ll b, ll m)
                 <span style="margin-right:15px">
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
-                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/kuai-su-mi/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://diego3893.github.io/post/kuai-su-mi/&sharesource=qzone&title=快速幂&pics=https://diego3893.github.io/images/avatar.png?v=1584192161056&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://diego3893.github.io/post/kuai-su-mi/&sharesource=weibo&title=快速幂 + " - " + &pic="https://diego3893.github.io/images/avatar.png?v=1584192161056"><i class="fa fa-weibo "></i></a>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/gao-jing-du/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://diego3893.github.io/post/gao-jing-du/&sharesource=qzone&title=高精度&pics=https://diego3893.github.io/images/avatar.png?v=1584192161056&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://diego3893.github.io/post/gao-jing-du/&sharesource=weibo&title=高精度 + " - " + &pic="https://diego3893.github.io/images/avatar.png?v=1584192161056"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             

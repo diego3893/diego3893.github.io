@@ -213,165 +213,55 @@
 </header>
         <div id="main">
             <div id="main-part">
-                <div class="lite-item">
-                    <article class="post post-type real-post">
-                        <header class="post-type-header">
-                            
-                                <div class="thumbnail-link" style="background-image: url('https://s2.ax1x.com/2020/02/28/3r1xYQ.jpg')"></div>
-                                
-                                        <div class="thumbnail-shadow">
-                                            <h1 class="post-title">
-                                                快速幂
-                                            </h1>
-                                            <div class="post-info">
-                                                <span class="post-category"><i class="Card Card-novel"></i>
+                <ul class="posts-list">
+                    <li class="lite-item">
+                        <article class="post post-type">
+                            <div class="post-main post-type-main">
+                                <div class="post-content">
+                                    <div class="post-content-real">
                                         
-                                            <a href="https://diego3893.github.io/tag/Nnc60LLfD/" rel="category">数学</a>
                                             
-                                            <a href="https://diego3893.github.io/tag/dJ3WAsaqR/" rel="category">算法</a>
-                                            
-                                            <a href="https://diego3893.github.io/tag/Gr5YErY6j/" rel="category">提高组笔记</a>
-                                            
-                                    </span>&nbsp;•&nbsp;
-                                                <span class="post-view">
-                                        
-                                            <i class="Card Card-view"></i>&nbsp;
-                                            <span data-hk-page="current"> - </span>
+                                                <h3>
+                                                    2020
+                                                </h3>
                                                 
-                                                    </span>&nbsp;•&nbsp;
+                                                    
 
-                                                    <span class="post-readtime">阅读时间:
-                                            <a href="#">0.8分</a></span>
-                                                    <span class="post-edit"></span></div>
-                                        </div>
-                                        <div class="post-relative">
-                                            <img alt="Diego&#39;s Blog" src="https://diego3893.github.io/images/avatar.png?v=1584192161056" srcset="https://diego3893.github.io/images/avatar.png?v=1584192161056" class="avatar avatar-100 photo" width="100" height="100">
-                                            <span class="post-type-author"><a href="https://diego3893.github.io" title="由Diego&#39;s Blog发布" rel="author">Diego&#39;s Blog<i class="Card Card-certify"></i></a></span>
-                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2020-02-28</span>
-                                        </div>
-                        </header>
-                        <div class="post-main post-type-main">
-                            <div class="post-content">
-                                <div class="post-content-real">
-                                    <h1 id="原理">原理</h1>
-<blockquote>
-<p>在指数b大于0时：</p>
-<blockquote>
-<p>若b为奇数，先将ans单独乘以底数a并mod m， 再将底数平方并mod m<br>
-若b为偶数，将底数平方并mod m</p>
-</blockquote>
-<p>b右移一位，即b/2<br>
-时间复杂度：O(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">logn</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span></span></span></span>)<br>
-数学理解很简单，位运算参考<a href="https://jingyan.baidu.com/article/1612d5008ff5b7e20f1eee4c.html">这个</a></p>
-</blockquote>
-<h1 id="模版">模版</h1>
-<pre><code class="language-cpp">#include&lt;cstdio&gt;
-using namespace std;
-typedef long long ll;
-ll qpower(ll, ll, ll);
-int main()
-{
-	ll a, b, m;
-	scanf(&quot;%lld%lld%lld&quot;, &amp;a, &amp;b, &amp;m);
-	printf(&quot;%lld&quot;, qpower(a, b, m));
- } 
-ll qpower(ll a, ll b, ll m)
-{
-	ll ans = 1, res = a;
-	while(b &gt; 0)
-	{
-		if(b &amp; 1)
-			ans = ans*res%m;
-		res = res*res%m;
-		b &gt;&gt;= 1;
-	}
-	return ans;
-}
-</code></pre>
+                                                        <article class="archive-item">
+                                                            <a class="archive-item-link" href="https://diego3893.github.io/post/gao-jing-du/">
+                                                                高精度
+                                                            </a>
+                                                            <span class="archive-item-date">2020-03-14 </span>
+                                                        </article>
+                                                        
+                                                            
+                                                    
 
-                                </div>
-                            </div>
-                            
-                                <div class="reward ">
-                                    <div class="reward-button ">&yen;
-                                        <span class="reward-code "> 
-                                            <span class="alipay-code "> <img class="alipay-img " alt = "support " src="https://blog.itjoker.cn/alipay.jpg"><b>Alipay</b>                                                            </span>
-                                        <span class="wechat-code "> <img alt ="support " class="wechat-img " src="https://blog.itjoker.cn/wechat.jpg"><b>Wechat</b> </span> </span>
+                                                        <article class="archive-item">
+                                                            <a class="archive-item-link" href="https://diego3893.github.io/post/ha-xi-suan-fa/">
+                                                                哈希算法
+                                                            </a>
+                                                            <span class="archive-item-date">2020-03-14 </span>
+                                                        </article>
+                                                        
+                                                            
+                                                                
+                                    </div>
+                                    <div class="pagination-container">
+                                        
+                                                                
+                                                                        
+                                                                                
                                     </div>
                                 </div>
-                                
-                        </div>
-                        <div class="post-footer">
-                            <div class="post-copyright">
-                                作者:
-                                Diego&#39;s Blog<br>永久链接:
-                                    <a href="https://diego3893.github.io/post/kuai-su-mi/" title="快速幂">
-                                        https://diego3893.github.io/post/kuai-su-mi/
-                                    </a><br> 协议: MIT License
                             </div>
-                        </div>
-                    </article>
-                </div>
-                <style>
-                    .prev:hover {
-                        color: #2d96bd;
-                        text-decoration: none;
-                        text-align: center;
-                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-                    }
-                    
-                    .next:hover {
-                        color: #2d96bd;
-                        text-decoration: none;
-                        text-align: center;
-                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-                    }
-                </style>
-                <div class="lite-item nearby-article">
-                    
-                        <div class="nearby-article-left" style="padding: 10px;">
-                            <a class="prev" rel="prev" href="https://diego3893.github.io/post/cban-win-xp/">
-                                <i class="fa fa-chevron-left"></i>
-                                c++版WIN XP ??!
-                            </a>
-                        </div>
-                        
-                            
-                                <div class="nearby-article-right" style="padding: 10px;">
-                                    <a class="next" rel="next" href="https://diego3893.github.io/post/er-fen-cha-zhao/">
-                                        二分查找<i class="fa fa-chevron-right"></i>
-                                    </a>
-                                </div>
+                            <div class="post-footer">
                                 
-                </div>
-                <!--Share-->
-                <span style="margin-right:15px">
-    <i class="post-share"></i>
-    <span>&#x5206;&#x4EAB;:</span>
-                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/kuai-su-mi/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://diego3893.github.io/post/kuai-su-mi/&sharesource=qzone&title=快速幂&pics=https://diego3893.github.io/images/avatar.png?v=1584192161056&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://diego3893.github.io/post/kuai-su-mi/&sharesource=weibo&title=快速幂 + " - " + &pic="https://diego3893.github.io/images/avatar.png?v=1584192161056"><i class="fa fa-weibo "></i></a>
-                </span>
-                
-                                            
-                                                <div id="vlaine-comment"></div>
-<script type="application/javascript" src="https://unpkg.com/valine"></script>
-<script type="application/javascript">
-  new Valine({
-    el: '#vlaine-comment',
-    appId: 'Vs9HajoWOqzzn7MR5R09X8sU-gzGzoHsz',
-    appKey: 'twuGD8G2X8bLhyet9rrIqavh',
-    pageSize: 10,
-    notify: false,
-    avatar: 'mp',
-    verify: true,
-    placeholder: '来都来了，不妨评论一下',
-    visitor: true,
-    highlight: true,
-    recordIP: true,
-  })
-</script>
-                                                    
+                                        
+                            </div>
+                        </article>
+                    </li>
+                </ul>
             </div>
             <div id="sidebar">
     <ul>
@@ -605,7 +495,6 @@ ll qpower(ll a, ll b, ll m)
     </ul>
 </div>
         </div>
-
 </body>
 <footer id="foot">
     <a id="back-to-top" href="#"><i class="Card Card-top"></i></a>
@@ -649,18 +538,5 @@ ll qpower(ll a, ll b, ll m)
         App.outputlog();
     </script>
 </footer>
-    <script>
-        renderMathInElement(document.body, {
-            delimiters: [{
-                left: "$$",
-                right: "$$",
-                display: true
-            }, {
-                left: "$",
-                right: "$",
-                display: false
-            }]
-        });
-    </script>
 
 </html>
