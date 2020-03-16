@@ -1890,10 +1890,10 @@ blockquote:before {
   font-weight: bold;
 }
 body {
-      background-color: #eee;
+      background-color: #a5d8ff;
     }
     .nav-toggle .line {
-      background-color: #eee !important;
+      background-color: #a5d8ff !important;
     }.header {
         width: 960px;
         margin: 0 auto;
