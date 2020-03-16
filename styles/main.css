@@ -1982,29 +1982,29 @@ body {
       }.pisces .sidebar, .gemini .sidebar {
         right: 0;
       }.markdownIt-TOC a {
-      color: #eee;
-      border-bottom-color: #eee;
+      color: #1c7ed6;
+      border-bottom-color: #1c7ed6;
     }.markdownIt-TOC a:hover {
-      color: #fff;
-      border-bottom-color: #fff;
+      color: #7048e8;
+      border-bottom-color: #7048e8;
     }.active-current > a {
-      color: #fc6423 !important;
-      border-bottom-color: #fc6423 !important;
+      color: #ff8787 !important;
+      border-bottom-color: #ff8787 !important;
     }
     .sidebar-title-active {
-      color: #fc6423 !important;
-      border-bottom-color: #fc6423 !important;
+      color: #ff8787;
+      border-bottom-color: #ff8787;
     }
     .sidebar-title-item:hover {
-      color: #fc6423 !important;
+      color: #ff8787 !important;
     }
     .active-show > a {
-      color: #fc6423;
-      border-bottom-color: #fc6423;
+      color: #ff8787;
+      border-bottom-color: #ff8787;
     }
     .active-hidden > a {
-      color: #fc6423;
-      border-bottom-color: #fc6423;
+      color: #ff8787;
+      border-bottom-color: #ff8787;
     }
       .site-meta {
         background: #000 !important;
@@ -2026,4 +2026,6 @@ body {
       background: #FFF;
     }.box-scale > #landlord {
       transform: scale([0, 1]);
+    }.box-shadow-wrapper {
+      padding: 10px;
     }
