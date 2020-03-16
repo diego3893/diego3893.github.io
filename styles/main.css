@@ -1904,66 +1904,66 @@ body {
         margin: 0 auto;
       }
     body {
-      color: #555;
+      color: #495057;
     }
     .next-md-body {
-      color: #555;
+      color: #495057;
     }
     .next-md-body h1, .next-md-body h2 {
-      border-bottom-color: #555;
+      border-bottom-color: #495057;
     }
     .archive-timeline-box::after, .tag-timeline-wrapper::after {
       background: #eee;
     }h1, h2, h3, h4, h5, h6 {
-      color: #555;
+      color: #212529;
     }
     
     .archive-timeline-title::before {
-      background-color: #555;
+      background-color: #212529;
     }
     
     .post-title-link::before {
-      background-color: #555;
+      background-color: #212529;
     }
     
     .node-title::before {
-      background-color: #555;
+      background-color: #212529;
     }.bg-color {
-      background-color: #fff;
+      background-color: #e7f5ff;
     }a {
-      color: #555;
+      color: #fd7e14;
     }
     
     .next-md-body a, .friends-box a  {
-      color: #555;
-      border-bottom: 1px solid #555;
+      color: #fd7e14;
+      border-bottom: 1px solid #fd7e14;
     }a:hover {
-      color: #222;
+      color: #f03e3e;
     }
     
     .archive-timeline-box .tag-node:hover::before {
-      background-color: #222;
+      background-color: #f03e3e;
     }
     
     .markdownIt-TOC a:hover {
-      color: #222;
-      border-bottom-color: #222;
+      color: #f03e3e;
+      border-bottom-color: #f03e3e;
     }
 
     .next-md-body a:hover, .friends-box a:hover {
-      color: #222;
-      border-bottom-color: #222;
+      color: #f03e3e;
+      border-bottom-color: #f03e3e;
     }
       .nav-item a {
         color:  #555;
       }.nav-item a:hover {
         color: #222;
       }.nav-item-active {
-      background: #f9f9f9;
+      background: #ffc078;
     }
 
     .nav-item:hover {
-      background: #f9f9f9;
+      background: #ffc078;
       color: rgba(0, 0, 0, 0.98);
     }.site-author-image {
       border-radius: 50%;
@@ -2007,23 +2007,23 @@ body {
       border-bottom-color: #ff8787;
     }
       .site-meta {
-        background: #000 !important;
+        background: #228be6 !important;
       }
       .head-top-line {
-        background: #000 !important;
+        background: #228be6 !important;
       }
     .brand {
-      background: #000;
+      background: #212529;
     }
     
       .brand {
         font-weight: bold;
         transform: scale([1, 3]);
       }.main-title {
-      color: #FFF;
+      color: #f8f9fa;
     }
     .mist .site-title i {
-      background: #FFF;
+      background: #f8f9fa;
     }.box-scale > #landlord {
       transform: scale([0, 1]);
     }.box-shadow-wrapper {
