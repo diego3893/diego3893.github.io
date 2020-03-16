@@ -4,11 +4,11 @@
       <meta charset="UTF-8"/>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="keywords" content="Gridea静态个人博客">
+<meta name="keywords" content="Diego">
 <meta name="description" content="Stay hungry, Stay foolish">
 <meta name="theme-color" content="#000">
 <title>Diego&#39;s Blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1584342668138">
+<link rel="shortcut icon" href="/favicon.ico?v=1584349773803">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
 
@@ -82,15 +82,6 @@ var _hmt = _hmt || [];
               
                 <a href="/" target="_self">
                   <i class="fa fa-home"></i> 🎈首页
-                </a>
-              
-            </li>
-          
-            <li class="nav-item ">
-              
-              
-                <a href="/posts" target="_self">
-                  <i class="fa fa-globe"></i> 📝文章列表
                 </a>
               
             </li>
@@ -221,10 +212,53 @@ var _hmt = _hmt || [];
     </div>
   
 
-  <div class="sidebar-item">
-    
-  </div>
 
+  <div class="sidebar-item right-motion sidebar-item-friends">
+    <p class="friends-title"><i class="fa fa-globe"></i> 友链</p>
+    <div class="friends-box">
+      
+        <p>
+          <a href="http://acg17.com">【ACG17 】</a>
+        </p>
+      
+        <p>
+          <a href="https://blog.itjoker.cn">【ITJoker 】</a>
+        </p>
+      
+        <p>
+          <a href="https://tangkaichuan.cn">【I&#39;m KT 】</a>
+        </p>
+      
+        <p>
+          <a href="https://www.wubin.design">【BruceWu 】</a>
+        </p>
+      
+        <p>
+          <a href="https://winterstarhu.github.io">【WinterStar&#39;s Blog 】</a>
+        </p>
+      
+        <p>
+          <a href="https://mlxxs.github.io/">【lxxs 】</a>
+        </p>
+      
+        <p>
+          <a href="https://cungudafa.top">【cungudafa 】</a>
+        </p>
+      
+        <p>
+          <a href="https://www.wztlink1013.com/">【尼采般地抒情 】</a>
+        </p>
+      
+        <p>
+          <a href="https://www.huing.cn/">【虎吟 】</a>
+        </p>
+      
+        <p>
+          <a href="https://www.xiaofm.cn/">【小凡梦 】</a>
+        </p>
+      
+    </div>
+  </div>
 
 </div>
 </div>
@@ -492,6 +526,38 @@ var apiKey = landlord.dataset.key;
   
   
     
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+  <div class="aplayer" id="aplayer"></div>
+  <input hidden id="player_cover" value="" />
+  <div class="music-list">
+  
+  </div>
+  <script>
+  let musics = document.querySelector('.music-list').children;
+  let mediaMusic = [];
+  let cover = document.querySelector('#player_cover').value;
+  for (let i = 0; i < musics.length; i++) {
+    let item = musics[i];
+    let splits = item.value.split(',');
+    mediaMusic.push({
+      name: splits[0],
+      artist: splits[1],
+      url: splits[2],
+      lrc: splits[3],
+      cover: cover
+    });
+  }
+  const ap = new APlayer({
+      container: document.getElementById('aplayer'),
+      fixed: true,
+      lrcType: 3,
+      listFolded: false,
+      listMaxHeight: 90,
+      audio: mediaMusic
+  });
+  </script>
+
 
   
 </div>
