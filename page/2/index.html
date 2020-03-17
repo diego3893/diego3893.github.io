@@ -1,1033 +1,1111 @@
 <!DOCTYPE html>
-<html id="bg">
+<html>
+  <head>
+      <meta charset="UTF-8"/>
 
-<head>
-    <meta charset="utf-8" />
-<!--
-    * @Theme Card
-    *
-    * @author admin@itjoker.cn
-    * @link https://blog.itjoker.cn
--->
-
-<title>
-    Diego&#39;s Blog
-</title>
-<!--[if lt IE 9]><script src="//cdn.bootcss.com/html5shiv/r29/html5.js"></script><![endif]-->
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-<meta http-equiv="x-dns-prefetch-control" content="on">
-<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-<meta name="author" content="Diego&#39;s Blog">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="keywords" content="Diego">
 <meta name="description" content="Stay hungry, Stay foolish">
-<meta name="keywords" content="OIer,蒟蒻,沉迷学习">
-<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/jquery@3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.12/CDN/js/Card/prism.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.12/CDN/css/Card/prism.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css">
-<script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/contrib/auto-render.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/Card/script.min.js"></script>
-<!--<script async src="https://diego3893.github.io/media/js/script.min.js"></script>-->
-<!--<link rel="stylesheet" href="https://diego3893.github.io/media/css/main.min.css" />-->
-<link rel="stylesheet" href="https://diego3893.github.io/styles/main.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.20/CDN/css/Card/main.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.19/CDN/css/Card/iconfont.css" />
-<!--link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_410989_wuhl0k5ojvf.css" /-->
-<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/love.min.js"></script>
+<meta name="theme-color" content="#228be6">
+<title>Diego&#39;s Blog</title>
+<link rel="shortcut icon" href="/favicon.ico?v=1584403619320">
+<link rel="stylesheet" href="/styles/main.css">
+<link rel="stylesheet" href="/media/css/gemini.css">
 
-    <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/hit-kounter-lc-0.3.0.js"></script>
-    <script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
-    
+<link rel="stylesheet" href="/media/fonts/font-awesome.css">
+<link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+<link href="/media/hljs/styles/atom-one-light.css" rel="stylesheet">  
+
+<script src="/media/hljs/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.ui.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160293821-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-160293821-1');
+</script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?2426c47fe3cae9f14e5452f54f0f596c";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  </head>
+  <body>
+    <div class="head-top-line"></div>
+    <div class="header-box">
+      
+<div class=" gemini">
+  <header class="header bg-color ">
+    <div class="blog-header box-shadow-wrapper bg-color " id="header">
+      <div class="nav-toggle" id="nav_toggle">
+        <div class="toggle-box">
+          <div class="line line-top"></div>
+          <div class="line line-center"></div>
+          <div class="line line-bottom"></div>
+        </div>
+      </div>
+      <div class="site-meta">       
+        <div class="site-title">
+          
+            <a href="/" class="brand">
+              <span>Diego&#39;s Blog</span>
+            </a>  
+          
+        </div>
         
-            <script>
-                (function() {
-                    var bp = document.createElement('script');
-                    var curProtocol = window.location.protocol.split(':')[0];
-                    if (curProtocol === 'https') {
-                        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-                    } else {
-                        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-                    }
-                    var s = document.getElementsByTagName("script")[0];
-                    s.parentNode.insertBefore(bp, s);
-                })();
-            </script>
-            
-                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160293821-1"></script>
-                <script>
-                    window.dataLayer = window.dataLayer || [];
-
-                    function gtag() {
-                        dataLayer.push(arguments);
-                    }
-                    gtag('js', new Date());
-                    gtag('config', 'UA-160293821-1');
-                </script>
-                
-                    <style>
-                        .Card-certify {
-                            color: #0091e4 !important;
-                        }
-                        
-                        #foot {
-                            color: #000;
-                        }
-                        
-                        #menu-item:hover {
-                            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-                            border-bottom-color: rgba(0, 0, 0, .6);
-                        }
-                        
-                        .lite-item,
-                        #header {
-                            opacity: 1;
-                        }
-                        
-                        #span {
-                            font-size: 14px;
-                        }
-                        
-                        #span_btn:hover {
-                            color: #fff;
-                            background: #0092eeee;
-                            /*linear-gradient( rgb(138, 160, 255) 30%, rgb(90, 140, 250) 70%);*/
-                        }
-                        
-                        .link_a:hover {
-                            margin-top: 10px;
-                            font-size: larger;
-                            transition: all .3s ease;
-                        }
-                        
-                        html {
-                            width: 100%;
-                            height: 100%;
-                            background-attachment: fixed;
-                            background-repeat: no-repeat;
-                        }
-                    </style>
-</head>
-
-<body>
-    <header id="header">
-    <div id="pc-menu">
-        <a id="menu-bar" class="Card Card-menu"></a>
-        <a id="menu-title" href="https://diego3893.github.io">
-            Diego&#39;s Blog
-        </a>
-        <nav id="menu-main" class="menu-main">
-            <ul>
-                
-                    <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7">
-                        <a href="/">
-                            首页
-                        </a>
-                    </li>
-                    
-                    <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7">
-                        <a href="/archives">
-                            归档
-                        </a>
-                    </li>
-                    
-                    <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7">
-                        <a href="/tags">
-                            标签
-                        </a>
-                    </li>
-                    
-                    <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7">
-                        <a href="https://travellings.now.sh/">
-                            开往-&gt;travelling
-                        </a>
-                    </li>
-                    
-                    <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7">
-                        <a href="/post/about">
-                            关于
-                        </a>
-                    </li>
-                    
-            </ul>
-        </nav>
-        <form id="gridea-search-form" class="searchform" data-update="1584367027948" action="/search/index.html">
-            <i class="Card Card-search"></i>
-            <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
-        </form>
+          <p class="subtitle">一枚OI蒟蒻的BLOG</p>
+        
+      </div>
+      <nav class="site-nav" id="site_nav">
+        <ul id="nav_ul">
+          
+            <li class="nav-item nav-item-active">
+              
+              
+                <a href="/" target="_self">
+                  <i class="fa fa-home"></i> 首页
+                </a>
+              
+            </li>
+          
+            <li class="nav-item ">
+              
+              
+                <a href="/archives" target="_self">
+                  <i class="fa fa-archive"></i> 归档
+                </a>
+              
+            </li>
+          
+            <li class="nav-item ">
+              
+              
+                <a href="/tags" target="_self">
+                  <i class="fa fa-tags"></i> 标签
+                </a>
+              
+            </li>
+          
+            <li class="nav-item ">
+              
+              
+                <a href="https://travellings.now.sh/" target="_self">
+                  <i class="fa fa-globe"></i> 开往-&gt;travelling
+                </a>
+              
+            </li>
+          
+            <li class="nav-item ">
+              
+              
+                <a href="/post/about" target="_self">
+                  <i class="fa fa-user"></i> 关于
+                </a>
+              
+            </li>
+          
+          <li class="nav-item">
+            <a>
+              <i class="fa fa-search"></i> 搜索
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <div id="mobile-menu">
-        <form id="gridea-search-form" class="mobile-searchform" data-update="1584367027948" action="/search/index.html">
-            <i class="Card Card-search"></i>
-            <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
-        </form>
-        <nav class="menu">
-            <ul style="list-style: none;">
-                
-                    <li class="page_item page-item-2">
-                        <a href="/">
-                            首页
-                        </a>
-                    </li>
-                    
-                    <li class="page_item page-item-2">
-                        <a href="/archives">
-                            归档
-                        </a>
-                    </li>
-                    
-                    <li class="page_item page-item-2">
-                        <a href="/tags">
-                            标签
-                        </a>
-                    </li>
-                    
-                    <li class="page_item page-item-2">
-                        <a href="https://travellings.now.sh/">
-                            开往-&gt;travelling
-                        </a>
-                    </li>
-                    
-                    <li class="page_item page-item-2">
-                        <a href="/post/about">
-                            关于
-                        </a>
-                    </li>
-                    
-            </ul>
-        </nav>
+  </header>
+</div>
+
+<script type="text/javascript"> 
+ 
+  let showNav = true;
+
+  let navToggle = document.querySelector('#nav_toggle'),
+  siteNav = document.querySelector('#site_nav');
+  
+  function navClick() {
+    let sideBar = document.querySelector('.sidebar');
+    let navUl = document.querySelector('#nav_ul');
+    navToggle.classList.toggle('nav-toggle-active');
+    siteNav.classList.toggle('nav-menu-active');
+    if (siteNav.classList.contains('nav-menu-active')) {
+      siteNav.style = "height: " + (navUl.children.length * 42) +"px !important";
+    } else {
+      siteNav.style = "";
+    }
+  }
+
+  navToggle.addEventListener('click',navClick);  
+</script>
     </div>
+    <div class="main-continer">
+      
+      <div class="section-layout gemini ">
+        <div class="section-layout-wrapper">
+          <div id="sidebarMeta" class="sidebar">
+    
+<div class="sidebar-wrapper box-shadow-wrapper bg-color">
+  <div class="sidebar-item">
+    <img class="site-author-image right-motion" src="https://diego3893.github.io/images/avatar.png"/>
+    <p class="site-author-name">Diego&#39;s Blog</p>
+    <p class="site-description right-motion">Stay hungry, Stay foolish</p>
+  </div>
+  <div class="sidebar-item side-item-stat right-motion">
+    <div class="sidebar-item-box">
+      <a href="/archives/">
+        
+        <span class="site-item-stat-count">18</span>
+        <span class="site-item-stat-name">文章</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="">
+        <span class="site-item-stat-count">11</span>
+        <span class="site-item-stat-name">分类</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="/tags/">
+        <span class="site-item-stat-count">11</span>
+        <span class="site-item-stat-name">标签</span>
+      </a>
+    </div>
+  </div>
+  
+    
+      <div class="sidebar-item">
+        <span class="site-item-rss">
+            <i class="fa fa-rss"></i>
+            <a href="https://diego3893.github.io/atom.xml" target="_blank">RSS</a>
+        </span>
+      </div>
+    
+  
+  
+    <div class="sidebar-item sidebar-item-social">
+      <div class="social-item">
+        
+          
+            <a href="https://github.com/diego3893?tab=repositories">
+              <i class="fa fa-github-alt"></i> github
+            </a>
+          
+            <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3013006997&amp;site=qq&amp;menu=yes">
+              <i class="fa fa-qq"></i> QQ
+            </a>
+          
+            <a href="https://space.bilibili.com/454077332">
+              <i class="fa fa-television"></i> Bilibili
+            </a>
+          
+        
+        
+      </div>
+    </div>
+  
+
+
+  <div class="sidebar-item right-motion sidebar-item-friends">
+    <p class="friends-title"><i class="fa fa-globe"></i> 友情链接</p>
+    <div class="friends-box">
+      
+        <p>
+          <a href="https://blog.itjoker.cn">【ITJoker 】</a>
+        </p>
+      
+        <p>
+          <a href="https://tangkaichuan.cn">【I&#39;m KT 】</a>
+        </p>
+      
+        <p>
+          <a href="https://www.wubin.design">【BruceWu 】</a>
+        </p>
+      
+        <p>
+          <a href="https://winterstarhu.github.io">【WinterStar&#39;s Blog 】</a>
+        </p>
+      
+        <p>
+          <a href="https://mlxxs.github.io/">【lxxs 】</a>
+        </p>
+      
+    </div>
+  </div>
+
+</div>
+</div>
+<script>
+  let sidebarMeta = document.querySelector('#sidebarMeta');
+  let scheme = 'gemini';
+  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
+  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
+    document.addEventListener('scroll', function(e) {
+      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
+        sidebarWrapper.classList.add('home-sidebar-fixed')
+      } else {
+        sidebarWrapper.classList.remove('home-sidebar-fixed')
+      }
+    });
+  }
+  </script>
+          <div class="section-box gemini">
+            <section class="section  posts-expand slide-down-in">
+              
+  <article class="post-list-box  post box-shadow-wrapper">
+    <div class="article-wrapper bg-color">
+      <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://diego3893.github.io/post/ckuai-du-shu-zi/">
+      c++快读（数字）
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2020-02-29</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+      <span class="meta-item">
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
+        
+          
+            <a href="https://diego3893.github.io/tag/dJ3WAsaqR/">
+              <span>算法</span>
+            </a>、
+          
+        
+          
+            <a href="https://diego3893.github.io/tag/Gr5YErY6j/">
+              <span>提高组笔记</span>
+            </a>
+          
+        
+      </span>
+      <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>1分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>112<span class="pc-show">字数</span></span>
+    </span>
+    
+  </div>
 </header>
-        <div id="main">
-            <div id="usercard">
-                <ul>
-                    <li class="lite-item">
-                        <div class="card-bg"></div>
-                        <div class="card-info">
-                            
-                                <img alt="Diego&#39;s Blog" src="https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/logo.jpg" srcset="https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/logo.jpg " class="avatar" style="height: 100px;">
-                                
-                                        <span class="card-info-block card-info-name">Diego&#39;s Blog&nbsp;<i
-                                class="Card Card-certify"></i></span>
-                                        <span>Stay hungry, Stay foolish</span>
-                        </div>
-                        <div class="catch-me">
-                            <a data-content="rss" data-balloon-pos="up" target="_blank" href="https://diego3893.github.io/atom.xml"><i class="fa fa-rss"></i></a>
-                            
-                                
-                                        
-                                            
-                                                
-                                                        
-                                                
-                                                        
-                                                
-                                                    <a data-content="github" data-balloon-pos="up" target="_blank" href="https://github.com/diego3893?tab=repositories"><i class="fa fa-github"></i></a>
-                                                    
-                                                        
-                                                
-                                                        
-                                                
-                                                        
-                                                
-                                                        
-                                                
-                                                        
-                                                
-                                                    <a data-content="qq" data-balloon-pos="up" target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=3013006997&amp;site=qq&amp;menu=yes"><i class="fa fa-qq"></i></a>
-                                                    
-                                                        
-                                                            
-                                                                
-                                                                    <a data-content="bilibili" data-balloon-pos="up" target="_blank" href="https://space.bilibili.com/454077332"><i class="Card Card-bilibili"></i></a>
-                                                                    
-                                                                        
-                                                                
-                                                                        
-                                                                
-                                                                        
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <div id="main-part">
-                    <ul class="posts-list">
-                        
-    <li class="lite-item">
-        <article class="post post-type">
-            <header class="post-type-header">
-                <div class="post-relative">
-                    
-                        <img alt="Diego&#39;s Blog" src="https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/logo.jpg" srcset="https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/logo.jpg " class="avatar" width="100" height="100">
-                        
-                                <span class="post-type-author">
-                    Diego&#39;s Blog
-                    <i class="Card Card-certify"></i><span class="publish-time"> - <i class="fa fa-calendar"
-                            aria-hidden="true"></i> 2020-02-29</span>
-                                </span>
-                                <h3 class="post-type-title">
-                                    <a href="https://diego3893.github.io/post/ckuai-du-shu-zi/" rel="bookmark" title="c++快读（数字）">
-                                        
-                                                c++快读（数字）
-                                    </a>
-                                </h3>
-                </div>
-            </header>
-            <div class="post-main post-type-main">
-                <div class="post-content">
-                    <div class="post-tag"></div>
-                    <div class="post-excerpt">
-                        
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                                    
-                    </div>
-                    <div class="post-category">
-                        
-                            <i class="fa fa-tags" aria-hidden="true"></i>
-                            
-                                <a href="https://diego3893.github.io/tag/dJ3WAsaqR/" rel="category">
-                                    算法
-                                        
-                                            ,
-                                            
-                                </a>
-                                
-                                <a href="https://diego3893.github.io/tag/Gr5YErY6j/" rel="category">
-                                    提高组笔记
-                                        
-                                </a>
-                                
-                                    
-                    </div>
-                </div>
-            </div>
-            <div class="post-footer">
-                <span id="span_btn" style="text-align: center;" onclick="javascript:top.location='https://diego3893.github.io/post/ckuai-du-shu-zi/'">
-                    <i class="Card Card-more-o"></i> &#x9605;&#x8BFB;
-                </span>
-                <span id="span_btn" style="text-align: center;" onclick="javascript:window.open('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/ckuai-du-shu-zi/')">
-                    <i class=" Card Card-share "></i> &#x4E8C;&#x7EF4;&#x7801;&#x5206;&#x4EAB;
-                </span>
-            </div>
-        </article>
-    </li>
+      <div class="post-body">
+        
+          
+            
+            
+          
+        
+        
+        <div class="post-button text-center">
+          <a class="btn" href="https://diego3893.github.io/post/ckuai-du-shu-zi/" rel="contents">
+            阅读全文 »
+          </a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </article>
+
+  <article class="post-list-box  post box-shadow-wrapper">
+    <div class="article-wrapper bg-color">
+      <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://diego3893.github.io/post/cban-win-xp/">
+      c++版WIN XP ??!
+    </a>
+  </h1>
+  <div class="post-meta">
     
-    <li class="lite-item">
-        <article class="post post-type">
-            <header class="post-type-header">
-                <div class="post-relative">
-                    
-                        <img alt="Diego&#39;s Blog" src="https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/logo.jpg" srcset="https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/logo.jpg " class="avatar" width="100" height="100">
-                        
-                                <span class="post-type-author">
-                    Diego&#39;s Blog
-                    <i class="Card Card-certify"></i><span class="publish-time"> - <i class="fa fa-calendar"
-                            aria-hidden="true"></i> 2020-02-28</span>
-                                </span>
-                                <h3 class="post-type-title">
-                                    <a href="https://diego3893.github.io/post/cban-win-xp/" rel="bookmark" title="c++版WIN XP ??!">
-                                        
-                                                c++版WIN XP ??!
-                                    </a>
-                                </h3>
-                </div>
-            </header>
-            <div class="post-main post-type-main">
-                <div class="post-content">
-                    <div class="post-tag"></div>
-                    <div class="post-excerpt">
-                        
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                                    
-                    </div>
-                    <div class="post-category">
-                        
-                            <i class="fa fa-tags" aria-hidden="true"></i>
-                            
-                                <a href="https://diego3893.github.io/tag/bunbgwXDf/" rel="category">
-                                    趣味
-                                        
-                                </a>
-                                
-                                    
-                    </div>
-                </div>
-            </div>
-            <div class="post-footer">
-                <span id="span_btn" style="text-align: center;" onclick="javascript:top.location='https://diego3893.github.io/post/cban-win-xp/'">
-                    <i class="Card Card-more-o"></i> &#x9605;&#x8BFB;
-                </span>
-                <span id="span_btn" style="text-align: center;" onclick="javascript:window.open('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/cban-win-xp/')">
-                    <i class=" Card Card-share "></i> &#x4E8C;&#x7EF4;&#x7801;&#x5206;&#x4EAB;
-                </span>
-            </div>
-        </article>
-    </li>
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2020-02-28</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
     
-    <li class="lite-item">
-        <article class="post post-type">
-            <header class="post-type-header">
-                <div class="post-relative">
-                    
-                        <img alt="Diego&#39;s Blog" src="https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/logo.jpg" srcset="https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/logo.jpg " class="avatar" width="100" height="100">
-                        
-                                <span class="post-type-author">
-                    Diego&#39;s Blog
-                    <i class="Card Card-certify"></i><span class="publish-time"> - <i class="fa fa-calendar"
-                            aria-hidden="true"></i> 2020-02-28</span>
-                                </span>
-                                <h3 class="post-type-title">
-                                    <a href="https://diego3893.github.io/post/kuai-su-mi/" rel="bookmark" title="快速幂">
-                                        
-                                                快速幂
-                                    </a>
-                                </h3>
-                </div>
-            </header>
-            <div class="post-main post-type-main">
-                <div class="post-content">
-                    <div class="post-tag"></div>
-                    <div class="post-excerpt">
-                        
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                                    
-                    </div>
-                    <div class="post-category">
-                        
-                            <i class="fa fa-tags" aria-hidden="true"></i>
-                            
-                                <a href="https://diego3893.github.io/tag/Nnc60LLfD/" rel="category">
-                                    数学
-                                        
-                                            ,
-                                            
-                                </a>
-                                
-                                <a href="https://diego3893.github.io/tag/dJ3WAsaqR/" rel="category">
-                                    算法
-                                        
-                                            ,
-                                            
-                                </a>
-                                
-                                <a href="https://diego3893.github.io/tag/Gr5YErY6j/" rel="category">
-                                    提高组笔记
-                                        
-                                </a>
-                                
-                                    
-                    </div>
-                </div>
-            </div>
-            <div class="post-footer">
-                <span id="span_btn" style="text-align: center;" onclick="javascript:top.location='https://diego3893.github.io/post/kuai-su-mi/'">
-                    <i class="Card Card-more-o"></i> &#x9605;&#x8BFB;
-                </span>
-                <span id="span_btn" style="text-align: center;" onclick="javascript:window.open('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/kuai-su-mi/')">
-                    <i class=" Card Card-share "></i> &#x4E8C;&#x7EF4;&#x7801;&#x5206;&#x4EAB;
-                </span>
-            </div>
-        </article>
-    </li>
+      <span class="meta-item">
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
+        
+          
+            <a href="https://diego3893.github.io/tag/bunbgwXDf/">
+              <span>趣味</span>
+            </a>
+          
+        
+      </span>
+      <span class="post-meta-divider">|</span>
     
-    <li class="lite-item">
-        <article class="post post-type">
-            <header class="post-type-header">
-                <div class="post-relative">
-                    
-                        <img alt="Diego&#39;s Blog" src="https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/logo.jpg" srcset="https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/logo.jpg " class="avatar" width="100" height="100">
-                        
-                                <span class="post-type-author">
-                    Diego&#39;s Blog
-                    <i class="Card Card-certify"></i><span class="publish-time"> - <i class="fa fa-calendar"
-                            aria-hidden="true"></i> 2020-02-28</span>
-                                </span>
-                                <h3 class="post-type-title">
-                                    <a href="https://diego3893.github.io/post/er-fen-cha-zhao/" rel="bookmark" title="二分查找">
-                                        
-                                                二分查找
-                                    </a>
-                                </h3>
-                </div>
-            </header>
-            <div class="post-main post-type-main">
-                <div class="post-content">
-                    <div class="post-tag"></div>
-                    <div class="post-excerpt">
-                        
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                                    
-                    </div>
-                    <div class="post-category">
-                        
-                            <i class="fa fa-tags" aria-hidden="true"></i>
-                            
-                                <a href="https://diego3893.github.io/tag/dJ3WAsaqR/" rel="category">
-                                    算法
-                                        
-                                            ,
-                                            
-                                </a>
-                                
-                                <a href="https://diego3893.github.io/tag/Gr5YErY6j/" rel="category">
-                                    提高组笔记
-                                        
-                                </a>
-                                
-                                    
-                    </div>
-                </div>
-            </div>
-            <div class="post-footer">
-                <span id="span_btn" style="text-align: center;" onclick="javascript:top.location='https://diego3893.github.io/post/er-fen-cha-zhao/'">
-                    <i class="Card Card-more-o"></i> &#x9605;&#x8BFB;
-                </span>
-                <span id="span_btn" style="text-align: center;" onclick="javascript:window.open('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/er-fen-cha-zhao/')">
-                    <i class=" Card Card-share "></i> &#x4E8C;&#x7EF4;&#x7801;&#x5206;&#x4EAB;
-                </span>
-            </div>
-        </article>
-    </li>
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>23分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>4129<span class="pc-show">字数</span></span>
+    </span>
     
-    <li class="lite-item">
-        <article class="post post-type">
-            <header class="post-type-header">
-                <div class="post-relative">
-                    
-                        <img alt="Diego&#39;s Blog" src="https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/logo.jpg" srcset="https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/logo.jpg " class="avatar" width="100" height="100">
-                        
-                                <span class="post-type-author">
-                    Diego&#39;s Blog
-                    <i class="Card Card-certify"></i><span class="publish-time"> - <i class="fa fa-calendar"
-                            aria-hidden="true"></i> 2020-02-28</span>
-                                </span>
-                                <h3 class="post-type-title">
-                                    <a href="https://diego3893.github.io/post/dui-pai-xu/" rel="bookmark" title="堆排序">
-                                        
-                                                堆排序
-                                    </a>
-                                </h3>
-                </div>
-            </header>
-            <div class="post-main post-type-main">
-                <div class="post-content">
-                    <div class="post-tag"></div>
-                    <div class="post-excerpt">
-                        
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                                    
-                    </div>
-                    <div class="post-category">
-                        
-                            <i class="fa fa-tags" aria-hidden="true"></i>
-                            
-                                <a href="https://diego3893.github.io/tag/Hc21XFSes/" rel="category">
-                                    图/树论
-                                        
-                                            ,
-                                            
-                                </a>
-                                
-                                <a href="https://diego3893.github.io/tag/4-8y6NRl-/" rel="category">
-                                    数据结构
-                                        
-                                            ,
-                                            
-                                </a>
-                                
-                                <a href="https://diego3893.github.io/tag/Gr5YErY6j/" rel="category">
-                                    提高组笔记
-                                        
-                                </a>
-                                
-                                    
-                    </div>
-                </div>
-            </div>
-            <div class="post-footer">
-                <span id="span_btn" style="text-align: center;" onclick="javascript:top.location='https://diego3893.github.io/post/dui-pai-xu/'">
-                    <i class="Card Card-more-o"></i> &#x9605;&#x8BFB;
-                </span>
-                <span id="span_btn" style="text-align: center;" onclick="javascript:window.open('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/dui-pai-xu/')">
-                    <i class=" Card Card-share "></i> &#x4E8C;&#x7EF4;&#x7801;&#x5206;&#x4EAB;
-                </span>
-            </div>
-        </article>
-    </li>
+  </div>
+</header>
+      <div class="post-body">
+        
+          
+            
+            
+          
+        
+        
+        <div class="post-button text-center">
+          <a class="btn" href="https://diego3893.github.io/post/cban-win-xp/" rel="contents">
+            阅读全文 »
+          </a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </article>
+
+  <article class="post-list-box  post box-shadow-wrapper">
+    <div class="article-wrapper bg-color">
+      <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://diego3893.github.io/post/kuai-su-mi/">
+      快速幂
+    </a>
+  </h1>
+  <div class="post-meta">
     
-    <li class="lite-item">
-        <article class="post post-type">
-            <header class="post-type-header">
-                <div class="post-relative">
-                    
-                        <img alt="Diego&#39;s Blog" src="https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/logo.jpg" srcset="https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/logo.jpg " class="avatar" width="100" height="100">
-                        
-                                <span class="post-type-author">
-                    Diego&#39;s Blog
-                    <i class="Card Card-certify"></i><span class="publish-time"> - <i class="fa fa-calendar"
-                            aria-hidden="true"></i> 2020-02-27</span>
-                                </span>
-                                <h3 class="post-type-title">
-                                    <a href="https://diego3893.github.io/post/zui-xiao-sheng-cheng-shu/" rel="bookmark" title="最小生成树">
-                                        
-                                                最小生成树
-                                    </a>
-                                </h3>
-                </div>
-            </header>
-            <div class="post-main post-type-main">
-                <div class="post-content">
-                    <div class="post-tag"></div>
-                    <div class="post-excerpt">
-                        
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                                    
-                    </div>
-                    <div class="post-category">
-                        
-                            <i class="fa fa-tags" aria-hidden="true"></i>
-                            
-                                <a href="https://diego3893.github.io/tag/dJ3WAsaqR/" rel="category">
-                                    算法
-                                        
-                                            ,
-                                            
-                                </a>
-                                
-                                <a href="https://diego3893.github.io/tag/Hc21XFSes/" rel="category">
-                                    图/树论
-                                        
-                                            ,
-                                            
-                                </a>
-                                
-                                <a href="https://diego3893.github.io/tag/Gr5YErY6j/" rel="category">
-                                    提高组笔记
-                                        
-                                </a>
-                                
-                                    
-                    </div>
-                </div>
-            </div>
-            <div class="post-footer">
-                <span id="span_btn" style="text-align: center;" onclick="javascript:top.location='https://diego3893.github.io/post/zui-xiao-sheng-cheng-shu/'">
-                    <i class="Card Card-more-o"></i> &#x9605;&#x8BFB;
-                </span>
-                <span id="span_btn" style="text-align: center;" onclick="javascript:window.open('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/zui-xiao-sheng-cheng-shu/')">
-                    <i class=" Card Card-share "></i> &#x4E8C;&#x7EF4;&#x7801;&#x5206;&#x4EAB;
-                </span>
-            </div>
-        </article>
-    </li>
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2020-02-28</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
     
-    <li class="lite-item">
-        <article class="post post-type">
-            <header class="post-type-header">
-                <div class="post-relative">
-                    
-                        <img alt="Diego&#39;s Blog" src="https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/logo.jpg" srcset="https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/logo.jpg " class="avatar" width="100" height="100">
-                        
-                                <span class="post-type-author">
-                    Diego&#39;s Blog
-                    <i class="Card Card-certify"></i><span class="publish-time"> - <i class="fa fa-calendar"
-                            aria-hidden="true"></i> 2020-02-27</span>
-                                </span>
-                                <h3 class="post-type-title">
-                                    <a href="https://diego3893.github.io/post/bing-cha-ji/" rel="bookmark" title="并查集">
-                                        
-                                                并查集
-                                    </a>
-                                </h3>
-                </div>
-            </header>
-            <div class="post-main post-type-main">
-                <div class="post-content">
-                    <div class="post-tag"></div>
-                    <div class="post-excerpt">
-                        
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                                    
-                    </div>
-                    <div class="post-category">
-                        
-                            <i class="fa fa-tags" aria-hidden="true"></i>
-                            
-                                <a href="https://diego3893.github.io/tag/Hc21XFSes/" rel="category">
-                                    图/树论
-                                        
-                                            ,
-                                            
-                                </a>
-                                
-                                <a href="https://diego3893.github.io/tag/4-8y6NRl-/" rel="category">
-                                    数据结构
-                                        
-                                            ,
-                                            
-                                </a>
-                                
-                                <a href="https://diego3893.github.io/tag/Gr5YErY6j/" rel="category">
-                                    提高组笔记
-                                        
-                                </a>
-                                
-                                    
-                    </div>
-                </div>
-            </div>
-            <div class="post-footer">
-                <span id="span_btn" style="text-align: center;" onclick="javascript:top.location='https://diego3893.github.io/post/bing-cha-ji/'">
-                    <i class="Card Card-more-o"></i> &#x9605;&#x8BFB;
-                </span>
-                <span id="span_btn" style="text-align: center;" onclick="javascript:window.open('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/bing-cha-ji/')">
-                    <i class=" Card Card-share "></i> &#x4E8C;&#x7EF4;&#x7801;&#x5206;&#x4EAB;
-                </span>
-            </div>
-        </article>
-    </li>
+      <span class="meta-item">
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
+        
+          
+            <a href="https://diego3893.github.io/tag/Nnc60LLfD/">
+              <span>数学</span>
+            </a>、
+          
+        
+          
+            <a href="https://diego3893.github.io/tag/dJ3WAsaqR/">
+              <span>算法</span>
+            </a>、
+          
+        
+          
+            <a href="https://diego3893.github.io/tag/Gr5YErY6j/">
+              <span>提高组笔记</span>
+            </a>
+          
+        
+      </span>
+      <span class="post-meta-divider">|</span>
     
-    <li class="lite-item">
-        <article class="post post-type">
-            <header class="post-type-header">
-                <div class="post-relative">
-                    
-                        <img alt="Diego&#39;s Blog" src="https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/logo.jpg" srcset="https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/logo.jpg " class="avatar" width="100" height="100">
-                        
-                                <span class="post-type-author">
-                    Diego&#39;s Blog
-                    <i class="Card Card-certify"></i><span class="publish-time"> - <i class="fa fa-calendar"
-                            aria-hidden="true"></i> 2018-12-12</span>
-                                </span>
-                                <h3 class="post-type-title">
-                                    <a href="https://diego3893.github.io/post/hello-gridea/" rel="bookmark" title="Hello Gridea">
-                                        
-                                                Hello Gridea
-                                    </a>
-                                </h3>
-                </div>
-            </header>
-            <div class="post-main post-type-main">
-                <div class="post-content">
-                    <div class="post-tag"></div>
-                    <div class="post-excerpt">
-                        
-                            <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>1分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>155<span class="pc-show">字数</span></span>
+    </span>
+    
+  </div>
+</header>
+      <div class="post-body">
+        
+          
+            
+            
+          
+        
+        
+        <div class="post-button text-center">
+          <a class="btn" href="https://diego3893.github.io/post/kuai-su-mi/" rel="contents">
+            阅读全文 »
+          </a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </article>
+
+  <article class="post-list-box  post box-shadow-wrapper">
+    <div class="article-wrapper bg-color">
+      <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://diego3893.github.io/post/er-fen-cha-zhao/">
+      二分查找
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2020-02-28</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+      <span class="meta-item">
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
+        
+          
+            <a href="https://diego3893.github.io/tag/dJ3WAsaqR/">
+              <span>算法</span>
+            </a>、
+          
+        
+          
+            <a href="https://diego3893.github.io/tag/Gr5YErY6j/">
+              <span>提高组笔记</span>
+            </a>
+          
+        
+      </span>
+      <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>1分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>9<span class="pc-show">字数</span></span>
+    </span>
+    
+  </div>
+</header>
+      <div class="post-body">
+        
+          
+            
+            
+          
+        
+        
+        <div class="post-button text-center">
+          <a class="btn" href="https://diego3893.github.io/post/er-fen-cha-zhao/" rel="contents">
+            阅读全文 »
+          </a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </article>
+
+  <article class="post-list-box  post box-shadow-wrapper">
+    <div class="article-wrapper bg-color">
+      <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://diego3893.github.io/post/dui-pai-xu/">
+      堆排序
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2020-02-28</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+      <span class="meta-item">
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
+        
+          
+            <a href="https://diego3893.github.io/tag/Hc21XFSes/">
+              <span>图/树论</span>
+            </a>、
+          
+        
+          
+            <a href="https://diego3893.github.io/tag/4-8y6NRl-/">
+              <span>数据结构</span>
+            </a>、
+          
+        
+          
+            <a href="https://diego3893.github.io/tag/Gr5YErY6j/">
+              <span>提高组笔记</span>
+            </a>
+          
+        
+      </span>
+      <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>3分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>501<span class="pc-show">字数</span></span>
+    </span>
+    
+  </div>
+</header>
+      <div class="post-body">
+        
+          
+            
+            
+          
+        
+        
+        <div class="post-button text-center">
+          <a class="btn" href="https://diego3893.github.io/post/dui-pai-xu/" rel="contents">
+            阅读全文 »
+          </a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </article>
+
+  <article class="post-list-box  post box-shadow-wrapper">
+    <div class="article-wrapper bg-color">
+      <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://diego3893.github.io/post/zui-xiao-sheng-cheng-shu/">
+      最小生成树
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2020-02-27</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+      <span class="meta-item">
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
+        
+          
+            <a href="https://diego3893.github.io/tag/dJ3WAsaqR/">
+              <span>算法</span>
+            </a>、
+          
+        
+          
+            <a href="https://diego3893.github.io/tag/Hc21XFSes/">
+              <span>图/树论</span>
+            </a>、
+          
+        
+          
+            <a href="https://diego3893.github.io/tag/Gr5YErY6j/">
+              <span>提高组笔记</span>
+            </a>
+          
+        
+      </span>
+      <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>4分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>628<span class="pc-show">字数</span></span>
+    </span>
+    
+  </div>
+</header>
+      <div class="post-body">
+        
+          
+            
+            
+          
+        
+        
+        <div class="post-button text-center">
+          <a class="btn" href="https://diego3893.github.io/post/zui-xiao-sheng-cheng-shu/" rel="contents">
+            阅读全文 »
+          </a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </article>
+
+  <article class="post-list-box  post box-shadow-wrapper">
+    <div class="article-wrapper bg-color">
+      <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://diego3893.github.io/post/bing-cha-ji/">
+      并查集
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2020-02-27</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+      <span class="meta-item">
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
+        
+          
+            <a href="https://diego3893.github.io/tag/Hc21XFSes/">
+              <span>图/树论</span>
+            </a>、
+          
+        
+          
+            <a href="https://diego3893.github.io/tag/4-8y6NRl-/">
+              <span>数据结构</span>
+            </a>、
+          
+        
+          
+            <a href="https://diego3893.github.io/tag/Gr5YErY6j/">
+              <span>提高组笔记</span>
+            </a>
+          
+        
+      </span>
+      <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>2分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>284<span class="pc-show">字数</span></span>
+    </span>
+    
+  </div>
+</header>
+      <div class="post-body">
+        
+          
+            
+            
+          
+        
+        
+        <div class="post-button text-center">
+          <a class="btn" href="https://diego3893.github.io/post/bing-cha-ji/" rel="contents">
+            阅读全文 »
+          </a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </article>
+
+  <article class="post-list-box  post box-shadow-wrapper">
+    <div class="article-wrapper bg-color">
+      <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://diego3893.github.io/post/hello-gridea/">
+      Hello Gridea
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2018-12-12</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+      <span class="meta-item">
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
+        
+          
+            <a href="https://diego3893.github.io/tag/4X9N1ZDzg/">
+              <span>Gridea</span>
+            </a>
+          
+        
+      </span>
+      <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>2分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>298<span class="pc-show">字数</span></span>
+    </span>
+    
+  </div>
+</header>
+      <div class="post-body">
+        
+          
+            
+            
+              <p>
+              
+            
+              <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
 ✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
 
-                                
-                    </div>
-                    <div class="post-category">
-                        
-                            <i class="fa fa-tags" aria-hidden="true"></i>
-                            
-                                <a href="https://diego3893.github.io/tag/4X9N1ZDzg/" rel="category">
-                                    Gridea
-                                        
-                                </a>
-                                
-                                    
-                    </div>
-                </div>
-            </div>
-            <div class="post-footer">
-                <span id="span_btn" style="text-align: center;" onclick="javascript:top.location='https://diego3893.github.io/post/hello-gridea/'">
-                    <i class="Card Card-more-o"></i> &#x9605;&#x8BFB;
-                </span>
-                <span id="span_btn" style="text-align: center;" onclick="javascript:window.open('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/hello-gridea/')">
-                    <i class=" Card Card-share "></i> &#x4E8C;&#x7EF4;&#x7801;&#x5206;&#x4EAB;
-                </span>
-            </div>
-        </article>
-    </li>
-    
-                    </ul>
-                    <div class="lite-item">
-                        
-                            <span id="span_btn" style="display: inline-block;width: 50%;text-align: center;border-right: 1px solid#e3e8e8;font-size: 14px;float: left;padding: 15px;" onclick="javascript:top.location='https://diego3893.github.io/'"><i class="icon-arrow-ios-back-outline"></i> &#x4E0A;&#x4E00;&#x9875;</span>
-                            
-                                    
-                                            <span id="span_btn" style="display: inline-block;width: 50%;text-align: center;border-right: 1px solid#e3e8e8;font-size: 14px;padding: 15px;" onclick="javascript:top.location=''"><i class="icon-arrow-ios-forward-outline"></i>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                            
-                    </div>
-                </div>
-                <div id="sidebar">
-    <ul>
-        
-            <li class="lite-item">
-                <header class="lite-item-header">
-                    <h3 class="sidebar-default-icon lite-item-title"><i class="Card Card-hitokoto"></i>&nbsp;&#x4E00;&#x8A00;</h3>
-                </header>
-                <div class="textwidget">
-                    <p>
-                        <b id="hitokoto"></b>
-                    </p>
-                </div>
-            </li>
+              
+                <img src="https://diego3893.github.io/post-images/hello-gridea.png" />
+              
             
-                <li class="lite-item">
-                    <header class="lite-item-header">
-                        <h3 class="sidebar-default-icon lite-item-title"><i class="Card Card-tags">&#x6807;&#x7B7E;</i></h3>
-                    </header>
-                    <div class="textwidget">
-                        
-                            <a href="https://diego3893.github.io/tag/a9JlscXkj/" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
-                                <i class="fa fa-tags" aria-hidden="true">字符串</i>
-                            </a>
-                            
-                            <a href="https://diego3893.github.io/tag/dJ3WAsaqR/" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
-                                <i class="fa fa-tags" aria-hidden="true">算法</i>
-                            </a>
-                            
-                            <a href="https://diego3893.github.io/tag/Gr5YErY6j/" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
-                                <i class="fa fa-tags" aria-hidden="true">提高组笔记</i>
-                            </a>
-                            
-                            <a href="https://diego3893.github.io/tag/qQcrTcB4k/" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
-                                <i class="fa fa-tags" aria-hidden="true">备忘</i>
-                            </a>
-                            
-                            <a href="https://diego3893.github.io/tag/h6HytAKAH/" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
-                                <i class="fa fa-tags" aria-hidden="true">折腾笔记</i>
-                            </a>
-                            
-                            <a href="https://diego3893.github.io/tag/Hc21XFSes/" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
-                                <i class="fa fa-tags" aria-hidden="true">图/树论</i>
-                            </a>
-                            
-                            <a href="https://diego3893.github.io/tag/4-8y6NRl-/" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
-                                <i class="fa fa-tags" aria-hidden="true">数据结构</i>
-                            </a>
-                            
-                            <a href="https://diego3893.github.io/tag/4X9N1ZDzg/" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
-                                <i class="fa fa-tags" aria-hidden="true">Gridea</i>
-                            </a>
-                            
-                            <a href="https://diego3893.github.io/tag/c3jkatgC-/" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
-                                <i class="fa fa-tags" aria-hidden="true">STL</i>
-                            </a>
-                            
-                            <a href="https://diego3893.github.io/tag/bunbgwXDf/" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
-                                <i class="fa fa-tags" aria-hidden="true">趣味</i>
-                            </a>
-                            
-                            <a href="https://diego3893.github.io/tag/Nnc60LLfD/" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
-                                <i class="fa fa-tags" aria-hidden="true">数学</i>
-                            </a>
-                            
-                    </div>
-                </li>
-                
-                    <script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/APlayer.min.js"></script>
-                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
-                    <div id="player"></div>
-                    
-                        <li class="lite-item">
-                            <header class="lite-item-header">
-                                <h3 class="sidebar-default-icon lite-item-title">
-                                    &#x1F3B5;&#x97F3;&#x4E50;
-                                </h3>
-                            </header>
-                            <div class="textwidget">
-                                <p>
-                                    <div id="player_box"></div>
-                                </p>
-                            </div>
-                        </li>
-                        
-                            <script>
-                                function LoadPlayer() {
-                                    var music_array = [];
-                                    
-                                    music_array.push({
-                                        name: 'Wolves ',
-                                        url: 'http://music.163.com/song/media/outer/url?id=515269424.mp3 ',
-                                        artist: 'Selena Gomez / Marshmello',
-                                        cover: 'https://s2.ax1x.com/2020/03/03/3heHEt.jpg ',
-                                    });
-                                    
-                                    music_array.push({
-                                        name: 'Into You  ',
-                                        url: 'http://music.163.com/song/media/outer/url?id=523042017.mp3 ',
-                                        artist: 'Matisse &amp; Sadko / Hanne Mjøen',
-                                        cover: ' https://s2.ax1x.com/2020/03/03/3heru9.jpg  ',
-                                    });
-                                    
-                                    music_array.push({
-                                        name: 'Señorita ',
-                                        url: 'http://music.163.com/song/media/outer/url?id=1373168742.mp3  ',
-                                        artist: 'Shawn Mendes / Camila Cabello',
-                                        cover: 'https://s2.ax1x.com/2020/03/03/3hZL6J.jpg  ',
-                                    });
-                                    
-                                    music_array.push({
-                                        name: 'Sold Out ',
-                                        url: 'http://music.163.com/song/media/outer/url?id=31010566.mp3 ',
-                                        artist: 'Hawk Nelson',
-                                        cover: 'https://s2.ax1x.com/2020/03/02/3RRXAs.jpg  ',
-                                    });
-                                    
-                                    
-                                    const ap = new APlayer({
-                                        container: document.getElementById('player_box'),
-                                        audio: music_array
-                                    });
-                                    
-                                }
-                                LoadPlayer();
-                            </script>
-                            
-                                
-                                    
-                                        
-                                            <li class="lite-item">
-                                                <header class="lite-item-header">
-                                                    <h3 class="sidebar-default-icon lite-item-title">
-                                                        😃加友链须知🤝
-                                                    </h3>
-                                                </header>
-                                                <div class="textwidget">
-                                                    <div id="textwidget-box" style="width:100%; height:auto;">
-                                                        <strong>MY BLOG:</strong> <p>名称：Diego's Blog</p> <p>LOGO:https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/logo.jpg</p> <p>描述：OI蒟蒻一枚</p> <p>链接:http://diego.plus/</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            
-                                            <li class="lite-item">
-                                                <header class="lite-item-header">
-                                                    <h3 class="sidebar-default-icon lite-item-title">
-                                                        提交建议👇
-                                                    </h3>
-                                                </header>
-                                                <div class="textwidget">
-                                                    <div id="textwidget-box" style="width:100%; height:auto;">
-                                                        <h1>1.使用valine在文章下方评论</h1> <h1>2.QQ邮箱联系我</h1> <a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1rK-s7G5rLWulrC5rru3v7r4tbm7" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_12.png"/></a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            
-                                            <li class="lite-item">
-                                                <header class="lite-item-header">
-                                                    <h3 class="sidebar-default-icon lite-item-title">
-                                                        😷为什么我要在这里上网课？？？
-                                                    </h3>
-                                                </header>
-                                                <div class="textwidget">
-                                                    <div id="textwidget-box" style="width:100%; height:auto;">
-                                                        因为有帮<strong>中二</strong>要吃蝙蝠！！！     <img src="https://s2.ax1x.com/2020/03/05/3HYH5q.jpg" alt="bat" />
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            
-                                                
-                                                    <li class="lite-item">
-                                                        <header class="lite-item-header">
-                                                            <h3 class="sidebar-default-icon lite-item-title">&#x1F468;&#x200D;&#x1F4BB;&#x53CB;&#x94FE;</h3>
-                                                        </header>
-                                                        <div class="textwidget">
-                                                            
-                                                                
-                                                                    <p><a href="https://blog.itjoker.cn" alt="ITJoker "><span id="span_btn" class="link_a" onclick="javascript:top.location='https://blog.itjoker.cn'">
-                                                                        ITJoker -
-                                            ITJoker&#39;s Blog
-                                </span></a></p>
-                                                                    
-                                                                    <p><a href="http://acg17.com " alt="ACG17 "><span id="span_btn" class="link_a" onclick="javascript:top.location='http://acg17.com '">
-                                                                        ACG17 -
-                                            日常找图
-                                </span></a></p>
-                                                                    
-                                                                    <p><a href="https://www.wubin.design" alt="BruceWu   "><span id="span_btn" class="link_a" onclick="javascript:top.location='https://www.wubin.design'">
-                                                                        BruceWu   -
-                                            UX Design一枚
-                                </span></a></p>
-                                                                    
-                                                                    <p><a href="https://tangkaichuan.cn " alt="I&#39;m KT  "><span id="span_btn" class="link_a" onclick="javascript:top.location='https://tangkaichuan.cn '">
-                                                                        I&#39;m KT  -
-                                            Keep Coding and Writing
-                                </span></a></p>
-                                                                    
-                                                                    <p><a href="https://winterstarhu.github.io " alt="WinterStar&#39;s Blog  "><span id="span_btn" class="link_a" onclick="javascript:top.location='https://winterstarhu.github.io '">
-                                                                        WinterStar&#39;s Blog  -
-                                            分享一些学习或生活上的东西
-                                </span></a></p>
-                                                                    
-                                                                    <p><a href="https://mlxxs.github.io/" alt="lxxs "><span id="span_btn" class="link_a" onclick="javascript:top.location='https://mlxxs.github.io/'">
-                                                                        lxxs -
-                                            I pray to myself.
-                                </span></a></p>
-                                                                    
-                                                                    <p><a href="https://cungudafa.top" alt="cungudafa "><span id="span_btn" class="link_a" onclick="javascript:top.location='https://cungudafa.top'">
-                                                                        cungudafa -
-                                            一个学习记录者
-                                </span></a></p>
-                                                                    
-                                                                    <p><a href="https://www.wztlink1013.com/" alt="尼采般地抒情 "><span id="span_btn" class="link_a" onclick="javascript:top.location='https://www.wztlink1013.com/'">
-                                                                        尼采般地抒情 -
-                                            记住技术的点滴，记住生活的感动。
-                                </span></a></p>
-                                                                    
-                                                                    <p><a href="https://www.huing.cn/" alt="虎吟 "><span id="span_btn" class="link_a" onclick="javascript:top.location='https://www.huing.cn/'">
-                                                                        虎吟 -
-                                            今日我，与你又试肩并肩
-                                </span></a></p>
-                                                                    
-                                                                    <p><a href="https://www.xiaofm.cn/" alt="小凡梦 "><span id="span_btn" class="link_a" onclick="javascript:top.location='https://www.xiaofm.cn/'">
-                                                                        小凡梦 -
-                                            愿有岁月可回首
-                                </span></a></p>
-                                                                    
-                                                                        
-                                                        </div>
-                                                    </li>
-    </ul>
-</div>
-            </div>
+          
+        
+        
+        <div class="post-button text-center">
+          <a class="btn" href="https://diego3893.github.io/post/hello-gridea/" rel="contents">
+            阅读全文 »
+          </a>
         </div>
-</body>
-<footer id="foot">
-    <a id="back-to-top" href="#"><i class="Card Card-top"></i></a>
+        
+      </div>
+      
+    </div>
+  </article>
+  
+              
+              
+<div class="page bg-color">
+  <ul class="pagination-ul">
+    
+      <li class="pagination-dir">
+        <a href="https://diego3893.github.io/">
+          <i class="fa fa-angle-left"></i>
+        </a>
+      </li>
+    
+    
+      
+        <li class="pagination-li ">
+            <a href="/page/../">
+              1
+            </a>
+        </li>
+      
+        <li class="pagination-li pagination-active">
+            <a href="/page/2">
+              2
+            </a>
+        </li>
+      
+    
+    
+  </ul>
+</div>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div class="footer-box">
+  <footer class="footer">
     <div class="copyright">
-        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> & <a href="https://github.com/diego3893/diego3893.github.io" target="_blank" > Diego </a>
-            
-                <div style="font-size:12px">已经建站 <b id='build_time'></b></div>
-                <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/time.min.js"></script>
-                <script>
-                    setInterval(show_date_time, 1000, '2020-02-26');
-                </script>
-                
-                    
-                            &#x7248;&#x6743;&#x6240;&#x6709; &copy;
-                            <span class="my-face"><script>
-                        var date = new Date();
-                        document.write("" + date.getFullYear());
-                    </script>
-                   </span>
-                            <a href="https://diego3893.github.io">
-                                Diego&#39;s Blog
-                            </a>&nbsp;|&nbsp;Powered by
-                            <a href="https://github.com/" target="_blank">
-                                github.com
-                            </a>
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | © 2019-2020 Theme By HsxyHao
     </div>
-    <div id='UpdateTime' style='display:none'>
-        1584367027948
+    <div class="poweredby">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> & <a href="https://github.com/diego3893/diego3893.github.io" target="_blank" > Diego </a>
     </div>
-    <script>
-        var titleTime;
-        document.addEventListener("visibilitychange", function() {
-            document.hidden ? (document.title = "\uD83D\uDE25" + OriginTitile, clearTimeout(titleTime)) : (document.title = "\uD83D\uDE1D" + OriginTitile, titleTime = setTimeout(function() {
-                document.title = OriginTitile
-            }, 2E3))
-        });
-        var OriginTitile = document.title;
-        
-        App.hitokoto();
-        
-        App.outputlog();
-    </script>
-</footer>
+  </footer>
+  
+  
+  <div class="gemini back-to-top" id="back_to_top">
+    <i class="fa fa-arrow-up"></i>
+    
+    <span class="scrollpercent">
+      <span id="back_to_top_text">0</span>%
+    </span>
+    
+  </div>
+  
+    <div class="bg-img">
+      <img src="\media\images\custom-bgImg.png" />
+    </div>
+  
+  
+    <link rel="stylesheet" href="/media/live2d/histoire/css/live2d.css" />
+<div class="box-scale">
+  <div id="landlord" style="left:5px;bottom:0px;" data-key="e2def21383be40d2bfef6aa7c5fba507">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="500" height="560" class="live2d"></canvas>
+    <div class="live_talk_input_body">
+      <div class="live_talk_input_name_body">
+        <input name="name" type="text" class="live_talk_name white_input" id="AIuserName" autocomplete="off" placeholder="你的名字" />
+      </div>
+      <div class="live_talk_input_text_body">
+        <input name="talk" type="text" class="live_talk_talk white_input" id="AIuserText" autocomplete="off" placeholder="要和我聊什么呀？"/>
+        <button type="button" class="live_talk_send_btn" id="talk_send">发送</button>
+      </div>
+    </div>
+    <input name="live_talk" id="live_talk" value="1" type="hidden" />
+    <div class="live_ico_box">
+      <div class="live_ico_item type_info" id="showInfoBtn"></div>
+      <div class="live_ico_item type_talk" id="showTalkBtn"></div>
+      
+      <div class="live_ico_item type_youdu" id="youduButton"></div>
+      <div class="live_ico_item type_quit" id="hideButton"></div>
+      <input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
+      <audio src="" style="display:none;" id="live2d_bgm" data-bgm="0" preload="none"></audio>
+      <input id="duType" value="douqilai" type="hidden">
+      
+    </div>
+  </div>
+</div>
+<div id="open_live2d">召唤伊斯特瓦尔</div>
+<script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+var message_Path = '/media/live2d/histoire/';
+let landlord = document.querySelector('#landlord');
+var apiKey = landlord.dataset.key;
+</script>
+<script type="text/javascript" src="/media/live2d/histoire/js/live2d.js"></script>
+<script type="text/javascript" src="/media/live2d/histoire/js/message.js"></script>
+  
+  
+    
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+  <div class="aplayer" id="aplayer"></div>
+  <input hidden id="player_cover" value="\media\images\custom-cover.jpg" />
+  <div class="music-list">
+  
+    
+    <input hidden value="Wolves ,Selena Gomez / Marshmello,http://music.163.com/song/media/outer/url?id=515269424.mp3," />
+  
+    
+    <input hidden value=" Into You  ,Matisse &amp; Sadko / Hanne Mjøen,http://music.163.com/song/media/outer/url?id=523042017.mp3," />
+  
+    
+    <input hidden value="Señorita  ,Shawn Mendes / Camila Cabello,http://music.163.com/song/media/outer/url?id=1373168742.mp3," />
+  
+    
+    <input hidden value="Sold Out ,Hawk Nelson,http://music.163.com/song/media/outer/url?id=31010566.mp3," />
+  
+  </div>
+  <script>
+  let musics = document.querySelector('.music-list').children;
+  let mediaMusic = [];
+  let cover = document.querySelector('#player_cover').value;
+  for (let i = 0; i < musics.length; i++) {
+    let item = musics[i];
+    let splits = item.value.split(',');
+    mediaMusic.push({
+      name: splits[0],
+      artist: splits[1],
+      url: splits[2],
+      lrc: splits[3],
+      cover: cover
+    });
+  }
+  const ap = new APlayer({
+      container: document.getElementById('aplayer'),
+      fixed: true,
+      lrcType: 3,
+      listFolded: false,
+      listMaxHeight: 90,
+      audio: mediaMusic
+  });
+  </script>
 
+
+  
+</div>
+<script>
+
+  let sideBarOpen = 'sidebar-open';
+  let body = document.body;
+  let back2Top = document.querySelector('#back_to_top'),
+  back2TopText = document.querySelector('#back_to_top_text'),
+  drawerBox = document.querySelector('#drawer_box'),
+  rightSideBar = document.querySelector('.sidebar'),
+  viewport = document.querySelector('body');
+
+  function scrollAnimation(currentY, targetY) {
+   
+    let needScrollTop = targetY - currentY
+    let _currentY = currentY
+    setTimeout(() => {
+      const dist = Math.ceil(needScrollTop / 10)
+      _currentY += dist
+      window.scrollTo(_currentY, currentY)
+      if (needScrollTop > 10 || needScrollTop < -10) {
+        scrollAnimation(_currentY, targetY)
+      } else {
+        window.scrollTo(_currentY, targetY)
+      }
+    }, 1)
+  }
+
+  back2Top.addEventListener("click", function(e) {
+    scrollAnimation(document.scrollingElement.scrollTop, 0);
+    e.stopPropagation();
+    return false;
+  });
+  
+  window.addEventListener('scroll', function(e) {
+    let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
+    if (percent > 1 && !back2Top.classList.contains('back-top-active')) {
+      back2Top.classList.add('back-top-active');
+    }
+    if (percent == 0) {
+      back2Top.classList.remove('back-top-active');
+    }
+    if (back2TopText) {
+      back2TopText.textContent = Math.floor(percent);
+    }
+  });
+
+  
+  let hasCacu = false;
+  window.onresize = function() {
+    if (window.width > 991) {
+      calcuHeight();
+    } else {
+      hasCacu = false;
+    }
+  }
+
+  function calcuHeight() {
+    // 动态调整站点概览高度
+    if (!hasCacu && back2Top.classList.contains('pisces') || back2Top.classList.contains('gemini')) {
+      let sideBar = document.querySelector('.sidebar');
+      let navUl = document.querySelector('#site_nav');
+      sideBar.style = 'margin-top:' + (navUl.offsetHeight + navUl.offsetTop + 15) + 'px;';
+      hasCacu = true;
+    }
+  }
+  calcuHeight();
+  
+  let open = false, MOTION_TIME = 300, RIGHT_MOVE_DIS = '320px';
+
+  if (drawerBox) {
+    let rightMotions = document.querySelectorAll('.right-motion');
+    let right = drawerBox.classList.contains('right');
+
+    let transitionDir = right ? "transition.slideRightIn" : "transition.slideLeftIn";
+
+    let openProp, closeProp;
+    if (right) {
+      openProp = {
+        paddingRight: RIGHT_MOVE_DIS 
+      };
+      closeProp = {
+        paddingRight: '0px'
+      };
+    } else {
+      openProp = {
+        paddingLeft: RIGHT_MOVE_DIS 
+      };
+      closeProp = {
+        paddingLeft: '0px'
+      };
+    }
+
+    drawerBox.onclick = function() {
+      open = !open;
+      window.Velocity(rightSideBar, 'stop');
+      window.Velocity(viewport, 'stop');
+      window.Velocity(rightMotions, 'stop');
+      if (open) {
+        window.Velocity(rightSideBar, {
+          width: RIGHT_MOVE_DIS
+        }, {
+          duration: MOTION_TIME,
+          begin: function() {
+            window.Velocity(rightMotions, transitionDir,{ });
+          }
+        })
+        window.Velocity(viewport, openProp,{
+          duration: MOTION_TIME
+        });
+      } else {
+        window.Velocity(rightSideBar, {
+          width: '0px'
+        }, {
+          duration: MOTION_TIME,
+          begin: function() {
+            window.Velocity(rightMotions, {
+              opacity: 0
+            });
+          }
+        })
+        window.Velocity(viewport, closeProp ,{
+          duration: MOTION_TIME
+        });
+      }
+      for (let i = 0; i < drawerBox.children.length; i++) {
+        drawerBox.children[i].classList.toggle('muse-line');
+      }
+      drawerBox.classList.toggle(sideBarOpen);
+    }
+  }
+
+  // 代码高亮
+  hljs.initHighlightingOnLoad();
+
+</script>
+    </div>
+  </body>
+  <script src="/media/js/motion.js"></script>
 </html>
