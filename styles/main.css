@@ -2015,11 +2015,7 @@ body {
     .brand {
       background: #212529;
     }
-    
-      .brand {
-        font-weight: bold;
-        transform: scale([1, 3]);
-      }.main-title {
+    .main-title {
       color: #f8f9fa;
     }
     .mist .site-title i {

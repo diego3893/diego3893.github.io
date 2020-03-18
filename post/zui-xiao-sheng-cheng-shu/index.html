@@ -4,11 +4,11 @@
     <meta charset="UTF-8"/>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="keywords" content="Diego">
+<meta name="keywords" content="Diego的博客">
 <meta name="description" content="Stay hungry, Stay foolish">
 <meta name="theme-color" content="#228be6">
 <title>最小生成树 | Diego&#39;s Blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1584415052254">
+<link rel="shortcut icon" href="/favicon.ico?v=1584490200894">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
 
@@ -73,7 +73,7 @@ var _hmt = _hmt || [];
           
         </div>
         
-          <p class="subtitle">一枚OI蒟蒻的BLOG</p>
+          <p class="subtitle">一枚OI蒟蒻的博客</p>
         
       </div>
       <nav class="site-nav" id="site_nav">
@@ -222,11 +222,15 @@ var _hmt = _hmt || [];
         
           
             <a href="https://github.com/diego3893?tab=repositories">
-              <i class="fa fa-github-alt"></i> github
+              <i class="fa fa-github"></i> github
             </a>
           
             <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3013006997&amp;site=qq&amp;menu=yes">
               <i class="fa fa-qq"></i> QQ
+            </a>
+          
+            <a href="https://www.luogu.com.cn/user/168726">
+              <i class="fa fa-code"></i> 洛谷
             </a>
           
             <a href="https://space.bilibili.com/454077332">
@@ -239,33 +243,6 @@ var _hmt = _hmt || [];
     </div>
   
 
-
-  <div class="sidebar-item right-motion sidebar-item-friends">
-    <p class="friends-title"><i class="fa fa-globe"></i> 友情链接</p>
-    <div class="friends-box">
-      
-        <p>
-          <a href="https://blog.itjoker.cn">【ITJoker 】</a>
-        </p>
-      
-        <p>
-          <a href="https://tangkaichuan.cn">【I&#39;m KT 】</a>
-        </p>
-      
-        <p>
-          <a href="https://www.wubin.design">【BruceWu 】</a>
-        </p>
-      
-        <p>
-          <a href="https://winterstarhu.github.io">【WinterStar&#39;s Blog 】</a>
-        </p>
-      
-        <p>
-          <a href="https://mlxxs.github.io/">【lxxs 】</a>
-        </p>
-      
-    </div>
-  </div>
 
 </div>
             </div>
@@ -818,7 +795,7 @@ new Valine({
     appKey: 'twuGD8G2X8bLhyet9rrIqavh',
     notify: 'true' === 'true', 
     avatar:'retro', 
-    placeholder: '来都来了，不妨评论一下',
+    placeholder: '来都来了，评论一下',
     pageSize: '15',
     lang: 'zh-cn',
     visitor: 'true' === 'true',
@@ -858,7 +835,7 @@ new Valine({
   
     <link rel="stylesheet" href="/media/live2d/histoire/css/live2d.css" />
 <div class="box-scale">
-  <div id="landlord" style="left:5px;bottom:0px;" data-key="e2def21383be40d2bfef6aa7c5fba507">
+  <div id="landlord" style="left:5px;bottom:0px;" data-key=" e2def21383be40d2bfef6aa7c5fba507">
     <div class="message" style="opacity:0"></div>
     <canvas id="live2d" width="500" height="560" class="live2d"></canvas>
     <div class="live_talk_input_body">
@@ -894,53 +871,6 @@ var apiKey = landlord.dataset.key;
 <script type="text/javascript" src="/media/live2d/histoire/js/live2d.js"></script>
 <script type="text/javascript" src="/media/live2d/histoire/js/message.js"></script>
   
-  
-    
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-  <div class="aplayer" id="aplayer"></div>
-  <input hidden id="player_cover" value="\media\images\custom-cover.jpg" />
-  <div class="music-list">
-  
-    
-    <input hidden value="Wolves ,Selena Gomez / Marshmello,http://music.163.com/song/media/outer/url?id=515269424.mp3," />
-  
-    
-    <input hidden value=" Into You  ,Matisse &amp; Sadko / Hanne Mjøen,http://music.163.com/song/media/outer/url?id=523042017.mp3," />
-  
-    
-    <input hidden value="Señorita  ,Shawn Mendes / Camila Cabello,http://music.163.com/song/media/outer/url?id=1373168742.mp3," />
-  
-    
-    <input hidden value="Sold Out ,Hawk Nelson,http://music.163.com/song/media/outer/url?id=31010566.mp3," />
-  
-  </div>
-  <script>
-  let musics = document.querySelector('.music-list').children;
-  let mediaMusic = [];
-  let cover = document.querySelector('#player_cover').value;
-  for (let i = 0; i < musics.length; i++) {
-    let item = musics[i];
-    let splits = item.value.split(',');
-    mediaMusic.push({
-      name: splits[0],
-      artist: splits[1],
-      url: splits[2],
-      lrc: splits[3],
-      cover: cover
-    });
-  }
-  const ap = new APlayer({
-      container: document.getElementById('aplayer'),
-      fixed: true,
-      lrcType: 3,
-      listFolded: false,
-      listMaxHeight: 90,
-      audio: mediaMusic
-  });
-  </script>
-
-
   
 </div>
 <script>
