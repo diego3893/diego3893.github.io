@@ -79,22 +79,22 @@ html, body{
 }
 
 .item:nth-of-type(1) .bg{
-    background-image: url('你的图片地址');
+    background-image: url('https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/photoswall/1.jpg');
 }
 .item:nth-of-type(2) .bg{
-    background-image: url('你的图片地址');
+    background-image: url('https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/photoswall/2.jpg');
 }
 .item:nth-of-type(3) .bg{
-    background-image: url('你的图片地址');
+    background-image: url('https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/photoswall/3.jpg');
 }
 .item:nth-of-type(4) .bg{
-    background-image: url('你的图片地址');
+    background-image: url('https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/photoswall/4.png');
 }
 .item:nth-of-type(5) .bg{
-    background-image: url('你的图片地址');
+    background-image: url('https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/photoswall/5.jpg');
 }
 .item:nth-of-type(6) .bg{
-    background-image: url('你的图片地址');
+    background-image: url('https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/photoswall/6.jpg');
 }
 
 .item .title{
