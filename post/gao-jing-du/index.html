@@ -170,13 +170,13 @@
                     
             </ul>
         </nav>
-        <form id="gridea-search-form" class="searchform" data-update="1584686693327" action="/search/index.html">
+        <form id="gridea-search-form" class="searchform" data-update="1584700467805" action="/search/index.html">
             <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
     </div>
     <div id="mobile-menu">
-        <form id="gridea-search-form" class="mobile-searchform" data-update="1584686693327" action="/search/index.html">
+        <form id="gridea-search-form" class="mobile-searchform" data-update="1584700467805" action="/search/index.html">
             <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
@@ -265,11 +265,11 @@
                                                     </span>&nbsp;•&nbsp;
 
                                                     <span class="post-readtime">阅读时间:
-                                            <a href="#">1.5分</a></span>
+                                            <a href="#">2.9分</a></span>
                                                     <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
-                                            <img alt="Diego&#39;s Blog" src="https://diego3893.github.io/images/avatar.png?v=1584686693327" srcset="https://diego3893.github.io/images/avatar.png?v=1584686693327" class="avatar avatar-100 photo" width="100" height="100">
+                                            <img alt="Diego&#39;s Blog" src="https://diego3893.github.io/images/avatar.png?v=1584700467805" srcset="https://diego3893.github.io/images/avatar.png?v=1584700467805" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://diego3893.github.io" title="由Diego&#39;s Blog发布" rel="author">Diego&#39;s Blog<i class="Card Card-certify"></i></a></span>
                                             <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2020-03-14</span>
                                         </div>
@@ -278,6 +278,7 @@
                             <div class="post-content">
                                 <div class="post-content-real">
                                     <h1 id="原理竖式计算">原理：竖式计算</h1>
+<p><strong>注意：倒序存储</strong></p>
 <h1 id="加减法">加/减法</h1>
 <h2 id="模版加减差不多">模版（加，减差不多）</h2>
 <pre><code class="language-cpp">#include&lt;cstdio&gt;
@@ -340,6 +341,64 @@ void print(sd x)
 </code></pre>
 <hr>
 <h1 id="乘法">乘法</h1>
+<pre><code class="language-cpp">#include&lt;cstdio&gt;
+#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+using namespace std;
+struct sd{
+	int d[300], len;
+}a, b;
+sd read_num();
+sd Mult(sd, sd);
+void print(sd);
+int main()
+{
+	a = read_num(), b = read_num();
+	a = Mult(a, b);
+	print(a);
+	return 0;
+}
+sd read_num()
+{
+	sd x;
+	memset(x.d, 0, sizeof(x.d));
+	char s[300];
+	cin &gt;&gt; s;
+	x.len = strlen(s);
+	int k = 0;
+	for(int i=x.len-1; i&gt;=0; --i)
+		x.d[k++] = s[i]-'0';
+	return x;
+}
+sd Mult(sd x, sd y)
+{
+	sd t;
+	memset(t.d, 0, sizeof(t.d));
+	//int len = x.len&gt;y.len?x.len:y.len;
+	//printf(&quot;%d\n&quot;, len);
+	for(int i=0; i&lt;x.len; ++i)
+	{
+		int temp = 0;
+		for(int j=0; j&lt;y.len; ++j)
+		{
+			t.d[i+j] = x.d[i]*y.d[j]+temp+t.d[i+j];
+			temp = t.d[i+j]/10;
+			t.d[i+j] %= 10;
+		}
+		t.d[i+y.len] = temp;
+	}
+	t.len = x.len+y.len;
+	return t;
+}
+void print(sd x)
+{
+	while(x.d[x.len-1]==0 &amp;&amp; x.len&gt;0)
+		--x.len;
+	for(int i=x.len-1; i&gt;=0; --i)
+		printf(&quot;%d&quot;, (int)x.d[i]);
+	return;
+}
+</code></pre>
 <hr>
 <p>#除法</p>
 
@@ -396,8 +455,8 @@ void print(sd x)
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
                 <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/gao-jing-du/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://diego3893.github.io/post/gao-jing-du/&sharesource=qzone&title=高精度&pics=https://diego3893.github.io/images/avatar.png?v=1584686693327&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://diego3893.github.io/post/gao-jing-du/&sharesource=weibo&title=高精度 + " - " + &pic="https://diego3893.github.io/images/avatar.png?v=1584686693327"><i class="fa fa-weibo "></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://diego3893.github.io/post/gao-jing-du/&sharesource=qzone&title=高精度&pics=https://diego3893.github.io/images/avatar.png?v=1584700467805&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://diego3893.github.io/post/gao-jing-du/&sharesource=weibo&title=高精度 + " - " + &pic="https://diego3893.github.io/images/avatar.png?v=1584700467805"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             
@@ -680,7 +739,7 @@ void print(sd x)
                             </a>
     </div>
     <div id='UpdateTime' style='display:none'>
-        1584686693327
+        1584700467805
     </div>
     <script>
         var titleTime;
