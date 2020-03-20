@@ -6,8 +6,29 @@
     font-style: normal
 }
 
+.message {
+    max-width: 640px;
+    width: auto;
+    position: fixed;
+    left: 50%;
+    bottom: 10px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.message-info {
+    background: rgba(17, 17, 17, .9);
+    color: #fff;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 0 1px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 0 1px rgba(0, 0, 0, 0.35);
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 0;
+    padding: 12px 25px;
+}
+
 html {
-    font-family: 'Fira Code Medium', Microsoft Yahei, monospace;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
 }
@@ -197,7 +218,7 @@ html::-webkit-scrollbar-thumb:hover {
 }
 
 body {
-    font-size: 11pt;
+    font-size: 10pt;
     font-weight: normal;
     line-height: 2em;
     background-color: #fff;
@@ -707,7 +728,7 @@ header label {
 }
 
 .post-content h1::before {
-    content: "#";
+    content: "";
     margin-right: 5px;
     color: #2d96bd;
 }
@@ -717,7 +738,7 @@ header label {
 }
 
 .post-content h2::before {
-    content: "#";
+    content: "";
     margin-right: 5px;
     color: #2d96bd;
 }
@@ -727,7 +748,7 @@ header label {
 }
 
 .post-content h3::before {
-    content: "|";
+    content: "";
     margin-right: 5px;
     color: #2d96bd;
 }
@@ -737,7 +758,7 @@ header label {
 }
 
 .post-content h4::before {
-    content: "*";
+    content: "";
     margin-right: 5px;
     color: #2d96bd;
 }
@@ -1078,8 +1099,8 @@ header label {
     position: fixed;
     top: 95px;
     right: 3rem;
-    width: 13em;
-    font-size: 0.75rem;
+    width: 8em;
+    font-size: 1.75rem;
 }
 
 .post-toc .tocbot-list {

@@ -4,7 +4,7 @@ function getParam(url, param) {
         var urlSearch = url.split('?');
         var paramList = urlSearch[1].split('&');
         for (var i = paramList.length - 1; i >= 0; i--) {
-            var tep = paramList[i].split('=');
+            var tep = paramList[i].split("=");
             if (tep[0] == param) {
                 return tep[1];
             }
@@ -15,7 +15,7 @@ function getParam(url, param) {
 //原生js Ajax 异步GET请求
 function ajax(obj) {
     var xhr = new XMLHttpRequest();
-    xhr.open('get', obj.url, true);
+    xhr.open("get", obj.url, true);
     xhr.send(null);
     xhr.onreadystatechange = function () {
         //异步请求：响应状态为4，数据加载完毕
@@ -34,36 +34,29 @@ function ajax(obj) {
 //模糊搜索
 function fuzzySearch(data, phrase) {
     var options = {
-        shouldSort: true,	// 是否按分数对结果列表排序
-        includeMatches: true,	//  是否应将分数包含在结果集中。0分表示完全匹配，1分表示完全不匹配。
-        threshold: 0.5,		// 匹配算法阈值。阈值为0.0需要完全匹配（字母和位置），阈值为1.0将匹配任何内容。
-/**
-         * 确定匹配与模糊位置（由位置指定）的距离。一个精确的字母匹配，即距离模糊位置很远的字符将被视为完全不匹配。
-         *  距离为0要求匹配位于指定的准确位置，距离为1000则要求完全匹配位于使用阈值0.8找到的位置的800个字符以内。
-         */
-        location: 0,		// 确定文本中预期找到的模式的大致位置。
+        shouldSort: true,
+        includeMatches: true,
+        threshold: 0.5,
+        location: 0,
         distance: 1000,
         maxPatternLength: 32,
         minMatchCharLength: 1,
-	// 搜索标题与作者名
         keys: [
-            'title',
-            'content'
+            "title",
+            "content"
         ]
     };
-	// 设置数据与参数
     var fuse = new Fuse(data, options);
     var fuzzyResult = fuse.search(phrase);
     return fuzzyResult;
 }
-
 //检查缓存是否最新
 function checkCache() {
     var infosCache = JSON.parse(localStorage.getItem('InfosCache'));
     var contentsCache = JSON.parse(localStorage.getItem('ContentsCache'));
     if (infosCache && contentsCache) {
         var cachedTime = infosCache.utils.now.toString();
-        var updateTime = document.getElementById('gridea-search-form').getAttribute('data-update');
+        var updateTime = document.getElementById("gridea-search-form").getAttribute("data-update");
         if (cachedTime === updateTime) {
             return true;
         }
@@ -120,16 +113,16 @@ function searchBy(phrase, callback) {
 
 //显示无搜索结果
 function showNoResult() {
-    var resultDIV = document.getElementById('gridea-search-result');
-    var noResult = resultDIV.getElementsByClassName('no-result')[0];
-    noResult.style.display = 'block';
+    var resultDIV = document.getElementById("gridea-search-result");
+    var noResult = resultDIV.getElementsByClassName("no-result")[0];
+    noResult.style.display = "block";
     resultDIV.innerHTML = noResult.outerHTML;
 }
 
-//根据URL参数执行搜索
+//执行搜索
 function searchByParam(resultHandler) {
     var phrase = getParam(window.location.href, 'q');
-    if (phrase === '' || typeof (phrase) === 'undefined') {
+    if (phrase === '' || typeof (phrase) === "undefined") {
         showNoResult();
     } else {
         searchBy(decodeURI(phrase), resultHandler);
@@ -138,7 +131,7 @@ function searchByParam(resultHandler) {
 
 //获取搜索结果列表模板的URL
 function getTemplateURL() {
-    var scripts = document.getElementsByTagName('script');
+    var scripts = document.getElementsByTagName("script");
     var templateURL = '';
     for (var i = 0; i < scripts.length; i++) {
         if (scripts[i].type === 'text/ejs') {
@@ -154,7 +147,7 @@ function renderResult(searchedInfos) {
         ajax({
             url: getTemplateURL(),
             success: function (data) {
-                var resultDIV = document.getElementById('gridea-search-result');
+                var resultDIV = document.getElementById("gridea-search-result");
                 resultDIV.innerHTML = ejs.compile(data)(searchedInfos);
             }
         });
@@ -204,7 +197,7 @@ function grideaSearch() {
     var resultHandler = function (searchedContents) {
         getInfos(function (infos) {
             //console.log(infos);
-            //console.log(searchedContents);
+            console.log(searchedContents);
             var searchedInfos = getResult(infos, searchedContents);
             renderResult(searchedInfos);
         });

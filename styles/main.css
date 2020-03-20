@@ -1,98 +1,105 @@
 @charset "UTF-8";
-/*Preloading*/
-#loading {
-  background-color: #2980b9;
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  z-index: 1;
-  margin-top: 0px;
-  top: 0px;
+/*Reward*/
+.reward {
+  padding: 5px 0;
+  float: right;
+  margin-right: 5px;
+  margin-top: 5px;
 }
-#loading-center {
-  width: 100%;
-  height: 100%;
+.reward .reward-notice {
+  font-size: 22px;
+  line-height: 14px;
+  margin: 15px auto;
+  text-align: center;
+}
+.reward .reward-button {
+  font-size: 14px;
+  line-height: 27.5px;
   position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+  padding: 0;
+  -webkit-user-select: none;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  border: 1px solid #f1b60e;
+  border-radius: 50%;
+  background: #fccd60;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fccd60), color-stop(100%, #fbae12), color-stop(100%, #2989d8), color-stop(100%, #207cca));
+  background: -webkit-linear-gradient(top, #fccd60 0, #fbae12 100%, #2989d8 100%, #207cca 100%);
+  background: linear-gradient(to bottom, #fccd60 0, #fbae12 100%, #2989d8 100%, #207cca 100%);
 }
-#loading-center-absolute {
+.reward .reward-code {
   position: absolute;
+  top: -230px;
   left: 50%;
-  top: 50%;
-  height: 118px;
-  width: 118px;
-  margin-top: -59px;
-  margin-left: -59px;
+  display: none;
+  width: 350px;
+  height: 200px;
+  margin-left: -195px;
+  padding: 15px;
+  border: 1px solid #e6e6e6;
+  background: #fff;
+  box-shadow: 0 1px 1px 1px #efefef;
 }
-.object {
-  width: 20px;
-  height: 20px;
-  background-color: #FFF;
-  margin-right: 20px;
+.reward .reward-button:hover .reward-code {
+  display: block;
+}
+.reward .reward-code span {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+}
+.reward .reward-code span.alipay-code {
   float: left;
-  margin-bottom: 20px;
 }
-.object:nth-child(3n+0) {
-  margin-right: 0px;
+.reward .reward-code span.alipay-code a {
+  padding: 0;
 }
-#object_one {
-  -webkit-animation: animate 1s -0.9s ease-in-out infinite;
-  animation: animate 1s -0.9s ease-in-out infinite;
+.reward .reward-code span.wechat-code {
+  float: right;
 }
-#object_two {
-  -webkit-animation: animate 1s -0.8s ease-in-out infinite;
-  animation: animate 1s -0.8s ease-in-out infinite;
+.reward .reward-code img {
+  display: inline-block;
+  float: left;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border: 0;
 }
-#object_three {
-  -webkit-animation: animate 1s -0.7s ease-in-out infinite;
-  animation: animate 1s -0.7s ease-in-out infinite;
+.reward .reward-code b {
+  font-size: 14px;
+  line-height: 26px;
+  display: block;
+  margin: 0;
+  text-align: center;
+  color: #666;
 }
-#object_four {
-  -webkit-animation: animate 1s -0.6s ease-in-out infinite;
-  animation: animate 1s -0.6s ease-in-out infinite;
+.reward .reward-code b.notice {
+  line-height: 2rem;
+  margin-top: -1rem;
+  color: #999;
 }
-#object_five {
-  -webkit-animation: animate 1s -0.5s ease-in-out infinite;
-  animation: animate 1s -0.5s ease-in-out infinite;
+.reward .reward-code:after,
+.reward .reward-code:before {
+  position: absolute;
+  content: '';
+  border: 10px solid transparent;
 }
-#object_six {
-  -webkit-animation: animate 1s -0.4s ease-in-out infinite;
-  animation: animate 1s -0.4s ease-in-out infinite;
+.reward .reward-code:after {
+  bottom: -19px;
+  left: 50%;
+  margin-left: -5px;
+  border-top-color: #fff;
 }
-#object_seven {
-  -webkit-animation: animate 1s -0.3s ease-in-out infinite;
-  animation: animate 1s -0.3s ease-in-out infinite;
-}
-#object_eight {
-  -webkit-animation: animate 1s -0.2s ease-in-out infinite;
-  animation: animate 1s -0.2s ease-in-out infinite;
-}
-#object_nine {
-  -webkit-animation: animate 1s -0.1s ease-in-out infinite;
-  animation: animate 1s -0.1s ease-in-out infinite;
-}
-@-webkit-keyframes animate {
-  50% {
-    -ms-transform: scale(1.5, 1.5);
-    -webkit-transform: scale(1.5, 1.5);
-    transform: scale(1.5, 1.5);
-  }
-  100% {
-    -ms-transform: scale(1, 1);
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1);
-  }
-}
-@keyframes animate {
-  50% {
-    -ms-transform: scale(1.5, 1.5);
-    -webkit-transform: scale(1.5, 1.5);
-    transform: scale(1.5, 1.5);
-  }
-  100% {
-    -ms-transform: scale(1, 1);
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1);
-  }
+.reward .reward-code:before {
+  bottom: -20px;
+  left: 50%;
+  margin-left: -5px;
+  border-top-color: #e6e6e6;
 }
 /*pagination*/
 .pagination-container {
@@ -238,170 +245,47 @@
     clip: rect(31px, 9999px, 149px, 0);
   }
 }
-/*Reward*/
-.reward {
-  padding: 5px 0;
-}
-.reward .reward-notice {
-  font-size: 14px;
-  line-height: 14px;
-  margin: 15px auto;
-  text-align: center;
-}
-.reward .reward-button {
-  font-size: 28px;
-  line-height: 58px;
-  position: relative;
-  display: block;
-  width: 60px;
-  height: 60px;
-  margin: 0 auto;
-  padding: 0;
-  -webkit-user-select: none;
-  text-align: center;
-  vertical-align: middle;
-  color: #fff;
-  border: 1px solid #f1b60e;
-  border-radius: 50%;
-  background: #fccd60;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fccd60), color-stop(100%, #fbae12), color-stop(100%, #2989d8), color-stop(100%, #207cca));
-  background: -webkit-linear-gradient(top, #fccd60 0, #fbae12 100%, #2989d8 100%, #207cca 100%);
-  background: linear-gradient(to bottom, #fccd60 0, #fbae12 100%, #2989d8 100%, #207cca 100%);
-}
-.reward .reward-code {
-  position: absolute;
-  top: -220px;
-  left: 50%;
-  display: none;
-  width: 350px;
-  height: 200px;
-  margin-left: -175px;
-  padding: 15px;
-  border: 1px solid #e6e6e6;
-  background: #fff;
-  box-shadow: 0 1px 1px 1px #efefef;
-}
-.reward .reward-button:hover .reward-code {
-  display: block;
-}
-.reward .reward-code span {
-  display: inline-block;
-  width: 150px;
-  height: 150px;
-}
-.reward .reward-code span.alipay-code {
-  float: left;
-}
-.reward .reward-code span.alipay-code a {
-  padding: 0;
-}
-.reward .reward-code span.wechat-code {
-  float: right;
-}
-.reward .reward-code img {
-  display: inline-block;
-  float: left;
-  width: 150px;
-  height: 150px;
-  margin: 0 auto;
-  border: 0;
-}
-.reward .reward-code b {
-  font-size: 14px;
-  line-height: 26px;
-  display: block;
-  margin: 0;
-  text-align: center;
-  color: #666;
-}
-.reward .reward-code b.notice {
-  line-height: 2rem;
-  margin-top: -1rem;
-  color: #999;
-}
-.reward .reward-code:after,
-.reward .reward-code:before {
-  position: absolute;
-  content: '';
-  border: 10px solid transparent;
-}
-.reward .reward-code:after {
-  bottom: -19px;
-  left: 50%;
-  margin-left: -10px;
-  border-top-color: #fff;
-}
-.reward .reward-code:before {
+/*Like*/
+.Like {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  line-height: 1rem;
+  cursor: pointer;
   bottom: -20px;
-  left: 50%;
-  margin-left: -10px;
-  border-top-color: #e6e6e6;
+  color: #596369;
+  position: relative;
+  margin-left: 91%;
+  margin-right: 0;
 }
-/*valine 评论系统样式*/
-.v .vwrap {
-  border: 2px solid black !important;
-  border-radius: 6px !important;
-  overflow: visible !important;
-  counter-reset: avater;
+.Like:hover {
+  color: #fff;
+  font-size: 22px;
+  border-radius: 2px;
 }
-.v .vwrap .vedit .vemojis {
-  width: 600px !important;
-  background-color: #fffaf0 !important;
-  border-radius: 5px !important;
+.Like > div {
+  background: rgba(1, 1, 1, 0.2);
+  height: 24px;
+  border-radius: 4px;
+  padding: 2px;
+  display: flex;
+  align-items: center;
 }
-.v .vwrap .vedit .vpreview {
-  width: 600px !important;
-  background-color: #fff !important;
-  border-radius: 5px !important;
+.Like > div svg {
+  width: 28px;
+  height: 28px;
 }
-.v .vbtn {
-  background-color: #971212 !important;
-  color: #fff !important;
+.Like > div a {
+  font-weight: bold;
+  text-align: center;
+  padding-right: 4px;
+  padding-left: 2px;
+  align-items: center;
+  font-size: 18px;
 }
-.v .vwrap .vedit .vctrl {
-  text-align: left !important;
-}
-.v .vwrap .vedit .vctrl span {
-  background-color: #7f7f7f !important;
-  color: #fff !important;
-  border-radius: 3px !important;
-  padding: 3px !important;
-}
-.v .vwrap .vedit .vctrl {
-  padding: 0px !important;
-  margin: 0px !important;
-}
-.v .vlist .vcard .vquote .vcontent {
-  font-size: 15px;
-  font-weight: 200;
-}
-.v .vlist .vcard {
-  border: 1px solid #ccc !important;
-  padding-left: 14px !important;
-  padding-right: 14px !important;
-  margin-bottom: 20px !important;
-  border-radius: 10px !important;
-}
-.v .vlist .vquote .vcard {
-  border: 0px !important;
-  margin-bottom: 0px !important;
-  border-radius: 0px !important;
-  padding: 0px !important;
-}
-.v .vlist .vcard .vhead .vsys {
-  display: none !important;
-  background-color: #fff !important;
-}
-.v .vlist .vcard .vh .vmeta .vat {
-  background-color: #177714 !important;
-  color: #fff !important;
-  border-radius: 3px !important;
-  padding-left: 10px !important;
-  padding-right: 10px !important;
-}
-.v .vlist .vcard .vimg {
-  margin: 0 12px 0 0;
-  counter-increment: avater;
+.like_text {
+  position: relative;
+  top: -5px;
 }
 /*Tips*/
 .tip::after {
@@ -431,6 +315,33 @@
 .tip:hover::after {
   opacity: 1;
   transform: translate(-50%, -0.2rem);
+}
+/*search*/
+.search-input {
+  position: relative;
+  top: -3px;
+  left: -2px;
+  width: 160px;
+  height: 26px;
+  padding: 0 0 2px 27px;
+  font-size: 16px;
+  background: #fafafa url(https://i.loli.net/2020/01/12/X3cnLxGjo7Wb8Jk.png) 6px 3px no-repeat;
+  background-size: 20px;
+  border: none;
+  border-radius: 15px;
+  border-bottom-color: currentcolor;
+  border-bottom-style: none;
+  border-bottom-width: medium;
+  outline: none;
+  color: #424242;
+  border-bottom: 1px solid #beb1b1;
+  transition: border-color 0.2s;
+}
+.search-input:hover {
+  width: 180px;
+}
+.search-input .dark-theme {
+  color: #fafafa;
 }
 /*Posts*/
 .post-main {
@@ -471,6 +382,17 @@
   color: #2d96bd;
   text-decoration: none;
   transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+}
+#gridea-search-result {
+  background-color: #e0e0e0;
+  display: flex;
+  border-radius: 5px;
+  justify-content: space-between;
+  padding: 32px 10px;
+  box-shadow: 1px 5px 10px -5px #444;
+  position: relative;
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
 }
 .post-item {
   display: flex;
@@ -584,6 +506,9 @@
   padding: 1px 0px 0px 0px;
   line-height: 1.2em;
   letter-spacing: 0.05em;
+  height: calc(100vh - 128px);
+  padding-bottom: 80px;
+  overflow-y: auto;
 }
 .post-toc .markdownIt-TOC:before {
   content: "";
@@ -595,8 +520,12 @@
   background-color: #ebedef;
   opacity: 0.5;
 }
+.post-toc .markdownIt-TOC > li:last-child {
+  padding-bottom: 200px;
+}
 .post-toc ul {
   list-style: none;
+  margin-left: -2.5em;
 }
 .post-toc li {
   padding-left: 16px;
@@ -660,4 +589,8 @@
           display:none;
         }
         #menu-toggle-en {display:none;}
+    
+      html {
+        font-family: -apple-system,BlinkMacSystemFont,'Helvetica Neue','PingFang SC','Hiragino Sans GB','Droid Sans Fallback','Microsoft YaHei',sans-serif;
+      }
     
