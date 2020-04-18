@@ -208,7 +208,7 @@
                     <article class="post-wrap">
                         <header class="post-header">
                             <h1 class="post-title">
-                                树状数组
+                                Typecho和FusionApp制作属于自己的BlogApp
                             </h1>
                             
                                     <!--zh-->
@@ -217,22 +217,12 @@
                                         <a itemprop="author" rel="author" href="/">
                                             Diego's Blog
                                         </a>
-                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-03-07</a></span>
+                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-04-02</a></span>
                                         <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
-                                    href="#">2.2
+                                    href="#">1.2
                                     &#x5206;&#x949F;</a></span>
-                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">408</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">360</a></span>
                                         
-                                            <span class="post-category">&#x5206;&#x7C7B;:
-                                
-                                <a href="https://diego3893.github.io/tag/Hc21XFSes/">图/树论</a>
-                                
-                                <a href="https://diego3893.github.io/tag/4-8y6NRl-/">数据结构</a>
-                                
-                                <a href="https://diego3893.github.io/tag/Gr5YErY6j/">提高组笔记</a>
-                                
-                            </span>
-                                            
                                                 阅读量:
                                                 <span data-hk-page="current"> - </span>
                                                 
@@ -240,125 +230,52 @@
                                     
                         </header>
                         
-                            <img class="post-feature-image" src="https://s2.ax1x.com/2020/03/07/3jRuE4.png" alt="">
-                          
                         <div class="post-content">
-                            <p><s>这是比较让我这个蒟蒻绝望的东西（以后可能一直这样）</s></p>
-<h1 id="原理">原理</h1>
-<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2020/03/07/3jRuE4.png" alt="tree" loading="lazy"></figure>
+                            <h1 id="先给自己的app打个advertisement前往下载">先给自己的APP打个advertisement：<a href="https://www.lanzous.com/b015b7xjc">前往下载</a></h1>
+<h1 id="我改主题搞了几个小时插件也找了半天你难道想白嫖">我改主题搞了几个小时，插件也找了半天，你难道想白嫖？？？</h1>
+<p>实际上你真的可以白嫖~~（手动滑稽）~~</p>
+<hr>
 <blockquote>
-<p>形态如图</p>
-</blockquote>
-<blockquote>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>x</mi></msub><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mi>x</mi><mo>−</mo><msup><mn>2</mn><mi>k</mi></msup><mo>+</mo><mn>1</mn></mrow><mrow><mi>x</mi><mo>−</mo><msup><mn>2</mn><mi>k</mi></msup><mo>+</mo><mi>x</mi></mrow></msubsup><msub><mi>A</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">C_x = \sum_{i=x-2^k+1}^{x-2^k+x}A_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.509861em;vertical-align:-0.35804100000000005em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1518199999999998em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">=</span><span class="mord mathdefault mtight">x</span><span class="mbin mtight">−</span><span class="mord mtight"><span class="mord mtight">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7820285714285713em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">x</span><span class="mbin mtight">−</span><span class="mord mtight"><span class="mord mtight">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9270285714285713em;"><span style="top:-2.931em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span><span class="mbin mtight">+</span><span class="mord mathdefault mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.35804100000000005em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><br>
-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">2^k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span></span></span>为区间最小二次幂，即<code>lowbit(x)</code></p>
-<blockquote>
-<p>e.g. <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>8</mn><msub><mo>)</mo><mn>10</mn></msub><mo>=</mo><mo>(</mo><mn>1000</mn><msub><mo>)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">(8)_{10} = (1000)_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">8</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>w</mi><mi>b</mi><mi>i</mi><mi>t</mi><mo>(</mo><mn>8</mn><mo>)</mo><mo>=</mo><msup><mn>2</mn><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">lowbit(8) = 2^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault">b</span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mord">8</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span><br>
-e.g. <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>10</mn><msub><mo>)</mo><mn>10</mn></msub><mo>=</mo><mo>(</mo><mn>1010</mn><msub><mo>)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">(10)_{10} = (1010)_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">0</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">0</span><span class="mord">1</span><span class="mord">0</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>w</mi><mi>b</mi><mi>i</mi><mi>t</mi><mo>(</mo><mn>10</mn><mo>)</mo><mo>=</mo><msup><mn>2</mn><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">lowbit(10) = 2^1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault">b</span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mord">1</span><span class="mord">0</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>以区间的方式存储，可以方便的求和、维护（前缀和等）</p>
-</blockquote>
-<blockquote>
-<p>lowbit的<strong>位运算</strong><br>
-因为是求最小二次幂<br>
-所以是<code>(~x+1)&amp;x</code>，即<code>(-x)&amp;x</code></p>
+<p>可以先参考这个<a href="https://qqdie.com/archives/typechofusionapp-plugin.html">大佬的文章</a><br>
+FusionApp下载链接在里面</p>
 </blockquote>
 <hr>
-<h1 id="核心代码">核心代码</h1>
-<pre><code class="language-cpp">//维护|构建
-void build(int x)
-{
-    while(x &lt;= N)
-    {
-        c[x] += a[x];
-        x += lowbit(x);
-    }
-}
-
-//求和
-int sum(int x)
-{
-    int res = 0;
-    while(x &gt; 0)
-    {
-        res += c[x];
-        x -= lowbit(x);
-    }
-    return res;
-}
-
-//求最小二次幂
-int lowbit(int x)
-{
-    return (-x) &amp; x;
-}
-</code></pre>
+<h1 id="web端配置">Web端配置</h1>
+<p>主题及插件：<a href="https://www.lanzous.com/b015blf4d">前往下载</a></p>
+<ul>
+<li>插件配置此处不讲，有一些不用配，有问题请评论或邮箱联系：diegozcx@foxmail.com</li>
+<li>内容修改在<code>page_索引.php</code>和<code>page_更多.php</code>中，我已经打上注释了，在控制台外观配置中也可以添加内容</li>
+</ul>
+<blockquote>
+<p>矢量图可以在<a href="http://www.fontawesome.com.cn/">这里</a>找一找</p>
+</blockquote>
+<ul>
+<li>新建独立页面：模板为<code>page_索引/更多/bangumi.php</code></li>
+</ul>
 <hr>
-<h1 id="模版">模版</h1>
-<pre><code class="language-cpp">#include&lt;cstdio&gt;
-#include&lt;algorithm&gt;
-#include&lt;cstring&gt;
-#define Maxn 15000+10
-#define Maxc 32000+10
-using namespace std;
-struct node{
-	int x, y;
-}p[Maxn];
-int n, m = 32001;
-int c[Maxc], ans[Maxc];
-int lowbit(int);
-void build(int, int);
-int sum(int);
-int main()
-{
-	scanf(&quot;%d&quot;, &amp;n);
-	for(int i=1; i&lt;=n; ++i)
-		scanf(&quot;%d%d&quot;, &amp;p[i].x, &amp;p[i].y);
-	for(int i=1; i&lt;=n; ++i)
-	{
-		int u = p[i].x+1;  //树状数组无法维护下标0
-		int w = sum(u);
-		build(u, 1);
-		++ans[w];
-	}
-	for(int i=0; i&lt;n; ++i)
-		printf(&quot;%d\n&quot;, ans[i]);
-	return 0;
-}
-int lowbit(int x)
-{
-	return (-x) &amp; x;
-}
-void build(int x, int y)
-{
-	while(x &lt;= m) //x范围不定，直接计算到最大
-	{
-		c[x] += y;
-		x += lowbit(x);
-	}
-}
-int sum(int x)
-{
-	int res = 0;
-	while(x &gt; 0)
-	{
-		res += c[x];
-		x -= lowbit(x);
-	}
-	return res;
-}
-</code></pre>
-<p>题目<a href="http://ybt.ssoier.cn:8088/problem_show.php?pid=1536">传送门</a></p>
+<h1 id="fa配置">FA配置</h1>
+<ul>
+<li>新建一个模版<code>底栏模板</code></li>
+<li>底栏项目为：首页，索引，更多————首页为你的博客网址，索引为<code>索引独立页面的网址</code>，更多为<code>更多独立页面的网址</code></li>
+<li>打开侧滑栏，新建项目：追番，关于————点击事件设置：右上角加好点开有一个<code>加载网页</code>，填写独立页面网址即可</li>
+<li>在<strong>属性</strong>的<strong>属性设置</strong>中顶栏标题自己设置一下</li>
+</ul>
+<hr>
+<p>大致就这样了，预览一下没问题点击右上角的三个点点，点击打包安装即可</p>
+<hr>
+<h1 id="写在最后">写在最后</h1>
+<p>如果您觉得还不错或者有问题，评论区说一声哦<br>
+要打赏的话，万分感谢哦，逃~</p>
 
                         </div>
                         
                             <div class="post-toc">
                                 <ul class="markdownIt-TOC">
-<li><a href="#%E5%8E%9F%E7%90%86">原理</a></li>
-<li><a href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81">核心代码</a></li>
-<li><a href="#%E6%A8%A1%E7%89%88">模版</a></li>
+<li><a href="#%E5%85%88%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84app%E6%89%93%E4%B8%AAadvertisement%E5%89%8D%E5%BE%80%E4%B8%8B%E8%BD%BD">先给自己的APP打个advertisement：前往下载</a></li>
+<li><a href="#%E6%88%91%E6%94%B9%E4%B8%BB%E9%A2%98%E6%90%9E%E4%BA%86%E5%87%A0%E4%B8%AA%E5%B0%8F%E6%97%B6%E6%8F%92%E4%BB%B6%E4%B9%9F%E6%89%BE%E4%BA%86%E5%8D%8A%E5%A4%A9%E4%BD%A0%E9%9A%BE%E9%81%93%E6%83%B3%E7%99%BD%E5%AB%96">我改主题搞了几个小时，插件也找了半天，你难道想白嫖？？？</a></li>
+<li><a href="#web%E7%AB%AF%E9%85%8D%E7%BD%AE">Web端配置</a></li>
+<li><a href="#fa%E9%85%8D%E7%BD%AE">FA配置</a></li>
+<li><a href="#%E5%86%99%E5%9C%A8%E6%9C%80%E5%90%8E">写在最后</a></li>
 </ul>
 
                             </div>
@@ -369,9 +286,9 @@ int sum(int x)
                                                                     <span style="margin-right:15px">
                         <i class="post-share"></i>
                         <span>&#x5206;&#x4EAB;:</span>
-                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/shu-zhuang-shu-zu/"><i class="fa fa-qrcode"></i></a>
-                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://diego3893.github.io/post/shu-zhuang-shu-zu/&sharesource=qzone&title=树状数组&pics=https://diego3893.github.io/images/avatar.png?v=1587194503682&summary="><i class="fa fa-qq"></i></a>
-                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://diego3893.github.io/post/shu-zhuang-shu-zu/&sharesource=weibo&title=树状数组 + " - " + &pic="https://diego3893.github.io/images/avatar.png?v=1587194503682 "><i class="fa fa-weibo "></i></a>
+                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/typecho-he-fusionapp-zhi-zuo-shu-yu-zi-ji-de-blogapp/"><i class="fa fa-qrcode"></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://diego3893.github.io/post/typecho-he-fusionapp-zhi-zuo-shu-yu-zi-ji-de-blogapp/&sharesource=qzone&title=Typecho和FusionApp制作属于自己的BlogApp&pics=https://diego3893.github.io/images/avatar.png?v=1587194503682&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://diego3893.github.io/post/typecho-he-fusionapp-zhi-zuo-shu-yu-zi-ji-de-blogapp/&sharesource=weibo&title=Typecho和FusionApp制作属于自己的BlogApp + " - " + &pic="https://diego3893.github.io/images/avatar.png?v=1587194503682 "><i class="fa fa-weibo "></i></a>
 
                                                                     </span>
                                                                     
@@ -389,20 +306,6 @@ int sum(int x)
                                                                                     <span>&#x6807;&#x7B7E;:</span>
                                                                                     <span class="tag ">
                         
-                        
-                        <a href="https://diego3893.github.io/tag/Hc21XFSes/">#
-                    图/树论
-                        </a>
-                        
-                        <a href="https://diego3893.github.io/tag/4-8y6NRl-/">#
-                    数据结构
-                        </a>
-                        
-                        <a href="https://diego3893.github.io/tag/Gr5YErY6j/">#
-                    提高组笔记
-                        </a>
-                        
-                            
                                 </span>
                                                                                 </div>
                                                                                 <div>
@@ -417,13 +320,9 @@ int sum(int x)
                                                                                 <!---->
                                                                                 <section class="post-nav">
                                                                                     
-                                                                                        <a class="prev" rel="prev" href="https://diego3893.github.io/post/valine-ping-lun-she-zhi-you-xiang-ti-xing-zhuan/">
-                                                                                            Valine评论设置邮箱提醒（转）
-                                                                                        </a>
-                                                                                        
                                                                                             
-                                                                                                <a class="next" rel="next" href="https://diego3893.github.io/post/gridea-jing-tai-bo-ke-shi-yong-cname-yi-ji-xiang-guan-pei-zhi/">
-                                                                                                    Gridea静态博客使用CNAME以及相关配置
+                                                                                                <a class="next" rel="next" href="https://diego3893.github.io/post/gao-jing-du/">
+                                                                                                    高精度
                                                                                                 </a>
                                                                                                 
                                                                                 </section>

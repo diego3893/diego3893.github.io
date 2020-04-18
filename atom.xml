@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://diego3893.github.io</id>
     <title>Diego&apos;s Blog</title>
-    <updated>2020-03-24T12:48:00.179Z</updated>
+    <updated>2020-04-18T07:21:46.769Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://diego3893.github.io"/>
     <link rel="self" href="https://diego3893.github.io/atom.xml"/>
@@ -10,6 +10,49 @@
     <logo>https://diego3893.github.io/images/avatar.png</logo>
     <icon>https://diego3893.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Diego&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Typecho和FusionApp制作属于自己的BlogApp]]></title>
+        <id>https://diego3893.github.io/post/typecho-he-fusionapp-zhi-zuo-shu-yu-zi-ji-de-blogapp/</id>
+        <link href="https://diego3893.github.io/post/typecho-he-fusionapp-zhi-zuo-shu-yu-zi-ji-de-blogapp/">
+        </link>
+        <updated>2020-04-02T14:50:00.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="先给自己的app打个advertisement前往下载">先给自己的APP打个advertisement：<a href="https://www.lanzous.com/b015b7xjc">前往下载</a></h1>
+<h1 id="我改主题搞了几个小时插件也找了半天你难道想白嫖">我改主题搞了几个小时，插件也找了半天，你难道想白嫖？？？</h1>
+<p>实际上你真的可以白嫖~~（手动滑稽）~~</p>
+<hr>
+<blockquote>
+<p>可以先参考这个<a href="https://qqdie.com/archives/typechofusionapp-plugin.html">大佬的文章</a><br>
+FusionApp下载链接在里面</p>
+</blockquote>
+<hr>
+<h1 id="web端配置">Web端配置</h1>
+<p>主题及插件：<a href="https://www.lanzous.com/b015blf4d">前往下载</a></p>
+<ul>
+<li>插件配置此处不讲，有一些不用配，有问题请评论或邮箱联系：diegozcx@foxmail.com</li>
+<li>内容修改在<code>page_索引.php</code>和<code>page_更多.php</code>中，我已经打上注释了，在控制台外观配置中也可以添加内容</li>
+</ul>
+<blockquote>
+<p>矢量图可以在<a href="http://www.fontawesome.com.cn/">这里</a>找一找</p>
+</blockquote>
+<ul>
+<li>新建独立页面：模板为<code>page_索引/更多/bangumi.php</code></li>
+</ul>
+<hr>
+<h1 id="fa配置">FA配置</h1>
+<ul>
+<li>新建一个模版<code>底栏模板</code></li>
+<li>底栏项目为：首页，索引，更多————首页为你的博客网址，索引为<code>索引独立页面的网址</code>，更多为<code>更多独立页面的网址</code></li>
+<li>打开侧滑栏，新建项目：追番，关于————点击事件设置：右上角加好点开有一个<code>加载网页</code>，填写独立页面网址即可</li>
+<li>在<strong>属性</strong>的<strong>属性设置</strong>中顶栏标题自己设置一下</li>
+</ul>
+<hr>
+<p>大致就这样了，预览一下没问题点击右上角的三个点点，点击打包安装即可</p>
+<hr>
+<h1 id="写在最后">写在最后</h1>
+<p>如果您觉得还不错或者有问题，评论区说一声哦<br>
+要打赏的话，万分感谢哦，逃~</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[高精度]]></title>
         <id>https://diego3893.github.io/post/gao-jing-du/</id>
@@ -830,45 +873,6 @@ int main()
 <figure data-type="image" tabindex="5"><img src="https://s2.ax1x.com/2020/02/29/361aNT.png" alt="5" loading="lazy"></figure>
 <figure data-type="image" tabindex="6"><img src="https://s2.ax1x.com/2020/02/29/361B34.png" alt="6" loading="lazy"></figure>
 <p>也可以参考<a href="https://blog.csdn.net/shenaisi/article/details/81545418">这个</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[c++快读（数字）]]></title>
-        <id>https://diego3893.github.io/post/ckuai-du-shu-zi/</id>
-        <link href="https://diego3893.github.io/post/ckuai-du-shu-zi/">
-        </link>
-        <updated>2020-02-29T12:46:26.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="代码">代码</h1>
-<pre><code class="language-cpp">inline int fread()
-{
-    int x=0,f=1;
-    char ch=getchar();
-    while(ch&lt;'0'||ch&gt;'9'){
-        if(ch=='-')
-            f=-1;
-        ch=getchar();
-    }
-    while(ch&gt;='0'&amp;&amp;ch&lt;='9'){
-        x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48);
-        ch=getchar();
-    }
-    return x*f;
-}
-</code></pre>
-<hr>
-<h1 id="原理">原理</h1>
-<blockquote>
-<p>getchar()比scanf()快</p>
-<p>f判断正负</p>
-</blockquote>
-<blockquote>
-<p>重点在<code>x = (x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48)</code><br>
-<code>x&lt;&lt;1</code>= <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>∗</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">x*2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>， <code>x&lt;&lt;3</code>= <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>∗</mo><mn>2</mn><mo>∗</mo><mn>2</mn><mo>∗</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">x*2*2*2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span></p>
-<blockquote>
-<p><code>(x&lt;&lt;1)+(x&lt;&lt;3) = x*10</code></p>
-</blockquote>
-<p>ch^48=ch-'0'</p>
-</blockquote>
 ]]></content>
     </entry>
 </feed>
