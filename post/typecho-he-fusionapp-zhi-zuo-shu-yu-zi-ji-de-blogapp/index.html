@@ -1,8 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html id="bg">
 
 <head>
     <meta charset="utf-8" />
+<!--
+    * @Theme Card
+    *
+    * @author admin@itjoker.cn
+    * @link https://blog.itjoker.cn
+-->
+
 <title>
     Diego&#39;s Blog
 </title>
@@ -10,228 +17,299 @@
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
 <meta http-equiv="x-dns-prefetch-control" content="on">
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-<meta name="author" content="Diego">
-<meta name="description" content="不一定出类拔萃，但一定与众不同                   我的小站，欢迎参观:  http://blog.diego.plus:5800">
-<meta name="keywords" content="蒟蒻, OIer, 沉迷学习">
-<script async src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/css/style.min.css" />
+<meta name="author" content="Diego&#39;s Blog">
+<meta name="description" content="Stay hungry, Stay foolish">
+<meta name="keywords" content="OIer,蒟蒻,沉迷学习">
+<meta name="gridea-theme" content="Card">
+<meta name="spider" content="https://nmsl.sbjxw.网址">
+<meta name="UpdateTime" content="1600506606908">
+<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/jquery@3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/Card/prism.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/css/Card/prism.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/js/Card/script.min.js"></script>-->
+<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/css/Card/main.min.css" />-->
+<script src="https://diego3893.github.io/media/js/script.min.js"></script>
+<link rel="stylesheet" href="https://diego3893.github.io/media/css/main.min.css" />
 <link rel="stylesheet" href="https://diego3893.github.io/styles/main.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/css/Card/iconfont.css" />
+<!--link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_410989_wuhl0k5ojvf.css" /-->
 <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/tocbot.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/script.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/icon.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.12/CDN/js/Card/prism.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.12/CDN/css/Card/prism.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/js/love.min.js"></script>
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<script>
+    $().ready(
+        function() {
+            var themeIcon = document.getElementById("themeIcon");
+            var currentTheme = window.localStorage.getItem('theme');
+            if (currentTheme == 'dark') {
+                document.getElementsByTagName('html')[0].classList.add('theme-dark');
+                themeIcon.classList.remove('Card-moon');
+                themeIcon.classList.add('Card-sun');
+            } else {
+                document.getElementsByTagName('html')[0].classList.remove('theme-dark');
+                themeIcon.classList.remove('Card-sun');
+                themeIcon.classList.add('Card-moon');
+            }
+        }
+    )
+</script>
 
-    <!--点击特效-->
-    <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@latest/CDN/js/love.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/hit-kounter-lc-0.3.0.js"></script>
     
-        <script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic@latest/assets/media/script/APlayer.min.js"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
         
-            <!--CDN样式-->
-            <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@latest/CDN/js/hit-kounter-lc-0.3.0.js"></script>
-            <script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+            <script>
+                (function() {
+                    var bp = document.createElement('script');
+                    var curProtocol = window.location.protocol.split(':')[0];
+                    if (curProtocol === 'https') {
+                        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                    } else {
+                        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                    }
+                    var s = document.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(bp, s);
+                })();
+            </script>
             
-                <script>
-                    (function() {
-                        var bp = document.createElement('script');
-                        var curProtocol = window.location.protocol.split(':')[0];
-                        if (curProtocol === 'https') {
-                            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-                        } else {
-                            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                    <style>
+                        .Card-certify {
+                            color: #0091e4 !important;
                         }
-                        var s = document.getElementsByTagName("script")[0];
-                        s.parentNode.insertBefore(bp, s);
-                    })();
-                </script>
-                
-                    <script async src="https://www.googletagmanager.com/gtag/js?id= UA-160293821-1"></script>
-                    <script>
-                        window.dataLayer = window.dataLayer || [];
-
-                        function gtag() {
-                            dataLayer.push(arguments);
+                        
+                        #foot {
+                            color: #666666;
                         }
-                        gtag('js', new Date());
-                        gtag('config', ' UA-160293821-1');
-                    </script>
-                    
+                        
+                        #menu-item:hover {
+                            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+                            border-bottom-color: rgba(0, 0, 0, .6);
+                        }
+                        
+                        .gray {
+                            -webkit-filter: grayscale(100%);
+                            /* webkit */
+                            -moz-filter: grayscale(100%);
+                            /*firefox*/
+                            -ms-filter: grayscale(100%);
+                            /*ie9*/
+                            -o-filter: grayscale(100%);
+                            /*opera*/
+                            filter: grayscale(100%);
+                            filter: progid: DXImageTransform.Microsoft.BasicImage(grayscale=1);
+                            filter: gray;
+                            /*ie9- */
+                        }
+                        
+                        .lite-item,
+                        #header {
+                            opacity: 1;
+                        }
+                        
+                        .lite-item {
+                            background-color: #fafafa;
+                        }
+                        
+                        #spnBtn:hover {
+                            transition: all .3s ease;
+                            color: #fff;
+                            background-color: #6b6b6b;
+                            /*#0092ee*/
+                            /*linear-gradient( rgb(138, 160, 255) 30%, rgb(90, 140, 250) 70%);*/
+                        }
+                        
+                        #spnBtn {
+                            background-color: #efefef;
+                            font-size: 14px;
+                            transition: all .3s ease;
+                        }
+                        
+                        .link_a:hover {
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                            color: #fff;
+                            border-left: 8px solid #6b6b6b;
+                            padding: 5px;
+                            transition: all .3s ease;
+                        }
+                        
+                        html {
+                            width: 100%;
+                            height: 100%;
+                            background-attachment: fixed;
+                            background-repeat: no-repeat;
+                        }
+                    </style>
 </head>
 
 <body>
-    <div class="wrapper">
-        <header>
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-header header-logo">
-                <a href="https://diego3893.github.io">
-                    Diego&#39;s Blog
-                </a>
-            </div>
+    <header id="header">
 
-            <div class="menu navbar-right">
+    <div id="pc-menu">
+        <a id="menu-bar" class="Card Card-menu"></a>
+        <a id="menu-title" href="https://diego3893.github.io">
+            Diego&#39;s Blog
+        </a>
+        <nav id="menu-main" class="menu-main">
+            <ul>
                 
-                    <a class="menu-item" href="/">
-                        🎈首页
-                    </a>
-                    
-                    <a class="menu-item" href="/posts">
-                        📝文章列表
-                    </a>
-                    
-                    <a class="menu-item" href="/archives">
-                        📜归档
-                    </a>
-                    
-                    <a class="menu-item" href="/tags">
-                        🔖标签
-                    </a>
-                    
-                    <a class="menu-item" href="/friends">
-                        🤝友链
-                    </a>
-                    
-                    <a class="menu-item" href="/photos">
-                        📌图墙
-                    </a>
-                    
-                    <a class="menu-item" href="https://travellings.now.sh/">
-                        🚀开往
-                    </a>
-                    
-                    <a class="menu-item" href="/post/about">
-                        🏳️‍🌈关于
-                    </a>
-                    
-                        <input id="switch_default" type="checkbox" class="switch_default">
-                        <label for="switch_default" class="toggleBtn"></label>
-            </div>
-            <form id="gridea-search-form" data-update="1587194503682" action="/search/index.html">
-                <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
-            </form>
-        </div>
-    </nav>
-
-    
-        <nav class="navbar-mobile" id="nav-mobile">
-            <div class="container">
-                <div class="navbar-header">
-                    <div>
-                        <a href="https://diego3893.github.io">
-                            Diego&#39;s Blog
-                        </a>
-                        <!--en-->
-                        <a id="mobile-toggle-theme-en" class="a en">&nbsp;Dark</a>
-                        <!--zh-->
-                        <a id="mobile-toggle-theme-zh" class="a zh">&nbsp;&#x6697;&#x9ED1;</a>
-                    </div>
-                    <form id="gridea-search-form" data-update="1587194503682" action="/search/index.html">
-                        <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
-                    </form>
-                    <!--en-->
-                    <div class="menu-toggle" id="menu-toggle-en" onclick="mobileBtn()">&#9776; Menu</div>
-                    <!--zh-->
-                    <div class="menu-toggle" id="menu-toggle-zh" onclick="mobileBtn()">&#9776; &#x83DC;&#x5355;</div>
-
-                </div>
-                <div class="menu" id="mobile-menu">
-                    
-                        <a class="menu-item" href="/">
+                    <li id="menu-item" class="menu-item">
+                        <a href="/">
                             🎈首页
                         </a>
-                        
-                        <a class="menu-item" href="/posts">
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="/posts">
                             📝文章列表
                         </a>
-                        
-                        <a class="menu-item" href="/archives">
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="/archives">
                             📜归档
                         </a>
-                        
-                        <a class="menu-item" href="/tags">
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="/tags">
                             🔖标签
                         </a>
-                        
-                        <a class="menu-item" href="/friends">
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="/friends">
                             🤝友链
                         </a>
-                        
-                        <a class="menu-item" href="/photos">
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="/photos">
                             📌图墙
                         </a>
-                        
-                        <a class="menu-item" href="https://travellings.now.sh/">
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="https://travellings.now.sh/">
                             🚀开往
                         </a>
-                        
-                        <a class="menu-item" href="/post/about">
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="/post/about">
                             🏳️‍🌈关于
                         </a>
-                        
-                </div>
-            </div>
+                    </li>
+                    
+            </ul>
         </nav>
+        <form id="gridea-search-form" class="searchform" data-update="1600506606908" action="/search/index.html">
+            <i class="Card Card-search"></i>
+            <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
+        </form>
+    </div>
+    <div id="mobile-menu">
+        <form id="gridea-search-form" class="mobile-searchform" data-update="1600506606908" action="/search/index.html">
+            <i class="Card Card-search"></i>
+            <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
+        </form>
+        <nav class="menu">
+            <ul style="list-style: none;">
+                
+                    <li class="page_item page-item-2">
+                        <a href="/">
+                            🎈首页
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="/posts">
+                            📝文章列表
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="/archives">
+                            📜归档
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="/tags">
+                            🔖标签
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="/friends">
+                            🤝友链
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="/photos">
+                            📌图墙
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="https://travellings.now.sh/">
+                            🚀开往
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="/post/about">
+                            🏳️‍🌈关于
+                        </a>
+                    </li>
+                    
+            </ul>
+        </nav>
+    </div>
+    <a id="theme-btn" class="theme-btn" onclick="App.changeTheme()"><i id="themeIcon" class="Card Card-moon"></i></a>
 </header>
-<script>
-    var mobileBtn = function f() {
-        var toggleMenu = document.getElementById("menu-toggle-en");
-        var toggleMenu_zh = document.getElementById("menu-toggle-zh");
-
-        var mobileMenu = document.getElementById("mobile-menu");
-        if (toggleMenu.display != "none") {
-            if (toggleMenu.classList.contains("active")) {
-                toggleMenu.classList.remove("active")
-                mobileMenu.classList.remove("active")
-            } else {
-                toggleMenu.classList.add("active")
-                mobileMenu.classList.add("active")
-            }
-        } else if (toggleMenu_zh.display != "none") {
-            if (toggleMenu_zh.classList.contains("active")) {
-                toggleMenu_zh.classList.remove("active")
-                mobileMenu.classList.remove("active")
-            } else {
-                toggleMenu_zh.classList.add("active")
-                mobileMenu.classList.add("active")
-            }
-        }
-
-    }
-</script>
-            <div class="main">
-                <div class="container">
-                    <article class="post-wrap">
-                        <header class="post-header">
-                            <h1 class="post-title">
-                                Typecho和FusionApp制作属于自己的BlogApp
-                            </h1>
+        <div id="main">
+            <div id="main-part">
+                <div class="lite-item">
+                    <article class="post post-type real-post">
+                        <header class="post-type-header">
                             
-                                    <!--zh-->
-                                    <div class="post-meta zh">
-                                        &#x4F5C;&#x8005;:
-                                        <a itemprop="author" rel="author" href="/">
-                                            Diego's Blog
-                                        </a>
-                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-04-02</a></span>
-                                        <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
-                                    href="#">1.2
-                                    &#x5206;&#x949F;</a></span>
-                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">360</a></span>
-                                        
-                                                阅读量:
-                                                <span data-hk-page="current"> - </span>
-                                                
-                                    </div>
+                                    <div class="thumbnail-link" style="background-color: transparent;"></div>
                                     
+                                        <div class="thumbnail-shadow">
+                                            <h1 class="post-title">
+                                                Typecho和FusionApp制作属于自己的BlogApp
+                                            </h1>
+                                            <div class="post-info">
+                                                <span class="post-category"><i class="Card Card-novel"></i>
+                                        
+                                                    </span>
+                                                    <span class="post-view">
+                                                    
+                                                        &nbsp;•&nbsp;
+                                                        <span class="post-meta-item-text"><i class="Card Card-view"></i>&nbsp;阅读量&nbsp;</span>
+                                                        <span data-hk-page="current"> - </span>
+                                                        
+                                                            </span>&nbsp;•&nbsp;
+
+                                                            <span class="post-readtime">阅读时间:
+                                            1.2分</span>
+                                                            <span class="post-edit"></span></div>
+                                        </div>
+                                        <div class="post-relative">
+                                            <img alt="Diego&#39;s Blog" src="https://diego3893.github.io/images/avatar.png?v=1600506606908" srcset="https://diego3893.github.io/images/avatar.png?v=1600506606908" class="avatar avatar-100 photo" width="100" height="100">
+                                            <span class="post-type-author"><a href="https://diego3893.github.io" title="由Diego&#39;s Blog发布" rel="author">Diego&#39;s Blog<i class="Card Card-certify"></i></a></span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2020-04-02</span>
+                                        </div>
                         </header>
-                        
-                        <div class="post-content">
-                            <h1 id="先给自己的app打个advertisement前往下载">先给自己的APP打个advertisement：<a href="https://www.lanzous.com/b015b7xjc">前往下载</a></h1>
+                        <div class="post-main post-type-main">
+                            <div class="post-content">
+                                <div class="post-content-real">
+                                    <h1 id="先给自己的app打个advertisement前往下载">先给自己的APP打个advertisement：<a href="https://www.lanzous.com/b015b7xjc">前往下载</a></h1>
 <h1 id="我改主题搞了几个小时插件也找了半天你难道想白嫖">我改主题搞了几个小时，插件也找了半天，你难道想白嫖？？？</h1>
 <p>实际上你真的可以白嫖~~（手动滑稽）~~</p>
 <hr>
@@ -267,262 +345,384 @@ FusionApp下载链接在里面</p>
 <p>如果您觉得还不错或者有问题，评论区说一声哦<br>
 要打赏的话，万分感谢哦，逃~</p>
 
-                        </div>
-                        
-                            <div class="post-toc">
-                                <ul class="markdownIt-TOC">
-<li><a href="#%E5%85%88%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84app%E6%89%93%E4%B8%AAadvertisement%E5%89%8D%E5%BE%80%E4%B8%8B%E8%BD%BD">先给自己的APP打个advertisement：前往下载</a></li>
-<li><a href="#%E6%88%91%E6%94%B9%E4%B8%BB%E9%A2%98%E6%90%9E%E4%BA%86%E5%87%A0%E4%B8%AA%E5%B0%8F%E6%97%B6%E6%8F%92%E4%BB%B6%E4%B9%9F%E6%89%BE%E4%BA%86%E5%8D%8A%E5%A4%A9%E4%BD%A0%E9%9A%BE%E9%81%93%E6%83%B3%E7%99%BD%E5%AB%96">我改主题搞了几个小时，插件也找了半天，你难道想白嫖？？？</a></li>
-<li><a href="#web%E7%AB%AF%E9%85%8D%E7%BD%AE">Web端配置</a></li>
-<li><a href="#fa%E9%85%8D%E7%BD%AE">FA配置</a></li>
-<li><a href="#%E5%86%99%E5%9C%A8%E6%9C%80%E5%90%8E">写在最后</a></li>
-</ul>
-
+                                </div>
                             </div>
                             
+                                <div class="reward ">
+                                    <div class="reward-button ">&yen;
+                                        <span class="reward-code "> 
+                                            <span class="alipay-code "> <img class="alipay-img " alt = "support " src="https://blog.itjoker.cn/alipay.jpg"><b>Alipay</b>                                                            </span>
+                                        <span class="wechat-code "> <img alt ="support " class="wechat-img " src="https://blog.itjoker.cn/wechat.jpg"><b>Wechat</b> </span> </span>
+                                    </div>
+                                </div>
                                 
-                                                    
-                                                                    <!--Share-->
-                                                                    <span style="margin-right:15px">
-                        <i class="post-share"></i>
-                        <span>&#x5206;&#x4EAB;:</span>
-                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/typecho-he-fusionapp-zhi-zuo-shu-yu-zi-ji-de-blogapp/"><i class="fa fa-qrcode"></i></a>
-                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://diego3893.github.io/post/typecho-he-fusionapp-zhi-zuo-shu-yu-zi-ji-de-blogapp/&sharesource=qzone&title=Typecho和FusionApp制作属于自己的BlogApp&pics=https://diego3893.github.io/images/avatar.png?v=1587194503682&summary="><i class="fa fa-qq"></i></a>
-                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://diego3893.github.io/post/typecho-he-fusionapp-zhi-zuo-shu-yu-zi-ji-de-blogapp/&sharesource=weibo&title=Typecho和FusionApp制作属于自己的BlogApp + " - " + &pic="https://diego3893.github.io/images/avatar.png?v=1587194503682 "><i class="fa fa-weibo "></i></a>
-
-                                                                    </span>
-                                                                    
-                                                                        <div class="reward ">
-                                                                            <div class="reward-button ">&yen;
-                                                                                <span class="reward-code "> 
-                        <span class="alipay-code "> <img class="alipay-img " alt = "support " src="https://blog.itjoker.cn/alipay.jpg"><b>支付宝</b> </span>
-                                                                                <span class="wechat-code "> <img alt ="support " class="wechat-img " src="https://blog.itjoker.cn/wechat.jpg"><b>微信</b> </span> </span>
-                                                                            </div>
-                                                                        </div>
-                                                                        
-                                                                            <!--zh-->
-                                                                            <section class="post-tags zh ">
-                                                                                <div>
-                                                                                    <span>&#x6807;&#x7B7E;:</span>
-                                                                                    <span class="tag ">
-                        
-                                </span>
-                                                                                </div>
-                                                                                <div>
-                                                                                    <a href="javascript:window.history.back();">
-                        &#x8FD4;&#x56DE;</a>
-                                                                                    <span>&dot;</span>
-                                                                                    <a href="#">&#x4E3B;&#x9875;</a>
-                                                                                </div>
-                                                                            </section>
-
-                                                                            
-                                                                                <!---->
-                                                                                <section class="post-nav">
-                                                                                    
-                                                                                            
-                                                                                                <a class="next" rel="next" href="https://diego3893.github.io/post/gao-jing-du/">
-                                                                                                    高精度
-                                                                                                </a>
-                                                                                                
-                                                                                </section>
+                        </div>
+                        <div class="post-footer">
+                            <div class="post-copyright">
+                                作者:
+                                Diego&#39;s Blog<br>永久链接:
+                                    <a href="https://diego3893.github.io/post/typecho-he-fusionapp-zhi-zuo-shu-yu-zi-ji-de-blogapp/" title="Typecho和FusionApp制作属于自己的BlogApp">
+                                        https://diego3893.github.io/post/typecho-he-fusionapp-zhi-zuo-shu-yu-zi-ji-de-blogapp/
+                                    </a><br> 协议: MIT License
+                            </div>
+                        </div>
                     </article>
                 </div>
+                <style>
+                    .prev:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                    
+                    .next:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                </style>
+                <div class="lite-item nearby-article">
+                    
+                            
+                                <div class="nearby-article-right" style="padding: 10px;">
+                                    <a class="next" rel="next" href="https://diego3893.github.io/post/gao-jing-du/">
+                                        高精度<i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                                
+                </div>
+                <!--Share-->
+                <span style="margin-right:15px">
+    <i class="post-share"></i>
+    <span>&#x5206;&#x4EAB;:</span>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/typecho-he-fusionapp-zhi-zuo-shu-yu-zi-ji-de-blogapp/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://diego3893.github.io/post/typecho-he-fusionapp-zhi-zuo-shu-yu-zi-ji-de-blogapp/&sharesource=qzone&title=Typecho和FusionApp制作属于自己的BlogApp&pics=https://diego3893.github.io/images/avatar.png?v=1600506606908&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://diego3893.github.io/post/typecho-he-fusionapp-zhi-zuo-shu-yu-zi-ji-de-blogapp/&sharesource=weibo&title=Typecho和FusionApp制作属于自己的BlogApp + " - " + &pic="https://diego3893.github.io/images/avatar.png?v=1600506606908"><i class="fa fa-weibo "></i></a>
+                </span>
                 
                                             
-                                                <div id="vlaine-comment"></div>
-<script type="application/javascript" src="https://unpkg.com/valine"></script>
-<script type="application/javascript">
-  new Valine({
-    el: '#vlaine-comment',
-    appId: '14A7TB22izxXd6FAG3JYhfXd-gzGzoHsz',
-    appKey: 'X6oQW2G42EgeAdSUqv2uMKqP',
-    pageSize: 15,
-    notify: true,
-    avatar: 'mp',
-    verify: true,
-    placeholder: '来都来了，不妨评论一下',
-    visitor: true,
-    highlight: true,
-    recordIP: true,
-  })
-</script>
-                                                    
             </div>
-    </div>
-    </div>
-    </div>
-    
-    <div id="player"></div>
-    
-        <footer id="footer" class="footer">
-            <div class="copyright">
-                
-                    <div class="Like">
-                        <div class="tip" data-tooltip="Do you like it?">
-                            <a href="https://github.com/ITJoker233/Gridea-theme-Chic" target="_blank" title=""><svg class="icon"
-                        aria-hidden="true">
-                        <use xlink:href="#like"></use>
-                    </svg><b class="like_text" id="star"></b></a>
-                        </div>
-                    </div>
-                    
-                        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> & <a href="https://github.com/diego3893/diego3893.github.io" target="_blank" > Diego </a>
-                            
-                                <b id="hitokoto"></b><br>
-                                
-                                        <svg viewBox="0 0 1024 1024" style="margin-left: 5px;margin-right: 5px;" version="1.0" width="8" height="8" class="my-face">
-            <path
-                d="M863.597631 513.574282l-271.33965-140.213484L729.783667 81.926656c3.583731-7.87141 7.167462-15.742819 7.167462-25.214109C736.887134 25.226908 708.345275 0.012799 672.635953 0.012799a63.611229 63.611229 0 0 0-39.293053 12.607055c-1.791866 1.59988-3.519736 3.19976-5.311602 3.19976L147.87531 418.925381a55.547834 55.547834 0 0 0-19.646527 47.356448c1.791866 17.278704 14.27093 33.021523 32.125591 42.492813l271.33965 141.749369L292.504463 945.221908c-12.479064 25.214109-1.791866 53.563983 23.166262 69.306802 10.751194 6.335525 23.230258 9.47129 35.709322 9.47129 16.062795 0 32.125591-4.735645 44.604655-15.742819l480.091993-403.297753a55.547834 55.547834 0 0 0 19.646526-47.228458 61.243407 61.243407 0 0 0-32.12559-44.156688z"
-                fill="#93b5cf"></path>
-        </svg>
-                                        Diego&#39;s Blog &copy;Copyright
-                                            <script>
-                                                var date = new Date();
-                                                document.write("" + date.getFullYear());
-                                            </script>
-                                            | Powered by
-                                            <a href="https://github.com" target="_blank">
-                                                github.com
-                                            </a>
-		| 本站已经运行了
-                <strong><script type="text/javascript">		
-
-                var urodz= new Date("2020/02/26");
-                var now = new Date();
-                var ile = now.getTime() - urodz.getTime();
-                var dni = Math.floor(ile / (1000 * 60 * 60 * 24));
-                document.write(+dni)
-                </script>
-                </strong>天
-            </div>
-            <div id="update" style="display:none;">
-                on
-            </div>
-            
-                <div id="version" style="display:none;">
-                    1.7.3
-                </div>
-                
-                    <script>
-                        var pat = '';
-                        
-                        document.write('<div id="home_path" style="display:none;">' + document.location.protocol + '//' + window.document.location.hostname + pat + '</div>')
-                    </script>
-        </footer>
+            <div id="sidebar">
+    <ul>
         
-            <script src='https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js'></script>
+            <li class="lite-item">
+                <header class="lite-item-header">
+                    <h3 class="lite-item-title"><i class="Card Card-hitokoto"></i>&nbsp;&#x4E00;&#x8A00;</h3>
+                </header>
+                <div class="textwidget">
+                    <p>
+                        <b id="hitokoto"></b>
+                    </p>
+                </div>
+            </li>
             
-                <script>
-                    
+                <!--
+                <li class="lite-item">
+                    <header class="lite-item-header">
+                        <h3 class="lite-item-title"><i class="Card Card-tags">&#x6807;&#x7B7E;</i></h3>
+                    </header>
+                    <div class="textwidget">
+                        
+                            <a href="" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
+                                <i class="fa fa-tags" aria-hidden="true"></i>
+                            </a>
+                            
+                    </div>
+                </li>-->
+                <li class="lite-item">
+                    <header class="lite-item-header">
+                        <h3 class="lite-item-title"><i class="Card Card-tags">&#x6807;&#x7B7E;</i></h3>
+                    </header>
+                    <div class="textwidget">
+                        <div id='tags' style="height: auto;width: 360;"></div>
+                        <script src="https://diego3893.github.io/media/js/svg3dtagcloud.min.js"></script>
+                        <script>
+                            $(document).ready(function() {
+                                var entries = ([
+                                    
+                                     {
+                                        label: '🏷字符串',
+                                        url: 'https://diego3893.github.io/tag/a9JlscXkj/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷算法',
+                                        url: 'https://diego3893.github.io/tag/dJ3WAsaqR/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷提高组笔记',
+                                        url: 'https://diego3893.github.io/tag/Gr5YErY6j/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷备忘',
+                                        url: 'https://diego3893.github.io/tag/qQcrTcB4k/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷折腾笔记',
+                                        url: 'https://diego3893.github.io/tag/h6HytAKAH/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷图/树论',
+                                        url: 'https://diego3893.github.io/tag/Hc21XFSes/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷数据结构',
+                                        url: 'https://diego3893.github.io/tag/4-8y6NRl-/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷Gridea',
+                                        url: 'https://diego3893.github.io/tag/4X9N1ZDzg/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷STL',
+                                        url: 'https://diego3893.github.io/tag/c3jkatgC-/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷趣味',
+                                        url: 'https://diego3893.github.io/tag/bunbgwXDf/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷数学',
+                                        url: 'https://diego3893.github.io/tag/Nnc60LLfD/',
+                                        target: '_button'
+                                    }
+                                    
+                                    
+                                ]);
+                                var settings = {
+                                    entries: entries, //数据
+                                    width: 300, //宽度
+                                    height: 300, //高度
+                                    radius: '50%',
+                                    radiusMin: 50,
+                                    bgDraw: false, //是否显示背景
+                                    bgColor: '#fff', //背景颜色
+                                    opacityOver: 1.00,
+                                    opacityOut: 0.05,
+                                    opacitySpeed: 6,
+                                    fov: 360,
+                                    speed: 0.3, //旋转的速度
+                                    fontFamily: 'Oswald, Arial, sans-serif',
+                                    fontSize: '18', //默认字体大小
+                                    fontColor: '#666', //默认字体颜色
+                                    fontWeight: 'normal', //bold
+                                    fontStyle: 'normal', //italic 
+                                    fontStretch: 'normal', //wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+                                    fontToUpperCase: true,
+                                    tooltipFontFamily: 'Oswald, Arial, sans-serif',
+                                    tooltipFontSize: '16',
+                                    tooltipFontColor: 'red',
+                                    tooltipFontWeight: 'normal', //bold
+                                    tooltipFontStyle: 'normal', //italic 
+                                    tooltipFontStretch: 'normal', //wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+                                    tooltipFontToUpperCase: false,
+                                    tooltipTextAnchor: 'left',
+                                    tooltipDiffX: 0,
+                                    tooltipDiffY: 5
 
-                    function LoadPlayer() {
-                        var music_array = [];
-                        
-                        music_array.push({
-                            name: 'Sold Out',
-                            url: 'http://music.163.com/song/media/outer/url?id=31010566.mp3',
-                            artist: 'Hawk Nelson',
-                            cover: 'https://s2.ax1x.com/2020/03/02/3RRXAs.jpg',
-                        });
-                        
-                        music_array.push({
-                            name: 'Señorita',
-                            url: 'http://music.163.com/song/media/outer/url?id=1373168742.mp3',
-                            artist: 'Shawn Mendes / Camila Cabello',
-                            cover: 'https://s2.ax1x.com/2020/03/03/3hZL6J.jpg',
-                        });
-                        
-                        music_array.push({
-                            name: 'Into You',
-                            url: 'http://music.163.com/song/media/outer/url?id=523042017.mp3',
-                            artist: 'Matisse &amp; Sadko / Hanne Mjøen',
-                            cover: 'https://s2.ax1x.com/2020/03/03/3heru9.jpg',
-                        });
-                        
-                        music_array.push({
-                            name: 'Wolves',
-                            url: 'http://music.163.com/song/media/outer/url?id=515269424.mp3',
-                            artist: 'Selena Gomez / Marshmello',
-                            cover: 'https://s2.ax1x.com/2020/03/03/3heHEt.jpg',
-                        });
-                        
-                        console.log(" MusicList: " + music_array);
-                        
-                        const ap = new APlayer({
-                            container: document.getElementById('player'),
-                            fixed: true,
-                            audio: music_array
-                        });
-                        
-                    }
-                    LoadPlayer();
-                    
-                    
-                    loadlive2d();
-                    
-                    
-                    hitokoto();
-                    
-                    getStar();
-                    hljs.initHighlighting();
-                    console.clear();
-                    
-                    CheckVersion();
-                    
-                    var newDate = new Date();
-                    newDate.setTime(1587194503682);
-                    console.log(" Blog Update Time: " + newDate.toLocaleDateString());
-                    console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
-                </script>
-                
-                    <div id="tp-weather-widget" style="background: #666;display: flex;"></div>
-                    <script>
-                        (function(T, h, i, n, k, P, a, g, e) {
-                            g = function() {
-                                P = h.createElement(i);
-                                a = h.getElementsByTagName(i)[0];
-                                P.src = k;
-                                P.charset = "utf-8";
-                                P.async = 1;
-                                a.parentNode.insertBefore(P, a)
-                            };
-                            T["ThinkPageWeatherWidgetObject"] = n;
-                            T[n] || (T[n] = function() {
-                                (T[n].q = T[n].q || []).push(arguments)
+                                };
+
+                                //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
+                                $('#tags').svg3DTagCloud(settings);
                             });
-                            T[n].l = +new Date();
-                            if (T.attachEvent) {
-                                T.attachEvent("onload", g)
-                            } else {
-                                T.addEventListener("load", g, false)
-                            }
-                        }(window, document, "script", "tpwidget", "//widget.seniverse.com/widget/chameleon.js"))
-                    </script>
-                    <script>
-                        var wearther_margin = "10px 10px";
-                        
-                        wearther_margin = "70px 5px";
-                        
-                        tpwidget("init", {
-                            "flavor": "bubble",
-                            "location": "WX4FBXXFKE4F",
-                            "geolocation": "enabled",
-                            "position": "bottom-left",
-                            "margin": wearther_margin,
-                            "language": "zh-chs",
-                            "unit": "c",
-                            "theme": "chameleon",
-                            "uid": "UFC977E1C7",
-                            "hash": "213ad798bc472dc365da3a9d4a9ff115"
-                        });
-                        tpwidget("show");
-                    </script>
+                        </script>
+                    </div>
+                </li>
+                
+                    <script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/APlayer.min.js"></script>
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+                    <div id="player"></div>
                     
+                        <li class="lite-item">
+                            <header class="lite-item-header">
+                                <h3 class="lite-item-title">
+                                    &#x1F3B5;&#x97F3;&#x4E50;
+                                </h3>
+                            </header>
+                            <div class="textwidget">
+                                <p>
+                                    <div id="playerbox"></div>
+                                </p>
+                            </div>
+                        </li>
+                        
+                            <script>
+                                function LoadPlayer() {
+                                    var music_array = [];
+                                    
+                                    music_array.push({
+                                        name: 'Sold Out',
+                                        url: ' http://music.163.com/song/media/outer/url?id=31010566.mp3',
+                                        artist: 'Hawk Nelson',
+                                        cover: 'https://s2.ax1x.com/2020/03/02/3RRXAs.jpg',
+                                    });
+                                    
+                                    music_array.push({
+                                        name: 'Señorita',
+                                        url: 'http://music.163.com/song/media/outer/url?id=1373168742.mp3',
+                                        artist: 'Shawn Mendes / Camila Cabello',
+                                        cover: 'https://s2.ax1x.com/2020/03/03/3hZL6J.jpg',
+                                    });
+                                    
+                                    music_array.push({
+                                        name: 'Into You',
+                                        url: 'http://music.163.com/song/media/outer/url?id=523042017.mp3',
+                                        artist: 'Matisse &amp; Sadko / Hanne Mjøen',
+                                        cover: 'https://s2.ax1x.com/2020/03/03/3heru9.jpg',
+                                    });
+                                    
+                                    music_array.push({
+                                        name: 'Wolves',
+                                        url: 'http://music.163.com/song/media/outer/url?id=515269424.mp3',
+                                        artist: 'Selena Gomez / Marshmello',
+                                        cover: 'https://s2.ax1x.com/2020/03/03/3heHEt.jpg',
+                                    });
+                                    
+                                    
+                                    const ap = new APlayer({
+                                        container: document.getElementById('playerbox'),
+                                        audio: music_array
+                                    });
+                                    
+                                }
+                                LoadPlayer();
+                            </script>
+                            
+                                
+                                        
+                                            
+                                                
+                                                    <li class="lite-item">
+                                                        <header class="lite-item-header">
+                                                            <h3 class="lite-item-title">
+                                                                
+                                                            </h3>
+                                                        </header>
+                                                        <div class="textwidget">
+                                                            <div id="textwidget-box" style="width:100%; height:auto;">
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    
+                                                        
+                                                            <li class="lite-item">
+                                                                <header class="lite-item-header">
+                                                                    <h3 class="lite-item-title">&#x1F468;&#x200D;&#x1F4BB;&#x53CB;&#x94FE;</h3>
+                                                                </header>
+                                                                <div class="textwidget">
+                                                                    
+                                                                        
+                                                                            <p onclick="javascript:top.location='https://blog.itjoker.cn'"><span class="link_a"><a href="https://blog.itjoker.cn" alt="ITJoker ">ITJoker -ITJoker&#39;s Blog</a></span></p>
+
+                                                                            
+                                                                            <p onclick="javascript:top.location='http://acg17.com'"><span class="link_a"><a href="http://acg17.com" alt="ACG17 ">ACG17 -日常找图</a></span></p>
+
+                                                                            
+                                                                                
+                                                                </div>
+                                                            </li>
+    </ul>
+</div>
         </div>
+
 </body>
-<script>
-    scroll();
-</script>
+<footer id="foot">
+    <a class="back-to-top" href="#"><i class="Card Card-top" ></i><span class="back-to-top-text">0%</span></a>
+    <div class="copyright">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> & <a href="https://github.com/diego3893/diego3893.github.io" target="_blank" > Diego </a>
+            
+                    
+                            &#x7248;&#x6743;&#x6240;&#x6709; &copy;
+                            <script>
+                                var date = new Date();
+                                data2 = new Date(buildTime.replace(/-/g, "/"));
+                                nowYear = date.getFullYear().toString()
+                                buildYear = data2.getFullYear().toString();
+                                if (buildYear == nowYear) {
+                                    document.write('<span class="my-face">' + nowYear + '</span>');
+                                } else {
+                                    document.write(buildYear + '-<span class="my-face">' + nowYear + '</span>');
+                                }
+                            </script>
+
+                            <a href="https://diego3893.github.io">
+                                Diego&#39;s Blog
+                            </a>&nbsp;|&nbsp;Powered by
+                            <a href="https://github.com" target="_blank">
+                                Github
+                            </a>
+    </div>
+    <script>
+        let back2TopText = document.querySelector('.back-to-top-text')
+        window.addEventListener('scroll', function(e) {
+            let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
+            if (back2TopText) {
+                back2TopText.textContent = Math.floor(percent).toString() + '%';
+            }
+        });
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            document.hidden ? (document.title = "\uD83D\uDE25" + OriginTitile, clearTimeout(titleTime)) : (document.title = "\uD83D\uDE1D" + OriginTitile, titleTime = setTimeout(function() {
+                document.title = OriginTitile
+            }, 2E3))
+        });
+        var OriginTitile = document.title;
+        
+        App.hitokoto();
+        
+        App.clearLog();
+        App.outputlog();
+        var logo = '%cDiego&#39;s Blog\'%cBlog';
+        console.info(
+            logo,
+            'color: #ffffff; background: #000000; padding:5px 10px 5px 10px;font-size:40px;border-radius:12px 0 0 12px;', 'color: #000000; background: #FE9A00; padding:5px 10px;font-size:40px;border-radius:0 12px 12px 0;'
+        );
+    </script>
+</footer>
+    <script>
+        renderMathInElement(document.body, {
+            delimiters: [{
+                left: "$$",
+                right: "$$",
+                display: true
+            }, {
+                left: "$",
+                right: "$",
+                display: false
+            }]
+        });
+    </script>
 
 </html>

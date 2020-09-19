@@ -7,6 +7,7 @@
 html,
 body,
 * {
+    cursor: pointer;
     margin: 0;
     padding: 0;
     border: 0;
@@ -40,7 +41,7 @@ h4 {
 
 a {
     text-decoration: none;
-    color: #000;
+    color: #666;
     cursor: pointer;
 }
 
@@ -70,7 +71,7 @@ input:-webkit-autofill {
 /* 滚动条的滑轨背景颜色 */
 
 ::-webkit-scrollbar-thumb {
-    background-color: #ea9595;
+    background-color: #666666;
 }
 
 
@@ -93,9 +94,9 @@ input:-webkit-autofill {
 button,
 input,
 textarea {
-    /*-webkit-appearance: none;
+    -webkit-appearance: none;
     outline: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);*/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 div,
@@ -135,7 +136,7 @@ textarea {
 .message-info {
     background: rgba(17, 17, 17, .9);
     color: #fff;
-    border-radius: 2px;
+    border-radius: 5px;
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 0 1px rgba(0, 0, 0, 0.35);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 0 1px rgba(0, 0, 0, 0.35);
     display: inline-block;
@@ -146,7 +147,7 @@ textarea {
 
 #header {
     width: 100%;
-    background: rgba(255, 255, 255, 1);
+    background: #f9f9f9;
     position: fixed;
     top: 0;
     left: 0;
@@ -303,11 +304,11 @@ textarea {
 
 #pc-menu .searchform {
     float: right;
-    margin: 5px 10px;
+    margin: 5px -25px;
     position: relative;
 }
 
-#pc-menu .searchform .memory-search {
+#pc-menu .searchform .Card-search {
     position: absolute;
     left: 10px;
     top: 8px;
@@ -320,7 +321,7 @@ textarea {
     width: 120px;
     border-radius: 3px;
     background-color: #fbf9f9;
-    border: 1px solid #e3e8e8;
+    border: 2px solid #e3e8e8;
     color: #635f5f;
     font-size: 14px;
     padding: 0 10px 0 30px;
@@ -334,7 +335,7 @@ textarea {
     -o-transition-delay: .1s;
 }
 
-#pc-menu .searchform #s:focus {
+#pc-menu .searchform>#s:focus {
     width: 200px;
     border: 2px solid #00BBFF;
 }
@@ -355,7 +356,6 @@ textarea {
 #foot .theme {
     font-family: "theme" !important;
     font-style: normal;
-    color: #000;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -377,7 +377,7 @@ textarea {
     margin-top: 5px;
     -webkit-box-shadow: 0 1px 3px rgba(26, 26, 26, .1);
     box-shadow: 0 1px 3px rgba(26, 26, 26, .1);
-    background: #fff;
+    background: #fafafa;
     border-radius: 2px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -476,7 +476,7 @@ textarea {
 .post-type-header .post-type-author a,
 .post-type-header .post-type-title a {
     font-weight: bold;
-    color: #000;
+    color: #666;
 }
 
 .post-type-header .post-type-author .publish-time {
@@ -531,7 +531,7 @@ textarea {
 }
 
 .post-type-header .thumbnail-shadow .post-info span a {
-    color: #fff;
+    color: #fafafa;
 }
 
 .post-type-header .post-relative {
@@ -752,7 +752,7 @@ textarea {
 .post-type .post-content blockquote:before {
     position: absolute;
     display: block;
-    font-family: 'memory';
+    font-family: 'Card';
     content: '\e654';
     right: 5px;
     top: 5px;
@@ -973,10 +973,10 @@ textarea {
 .lite-item .lite-item-header {
     line-height: 38px;
     margin: 0;
-    background: #fcfcfc;
+    background: #efefef;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    border-bottom: 1px solid #e3e8e8;
+    border-bottom: 1px solid #efefef;
     padding: 0 15px;
 }
 
@@ -985,7 +985,7 @@ textarea {
     font-weight: normal;
 }
 
-.lite-item .lite-item-header .memory {
+.lite-item .lite-item-header .Card {
     font-size: 19px;
 }
 
@@ -1016,7 +1016,7 @@ textarea {
 
 .lite-item .recentcomments .comment-content:before {
     display: block;
-    font-family: 'memory';
+    font-family: 'Card';
     content: '\e655';
     position: absolute;
     left: -10px;
@@ -1129,7 +1129,7 @@ textarea {
 }
 
 #comments .comment-comment .comment-info .comment-reply-link:before {
-    font-family: 'memory';
+    font-family: 'Card';
     content: '\e6a7\ '
 }
 
@@ -1156,8 +1156,8 @@ textarea {
     padding-top: 10px;
 }
 
-#pagination .memory-comments-page a,
-#pagination .memory-comments-page span {
+#pagination .Card-comments-page a,
+#pagination .Card-comments-page span {
     color: #222;
     cursor: pointer;
     text-align: center;
@@ -1176,8 +1176,8 @@ textarea {
     line-height: 36px;
 }
 
-#pagination .memory-comments-page .current,
-#pagination .memory-comments-page a:hover {
+#pagination .Card-comments-page .current,
+#pagination .Card-comments-page a:hover {
     background: #0d93ee;
     color: #fff;
     border: 1px solid #0d93ee;
@@ -1269,7 +1269,7 @@ textarea {
 }
 
 .lite-item .catch-me i:hover {
-    background-color: #0bf;
+    background-color: #6b6b6b;
     color: #fff
 }
 
@@ -1304,7 +1304,7 @@ textarea {
 
 .post-preview .post-preview--meta .post-preview--title a {
     text-decoration: none;
-    color: #000;
+    color: #666;
 }
 
 .post-preview .post-preview--meta .post-preview--title a:before {
@@ -1495,7 +1495,7 @@ textarea {
     min-height: 80px;
 }
 
-#main-part .author .art-author .author-info .memory-birthday {
+#main-part .author .art-author .author-info .Card-birthday {
     color: #adad0f;
 }
 
@@ -1515,35 +1515,35 @@ textarea {
     text-align: center;
 }
 
-#main-part .author .art-author .author-info .author-contactmethods .memory-twitter {
+#main-part .author .art-author .author-info .author-contactmethods .Card-twitter {
     color: #55acee;
 }
 
-#main-part .author .art-author .author-info .author-contactmethods .memory-facebook {
+#main-part .author .art-author .author-info .author-contactmethods .Card-facebook {
     color: #44619d;
 }
 
-#main-part .author .art-author .author-info .author-contactmethods .memory-weibo {
+#main-part .author .art-author .author-info .author-contactmethods .Card-weibo {
     color: #ff763b;
 }
 
-#main-part .author .art-author .author-info .author-contactmethods .memory-tencentweibo {
+#main-part .author .art-author .author-info .author-contactmethods .Card-tencentweibo {
     color: #56b6e7;
 }
 
-#main-part .author .art-author .author-info .author-contactmethods .memory-bilibili {
+#main-part .author .art-author .author-info .author-contactmethods .Card-bilibili {
     color: #0bf;
 }
 
-#main-part .author .art-author .author-info .author-contactmethods .memory-douban {
+#main-part .author .art-author .author-info .author-contactmethods .Card-douban {
     color: #33b045;
 }
 
-#main-part .author .art-author .author-info .author-contactmethods .memory-qqzone {
+#main-part .author .art-author .author-info .author-contactmethods .Card-qqzone {
     color: #fdbe3d;
 }
 
-#main-part .author .art-author .author-info .author-contactmethods .memory-zhihu {
+#main-part .author .art-author .author-info .author-contactmethods .Card-zhihu {
     color: rgb(15, 136, 235);
 }
 
@@ -1619,15 +1619,20 @@ textarea {
     height: 100%;
 }
 
-#foot #back-to-top {
-    display: block;
+.back-to-top-text {
+    font-size: 10px;
+    margin-left: 2px;
+}
+
+#foot .back-to-top {
+    display: inline;
     z-index: 999;
     background: #fff;
-    width: 45px;
+    width: 65px;
     height: 45px;
     line-height: 45px;
     opacity: .8;
-    color: rgba(111, 111, 111, .6);
+    color: rgba(111, 111, 111, .8);
     position: fixed;
     text-align: center;
     text-decoration: none;
@@ -1661,8 +1666,8 @@ textarea {
     border-radius: 5px;
 }
 
-#foot #back-to-top .memory-top,
-#go-to-comment .memory-comments {
+#foot .back-to-top .Card-top,
+#go-to-comment .Card-comments {
     font-size: 25px;
 }
 
@@ -1732,7 +1737,7 @@ textarea {
         font-size: 14px;
         padding: 0 10px 0 35px;
     }
-    #mobile-menu .mobile-searchform .memory-search {
+    #mobile-menu .mobile-searchform .Card-search {
         position: absolute;
         left: 12px;
         top: 10px;
@@ -1751,7 +1756,7 @@ textarea {
         margin: 8px 0;
         font-size: 14px;
     }
-    #mobile-menu #mobile-menu-main>ul>li .memory,
+    #mobile-menu #mobile-menu-main>ul>li .Card,
     #mobile-menu #mobile-menu-main>ul>li:before {
         display: block;
         font-size: 28px;
@@ -2294,7 +2299,7 @@ button[data-content] {
 }
 
 [data-content-pos=right]:after {
-    margin-left: 11px
+    margin-left: 11px;
 }
 
 [data-content-pos=right]:before {
