@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html id="bg">
+
+<head>
+    <meta charset="utf-8" />
+<!--
+    * @Theme Card
+    *
+    * @author admin@itjoker.cn
+    * @link https://blog.itjoker.cn
+-->
+
+<title>
+    Diego&#39;s Blog
+</title>
+<!--[if lt IE 9]><script src="//cdn.bootcss.com/html5shiv/r29/html5.js"></script><![endif]-->
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<meta name="author" content="Diego&#39;s Blog">
+<meta name="description" content="Stay hungry, Stay foolish">
+<meta name="keywords" content="OIer,蒟蒻,沉迷学习">
+<meta name="gridea-theme" content="Card">
+<meta name="spider" content="https://nmsl.sbjxw.网址">
+<meta name="UpdateTime" content="1600509604622">
+<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/jquery@3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/Card/prism.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/css/Card/prism.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/js/Card/script.min.js"></script>-->
+<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/css/Card/main.min.css" />-->
+<script src="https://diego3893.github.io/media/js/script.min.js"></script>
+<link rel="stylesheet" href="https://diego3893.github.io/media/css/main.min.css" />
+<link rel="stylesheet" href="https://diego3893.github.io/styles/main.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/css/Card/iconfont.css" />
+<!--link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_410989_wuhl0k5ojvf.css" /-->
+<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/js/love.min.js"></script>
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<script>
+    $().ready(
+        function() {
+            var themeIcon = document.getElementById("themeIcon");
+            var currentTheme = window.localStorage.getItem('theme');
+            if (currentTheme == 'dark') {
+                document.getElementsByTagName('html')[0].classList.add('theme-dark');
+                themeIcon.classList.remove('Card-moon');
+                themeIcon.classList.add('Card-sun');
+            } else {
+                document.getElementsByTagName('html')[0].classList.remove('theme-dark');
+                themeIcon.classList.remove('Card-sun');
+                themeIcon.classList.add('Card-moon');
+            }
+        }
+    )
+</script>
+
+    <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/hit-kounter-lc-0.3.0.js"></script>
+    
+        
+            <script>
+                (function() {
+                    var bp = document.createElement('script');
+                    var curProtocol = window.location.protocol.split(':')[0];
+                    if (curProtocol === 'https') {
+                        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                    } else {
+                        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                    }
+                    var s = document.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(bp, s);
+                })();
+            </script>
+            
+                    <style>
+                        .Card-certify {
+                            color: #0091e4 !important;
+                        }
+                        
+                        #foot {
+                            color: #666666;
+                        }
+                        
+                        #menu-item:hover {
+                            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+                            border-bottom-color: rgba(0, 0, 0, .6);
+                        }
+                        
+                        .gray {
+                            -webkit-filter: grayscale(100%);
+                            /* webkit */
+                            -moz-filter: grayscale(100%);
+                            /*firefox*/
+                            -ms-filter: grayscale(100%);
+                            /*ie9*/
+                            -o-filter: grayscale(100%);
+                            /*opera*/
+                            filter: grayscale(100%);
+                            filter: progid: DXImageTransform.Microsoft.BasicImage(grayscale=1);
+                            filter: gray;
+                            /*ie9- */
+                        }
+                        
+                        .lite-item,
+                        #header {
+                            opacity: 1;
+                        }
+                        
+                        .lite-item {
+                            background-color: #fafafa;
+                        }
+                        
+                        #spnBtn:hover {
+                            transition: all .3s ease;
+                            color: #fff;
+                            background-color: #6b6b6b;
+                            /*#0092ee*/
+                            /*linear-gradient( rgb(138, 160, 255) 30%, rgb(90, 140, 250) 70%);*/
+                        }
+                        
+                        #spnBtn {
+                            background-color: #efefef;
+                            font-size: 14px;
+                            transition: all .3s ease;
+                        }
+                        
+                        .link_a:hover {
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                            color: #fff;
+                            border-left: 8px solid #6b6b6b;
+                            padding: 5px;
+                            transition: all .3s ease;
+                        }
+                        
+                        html {
+                            width: 100%;
+                            height: 100%;
+                            background-attachment: fixed;
+                            background-repeat: no-repeat;
+                        }
+                    </style>
+</head>
+
+<body>
+    <header id="header">
+
+    <div id="pc-menu">
+        <a id="menu-bar" class="Card Card-menu"></a>
+        <a id="menu-title" href="https://diego3893.github.io">
+            Diego&#39;s Blog
+        </a>
+        <nav id="menu-main" class="menu-main">
+            <ul>
+                
+                    <li id="menu-item" class="menu-item">
+                        <a href="/">
+                            🎈首页
+                        </a>
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="/posts">
+                            📝文章列表
+                        </a>
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="/archives">
+                            📜归档
+                        </a>
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="/tags">
+                            🔖标签
+                        </a>
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="/friends">
+                            🤝友链
+                        </a>
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="/photos">
+                            📌图墙
+                        </a>
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="https://travellings.now.sh/">
+                            🚀开往
+                        </a>
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="/post/about">
+                            🏳️‍🌈关于
+                        </a>
+                    </li>
+                    
+            </ul>
+        </nav>
+        <form id="gridea-search-form" class="searchform" data-update="1600509604622" action="/search/index.html">
+            <i class="Card Card-search"></i>
+            <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
+        </form>
+    </div>
+    <div id="mobile-menu">
+        <form id="gridea-search-form" class="mobile-searchform" data-update="1600509604622" action="/search/index.html">
+            <i class="Card Card-search"></i>
+            <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
+        </form>
+        <nav class="menu">
+            <ul style="list-style: none;">
+                
+                    <li class="page_item page-item-2">
+                        <a href="/">
+                            🎈首页
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="/posts">
+                            📝文章列表
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="/archives">
+                            📜归档
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="/tags">
+                            🔖标签
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="/friends">
+                            🤝友链
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="/photos">
+                            📌图墙
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="https://travellings.now.sh/">
+                            🚀开往
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="/post/about">
+                            🏳️‍🌈关于
+                        </a>
+                    </li>
+                    
+            </ul>
+        </nav>
+    </div>
+    <a id="theme-btn" class="theme-btn" onclick="App.changeTheme()"><i id="themeIcon" class="Card Card-moon"></i></a>
+</header>
+        <div id="main">
+            <div id="main-part">
+                <div class="lite-item">
+                    <article class="post post-type real-post">
+                        <header class="post-type-header">
+                            
+                                    <div class="thumbnail-link" style="background-color: transparent;"></div>
+                                    
+                                        <div class="thumbnail-shadow">
+                                            <h1 class="post-title">
+                                                安利Typecho插件
+                                            </h1>
+                                            <div class="post-info">
+                                                <span class="post-category"><i class="Card Card-novel"></i>
+                                        
+                                            <span onclick="javascript:top.location='https://diego3893.github.io/tag/G1eM_Hyfm/'">安利</span>
+                                                
+                                                    </span>
+                                                    <span class="post-view">
+                                                    
+                                                        &nbsp;•&nbsp;
+                                                        <span class="post-meta-item-text"><i class="Card Card-view"></i>&nbsp;阅读量&nbsp;</span>
+                                                        <span data-hk-page="current"> - </span>
+                                                        
+                                                            </span>&nbsp;•&nbsp;
+
+                                                            <span class="post-readtime">阅读时间:
+                                            2.5分</span>
+                                                            <span class="post-edit"></span></div>
+                                        </div>
+                                        <div class="post-relative">
+                                            <img alt="Diego&#39;s Blog" src="https://diego3893.github.io/images/avatar.png?v=1600509604622" srcset="https://diego3893.github.io/images/avatar.png?v=1600509604622" class="avatar avatar-100 photo" width="100" height="100">
+                                            <span class="post-type-author"><a href="https://diego3893.github.io" title="由Diego&#39;s Blog发布" rel="author">Diego&#39;s Blog<i class="Card Card-certify"></i></a></span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2020-09-19</span>
+                                        </div>
+                        </header>
+                        <div class="post-main post-type-main">
+                            <div class="post-content">
+                                <div class="post-content-real">
+                                    <p>轻量到绝望的Typecho因主题和插件而美丽<s>doge</s><br>
+以下为本人使用的主题及插件，安利一下哦</p>
+<!--more-->
+<h1 id="插件">插件</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">简介</th>
+<th style="text-align:center">版本</th>
+<th style="text-align:center">指南</th>
+<th style="text-align:center">下载</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">APlayerAtBottom</td>
+<td style="text-align:center">在网站底部插入APlayer吸底播放器</td>
+<td style="text-align:center">1.1.0</td>
+<td style="text-align:center"><a href="https://713.moe/p/135">查看</a></td>
+<td style="text-align:center"><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/652430413.zip">APlayerAtBottom.zip</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Access</td>
+<td style="text-align:center">获取访客信息，生成统计图表</td>
+<td style="text-align:center">2.0.2</td>
+<td style="text-align:center"><a href="https://kotori.love/archives/typecho-plugin-access.html">查看</a></td>
+<td style="text-align:center"><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/3443054983.zip">Access.zip</a></td>
+</tr>
+<tr>
+<td style="text-align:center">AliceStyle</td>
+<td style="text-align:center">萌卜兔's 美化插件</td>
+<td style="text-align:center">2.6.2</td>
+<td style="text-align:center"><a href="https://racns.com/374.html">查看</a></td>
+<td style="text-align:center"><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/3617363394.zip">AliceStyle.zip</a></td>
+</tr>
+<tr>
+<td style="text-align:center">ArticlePoster</td>
+<td style="text-align:center">为文章生成海报</td>
+<td style="text-align:center">1.0.6</td>
+<td style="text-align:center"><a href="https://www.moleft.cn/post-53.html">q</a></td>
+<td style="text-align:center"><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/678443159.zip">ArticlePoster.zip</a></td>
+</tr>
+<tr>
+<td style="text-align:center">AutoLaTeX</td>
+<td style="text-align:center">自动渲染 LaTeX 公式</td>
+<td style="text-align:center">0.1.0</td>
+<td style="text-align:center">无</td>
+<td style="text-align:center"><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/3978351445.zip">AutoLaTeX.zip</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Comment2Wechat</td>
+<td style="text-align:center">微信推送评论通知</td>
+<td style="text-align:center">1.1.0</td>
+<td style="text-align:center"><a href="https://yian.me/blog/php/typecho-plugin--comment2wechat.html">查看</a></td>
+<td style="text-align:center"><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/1514182740.zip">Comment2Wechat.zip</a></td>
+</tr>
+<tr>
+<td style="text-align:center">EditorMD</td>
+<td style="text-align:center">Markdown 编辑器 Editor.md for Typecho</td>
+<td style="text-align:center">1.4.0</td>
+<td style="text-align:center"><a href="https://dt27.org/php/editormd-for-typecho/">查看</a></td>
+<td style="text-align:center"><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/3734025040.zip">EditorMD.zip</a></td>
+</tr>
+<tr>
+<td style="text-align:center">GHbutton</td>
+<td style="text-align:center">在文中嵌入GitHub项目按钮</td>
+<td style="text-align:center">1.0.4</td>
+<td style="text-align:center"><a href="https://www.yzmb.me/archives/net/github-btn-typecho">查看</a></td>
+<td style="text-align:center"><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/41455021.zip">GHbutton.zip</a></td>
+</tr>
+<tr>
+<td style="text-align:center">GoodLuck</td>
+<td style="text-align:center">随机跳转一篇文章</td>
+<td style="text-align:center">1.0.2</td>
+<td style="text-align:center"><a href="https://github.com/typecho-fans/plugins/tree/master/GoodLuck">查看</a></td>
+<td style="text-align:center"><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/1833657878.zip">GoodLuck.zip</a></td>
+</tr>
+<tr>
+<td style="text-align:center">HighSlide</td>
+<td style="text-align:center">为博客添加HighSlide弹窗效果与相册功能</td>
+<td style="text-align:center">1.4.7</td>
+<td style="text-align:center"><a href="https://www.yzmb.me/archives/net/highslide-for-typecho">查看</a></td>
+<td style="text-align:center"><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/533014312.zip">HighSlide.zip</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Links</td>
+<td style="text-align:center">友情链接插件</td>
+<td style="text-align:center">1.1.2</td>
+<td style="text-align:center"><a href="http://www.imhan.com/archives/typecho_links_20141214/">查看</a></td>
+<td style="text-align:center"><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/2612369645.zip">Links.zip</a></td>
+</tr>
+<tr>
+<td style="text-align:center">LoveKKComment</td>
+<td style="text-align:center">Typecho 评论通知、找回密码插件</td>
+<td style="text-align:center">1.0.5</td>
+<td style="text-align:center"><a href="https://github.com/ylqjgm/LoveKKComment">查看</a></td>
+<td style="text-align:center"><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/1901312020.zip">LoveKKComment.zip</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Parsedown Plugin</td>
+<td style="text-align:center">替换markdown解析源</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">无</td>
+<td style="text-align:center"><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/2365024099.zip">Parsedown.zip</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Pio</td>
+<td style="text-align:center">一个简易的 Live2D 插件</td>
+<td style="text-align:center">2.4</td>
+<td style="text-align:center"><a href="https://paugram.com/coding/add-poster-girl-with-plugin.html">查看</a></td>
+<td style="text-align:center"><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/234057245.zip">Pio.zip</a></td>
+</tr>
+<tr>
+<td style="text-align:center">权限狗</td>
+<td style="text-align:center">修改注册时默认用户组，贡献者可直接发布文章无需审核,前台注册支持用户输入密码,支持模板开发者设置前台注册后的跳转地址，设置前台文章发布后的跳转地址</td>
+<td style="text-align:center">1.3.0</td>
+<td style="text-align:center"><a href="https://qqdie.com/archives/typecho-Rdog.html">查看</a></td>
+<td style="text-align:center"><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/3264720032.zip">Rdog.zip</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Sitemap</td>
+<td style="text-align:center">Google Sitemap 生成器</td>
+<td style="text-align:center">1.0.1</td>
+<td style="text-align:center">无</td>
+<td style="text-align:center"><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/247215004.zip">Sitemap.zip</a></td>
+</tr>
+<tr>
+<td style="text-align:center">SmartSpam</td>
+<td style="text-align:center">智能评论过滤器，让机器人彻底远离你！</td>
+<td style="text-align:center">2.6.0</td>
+<td style="text-align:center"><a href="http://www.yovisun.com/archive/typecho-plugin-smartspam.html">查看</a></td>
+<td style="text-align:center"><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/1912090795.zip">SmartSpam.zip</a></td>
+</tr>
+<tr>
+<td style="text-align:center">TeStore</td>
+<td style="text-align:center">通过读取html表格实现插件仓库的下载、安装及卸载等功能</td>
+<td style="text-align:center">1.1.2</td>
+<td style="text-align:center"><a href="https://www.yzmb.me/archives/net/testore-for-typecho">查看</a></td>
+<td style="text-align:center"><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/3993098958.zip">TeStore.zip</a></td>
+</tr>
+<tr>
+<td style="text-align:center">WTS</td>
+<td style="text-align:center">模仿ACFUN通知条公告</td>
+<td style="text-align:center">1.0.0</td>
+<td style="text-align:center"><a href="https://www.sshuo.cc/archives/360.html">查看</a></td>
+<td style="text-align:center"><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/1692520424.zip">WTS.zip</a></td>
+</tr>
+<tr>
+<td style="text-align:center">WikimoeBangumi</td>
+<td style="text-align:center">Bangumi追番表</td>
+<td style="text-align:center">1.0.0</td>
+<td style="text-align:center"><a href="https://www.wikimoe.com/?post=136#3631">查看</a></td>
+<td style="text-align:center"><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/4166419012.zip">bangumi_plugin.zip</a></td>
+</tr>
+<tr>
+<td style="text-align:center">notice</td>
+<td style="text-align:center">一款消息通知插件，判断来路地址输出欢迎消息。</td>
+<td style="text-align:center">0.3</td>
+<td style="text-align:center"><a href="https://qqdie.com/archives/typecho-a-notice-plugin.html">查看</a></td>
+<td style="text-align:center"><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/4181440715.zip">notice.zip</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Login Designer</td>
+<td style="text-align:center">博客登录/注册页面美化插件，提供多种美化样式</td>
+<td style="text-align:center">1.3.0</td>
+<td style="text-align:center"><a href="https://qqdie.com/archives/typecho-LoginDesigner-plugin.html">查看</a></td>
+<td style="text-align:center"><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/4101464860.zip">LoginDesigner.zip</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="主题">主题</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">最新版本</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Cuckoo</td>
+<td style="text-align:center">v1.0.4Beta</td>
+<td style="text-align:center">前台</td>
+<td style="text-align:center"><a href="https://cuckoo.owo.show/#/">查看</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Fresh</td>
+<td style="text-align:center">v3.0</td>
+<td style="text-align:center">后台</td>
+<td style="text-align:center"><a href="https://www.mlwly.cn/archives/fresh.html">查看</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="freshv30食用方法">Freshv3.0食用方法</h2>
+<ul>
+<li>下载到本地</li>
+<li>将Fresh重命名为<code>admin</code>，覆盖原<code>admin</code>文件夹</li>
+<li>将此时的<code>admin/菜单文件</code>中的<code>Menu.php</code>**（好像文件名是<code>Meun.php</code>，重命名）**替换根目录的<code>var/Widget/Menu.php</code>即可</li>
+</ul>
+
+                                </div>
+                            </div>
+                            
+                                <div class="reward ">
+                                    <div class="reward-button ">&yen;
+                                        <span class="reward-code "> 
+                                            <span class="alipay-code "> <img class="alipay-img " alt = "support " src="https://blog.itjoker.cn/alipay.jpg"><b>Alipay</b>                                                            </span>
+                                        <span class="wechat-code "> <img alt ="support " class="wechat-img " src="https://blog.itjoker.cn/wechat.jpg"><b>Wechat</b> </span> </span>
+                                    </div>
+                                </div>
+                                
+                        </div>
+                        <div class="post-footer">
+                            <div class="post-copyright">
+                                作者:
+                                Diego&#39;s Blog<br>永久链接:
+                                    <a href="https://diego3893.github.io/post/an-li-typecho-cha-jian/" title="安利Typecho插件">
+                                        https://diego3893.github.io/post/an-li-typecho-cha-jian/
+                                    </a><br> 协议: MIT License
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <style>
+                    .prev:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                    
+                    .next:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                </style>
+                <div class="lite-item nearby-article">
+                    
+                        <div class="nearby-article-left" style="padding: 10px;">
+                            <a class="prev" rel="prev" href="https://diego3893.github.io/post/zi-ji-xie-de-xiao-you-xi-wu-zi-qi/">
+                                <i class="fa fa-chevron-left"></i>
+                                自己写的小游戏--五子棋
+                            </a>
+                        </div>
+                        
+                            
+                                <div class="nearby-article-right" style="padding: 10px;">
+                                    <a class="next" rel="next" href="https://diego3893.github.io/post/an-li-yi-bo-py-zhi-wu-da-zhan-jiang-shi/">
+                                        安利一波PY植物大战僵尸<i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                                
+                </div>
+                <!--Share-->
+                <span style="margin-right:15px">
+    <i class="post-share"></i>
+    <span>&#x5206;&#x4EAB;:</span>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/an-li-typecho-cha-jian/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://diego3893.github.io/post/an-li-typecho-cha-jian/&sharesource=qzone&title=安利Typecho插件&pics=https://diego3893.github.io/images/avatar.png?v=1600509604622&summary=&lt;p&gt;轻量到绝望的Typecho因主题和插件而美丽&lt;s&gt;doge&lt;/s&gt;&lt;br&gt;
+以下为本人使用的主题及插件，安利一下哦&lt;/p&gt;
+"><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://diego3893.github.io/post/an-li-typecho-cha-jian/&sharesource=weibo&title=安利Typecho插件 + " - " + &lt;p&gt;轻量到绝望的Typecho因主题和插件而美丽&lt;s&gt;doge&lt;/s&gt;&lt;br&gt;
+以下为本人使用的主题及插件，安利一下哦&lt;/p&gt;
+&pic="https://diego3893.github.io/images/avatar.png?v=1600509604622"><i class="fa fa-weibo "></i></a>
+                </span>
+                
+                                            
+            </div>
+            <div id="sidebar">
+    <ul>
+        
+            <li class="lite-item">
+                <header class="lite-item-header">
+                    <h3 class="lite-item-title"><i class="Card Card-hitokoto"></i>&nbsp;&#x4E00;&#x8A00;</h3>
+                </header>
+                <div class="textwidget">
+                    <p>
+                        <b id="hitokoto"></b>
+                    </p>
+                </div>
+            </li>
+            
+                <!--
+                <li class="lite-item">
+                    <header class="lite-item-header">
+                        <h3 class="lite-item-title"><i class="Card Card-tags">&#x6807;&#x7B7E;</i></h3>
+                    </header>
+                    <div class="textwidget">
+                        
+                            <a href="" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
+                                <i class="fa fa-tags" aria-hidden="true"></i>
+                            </a>
+                            
+                    </div>
+                </li>-->
+                <li class="lite-item">
+                    <header class="lite-item-header">
+                        <h3 class="lite-item-title"><i class="Card Card-tags">&#x6807;&#x7B7E;</i></h3>
+                    </header>
+                    <div class="textwidget">
+                        <div id='tags' style="height: auto;width: 360;"></div>
+                        <script src="https://diego3893.github.io/media/js/svg3dtagcloud.min.js"></script>
+                        <script>
+                            $(document).ready(function() {
+                                var entries = ([
+                                    
+                                     {
+                                        label: '🏷技术宅',
+                                        url: 'https://diego3893.github.io/tag/jsIDxauOd/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷折腾笔记',
+                                        url: 'https://diego3893.github.io/tag/h6HytAKAH/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷安利',
+                                        url: 'https://diego3893.github.io/tag/G1eM_Hyfm/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷转载',
+                                        url: 'https://diego3893.github.io/tag/89WnJ3Arn/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷打卡模版',
+                                        url: 'https://diego3893.github.io/tag/rAwVgYtMd/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷字符串',
+                                        url: 'https://diego3893.github.io/tag/a9JlscXkj/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷算法',
+                                        url: 'https://diego3893.github.io/tag/dJ3WAsaqR/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷提高组笔记',
+                                        url: 'https://diego3893.github.io/tag/Gr5YErY6j/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷备忘',
+                                        url: 'https://diego3893.github.io/tag/qQcrTcB4k/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷图/树论',
+                                        url: 'https://diego3893.github.io/tag/Hc21XFSes/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷数据结构',
+                                        url: 'https://diego3893.github.io/tag/4-8y6NRl-/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷Gridea',
+                                        url: 'https://diego3893.github.io/tag/4X9N1ZDzg/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷STL',
+                                        url: 'https://diego3893.github.io/tag/c3jkatgC-/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷趣味',
+                                        url: 'https://diego3893.github.io/tag/bunbgwXDf/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷数学',
+                                        url: 'https://diego3893.github.io/tag/Nnc60LLfD/',
+                                        target: '_button'
+                                    }
+                                    
+                                    
+                                ]);
+                                var settings = {
+                                    entries: entries, //数据
+                                    width: 300, //宽度
+                                    height: 300, //高度
+                                    radius: '50%',
+                                    radiusMin: 50,
+                                    bgDraw: false, //是否显示背景
+                                    bgColor: '#fff', //背景颜色
+                                    opacityOver: 1.00,
+                                    opacityOut: 0.05,
+                                    opacitySpeed: 6,
+                                    fov: 360,
+                                    speed: 0.3, //旋转的速度
+                                    fontFamily: 'Oswald, Arial, sans-serif',
+                                    fontSize: '18', //默认字体大小
+                                    fontColor: '#666', //默认字体颜色
+                                    fontWeight: 'normal', //bold
+                                    fontStyle: 'normal', //italic 
+                                    fontStretch: 'normal', //wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+                                    fontToUpperCase: true,
+                                    tooltipFontFamily: 'Oswald, Arial, sans-serif',
+                                    tooltipFontSize: '16',
+                                    tooltipFontColor: 'red',
+                                    tooltipFontWeight: 'normal', //bold
+                                    tooltipFontStyle: 'normal', //italic 
+                                    tooltipFontStretch: 'normal', //wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+                                    tooltipFontToUpperCase: false,
+                                    tooltipTextAnchor: 'left',
+                                    tooltipDiffX: 0,
+                                    tooltipDiffY: 5
+
+                                };
+
+                                //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
+                                $('#tags').svg3DTagCloud(settings);
+                            });
+                        </script>
+                    </div>
+                </li>
+                
+                    <script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/APlayer.min.js"></script>
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+                    <div id="player"></div>
+                    
+                        <li class="lite-item">
+                            <header class="lite-item-header">
+                                <h3 class="lite-item-title">
+                                    &#x1F3B5;&#x97F3;&#x4E50;
+                                </h3>
+                            </header>
+                            <div class="textwidget">
+                                <p>
+                                    <div id="playerbox"></div>
+                                </p>
+                            </div>
+                        </li>
+                        
+                            <script>
+                                function LoadPlayer() {
+                                    var music_array = [];
+                                    
+                                    music_array.push({
+                                        name: 'Sold Out',
+                                        url: ' http://music.163.com/song/media/outer/url?id=31010566.mp3',
+                                        artist: 'Hawk Nelson',
+                                        cover: 'https://s2.ax1x.com/2020/03/02/3RRXAs.jpg',
+                                    });
+                                    
+                                    music_array.push({
+                                        name: 'Señorita',
+                                        url: 'http://music.163.com/song/media/outer/url?id=1373168742.mp3',
+                                        artist: 'Shawn Mendes / Camila Cabello',
+                                        cover: 'https://s2.ax1x.com/2020/03/03/3hZL6J.jpg',
+                                    });
+                                    
+                                    music_array.push({
+                                        name: 'Into You',
+                                        url: 'http://music.163.com/song/media/outer/url?id=523042017.mp3',
+                                        artist: 'Matisse &amp; Sadko / Hanne Mjøen',
+                                        cover: 'https://s2.ax1x.com/2020/03/03/3heru9.jpg',
+                                    });
+                                    
+                                    music_array.push({
+                                        name: 'Wolves',
+                                        url: 'http://music.163.com/song/media/outer/url?id=515269424.mp3',
+                                        artist: 'Selena Gomez / Marshmello',
+                                        cover: 'https://s2.ax1x.com/2020/03/03/3heHEt.jpg',
+                                    });
+                                    
+                                    
+                                    const ap = new APlayer({
+                                        container: document.getElementById('playerbox'),
+                                        audio: music_array
+                                    });
+                                    
+                                }
+                                LoadPlayer();
+                            </script>
+                            
+                                
+                                        
+                                            
+                                                
+                                                    <li class="lite-item">
+                                                        <header class="lite-item-header">
+                                                            <h3 class="lite-item-title">
+                                                                
+                                                            </h3>
+                                                        </header>
+                                                        <div class="textwidget">
+                                                            <div id="textwidget-box" style="width:100%; height:auto;">
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    
+                                                        
+                                                            <li class="lite-item">
+                                                                <header class="lite-item-header">
+                                                                    <h3 class="lite-item-title">&#x1F468;&#x200D;&#x1F4BB;&#x53CB;&#x94FE;</h3>
+                                                                </header>
+                                                                <div class="textwidget">
+                                                                    
+                                                                        
+                                                                            <p onclick="javascript:top.location='https://blog.itjoker.cn'"><span class="link_a"><a href="https://blog.itjoker.cn" alt="ITJoker ">ITJoker -ITJoker&#39;s Blog</a></span></p>
+
+                                                                            
+                                                                            <p onclick="javascript:top.location='http://acg17.com'"><span class="link_a"><a href="http://acg17.com" alt="ACG17 ">ACG17 -日常找图</a></span></p>
+
+                                                                            
+                                                                                
+                                                                </div>
+                                                            </li>
+    </ul>
+</div>
+        </div>
+
+</body>
+<footer id="foot">
+    <a class="back-to-top" href="#"><i class="Card Card-top" ></i><span class="back-to-top-text">0%</span></a>
+    <div class="copyright">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> & <a href="https://github.com/diego3893/diego3893.github.io" target="_blank" > Diego </a>
+            
+                    
+
+                        <div style="font-size:12px">
+                            
+                                        已经建站 <b id='build_time'></b>
+                        </div>
+                        <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/time.min.js"></script>
+                        <script>
+                            buildTime = '2020-02-13'
+                            setInterval(show_date_time, 1000, buildTime);
+                        </script>
+                        
+                            &#x7248;&#x6743;&#x6240;&#x6709; &copy;
+                            <script>
+                                var date = new Date();
+                                data2 = new Date(buildTime.replace(/-/g, "/"));
+                                nowYear = date.getFullYear().toString()
+                                buildYear = data2.getFullYear().toString();
+                                if (buildYear == nowYear) {
+                                    document.write('<span class="my-face">' + nowYear + '</span>');
+                                } else {
+                                    document.write(buildYear + '-<span class="my-face">' + nowYear + '</span>');
+                                }
+                            </script>
+
+                            <a href="https://diego3893.github.io">
+                                Diego&#39;s Blog
+                            </a>&nbsp;|&nbsp;Powered by
+                            <a href="https://github.com" target="_blank">
+                                Github
+                            </a>
+    </div>
+    <script>
+        let back2TopText = document.querySelector('.back-to-top-text')
+        window.addEventListener('scroll', function(e) {
+            let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
+            if (back2TopText) {
+                back2TopText.textContent = Math.floor(percent).toString() + '%';
+            }
+        });
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            document.hidden ? (document.title = "\uD83D\uDE25" + OriginTitile, clearTimeout(titleTime)) : (document.title = "\uD83D\uDE1D" + OriginTitile, titleTime = setTimeout(function() {
+                document.title = OriginTitile
+            }, 2E3))
+        });
+        var OriginTitile = document.title;
+        
+        App.hitokoto();
+        
+        App.clearLog();
+        App.outputlog();
+        var logo = '%cDiego&#39;s Blog\'%cBlog';
+        console.info(
+            logo,
+            'color: #ffffff; background: #000000; padding:5px 10px 5px 10px;font-size:40px;border-radius:12px 0 0 12px;', 'color: #000000; background: #FE9A00; padding:5px 10px;font-size:40px;border-radius:0 12px 12px 0;'
+        );
+    </script>
+</footer>
+    <script>
+        renderMathInElement(document.body, {
+            delimiters: [{
+                left: "$$",
+                right: "$$",
+                display: true
+            }, {
+                left: "$",
+                right: "$",
+                display: false
+            }]
+        });
+    </script>
+
+</html>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://diego3893.github.io</id>
     <title>Diego&apos;s Blog</title>
-    <updated>2020-09-19T09:28:34.495Z</updated>
+    <updated>2020-09-19T10:00:07.176Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://diego3893.github.io"/>
     <link rel="self" href="https://diego3893.github.io/atom.xml"/>
@@ -11,868 +11,496 @@
     <icon>https://diego3893.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Diego&apos;s Blog</rights>
     <entry>
-        <title type="html"><![CDATA[Typecho和FusionApp制作属于自己的BlogApp]]></title>
-        <id>https://diego3893.github.io/post/typecho-he-fusionapp-zhi-zuo-shu-yu-zi-ji-de-blogapp/</id>
-        <link href="https://diego3893.github.io/post/typecho-he-fusionapp-zhi-zuo-shu-yu-zi-ji-de-blogapp/">
+        <title type="html"><![CDATA[deepin安装Lemon]]></title>
+        <id>https://diego3893.github.io/post/deepin-an-zhuang-lemon/</id>
+        <link href="https://diego3893.github.io/post/deepin-an-zhuang-lemon/">
         </link>
-        <updated>2020-04-02T14:50:00.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="先给自己的app打个advertisement前往下载">先给自己的APP打个advertisement：<a href="https://www.lanzous.com/b015b7xjc">前往下载</a></h1>
-<h1 id="我改主题搞了几个小时插件也找了半天你难道想白嫖">我改主题搞了几个小时，插件也找了半天，你难道想白嫖？？？</h1>
-<p>实际上你真的可以白嫖~~（手动滑稽）~~</p>
+        <updated>2020-09-19T09:59:50.000Z</updated>
+        <summary type="html"><![CDATA[<p>测评机乃OI之神器也！于Linux安装之实属重要！</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>测评机乃OI之神器也！于Linux安装之实属重要！</p>
+<!--more-->
+<h1 id="下载资源">下载资源</h1>
+<p>原项目：<br>
+<gb user="iotang" type="star" count="1" size="1" width="200">Project_LemonLime</gb><br>
+也可以在码云下载：<br>
+<code>https://gitee.com/oierzcx/Project_LemonLime</code></p>
 <hr>
-<blockquote>
-<p>可以先参考这个<a href="https://qqdie.com/archives/typechofusionapp-plugin.html">大佬的文章</a><br>
-FusionApp下载链接在里面</p>
-</blockquote>
+<h1 id="本教程有视频">本教程有视频</h1>
+<p>本人<s>辛苦录制11分钟的</s>教学视频：<br>
+<code>https://www.bilibili.com/video/BV1ei4y1t7yR</code></p>
+<h1 id="安装">安装</h1>
+<h2 id="安装依赖">安装依赖</h2>
+<pre><code class="language-shell">sudo apt install qt5-default build-essential
+sudo apt install git
+sudo apt install g++
+</code></pre>
+<h2 id="编译">编译</h2>
+<pre><code class="language-shell">cd 源码目录
+g++ watcher_unix.cpp -o watcher_unix -O2
+qmake lemon.pro
+make
+</code></pre>
+<h2 id="似乎可装可不装">似乎可装可不装</h2>
+<pre><code class="language-shell">sudo apt install qtcreator
+</code></pre>
+<h2 id="设置全局开启">设置全局开启</h2>
+<pre><code class="language-shell">cd 源码目录
+sudo cp lemon /usr/bin
+</code></pre>
+<h1 id="效果">效果</h1>
+<figure data-type="image" tabindex="1"><img src="http://blog.diego.plus:2000/usr/uploads/2020/05/2417492455.png" alt="Snipaste_2020-05-01_20-10-49.png" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Deepin美化笔记]]></title>
+        <id>https://diego3893.github.io/post/deepin-mei-hua-bi-ji/</id>
+        <link href="https://diego3893.github.io/post/deepin-mei-hua-bi-ji/">
+        </link>
+        <updated>2020-09-19T09:59:16.000Z</updated>
+        <summary type="html"><![CDATA[<p>deepin已经很好看了，但还可以美化！<br>
+Conky参上！</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>deepin已经很好看了，但还可以美化！<br>
+Conky参上！</p>
+<!--more-->
 <hr>
-<h1 id="web端配置">Web端配置</h1>
-<p>主题及插件：<a href="https://www.lanzous.com/b015blf4d">前往下载</a></p>
+<h1 id="安装conky">安装Conky</h1>
 <ul>
-<li>插件配置此处不讲，有一些不用配，有问题请评论或邮箱联系：diegozcx@foxmail.com</li>
-<li>内容修改在<code>page_索引.php</code>和<code>page_更多.php</code>中，我已经打上注释了，在控制台外观配置中也可以添加内容</li>
+<li>安装Conky组件</li>
 </ul>
-<blockquote>
-<p>矢量图可以在<a href="http://www.fontawesome.com.cn/">这里</a>找一找</p>
-</blockquote>
+<pre><code class="language-sh">sudo apt-get install conky-all
+</code></pre>
 <ul>
-<li>新建独立页面：模板为<code>page_索引/更多/bangumi.php</code></li>
+<li>安装Conky管理器</li>
 </ul>
+<pre><code class="language-bash">wget --no-check-certificate https://github.com/teejee2008/conky-manager/releases/download/v2.4/conky-manager-v2.4-amd64.run
+</code></pre>
+<p>或者在这里下载<a href="http://blog.diego.plus:2000/usr/uploads/2020/04/1960381472.run">conky-manager-v2.4-amd64.run</a>，重命名为<code>conky-manager-v2.4-amd64.run</code><br>
+- 给予权限</p>
+<pre><code class="language-sh">chmod +x ./conky-manager-v2.4-amd64.run
+</code></pre>
+<pre><code>- 安装
+</code></pre>
+<pre><code class="language-shell">sudo ./conky-manager-v2.4-amd64.run
+</code></pre>
+<h1 id="创建组件">创建组件</h1>
+<p>到<code>.conky</code>目录下，新建组件文件</p>
+<pre><code class="language-shell">cd ~/.conky
+sudo touch deepin_conky
+sudo deepin-editor deepin_conky
+</code></pre>
+<p>设置组件，将以下内容复制到deepin_conky中并保存</p>
+<pre><code>default_color white
+double_buffer yes
+no_buffers yes
+update_interval 1.0
+total_run_times 0
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+ 
+own_window_colour 000000
+own_window_argb_visual yes
+own_window_argb_value 0
+ 
+double_buffer yes
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders n0
+minimum_size 300 1
+maximum_width 406
+default_color ffffff
+default_shade_color 000000
+default_outline_color 000000
+alignment top_right
+gap_x 6
+gap_y 5
+cpu_avg_samples 2
+override_utf8_locale no
+uppercase no # set to yes if you want all text to be in uppercase
+use_spacer no
+use_xft yes
+xftfont WenQuanYi Zen Hei:pixelsize=12
+override_utf8_locale yes
+use_spacer no
+minimum_size 300 1
+TEXT
+${font LCD:style=Bold:pixelsize=40}${alignc}${time %I:%M:%S}
+${font LCD:style=Bold:pixelsize=20}${time %Y年%b%d日 星期%a}${alignc}
+${font WenQuanYi Zen Hei:pixelsize=14}
+ 
+${color #98c2c7}姓名:  ${color}$alignr Diego
+${color #98c2c7}邮箱:  ${color}$alignr 3013006997@qq.com
+${color #98c2c7}内核:  ${color}$alignr$kernel
+${color #98c2c7}已开机: ${color}$alignr$uptime
+ 
+ 
+${color #98c2c7}CPU使用率: ${color}$cpu%
+ 
+$cpubar
+ 
+ CPU1 温度:  $alignr${exec sensors | grep 'Core 0' | cut -c17-25}
+ CPU2 温度: $alignr${exec sensors | grep 'Core 1' | cut -c17-25}
+ 
+${color #98c2c7}CPU占用:${color}
+ 
+ ${top name 1} ${alignr}${top cpu 1} 
+ ${top name 2} ${alignr}${top cpu 2} 
+ ${top name 3} ${alignr}${top cpu 3} 
+ ${top name 4} ${alignr}${top cpu 4} 
+ ${top name 5} ${alignr}${top cpu 5} 
+ ${top name 6} ${alignr}${top cpu 6} 
+ 
+${color #98c2c7}物理内存：${color}${alignr}$mem / $memmax
+ 
+${membar}
+ 
+${color #98c2c7}根分区: ${color}${alignr}${fs_free /} / ${fs_size /}
+ 
+${fs_bar 4 /}
+ 
+${color #98c2c7}Home分区: ${color}${alignr}${fs_free /home} / ${fs_size /home}
+ 
+${fs_bar 4 /home}
+ 
+${color #98c2c7}网络使用:${color}
+ 
+下载速度:$alignr${downspeed wlp3s0} k/s
+上传速度:$alignr${upspeed wlp3s0} k/s
+${downspeedgraph wlp3s0 324D23 77B753}
+</code></pre>
+<p>在管理器勾选即可<br>
+<img src="http://blog.diego.plus:2000/usr/uploads/2020/04/3796045765.png" alt="截图录屏_conky-manager_20200429221826.png" loading="lazy"></p>
+<h1 id="设置开机自启">设置开机自启</h1>
+<p><img src="http://blog.diego.plus:2000/usr/uploads/2020/04/1855242712.png" alt="截图录屏_conky-manager_20200430231012.png" loading="lazy"><br>
+<img src="http://blog.diego.plus:2000/usr/uploads/2020/04/61264178.png" alt="截图录屏_conky-manager_20200430231027.png" loading="lazy"><br>
+打开第一个选项即可</p>
+<h1 id="为什么这么麻烦">为什么这么麻烦？</h1>
+<p>Conky原生的组件对deepin并不友好，所以……</p>
+<h1 id="问题修复">问题修复</h1>
+<p>如果<strong>CPU温度</strong>无法显示<br>
+请安装一个东西：</p>
+<pre><code class="language-shell">sudo apt-get install lm-sensors
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[DeepinV20网速慢的解决方法]]></title>
+        <id>https://diego3893.github.io/post/deepinv20-wang-su-man-de-jie-jue-fang-fa/</id>
+        <link href="https://diego3893.github.io/post/deepinv20-wang-su-man-de-jie-jue-fang-fa/">
+        </link>
+        <updated>2020-09-19T09:58:53.000Z</updated>
+        <summary type="html"><![CDATA[<p>这个可能是beta的小问题</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>这个可能是beta的小问题</p>
+<!--more-->
 <hr>
-<h1 id="fa配置">FA配置</h1>
 <ul>
-<li>新建一个模版<code>底栏模板</code></li>
-<li>底栏项目为：首页，索引，更多————首页为你的博客网址，索引为<code>索引独立页面的网址</code>，更多为<code>更多独立页面的网址</code></li>
-<li>打开侧滑栏，新建项目：追番，关于————点击事件设置：右上角加好点开有一个<code>加载网页</code>，填写独立页面网址即可</li>
-<li>在<strong>属性</strong>的<strong>属性设置</strong>中顶栏标题自己设置一下</li>
+<li>终端输入：</li>
 </ul>
-<hr>
-<p>大致就这样了，预览一下没问题点击右上角的三个点点，点击打包安装即可</p>
-<hr>
-<h1 id="写在最后">写在最后</h1>
-<p>如果您觉得还不错或者有问题，评论区说一声哦<br>
-要打赏的话，万分感谢哦，逃~</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[高精度]]></title>
-        <id>https://diego3893.github.io/post/gao-jing-du/</id>
-        <link href="https://diego3893.github.io/post/gao-jing-du/">
-        </link>
-        <updated>2020-03-14T13:20:29.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="原理竖式计算">原理：竖式计算</h1>
-<p><strong>注意：倒序存储</strong></p>
-<h1 id="加减法">加/减法</h1>
-<h2 id="模版加减差不多">模版（加，减差不多）</h2>
-<pre><code class="language-cpp">#include&lt;cstdio&gt;
-#include&lt;iostream&gt;
-#include&lt;cstring&gt;
-using namespace std;
-struct sd{
-	int d[300], len;
-}a, b;
-sd read_num();
-sd Plus(sd, sd);
-void print(sd);
-int main()
-{
-	a = read_num(), b = read_num();
-	a = Plus(a, b);
-	print(a);
-	return 0;
-}
-sd read_num()
-{
-	sd x;
-	memset(x.d, 0, sizeof(x.d));
-	char s[300];
-	cin &gt;&gt; s;
-	x.len = strlen(s);
-	int k = 0;
-	for(int i=x.len-1; i&gt;=0; --i)
-		x.d[k++] = s[i]-'0';
-	return x;
-}
-sd Plus(sd x, sd y)
-{
-	sd t;
-	memset(t.d, 0, sizeof(t.d));
-	int len = x.len&gt;y.len?x.len:y.len;
-	//printf(&quot;%d\n&quot;, len);
-	for(int i=0; i&lt;len; ++i)
-	{
-		//printf(&quot;%d %d\n&quot;, x.d[i], y.d[i]);
-		t.d[i] += x.d[i]+y.d[i];
-		//printf(&quot;%d &quot;, (int)t.d[i]);
-		t.d[i+1] = t.d[i]/10;
-		//printf(&quot;%d &quot;, (int)t.d[i+1]);
-		t.d[i] = t.d[i]%10;
-		//printf(&quot;%d\n&quot;, (int)t.d[i]);
-	}
-	if(t.d[len] &gt; 0)
-		t.len = len+1;
-	else
-		t.len = len;
-	return t;
-}
-void print(sd x)
-{
-	for(int i=x.len-1; i&gt;=0; --i)
-		printf(&quot;%d&quot;, (int)x.d[i]);
-	return;
-}
+<pre><code class="language-shell">sudo deepin-editor /etc/modprobe.d/iwlwifi.conf
 </code></pre>
-<hr>
-<h1 id="乘法">乘法</h1>
-<pre><code class="language-cpp">#include&lt;cstdio&gt;
-#include&lt;iostream&gt;
-#include&lt;cstring&gt;
-using namespace std;
-struct sd{
-	int d[300], len;
-}a, b;
-sd read_num();
-sd Mult(sd, sd);
-void print(sd);
-int main()
-{
-	a = read_num(), b = read_num();
-	a = Mult(a, b);
-	print(a);
-	return 0;
-}
-sd read_num()
-{
-	sd x;
-	memset(x.d, 0, sizeof(x.d));
-	char s[300];
-	cin &gt;&gt; s;
-	x.len = strlen(s);
-	int k = 0;
-	for(int i=x.len-1; i&gt;=0; --i)
-		x.d[k++] = s[i]-'0';
-	return x;
-}
-sd Mult(sd x, sd y)
-{
-	sd t;
-	memset(t.d, 0, sizeof(t.d));
-	//int len = x.len&gt;y.len?x.len:y.len;
-	//printf(&quot;%d\n&quot;, len);
-	for(int i=0; i&lt;x.len; ++i)
-	{
-		int temp = 0;
-		for(int j=0; j&lt;y.len; ++j)
-		{
-			t.d[i+j] = x.d[i]*y.d[j]+temp+t.d[i+j];
-			temp = t.d[i+j]/10;
-			t.d[i+j] %= 10;
-		}
-		t.d[i+y.len] = temp;
-	}
-	t.len = x.len+y.len;
-	return t;
-}
-void print(sd x)
-{
-	while(x.d[x.len-1]==0 &amp;&amp; x.len&gt;0)
-		--x.len;
-	for(int i=x.len-1; i&gt;=0; --i)
-		printf(&quot;%d&quot;, (int)x.d[i]);
-	return;
-}
-</code></pre>
-<hr>
-<p>#除法</p>
-<h2 id="高精除以低精">高精除以低精</h2>
-<pre><code class="language-cpp">
-</code></pre>
-<h2 id="高精除以高精">高精除以高精</h2>
-<pre><code class="language-cpp">
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[哈希算法]]></title>
-        <id>https://diego3893.github.io/post/ha-xi-suan-fa/</id>
-        <link href="https://diego3893.github.io/post/ha-xi-suan-fa/">
-        </link>
-        <updated>2020-03-14T11:41:12.000Z</updated>
-        <content type="html"><![CDATA[<p>对数据进行处理，方便<strong>匹配</strong></p>
-<h1 id="整数">整数</h1>
-<h2 id="原理">原理</h2>
-<blockquote>
-<p>用hash操作，将数作为数组下标存储<br>
-照搬原话：<code>大数化小，小数化了（不变）</code><br>
-hash冲突：1.线性 2.链式结构</p>
-</blockquote>
-<h2 id="线性伪代码">线性伪代码：</h2>
-<pre><code class="language-cpp">int k = x/m;
-int p = flag[k];
-while(1)
-{
-if(hash[p]==x)
-{
-printf(&quot;%d&quot;,hash[p]);
-break;
-}
-if(hash[p]==0)
-{
-hash[p]=x;
-break;
-}
-if(hash[p]!=x&amp;&amp;hash[p]!=0)
-++p;
-}
-</code></pre>
-<hr>
-<h1 id="字符串重点">字符串（重点）</h1>
-<h2 id="原理-2">原理</h2>
-<blockquote>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mi>A</mi><mi>S</mi><msub><mi>H</mi><mi>C</mi></msub><mo>=</mo><mo>(</mo><msub><mi>C</mi><mn>1</mn></msub><mo>∗</mo><msup><mi>b</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>∗</mo><msup><mi>b</mi><mrow><mi>m</mi><mo>−</mo><mn>2</mn></mrow></msup><mo>+</mo><mo>…</mo><mo>…</mo><mo>+</mo><msub><mi>C</mi><mi>m</mi></msub><mo>∗</mo><msup><mi>b</mi><mn>0</mn></msup><mo>)</mo><mi>m</mi><mi>o</mi><mi>d</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">HASH_C = (C_1*b^{m-1}+C_2*b^{m-2}+ …… +C_m*b^0) mod h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">C</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">m</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">m</span><span class="mbin mtight">−</span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord mathdefault">m</span><span class="mord mathdefault">o</span><span class="mord mathdefault">d</span><span class="mord mathdefault">h</span></span></span></span>    <mark><strong>b，h互质</strong></mark></p>
-<p>字符处理：映射:</p>
-<blockquote>
-<p>A-&gt;1,B-&gt;2,……,a-&gt;27,b-&gt;28</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>匹配一段字符串：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mi>A</mi><mi>S</mi><msub><mi>H</mi><mi>D</mi></msub><mo>=</mo><mi>H</mi><mi>A</mi><mi>S</mi><msub><mi>H</mi><mrow><mi>C</mi><mo separator="true">,</mo><mi>k</mi><mo>+</mo><mi>l</mi><mi>e</mi><mi>n</mi><mi>D</mi></mrow></msub><mo>−</mo><mi>H</mi><mi>A</mi><mi>S</mi><msub><mi>H</mi><mrow><mi>C</mi><mo separator="true">,</mo><mi>k</mi></mrow></msub><mo>∗</mo><msup><mi>b</mi><mrow><mi>l</mi><mi>e</mi><mi>n</mi><mi>D</mi></mrow></msup></mrow><annotation encoding="application/x-tex">HASH_D = HASH_{C,k+lenD}-HASH_{C,k}*b^{lenD}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">D</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">C</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mbin mtight">+</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">e</span><span class="mord mathdefault mtight">n</span><span class="mord mathdefault mtight" style="margin-right:0.02778em;">D</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">C</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">e</span><span class="mord mathdefault mtight">n</span><span class="mord mathdefault mtight" style="margin-right:0.02778em;">D</span></span></span></span></span></span></span></span></span></span></span></span></p>
-<blockquote>
-<p><strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mi>A</mi><mi>S</mi><msub><mi>H</mi><mrow><mi>C</mi><mo separator="true">,</mo><mi>k</mi></mrow></msub></mrow><annotation encoding="application/x-tex">HASH_{C,k}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">C</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>表示字符串C前k个字符的哈希值</strong></p>
-<blockquote>
-<p>乘以lenD原因如图，自行理解：<br>
-<img src="https://cdn.jsdelivr.net/gh/diego3893/blog-FILE/article/lenD.png" alt="lenD" loading="lazy"></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="同余当-blen过大时">同余(当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>b</mi><mrow><mi>l</mi><mi>e</mi><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">b^{len}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">e</span><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span></span></span></span>过大时)</h2>
-<p>(a+b) mod c = (a mod c + b mod c) mod c<br>
-ab mod c = (a mod c * b mod c) mod c</p>
-<h2 id="模版">模版</h2>
-<p>求T组大写字符串中s1在s2中出现了几次：</p>
-<pre><code class="language-cpp">#include&lt;cstdio&gt;
-#include&lt;cstring&gt;
-using namespace std;
-typedef unsigned long long ULL;
-ULL power[1000002];
-ULL T, b = 2;
-char s1[10002], s2[1000002];
-ULL sum[1000002], s;
-int main()
-{
-	power[0] = 1;
-	for(int i=1; i&lt;1000000; ++i)
-		power[i] = power[i-1]*b;
-	scanf(&quot;%lld&quot;, &amp;T);
-	while(T--)
-	{
-		scanf(&quot;%s%s&quot;, s1+1, s2+1);
-		int n = strlen(s1+1), m = strlen(s2+1);
-		sum[0] = 0;
-		for(int i=1; i&lt;=m; ++i)
-			sum[i] = sum[i-1]*b+(ULL)(s2[i]-'A'+1);
-		s = 0;
-		for(int i=1; i&lt;=n; ++i)
-			s = s*b+(ULL)(s1[i]-'A'+1);
-		int ans = 0;
-		for(int i=0; i&lt;=m-n; ++i)
-			if(s==sum[i+n]-sum[i]*power[n])
-				++ans;
-		printf(&quot;%d\n&quot;, ans);
-		
-	}
-	return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[免费CDN]]></title>
-        <id>https://diego3893.github.io/post/mian-fei-cdn/</id>
-        <link href="https://diego3893.github.io/post/mian-fei-cdn/">
-        </link>
-        <updated>2020-03-11T12:31:38.000Z</updated>
-        <content type="html"><![CDATA[<p>GITHUB：<code>https://cdn.jsdelivr.net/gh/user/repo@version/file</code><br>
-详参：<a href="https://www.jsdelivr.com/?docs=gh">官网</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Valine评论设置邮箱提醒（转）]]></title>
-        <id>https://diego3893.github.io/post/valine-ping-lun-she-zhi-you-xiang-ti-xing-zhuan/</id>
-        <link href="https://diego3893.github.io/post/valine-ping-lun-she-zhi-you-xiang-ti-xing-zhuan/">
-        </link>
-        <updated>2020-03-09T14:57:25.000Z</updated>
-        <content type="html"><![CDATA[<p>链接：<code>https://blog.csdn.net/cungudafa/article/details/104497664</code><br>
-转自：CSDN，cungudafa<br>
-如有侵权，邮箱联系我：3013006997@qq.com</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[树状数组]]></title>
-        <id>https://diego3893.github.io/post/shu-zhuang-shu-zu/</id>
-        <link href="https://diego3893.github.io/post/shu-zhuang-shu-zu/">
-        </link>
-        <updated>2020-03-07T13:48:06.000Z</updated>
-        <content type="html"><![CDATA[<p><s>这是比较让我这个蒟蒻绝望的东西（以后可能一直这样）</s></p>
-<h1 id="原理">原理</h1>
-<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2020/03/07/3jRuE4.png" alt="tree" loading="lazy"></figure>
-<blockquote>
-<p>形态如图</p>
-</blockquote>
-<blockquote>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>x</mi></msub><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mi>x</mi><mo>−</mo><msup><mn>2</mn><mi>k</mi></msup><mo>+</mo><mn>1</mn></mrow><mrow><mi>x</mi><mo>−</mo><msup><mn>2</mn><mi>k</mi></msup><mo>+</mo><mi>x</mi></mrow></msubsup><msub><mi>A</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">C_x = \sum_{i=x-2^k+1}^{x-2^k+x}A_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.509861em;vertical-align:-0.35804100000000005em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1518199999999998em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">=</span><span class="mord mathdefault mtight">x</span><span class="mbin mtight">−</span><span class="mord mtight"><span class="mord mtight">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7820285714285713em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">x</span><span class="mbin mtight">−</span><span class="mord mtight"><span class="mord mtight">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9270285714285713em;"><span style="top:-2.931em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span><span class="mbin mtight">+</span><span class="mord mathdefault mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.35804100000000005em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><br>
-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">2^k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span></span></span>为区间最小二次幂，即<code>lowbit(x)</code></p>
-<blockquote>
-<p>e.g. <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>8</mn><msub><mo>)</mo><mn>10</mn></msub><mo>=</mo><mo>(</mo><mn>1000</mn><msub><mo>)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">(8)_{10} = (1000)_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">8</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>w</mi><mi>b</mi><mi>i</mi><mi>t</mi><mo>(</mo><mn>8</mn><mo>)</mo><mo>=</mo><msup><mn>2</mn><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">lowbit(8) = 2^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault">b</span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mord">8</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span><br>
-e.g. <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>10</mn><msub><mo>)</mo><mn>10</mn></msub><mo>=</mo><mo>(</mo><mn>1010</mn><msub><mo>)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">(10)_{10} = (1010)_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">0</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">0</span><span class="mord">1</span><span class="mord">0</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>w</mi><mi>b</mi><mi>i</mi><mi>t</mi><mo>(</mo><mn>10</mn><mo>)</mo><mo>=</mo><msup><mn>2</mn><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">lowbit(10) = 2^1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault">b</span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mord">1</span><span class="mord">0</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>以区间的方式存储，可以方便的求和、维护（前缀和等）</p>
-</blockquote>
-<blockquote>
-<p>lowbit的<strong>位运算</strong><br>
-因为是求最小二次幂<br>
-所以是<code>(~x+1)&amp;x</code>，即<code>(-x)&amp;x</code></p>
-</blockquote>
-<hr>
-<h1 id="核心代码">核心代码</h1>
-<pre><code class="language-cpp">//维护|构建
-void build(int x)
-{
-    while(x &lt;= N)
-    {
-        c[x] += a[x];
-        x += lowbit(x);
-    }
-}
-
-//求和
-int sum(int x)
-{
-    int res = 0;
-    while(x &gt; 0)
-    {
-        res += c[x];
-        x -= lowbit(x);
-    }
-    return res;
-}
-
-//求最小二次幂
-int lowbit(int x)
-{
-    return (-x) &amp; x;
-}
-</code></pre>
-<hr>
-<h1 id="模版">模版</h1>
-<pre><code class="language-cpp">#include&lt;cstdio&gt;
-#include&lt;algorithm&gt;
-#include&lt;cstring&gt;
-#define Maxn 15000+10
-#define Maxc 32000+10
-using namespace std;
-struct node{
-	int x, y;
-}p[Maxn];
-int n, m = 32001;
-int c[Maxc], ans[Maxc];
-int lowbit(int);
-void build(int, int);
-int sum(int);
-int main()
-{
-	scanf(&quot;%d&quot;, &amp;n);
-	for(int i=1; i&lt;=n; ++i)
-		scanf(&quot;%d%d&quot;, &amp;p[i].x, &amp;p[i].y);
-	for(int i=1; i&lt;=n; ++i)
-	{
-		int u = p[i].x+1;  //树状数组无法维护下标0
-		int w = sum(u);
-		build(u, 1);
-		++ans[w];
-	}
-	for(int i=0; i&lt;n; ++i)
-		printf(&quot;%d\n&quot;, ans[i]);
-	return 0;
-}
-int lowbit(int x)
-{
-	return (-x) &amp; x;
-}
-void build(int x, int y)
-{
-	while(x &lt;= m) //x范围不定，直接计算到最大
-	{
-		c[x] += y;
-		x += lowbit(x);
-	}
-}
-int sum(int x)
-{
-	int res = 0;
-	while(x &gt; 0)
-	{
-		res += c[x];
-		x -= lowbit(x);
-	}
-	return res;
-}
-</code></pre>
-<p>题目<a href="http://ybt.ssoier.cn:8088/problem_show.php?pid=1536">传送门</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Gridea静态博客使用CNAME以及相关配置]]></title>
-        <id>https://diego3893.github.io/post/gridea-jing-tai-bo-ke-shi-yong-cname-yi-ji-xiang-guan-pei-zhi/</id>
-        <link href="https://diego3893.github.io/post/gridea-jing-tai-bo-ke-shi-yong-cname-yi-ji-xiang-guan-pei-zhi/">
-        </link>
-        <updated>2020-03-05T00:14:44.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="0-准备工作">0 准备工作</h1>
-<p>注册域名使用<a href="https://cloud.tencent.com/">腾讯云</a><br>
-加速以及https配置使用<a href="https://www.cloudflare.com/">cloudflare</a></p>
-<hr>
-<h1 id="1-注册域名">1 注册域名</h1>
-<h2 id="11-注册">1.1 注册</h2>
-<p>进入<a href="https://dnspod.cloud.tencent.com/">腾讯云</a>注册域名<br>
-<s>购买过程不说，非常简单</s><br>
-支付完成后，进入<a href="https://console.cloud.tencent.com/domain">管理页面</a></p>
 <ul>
-<li>如果<em>服务状态</em>显示未实名认证，请立即实名认证</li>
-<li>认证完成后，<em>服务状态</em>会显示<strong>正常</strong></li>
-<li></li>
-<li>备案不管它</li>
+<li>将<code>options iwlwifi 11n_disable=1 bt_coex_active=0 power_save=0 swcrypto=1</code></li>
 </ul>
-<h2 id="12-解析">1.2 解析</h2>
-<p>进入<strong>解析</strong>页面<br>
-<img src="https://s2.ax1x.com/2020/03/05/3Tawon.jpg" alt="CNAME" loading="lazy"><br>
-添加两条解析记录，配置如图 <strong>（记录值为username.github.io，即博客地址）</strong></p>
-<h2 id="13-cname绑定">1.3 CNAME绑定</h2>
-<h3 id="131-github绑定">1.3.1 github绑定</h3>
-<p>在<em>custom domain</em>中填入域名<br>
-<img src="https://s2.ax1x.com/2020/03/05/3TdZYq.jpg" alt="N" loading="lazy"></p>
-<h3 id="132-gridea绑定">1.3.2 Gridea绑定</h3>
-<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2020/03/05/3TaHyD.jpg" alt="C" loading="lazy"></figure>
-<hr>
-<h1 id="2-在cloudflare中添加域名并启用cdn">2 在cloudflare中添加域名并启用CDN</h1>
-<p>看这篇<a href="http://www.fangyuba.com/news/dynamic/197.htm">教程</a><br>
-<strong>注</strong>：腾讯云修改DNS如下<br>
-<img src="https://s2.ax1x.com/2020/03/05/3TUNU1.jpg" alt="DNS1" loading="lazy"><br>
-<img src="https://s2.ax1x.com/2020/03/05/3TUtER.jpg" alt="DNS2" loading="lazy"></p>
-<hr>
-<h1 id="3-在cloudflare中配置https">3 在cloudflare中配置https</h1>
-<h2 id="31-添加一条a记录">3.1 添加一条A记录</h2>
-<p>在DNS目录下<br>
-<img src="https://s2.ax1x.com/2020/03/05/3Tw02V.jpg" alt="settings" loading="lazy"><br>
-确保是这两条（IPv4获取方式自行百度，cmd使用ping）</p>
-<h2 id="32-打开https">3.2 打开https</h2>
-<p>设置为Flexible<br>
-<img src="https://s2.ax1x.com/2020/03/05/3Twbad.jpg" alt="F" loading="lazy"><br>
-打开<em>always use https</em><br>
-<img src="https://s2.ax1x.com/2020/03/05/3TwHVH.jpg" alt="U" loading="lazy"></p>
-<h2 id="33-设置page-rules">3.3 设置Page Rules</h2>
-<p><img src="https://s2.ax1x.com/2020/03/05/3T0ySP.jpg" alt="PR" loading="lazy"><br>
-网址分别为<code>http://yourdomain/*</code>和<code>http://yourdomain/</code><br>
-<img src="https://s2.ax1x.com/2020/03/05/3TBFmD.jpg" alt="P" loading="lazy"></p>
-<hr>
-<p>如果一切正常的话，应该会有以下：<br>
-<img src="https://s2.ax1x.com/2020/03/05/3TDSEQ.jpg" alt="Active" loading="lazy"></p>
-<p>有问题请在下方评论或发邮件询问我</p>
-<blockquote>
-<p>3013006997@qq.com</p>
-</blockquote>
+<p>中的<code>11n_disable=1</code>修改为<code>11n_disable=0</code></p>
+<ul>
+<li>重启电脑</li>
+</ul>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[图的存储]]></title>
-        <id>https://diego3893.github.io/post/tu-de-cun-chu/</id>
-        <link href="https://diego3893.github.io/post/tu-de-cun-chu/">
+        <title type="html"><![CDATA[安利一个Linux第三方QQ音乐]]></title>
+        <id>https://diego3893.github.io/post/an-li-yi-ge-linux-di-san-fang-qq-yin-le/</id>
+        <link href="https://diego3893.github.io/post/an-li-yi-ge-linux-di-san-fang-qq-yin-le/">
         </link>
-        <updated>2020-03-01T13:33:09.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="邻接矩阵">邻接矩阵</h1>
-<p><s>简单，不讲</s></p>
-<blockquote>
-<p><code>g[i][j]</code>表示从i到j的边权</p>
-</blockquote>
+        <updated>2020-09-19T09:58:30.000Z</updated>
+        <summary type="html"><![CDATA[<p>众所周知，Linux没有QQ音乐，wine下的QQ音乐会有各种奇奇怪怪的错误，所以，我们就有了<strong>CocoMusic</strong>!</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>众所周知，Linux没有QQ音乐，wine下的QQ音乐会有各种奇奇怪怪的错误，所以，我们就有了<strong>CocoMusic</strong>!</p>
+<!--more-->
 <hr>
-<h1 id="邻接表数组">邻接表（数组）</h1>
-<blockquote>
-<p>u, v, w记录边的信息<br>
-first初始化-1，表示没有边<br>
-first[u[i]]保存u[i]的第一条边编号，next[i]存储<em>编号为i的边</em>的下一条边的编号</p>
-</blockquote>
-<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2020/03/01/32lNxe.jpg" alt="如图" loading="lazy"></figure>
-<h2 id="模版">模版</h2>
-<h3 id="无向图">无向图</h3>
-<pre><code class="language-cpp">#include&lt;cstdio&gt;
-#define N 100
-using namespace std;
-int main()
-{
-    int m;
-    scanf(&quot;%d&quot;, &amp;m);
-    int first[N*2], next[N*2];
-    for(int i=0; i&lt;N; ++i)
-    	first[i] = -1;
-    int u[N*2], v[N*2], w[N*2];
-    for(int i=1; i&lt;=m*2; i+=2)
-    {
-    	scanf(&quot;%d%d%d&quot;, &amp;u[i], &amp;v[i], &amp;w[i]);
-    	u[i+1] = v[i];
-    	v[i+1] = u[i];
-    	w[i+1] = w[i];
-    	next[i] = first[u[i]];
-    	first[u[i]] = i;
-    	next[i+1] = first[u[i+1]];
-    	first[u[i+1]] = i+1;
-	}
-	int k;
-	for(int i=1; i&lt;=m*2; ++i)
-	{
-		k = first[i];
-		while(k != -1)
-		{
-			printf(&quot;%d %d %d\n&quot;, u[k], v[k], w[k]);
-			k = next[k];
-		}
-	}	
-    return 0;
-}
+<h1 id="安装包在此">安装包在此</h1>
+<p><code>https://ww.lanzous.com/ic1v69e</code><br>
+此为最新版</p>
+<h1 id="开始安装">开始安装</h1>
+<p>以deepinv20为例</p>
+<ul>
+<li>双击deb，开始安装，不过会安装失败（莫慌）</li>
+<li>进入终端，输入以下</li>
+</ul>
+<pre><code class="language-sh">sudo apt --fix-broken install
 </code></pre>
-<h3 id="有向图">有向图</h3>
-<pre><code class="language-cpp">#include&lt;cstdio&gt;
-using namespace std;
-int main()
-{
-    int m, n;
-    scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
-    int first[n+1], next[m+1];
-    for(int i=0; i&lt;N; ++i)
-    	first[i] = -1;
-    int u[m+1], v[m+1], w[m+1];
-    for(int i=1; i&lt;=m; ++i)
-    {
-    	scanf(&quot;%d%d%d&quot;, &amp;u[i], &amp;v[i], &amp;w[i]);
-    	next[i] = first[u[i]];
-        first[u[i]] = i;
-	}
-	int k;
-	for(int i=1; i&lt;=n; ++i)
-	{
-		k = first[i];
-		while(k != -1)
-		{
-			printf(&quot;%d %d %d\n&quot;, u[k], v[k], w[k]);
-			k = next[k];
-		}
-	}	
-    return 0;
-}
-</code></pre>
+<p>开始享受吧！</p>
+<h1 id="源项目">源项目</h1>
+<gb user="xtuJSer" type="star" count="1" size="1" lang="cn" width="370">
+CoCoMusic
+</gb>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[我有不一样的Bilibili！]]></title>
+        <id>https://diego3893.github.io/post/wo-you-bu-yi-yang-de-bilibili/</id>
+        <link href="https://diego3893.github.io/post/wo-you-bu-yi-yang-de-bilibili/">
+        </link>
+        <updated>2020-09-19T09:57:52.000Z</updated>
+        <summary type="html"><![CDATA[<p>请先安装油猴，步骤详见：<a href="http://blog.diego.plus:2000/archives/341/">这里</a></p>
+]]></summary>
+        <content type="html"><![CDATA[<p>请先安装油猴，步骤详见：<a href="http://blog.diego.plus:2000/archives/341/">这里</a></p>
+<!--more-->
+<h1 id="开始安装">开始安装</h1>
+<p>访问这个<a href="https://greasyfork.org/zh-CN/scripts/373563-bilibili-evolved">脚本页面</a><br>
+安装</p>
+<h1 id="开始使用">开始使用</h1>
+<p><img src="http://blog.diego.plus:2000/usr/uploads/2020/04/2562318798.png" alt="Snipaste_2020-04-27_23-39-25.png" loading="lazy"><br>
+<img src="http://blog.diego.plus:2000/usr/uploads/2020/04/1188487051.png" alt="Snipaste_2020-04-27_23-38-52.png" loading="lazy"><br>
+开始自定义吧！</p>
+<h1 id="最终效果">最终效果</h1>
+<figure data-type="image" tabindex="1"><img src="http://blog.diego.plus:2000/usr/uploads/2020/04/2752978353.png" alt="Snipaste_2020-04-27_23-45-35.png" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[最短路径]]></title>
-        <id>https://diego3893.github.io/post/zui-duan-lu-jing/</id>
-        <link href="https://diego3893.github.io/post/zui-duan-lu-jing/">
+        <title type="html"><![CDATA[Google Chrome的扩展安利]]></title>
+        <id>https://diego3893.github.io/post/google-chrome-de-kuo-zhan-an-li/</id>
+        <link href="https://diego3893.github.io/post/google-chrome-de-kuo-zhan-an-li/">
         </link>
-        <updated>2020-03-01T12:47:08.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="floyd-warshall">Floyd-Warshall</h1>
-<h2 id="原理">原理</h2>
-<blockquote>
-<p>分别枚举起始点i，中转点k，目标点j<br>
-如果<code>e[i][k]+e[k][j] &lt; e[i][j]</code><br>
-更新<code>e[i][j]</code>的值</p>
-</blockquote>
-<blockquote>
-<p><mark>中转点</mark>枚举在最外层</p>
-</blockquote>
-<h2 id="模版">模版</h2>
-<pre><code class="language-cpp">#include&lt;iostream&gt;
-#include&lt;cstring&gt;
-#include&lt;cstdio&gt;
-#include&lt;algorithm&gt;
-#include&lt;cmath&gt;
-#define N 100 
-#define INF 0x7fffff
-using namespace std;
-int main()
-{
-	int g[N][N] = {};
-	for(int i=0; i&lt;=N; ++i)
-		for(int j=0; j&lt;=N; ++j)
-			if(i != j)
-				g[i][j] = INF;
-			else
-				g[i][j] = 0;
-	int n, m;
-	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
-	int u, v, w;
-	for(int i=0; i&lt;m; ++i)
-	{
-		scanf(&quot;%d%d%d&quot;, &amp;u, &amp;v, &amp;w);
-		g[u][v] = w;
-	}
-	for(int k=1; k&lt;=n; ++k)
-		for(int i=1; i&lt;=n; ++i)
-			for(int j=1; j&lt;=n; ++j)
-				g[i][j] = min(g[i][j], g[i][k]+g[k][j]);
-	printf(&quot;%d&quot;, g[1][n]);
-	return 0;
-}
-</code></pre>
-<hr>
-<h1 id="dijkstra">Dijkstra</h1>
-<h2 id="原理-2">原理</h2>
-<p>假设起点为1号节点</p>
-<blockquote>
-<p>初始化1号节点的出边权值至dis数组（估计值）<br>
-找当前dis中最小边权（确定值）（假设为2号节点）<br>
-以2号节点的出边边权更新dis数组，若<code>e[2][i]+dis[2] &lt; dis[i]</code>，就更新<code>dis[i]</code><br>
-以此类推，进行<strong>松弛</strong></p>
-</blockquote>
-<blockquote>
-<p>每次找离源点最近的点，然后依次进行扩展<br>
-用book数组进行标记是否使用</p>
-</blockquote>
-<h2 id="模版-2">模版</h2>
-<pre><code class="language-cpp">#include&lt;iostream&gt;
-#include&lt;cstring&gt;
-#include&lt;cstdio&gt;
-#include&lt;algorithm&gt;
-#include&lt;cmath&gt;
-#define N 100
-#define INF 0x7ffff
-using namespace std;
-int main()
-{
-	int e[N][N], dis[N], book[N];
-	int n, m;
-	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
-	for(int i=1; i&lt;=n; ++i)
-		for(int j=1; j&lt;=n; ++j)
-			if(i == j)
-				e[i][j] = 0;
-			else
-				e[i][j] = INF;
-	int u, v, w;
-	for(int i=1; i&lt;=m; ++i)
-	{
-		scanf(&quot;%d%d%d&quot;, &amp;u, &amp;v, &amp;w);
-		e[u][v] = w;
-	}
-	for(int i=1; i&lt;=n; ++i)
-		dis[i] = e[1][i];
-	memset(book, 0, sizeof(book));
-	book[1] = 1;
-	int minn = INF, k;
-	for(int i=1; i&lt;=n; ++i)
-	{
-		minn = INF;
-		for(int j=1; j&lt;=n; ++j)
-			if(!book[j] &amp;&amp; dis[j]&lt;minn)
-			{
-				minn = dis[j];
-				k = j;
-			}
-		book[k] = 1;
-		for(int j=1; j&lt;=n; ++j)
-			if(e[k][j]&lt;INF)
-				dis[j] = min(dis[j], dis[k]+e[k][j]);
-	}
-	for(int i=1; i&lt;=n; ++i)
-		printf(&quot;%d &quot;, dis[i]);
-	return 0;
-}
-
-</code></pre>
-<hr>
-<h1 id="bellman-ford">Bellman-Ford</h1>
-<h2 id="原理-3">原理</h2>
-<blockquote>
-<p>进行n-1轮松弛（详见Dijkstra）<br>
-<s>没啥好说的</s></p>
-</blockquote>
-<h2 id="模版-3">模版</h2>
-<pre><code class="language-cpp">#include&lt;iostream&gt;
-#include&lt;cstring&gt;
-#include&lt;cstdio&gt;
-#include&lt;algorithm&gt;
-#include&lt;cmath&gt;
-#define N 100
-#define INF 0x7ffff
-using namespace std;
-int main()
-{
-	int dis[N], n, m, u[N], v[N], w[N];
-	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
-	for(int i=1; i&lt;=m; ++i)
-		scanf(&quot;%d%d%d&quot;, &amp;u[i], &amp;v[i], &amp;w[i]);
-	for(int i=1; i&lt;=n; ++i)
-		dis[i] = INF;
-	dis[1] = 0;
-	int check = 0;  //检查dis是否改变
-	for(int i=1; i&lt;=n-1; ++i)
-	{
-		check = 0;
-		for(int j=1; j&lt;=n; ++j)
-			if(dis[v[j]] &gt; dis[u[j]]+w[j])
-			{
-				dis[v[j]] = dis[u[j]]+w[j];
-				check = 1;
-			}
-		if(!check)  //优化
-			break;
-	}
-	int flag = 0;
-	for(int i=1; i&lt;=m; ++i)
-		if(dis[v[i]] &gt; dis[u[i]]+w[i])
-			flag = 1;
-	if(flag)
-		printf(&quot;有负权回路&quot;);
-	else
-		for(int i=1; i&lt;=n; ++i)
-			printf(&quot;%d &quot;, dis[i]);
-	return 0;
-}
-</code></pre>
-<hr>
-<h1 id="spfa">SPFA</h1>
-<h2 id="原理-4">原理</h2>
-<blockquote>
-<p>用队列优化的Bellman-Ford<br>
-思想差不多（Bellman-Ford+BFS）<br>
-<em><strong>不用像BFS一样打标记（敲黑板）</strong></em></p>
-</blockquote>
-<p>不会邻接表的参考<a href="https://diego3893.github.io/post/tu-de-cun-chu/">我的这篇博文</a></p>
-<h2 id="模版邻接表">模版（邻接表）</h2>
-<pre><code class="language-cpp">#include&lt;iostream&gt;
-#include&lt;cstring&gt;
-#include&lt;cstdio&gt;
-#include&lt;algorithm&gt;
-#include&lt;cmath&gt;
-#define N 100
-#define INF 0x7ffff
-
-using namespace std;
-int main()
-{
-	int n, m;
-	int u[N], v[N], w[N];
-	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
-	int first[n+1], next[m+1];
-	int dis[N] = {}, book[N] = {}, que[N] = {}, head = 1, tail = 1;
-	for(int i=1; i&lt;=n; ++i)
-		dis[i] = INF;
-	dis[1] = 0;
-	for(int i=1; i&lt;=n; ++i)
-		first[i] = -1;
-	for(int i=1; i&lt;=m; ++i)
-	{
-		scanf(&quot;%d%d%d&quot;, &amp;u[i], &amp;v[i], &amp;w[i]);
-		next[i] = first[u[i]];
-		first[u[i]] = i;
-	}
-	que[tail++] = 1;
-	book[1] = 1;
-	int k;
-	while(head &lt; tail)
-	{
-		k = first[que[head]];
-		while(k != -1)
-		{
-			if(dis[v[k]] &gt; dis[u[k]]+w[k])
-			{
-				dis[v[k]] = dis[u[k]]+w[k];
-				if(book[v[k]] == 0)
-				{
-					que[tail++] = v[k];
-					book[v[k]] = 1;
-				}
-			}
-			k = next[k];
-		}
-		book[que[head]] = 0;
-		head++;
-	}
-	for(int i=1; i&lt;=n; ++i)
-		printf(&quot;%d &quot;, dis[i]);
-	return 0;
-}
-
-</code></pre>
-<hr>
-<h1 id="算法比较">算法比较</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Floyd-Warshall</th>
-<th style="text-align:center">Dijkstra</th>
-<th style="text-align:center">Bellman-Ford</th>
-<th style="text-align:center">SPFA</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">空间复杂度</td>
-<td style="text-align:center">O(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>N</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">N^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>)</td>
-<td style="text-align:center">O(M)</td>
-<td style="text-align:center">O(M)</td>
-<td style="text-align:center">O(M)</td>
-</tr>
-<tr>
-<td style="text-align:center">时间复杂度</td>
-<td style="text-align:center">O(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>N</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">N^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span>)</td>
-<td style="text-align:center">O((M+N)logN)</td>
-<td style="text-align:center">O(NM)</td>
-<td style="text-align:center">最坏也是O(NM)</td>
-</tr>
-<tr>
-<td style="text-align:center">适用情况</td>
-<td style="text-align:center">稠密图，与顶点关系密切</td>
-<td style="text-align:center">稠密图，与顶点关系密切</td>
-<td style="text-align:center">稀疏图，与边关系密切</td>
-<td style="text-align:center">稀疏图，与边关系密切</td>
-</tr>
-<tr>
-<td style="text-align:center">负权</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">N</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-</tr>
-<tr>
-<td style="text-align:center">负权边</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">N</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-</tr>
-<tr>
-<td style="text-align:center">负权回路判定</td>
-<td style="text-align:center">N</td>
-<td style="text-align:center">N</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-</tr>
-</tbody>
-</table>
+        <updated>2020-09-19T09:56:38.000Z</updated>
+        <content type="html"><![CDATA[<ul>
+<li>AdBlock
+<ul>
+<li>广告拦截</li>
+</ul>
+</li>
+<li>Astar
+<ul>
+<li>免费高速梯子，够稳</li>
+</ul>
+</li>
+<li>Dmooji 弹幕君
+<ul>
+<li>YouTube弹幕助手</li>
+</ul>
+</li>
+<li>Dualsub
+<ul>
+<li>YouTube双语字幕</li>
+</ul>
+</li>
+<li>IDM Integration Module
+<ul>
+<li>IDM配套插件（要IDM的私信我）</li>
+</ul>
+</li>
+<li>Infinity 新标签页 (Pro)
+<ul>
+<li>美化首页</li>
+</ul>
+</li>
+<li>pakku
+<ul>
+<li>Bilibili弹幕过滤+合并</li>
+</ul>
+</li>
+<li>InstantView for YouTube™
+<ul>
+<li>允许您在弹出窗口中打开YouTube视频</li>
+</ul>
+</li>
+<li>RSSHub Radar
+<ul>
+<li>RSS订阅器</li>
+</ul>
+</li>
+<li>Tampermonkey BETA
+<ul>
+<li>红油猴，程序猿都知道脚本的厉害<s>doge</s>（黑油猴也可以）</li>
+<li>更多脚本请见<code>https://greasyfork.org/zh-CN/</code></li>
+</ul>
+</li>
+<li>哔哩哔哩·猜你喜欢
+<ul>
+<li>如题……</li>
+</ul>
+</li>
+<li>哔哩哔哩助手
+<ul>
+<li>多功能自定义Bilibili</li>
+</ul>
+</li>
+<li>扩展管理器
+<ul>
+<li>如题……</li>
+</ul>
+</li>
+<li>沙拉查词
+<ul>
+<li>划词翻译</li>
+</ul>
+</li>
+<li>Github加速
+<ul>
+<li>最棒的镜像加速</li>
+</ul>
+</li>
+</ul>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[STL合集]]></title>
-        <id>https://diego3893.github.io/post/stl-he-ji/</id>
-        <link href="https://diego3893.github.io/post/stl-he-ji/">
+        <title type="html"><![CDATA[用Google Chrome科学上网]]></title>
+        <id>https://diego3893.github.io/post/yong-google-chrome-ke-xue-shang-wang/</id>
+        <link href="https://diego3893.github.io/post/yong-google-chrome-ke-xue-shang-wang/">
         </link>
-        <updated>2020-02-29T14:09:51.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2020/02/29/3618js.png" alt="1" loading="lazy"></figure>
-<figure data-type="image" tabindex="2"><img src="https://s2.ax1x.com/2020/02/29/361d4U.png" alt="2" loading="lazy"></figure>
-<figure data-type="image" tabindex="3"><img src="https://s2.ax1x.com/2020/02/29/361YBq.png" alt="3" loading="lazy"></figure>
-<figure data-type="image" tabindex="4"><img src="https://s2.ax1x.com/2020/02/29/361UEV.png" alt="4" loading="lazy"></figure>
-<figure data-type="image" tabindex="5"><img src="https://s2.ax1x.com/2020/02/29/361aNT.png" alt="5" loading="lazy"></figure>
-<figure data-type="image" tabindex="6"><img src="https://s2.ax1x.com/2020/02/29/361B34.png" alt="6" loading="lazy"></figure>
-<p>也可以参考<a href="https://blog.csdn.net/shenaisi/article/details/81545418">这个</a></p>
+        <updated>2020-09-19T09:56:22.000Z</updated>
+        <summary type="html"><![CDATA[<p>免费畅游墙外世界！</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>免费畅游墙外世界！</p>
+<!--more-->
+<hr>
+<h1 id="先放资源">先放资源</h1>
+<p><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/2314227591.zip">谷歌访问助手.zip</a><br>
+将之下载</p>
+<hr>
+<h1 id="在chrome中添加扩展">在Chrome中添加扩展</h1>
+<p>请先打开<code>开发者模式</code><br>
+<img src="http://blog.diego.plus:2000/usr/uploads/2020/04/570823941.png" alt="2.png" loading="lazy"><br>
+选择<code>加载扩展</code><br>
+<img src="http://blog.diego.plus:2000/usr/uploads/2020/04/1422245035.png" alt="Snipaste_2020-04-27_23-11-28.png" loading="lazy"><br>
+选中刚才下载文件夹中的<code>master</code>分支文件<br>
+<img src="http://blog.diego.plus:2000/usr/uploads/2020/04/1008135653.png" alt="Snipaste_2020-04-27_23-12-14.png" loading="lazy"><br>
+如果出现下图，恭喜！您可以访问<strong>Google</strong>啦！<br>
+<img src="http://blog.diego.plus:2000/usr/uploads/2020/04/3340144554.png" alt="Snipaste_2020-04-27_23-12-33.png" loading="lazy"></p>
+<hr>
+<h1 id="开始挂梯子">开始挂梯子</h1>
+<ul>
+<li>先注册Google账号，此处略过</li>
+<li>点击Chrome收藏栏中的<code>应用</code>，进入商店<br>
+<img src="http://blog.diego.plus:2000/usr/uploads/2020/04/1006592364.png" alt="Snipaste_2020-04-27_23-19-11.png" loading="lazy"></li>
+<li>搜索<code>Astar</code>，安装<br>
+<img src="http://blog.diego.plus:2000/usr/uploads/2020/04/1099050942.png" alt="1.png" loading="lazy"><br>
+梯子就挂好了！</li>
+</ul>
+<hr>
+<h1 id="效果">效果</h1>
+<p>支持<em>美国，日本，加拿大</em>等多个节点<br>
+<img src="http://blog.diego.plus:2000/usr/uploads/2020/04/563054380.png" alt="Snipaste_2020-04-27_23-21-23.png" loading="lazy"><br>
+速度也绝对不慢（下载大文件还是比较恼火的）<br>
+高清YouTube随便看！<br>
+<img src="http://blog.diego.plus:2000/usr/uploads/2020/04/2767463082.png" alt="Snipaste_2020-04-27_23-22-53.png" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[转载]Typecho无插件实现QQ评论回复]]></title>
+        <id>https://diego3893.github.io/post/zhuan-zai-typecho-wu-cha-jian-shi-xian-qq-ping-lun-hui-fu/</id>
+        <link href="https://diego3893.github.io/post/zhuan-zai-typecho-wu-cha-jian-shi-xian-qq-ping-lun-hui-fu/">
+        </link>
+        <updated>2020-09-19T09:55:57.000Z</updated>
+        <content type="html"><![CDATA[<p>作者：奥秘Sir<br>
+原文地址：<code>https://blog.say521.cn/archives/369.html</code></p>
+<hr>
+<ol>
+<li>QQ添加订阅机器人<code>2827803813</code></li>
+<li>订阅自己博客的RSS地址，比如<code>http://blog.diego.plus:2000/feed</code>
+<ul>
+<li>命令为<code>订阅 http://blog.diego.plus:2000/feed</code></li>
+</ul>
+</li>
+<li>订阅评论地址：RSS地址/comments
+<ul>
+<li><code>订阅 http://blog.diego.plus:2000/feed/comments</code></li>
+</ul>
+</li>
+</ol>
+<p>然后就可以使用啦！不过好像推送有些滞后诶……</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[博主]Cuckoo的更新须知]]></title>
+        <id>https://diego3893.github.io/post/bo-zhu-cuckoo-de-geng-xin-xu-zhi/</id>
+        <link href="https://diego3893.github.io/post/bo-zhu-cuckoo-de-geng-xin-xu-zhi/">
+        </link>
+        <updated>2020-09-19T09:55:34.000Z</updated>
+        <content type="html"><![CDATA[<ul>
+<li>备份后台数据</li>
+<li>备份独立页面模版
+<ul>
+<li>追番</li>
+<li>相册</li>
+</ul>
+</li>
+<li><code>function.php</code>中的代码段
+<ul>
+<li>热门文章</li>
+<li>最新文章</li>
+</ul>
+</li>
+<li><code>sidebar.php</code>中代码段
+<ul>
+<li>热门文章</li>
+<li>最新文章</li>
+</ul>
+</li>
+<li><code>footer.php</code>中的代码段
+<ul>
+<li>notice</li>
+</ul>
+</li>
+<li>CSS样式
+<ul>
+<li>B站视频</li>
+<li>打赏</li>
+</ul>
+</li>
+<li>文章页面
+<ul>
+<li>打赏</li>
+<li>海报</li>
+</ul>
+</li>
+<li>封面图片<code>random</code></li>
+</ul>
+<hr>
+<p>暂时能想起的就这些……</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Typecho不使用插件实现“打赏”按钮]]></title>
+        <id>https://diego3893.github.io/post/typecho-bu-shi-yong-cha-jian-shi-xian-da-shang-an-niu/</id>
+        <link href="https://diego3893.github.io/post/typecho-bu-shi-yong-cha-jian-shi-xian-da-shang-an-niu/">
+        </link>
+        <updated>2020-09-19T09:54:53.000Z</updated>
+        <content type="html"><![CDATA[<p>添加CSS样式到CSS文件或者主题后台的<em>自定义CSS</em>：</p>
+<pre><code class="language-css">#QR{padding-top:20px;}
+#QR a{border:0}
+#QR img{width:180px;max-width:100%;display:inline-block;margin:.8em 2em 0 2em}
+#rewardButton{border:1px solid #ccc;line-height:36px;text-align:center;height:36px;display:block;border-radius:4px;-webkit-transition-duration:.4s;transition-duration:.4s;background-color:#fff;color:#999;margin:0 auto;padding:0 25px}
+</code></pre>
+<p>在<code>post.php</code>中添加如下：</p>
+<pre><code class="language-html">&lt;div style=&quot;padding: 10px 0; margin: 20px auto; width: 100%; font-size:16px; text-align: center;&quot;&gt;
+    &lt;button id=&quot;rewardButton&quot; disable=&quot;enable&quot; onclick=&quot;var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}&quot;&gt;
+    &lt;span&gt;打赏&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div id=&quot;QR&quot; style=&quot;display: none;&quot;&gt;
+        &lt;div id=&quot;wechat&quot; style=&quot;display: inline-block&quot;&gt;
+            &lt;a class=&quot;fancybox&quot; rel=&quot;group&quot;&gt;&lt;img id=&quot;wechat_qr&quot; src=&quot;http://blog.diego.plus:2000/images/pay/wx.png&quot; alt=&quot;Diego -&gt; WeChat Pay&quot;&gt;&lt;/a&gt;
+            &lt;p&gt;
+                微信打赏
+            &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div id=&quot;alipay&quot; style=&quot;display: inline-block&quot;&gt;
+            &lt;a class=&quot;fancybox&quot; rel=&quot;group&quot;&gt;&lt;img id=&quot;alipay_qr&quot; src=&quot;http://blog.diego.plus:2000/images/pay/ali.jpg&quot; alt=&quot;Diego -&gt; Alipay&quot;&gt;&lt;/a&gt;
+            &lt;p&gt;
+                支付宝打赏
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li>至于怎么获取付款码，自行百度</li>
+<li>代码不会改的，下方留言</li>
+</ul>
 ]]></content>
     </entry>
 </feed>
