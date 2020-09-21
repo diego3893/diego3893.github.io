@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://diego3893.github.io</id>
     <title>Diego&apos;s Blog</title>
-    <updated>2020-09-19T10:00:07.176Z</updated>
+    <updated>2020-09-21T16:13:17.276Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://diego3893.github.io"/>
     <link rel="self" href="https://diego3893.github.io/atom.xml"/>
@@ -10,6 +10,623 @@
     <logo>https://diego3893.github.io/images/avatar.png</logo>
     <icon>https://diego3893.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Diego&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[题解 P1135 【奇怪的电梯】]]></title>
+        <id>https://diego3893.github.io/post/ti-jie-p1135-qi-guai-de-dian-ti/</id>
+        <link href="https://diego3893.github.io/post/ti-jie-p1135-qi-guai-de-dian-ti/">
+        </link>
+        <updated>2020-09-21T16:11:23.000Z</updated>
+        <content type="html"><![CDATA[<p>典型的BFS题</p>
+<h3 id="大体思路">大体思路</h3>
+<p>把楼层抽象为一个一维数组，对应K值为行走步数，进行搜索</p>
+<p><strong>注：蒟蒻使用数组模拟队列</strong></p>
+<hr>
+<p>上代码：     （<em>有注释</em> ）</p>
+<pre><code class="language-cpp">#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+using namespace std;
+int head, tail; //头尾指针
+struct lift{ 	//存储电梯楼层
+    int book;	//标记
+    int cnt;	//步数
+    int k;	//K值
+}l[201];
+int a, b, n; 	//如题
+int x;   	//临时数据存储
+int map[1002];  //队列
+int main()
+{
+    //freopen(&quot;data.in&quot;, &quot;r&quot;, stdin);
+    scanf(&quot;%d%d%d&quot;, &amp;n, &amp;a, &amp;b);//不多说
+    for(int i=1; i&lt;=n; ++i)
+    {
+        scanf(&quot;%d&quot;, &amp;l[i].k);
+        l[i].cnt = 0, l[i].book = 0;//初始化
+    }
+    head = 0, tail = 0;
+    l[a].book = 1, l[a].cnt = 0;
+    map[head] = a, ++tail;	//初始点特殊处理
+    while(head &lt; tail)	//若还能扩展
+    {
+        x = map[head] + l[map[head]].k; //扩展方式1
+        if(x&gt;=1 &amp;&amp; x&lt;=n &amp;&amp; l[x].book == 0)  //在范围以内且未到过
+        {
+            map[tail++] = x; //入队
+            l[x].book = 1; //打标记
+            l[x].cnt = l[map[head]].cnt+1;//步数+1
+        }
+        if(x == b)//剪枝1
+        {
+            printf(&quot;%d&quot;, l[x].cnt);
+            return 0;
+        }
+        x = map[head] - l[map[head]].k;//扩展方式2
+        if(x&gt;=1 &amp;&amp; x&lt;=n &amp;&amp; l[x].book == 0)
+        {
+            map[tail++] = x;//同上
+            l[x].book = 1;
+            l[x].cnt = l[map[head]].cnt+1;
+        }  
+        if(x == b)//剪枝2
+        {
+            printf(&quot;%d&quot;, l[x].cnt);
+            return 0;
+        }
+        ++head;//这个楼层扩展完毕，出队
+    }
+    if(l[b].book == 0)//若无法到达
+        printf(&quot;-1&quot;);
+    //fclose(stdin);
+    return 0;
+}
+</code></pre>
+<hr>
+<p>若有不懂，可以和本蒟蒻一样，阅读《<strong>啊哈！算法</strong>》</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[题解 P1164 【小A点菜】]]></title>
+        <id>https://diego3893.github.io/post/ti-jie-p1164-xiao-a-dian-cai/</id>
+        <link href="https://diego3893.github.io/post/ti-jie-p1164-xiao-a-dian-cai/">
+        </link>
+        <updated>2020-09-21T16:10:35.000Z</updated>
+        <content type="html"><![CDATA[<p>这是一道<s>很水的</s>dp题，但作为第一天学动态规划的蒟蒻还是提交了两遍/捂脸/</p>
+<p>看到前面dalao全部用文字叙述，今天我想介绍一种推状态转移方程的方法————</p>
+<h1 id="表格法">表格法</h1>
+<p><img src="https://cdn.luogu.com.cn/upload/pic/72291.png" alt="直观的表格" loading="lazy"><br>
+本人直接用的样例，方便对照</p>
+<p>通过表格可以直观看出方程  <s>自认为小学找规律难度</s></p>
+<p>具体数据表示啥我就不详细介绍了，应该都懂<br>
+还是上一下代码吧：</p>
+<pre><code class="language-cpp">#include&lt;cstdio&gt;
+using namespace std;
+const int maxm = 10005, maxn = 105;  //数据范围
+int cell[maxn][maxm], p[maxn];
+int main()
+{
+	int m, n;
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);  //看清输入顺序，我第一次就是把顺序搞反了
+	for(int i=1; i&lt;=n; ++i)
+		scanf(&quot;%d&quot;, &amp;p[i]);  //输入价格
+	for(int i=1; i&lt;=n; ++i)    //从第一道菜开始（表格第一列）
+		for(int j=1; j&lt;=m; ++j)   //从只剩一元钱开始直到符合输入的钱数（表格第一行）
+		{
+			if(j &lt; p[i])   //三个方程依次判断
+				cell[i][j] = cell[i-1][j];
+			if(j == p[i]) 
+				cell[i][j] = cell[i-1][j]+1;
+			if(j &gt; p[i]) 
+				cell[i][j] = cell[i-1][j]+cell[i-1][j-p[i]];
+		}
+	printf(&quot;%d&quot;, cell[n][m]);  //由上表可得：右下角的数即为正解
+	return 0;  //愉快的结束
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[题解 P1765 【手机_NOI导刊2010普及（10）】]]></title>
+        <id>https://diego3893.github.io/post/ti-jie-p1765-shou-ji-_noi-dao-kan-2010-pu-ji-10/</id>
+        <link href="https://diego3893.github.io/post/ti-jie-p1765-shou-ji-_noi-dao-kan-2010-pu-ji-10/">
+        </link>
+        <updated>2020-09-21T16:09:56.000Z</updated>
+        <content type="html"><![CDATA[<p>这道题<s>其实很水</s>，用一个整形数组存放每个字母的按键次数即可<br>
+附代码：</p>
+<pre><code class="language-cpp">#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+using namespace std;
+int l[26] = {1,2,3, 1,2,3, 1,2,3, 1,2,3, 1,2,3, 1,2,3,4, 1,2,3, 1,2,3,4};  //按键次数
+int main()
+{
+    char c[200];
+    while(gets(c))  //读入若干行句子（不要用scanf(&quot;%s&quot;, c)；和cin&gt;&gt;c;读到空格就要停
+    {
+        int ans = 0;  //按键次数总和
+        for(int i=0; i&lt;strlen(c); ++i)  //遍历
+        {
+            if(c[i]&lt;='z' &amp;&amp; c[i]&gt;='a')  //如果是字母
+                ans += l[c[i]-'a'];   //加上对应次数
+            else if(c[i] == ' ')  //如果是空格
+                ++ans; //加一次
+        }
+        printf(&quot;%d\n&quot;, ans);  //输出
+    }
+    return 0;  //愉快的结束
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[题解 P4414 【[COCI2006-2007#2] ABC】]]></title>
+        <id>https://diego3893.github.io/post/ti-jie-p4414-coci2006-20072-abc/</id>
+        <link href="https://diego3893.github.io/post/ti-jie-p4414-coci2006-20072-abc/">
+        </link>
+        <updated>2020-09-21T16:09:16.000Z</updated>
+        <content type="html"><![CDATA[<p>用简化的桶排序，再用if判断输出就行<br>
+附AC代码：</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int main()
+{
+    int a, b, c, n[3], j = 0;//n为排序用数组，j为排序时下标
+    char s[3];//s为输出顺序
+    cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;//输入数据
+    cin&gt;&gt;s;
+    for(int i=1; i&lt;=100; ++i)//循环排序【排序】
+    {
+        if(i == a)//如果是a，就把它放在第一位（最小）
+        {
+            n[j] = a;
+            ++j;
+            continue;
+        }
+        if(i == b)//同上
+        {
+            n[j] = b;
+            ++j;
+            continue;
+        }
+        if(i == c)//同上
+        {
+            n[j] = c;
+            ++j;
+            continue;
+        }
+        if(j ==3)//如果三个数顺序已经排好，退出循环
+            break;
+    }
+    for(int i=0; i&lt;3; ++i)//选择输出【输出】
+    {
+        if(s[i] == 'A')//检查顺序
+            cout&lt;&lt;n[0];
+        if(s[i] == 'B')
+            cout&lt;&lt;n[1];
+        if(s[i] == 'C')
+            cout&lt;&lt;n[2];
+        cout&lt;&lt;' ';
+    }
+    return 0;//结束程序
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[题解 P1059 【明明的随机数】]]></title>
+        <id>https://diego3893.github.io/post/ti-jie-p1059-ming-ming-de-sui-ji-shu/</id>
+        <link href="https://diego3893.github.io/post/ti-jie-p1059-ming-ming-de-sui-ji-shu/">
+        </link>
+        <updated>2020-09-21T16:08:28.000Z</updated>
+        <content type="html"><![CDATA[<p>看到去重+排序（数据范围不是很大）直接用桶排序<br>
+上AC代码：</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+bool number[1000]; //1000个“桶”
+int main()
+{
+    int N, sum = 0, s;
+    cin&gt;&gt;N;
+    for(int i = 1; i&lt;=N; ++i)
+    {
+        cin&gt;&gt;s;//读入数据
+        if(!number[s])//如果这个数没有出现过
+        {
+            number[s] = 1;//标记为出现
+            ++sum;//计数器+1
+        }
+    }
+    cout&lt;&lt;sum&lt;&lt;endl;//输出不相同的数的个数
+    for(int i=0; i&lt;1000; ++i)//遍历数组
+        if(number[i])//如果出现过就输出
+            cout&lt;&lt;i&lt;&lt;' ';
+    return 0;//结束程序
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[题解 P1150 【Peter的烟】]]></title>
+        <id>https://diego3893.github.io/post/ti-jie-p1150-peter-de-yan/</id>
+        <link href="https://diego3893.github.io/post/ti-jie-p1150-peter-de-yan/">
+        </link>
+        <updated>2020-09-21T16:07:52.000Z</updated>
+        <content type="html"><![CDATA[<p>直接上AC代码：</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int main()
+{
+    int n, k, x = 1, sum = 0;
+    scanf(&quot;%d%d&quot;, &amp;n, &amp;k);//输入
+    sum += n;//本来拥有的烟
+    while(x&gt;0)
+    {
+        x = n/k;//可以换x根
+        n = n-x*k+x;//剩下的烟蒂
+        sum += x;//加上换来的烟
+    }
+    cout&lt;&lt;sum;
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[题解 P3742  【umi的函数】]]></title>
+        <id>https://diego3893.github.io/post/ti-jie-p3742-umi-de-han-shu/</id>
+        <link href="https://diego3893.github.io/post/ti-jie-p3742-umi-de-han-shu/">
+        </link>
+        <updated>2020-09-21T16:06:43.000Z</updated>
+        <content type="html"><![CDATA[<p>AC代码：</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+char s[100],s1[100],s2[100];//s为y,s1为x,s2为z
+int n;
+int main()
+{
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++)//输入
+        cin&gt;&gt;s1[i];
+    for(int i=0;i&lt;n;i++)
+        cin&gt;&gt;s2[i];
+    for(int i=0;i&lt;n;i++)
+    {
+        if(s1[i]&lt;s2[i])//判断是否存在
+        {
+            cout&lt;&lt;&quot;-1&quot;;
+            return 0;
+        }
+    }
+    for(int i=0;i&lt;n;i++)
+    {
+        if(s1[i]==s2[i])
+        {
+            s[i]='z';//保证大于等于s1[i]
+        }
+        else s[i]=s2[i];
+    }
+    puts(s);//输出
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[单链表实现----学生成绩查询系统]]></title>
+        <id>https://diego3893.github.io/post/dan-lian-biao-shi-xian-xue-sheng-cheng-ji-cha-xun-xi-tong/</id>
+        <link href="https://diego3893.github.io/post/dan-lian-biao-shi-xian-xue-sheng-cheng-ji-cha-xun-xi-tong/">
+        </link>
+        <updated>2020-09-21T16:04:46.000Z</updated>
+        <content type="html"><![CDATA[<p>代码注释较少，若给各位的阅读带来不便，请谅解<br>
+本人蒟蒻一枚，写得也是很不容易了，请多多鼓励</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+void run(); //运行 
+void menu();//菜单 
+void Read();//读入 
+void Put();//全部输出 
+void Find();//查询 
+void Insert();//添加 
+void Delete(); //删除 
+void Len();//输出长度 
+void Save();//保存 
+void Empty();//清空 
+int Lenth();//求长度 
+void readData();//提取数据 
+void Data();//读取数据 
+struct node{
+    int number;
+    char name[20];
+    int ch;
+    int ma;
+    int en;
+    int to = 0;
+    double av;
+    node *next;
+}*head, *p, *r, a; 
+int choose, member;
+bool f = 1, flag;
+int main()
+{
+    head = new node;
+    r = head;
+    system(&quot;color 74&quot;);
+    cout&lt;&lt;&quot;欢迎使用成绩查询系统\nMADE BY DIEGO\n&quot;;
+    system(&quot;pause&quot;);
+    system(&quot;cls&quot;);
+    Data();
+    system(&quot;cls&quot;);
+    while(f)
+    {
+        system(&quot;color f1&quot;);
+        run();
+    }
+    return 0;
+}
+void run()
+{
+    menu();
+    system(&quot;cls&quot;);
+    return;
+}
+void menu()
+{
+    cout&lt;&lt;setw(50)&lt;&lt;&quot;MENU\n&quot;;
+    cout&lt;&lt;&quot;1：录入； 2：查询； 3：添加； 4：删除； 5：清空； 6：显示所有； 7：学生人数  8：保存并退出\n&quot;;
+    cout&lt;&lt;&quot;请输入您的选择：&quot;;
+    scanf(&quot;%d&quot;, &amp;choose);
+    switch(choose)
+    {
+        case 1:Read();break;
+        case 2:Find();break;
+        case 3:Insert();break;
+        case 4:Delete();break;
+        case 5:Empty();break;
+        case 6:Put();break;
+        case 7:Len();break; 
+        case 8:Save();break; 
+    }
+    return;
+}
+void Read()
+{
+    system(&quot;color f2&quot;);
+    cout&lt;&lt;&quot;请输入人数：&quot;;
+    scanf(&quot;%d&quot;, &amp;member);
+    cout&lt;&lt;&quot;输入顺序为：学号 姓名(长度不超过20) 语文分数 数学分数 英语分数\n&quot;; 
+    for(int i=1; i&lt;=member; ++i)
+    {
+        scanf(&quot;%d%s%d%d%d&quot;, &amp;a.number, &amp;a.name, &amp;a.ch, &amp;a.ma, &amp;a.en);
+        p = new node;
+        p-&gt;number = a.number;
+        strcpy(p-&gt;name, a.name);
+        p-&gt;ch = a.ch;
+        p-&gt;ma = a.ma;
+        p-&gt;en = a.en;
+        p-&gt;to = a.ch+a.en+a.ma;
+        p-&gt;av = p-&gt;to/3.0;
+        p-&gt;next = NULL;
+        r-&gt;next = p;
+        r = p;
+    }
+    cout&lt;&lt;&quot;录入完成\n\n&quot;;
+    system(&quot;pause&quot;); 
+    return;
+}
+void Len()
+{
+    system(&quot;color f3&quot;);
+    cout&lt;&lt;&quot;学生人数为：&quot;;
+    int n = 0;
+    node *s = head;
+    while(s != NULL)
+    {
+        ++n;
+        s = s-&gt;next;
+    }
+    cout&lt;&lt;n-1&lt;&lt;endl&lt;&lt;endl;
+    system(&quot;pause&quot;); 
+    return;
+}
+void Delete()
+{
+    int g; 
+    system(&quot;color f5&quot;);
+    cout&lt;&lt;&quot;请输入删除结点编号：&quot;;
+    scanf(&quot;%d&quot;, &amp;g);
+    node *x, *s;
+    x = head;
+    int j = 0;
+    while(x-&gt;next!=NULL &amp;&amp; j&lt;g-1)
+    {
+        x = x-&gt;next;
+        ++j;
+    }
+    if(x-&gt;next == NULL)
+        printf(&quot;cannot find this one&quot;);
+    else
+    {
+        s = x-&gt;next;
+        x-&gt;next = s-&gt;next;
+        free(s);
+        cout&lt;&lt;&quot;删除成功\n\n&quot;;
+    }
+    system(&quot;pause&quot;);
+    return;
+}
+void Insert()
+{
+    int d;
+    system(&quot;color f6&quot;);
+    cout&lt;&lt;&quot;请输入需添加的后一个结点位置：&quot;;
+    scanf(&quot;%d&quot;, &amp;d);
+    cout&lt;&lt;&quot;请输入数据（格式同录入数据）：&quot;;
+    node *x, *s;
+    x = head;
+    int j = 0;
+    while(x!=NULL &amp;&amp; j&lt;d-1)
+    {
+        x = x-&gt;next;
+        ++j;
+    }
+    if(x == NULL)
+        printf(&quot;cannot find this one&quot;);
+    else
+    {
+        s = new node;
+        scanf(&quot;%d%s%d%d%d&quot;, &amp;a.number, &amp;a.name, &amp;a.ch, &amp;a.ma, &amp;a.en);
+        s-&gt;number = a.number;
+        strcpy(s-&gt;name, a.name);
+        s-&gt;ch = a.ch;
+        s-&gt;ma = a.ma;
+        s-&gt;en = a.en;
+        s-&gt;to = a.ch+a.en+a.ma;
+        s-&gt;av = s-&gt;to/3.0;
+        s-&gt;next = x-&gt;next;
+        x-&gt;next = s;
+        cout&lt;&lt;&quot;添加成功\n\n&quot;; 
+    }
+    system(&quot;pause&quot;);
+    return;
+}
+void Put()
+{
+    system(&quot;color f9&quot;);
+    if(Lenth() == 0)
+    {
+        cout&lt;&lt;&quot;无数据\n\n&quot;;
+        system(&quot;pause&quot;);
+        return;
+    }
+    cout&lt;&lt;&quot;输出顺序为：学号 姓名 语文分数 数学分数 英语分数 总分 平均分\n&quot;;
+    p = head-&gt;next;
+    while(p-&gt;next != NULL)
+    {
+        printf(&quot;%d &quot;, p-&gt;number);
+        cout&lt;&lt;p-&gt;name;
+        printf(&quot; %d %d %d %d %.2f\n&quot;, p-&gt;ch, p-&gt;ma, p-&gt;en, p-&gt;to, p-&gt;av);
+        p = p-&gt;next;
+    }
+    printf(&quot;%d &quot;, p-&gt;number);
+    cout&lt;&lt;p-&gt;name;
+    printf(&quot; %d %d %d %d %.2f\n&quot;, p-&gt;ch, p-&gt;ma, p-&gt;en, p-&gt;to, p-&gt;av);
+    cout&lt;&lt;&quot;\n&quot;;
+    system(&quot;pause&quot;);
+    return;
+}
+void Find()
+{
+    int pi;
+    system(&quot;color f8&quot;);
+    cout&lt;&lt;&quot;请输入结点位置：&quot;;
+    scanf(&quot;%d&quot;, &amp;pi);
+    node *s = head-&gt;next;
+    int j = 1;
+    while(s!=NULL &amp;&amp; j&lt;pi)
+    {
+        s = s-&gt;next;
+        ++j;
+    }
+    if(s!=NULL &amp;&amp; j==pi)
+    {
+        printf(&quot;%d &quot;, s-&gt;number);
+        cout&lt;&lt;s-&gt;name;
+        printf(&quot; %d %d %d %d %.2f\n&quot;, s-&gt;ch, s-&gt;ma, s-&gt;en, s-&gt;to, s-&gt;av);
+    }
+    else
+        cout&lt;&lt;&quot;cannot find this one&quot;;
+    cout&lt;&lt;&quot;\n\n&quot;;
+    system(&quot;pause&quot;);
+    return;
+}
+int Lenth()
+{
+    int n = 0;
+    node *s = head;
+    while(s != NULL)
+    {
+        ++n;
+        s = s-&gt;next;
+    }
+    return n-1;
+}
+void Empty()
+{
+    system(&quot;color f5&quot;);
+    node *x, *s;
+    x = head;
+    while(x-&gt;next!=NULL)
+    {
+        s = x-&gt;next;
+        x-&gt;next = s-&gt;next;
+        free(s);
+    }
+    free(x);
+    cout&lt;&lt;&quot;系统已清空\n\n&quot;;
+    system(&quot;pause&quot;);
+    return;
+}
+void Save()
+{
+    system(&quot;color 7C&quot;);
+    freopen(&quot;score.txt&quot;, &quot;w&quot;, stdout);
+    printf(&quot;%d\n&quot;, Lenth());
+    p = head-&gt;next;
+    while(p-&gt;next != NULL)
+    {
+        printf(&quot;%d &quot;, p-&gt;number);
+        cout&lt;&lt;p-&gt;name;
+        printf(&quot; %d %d %d %d %.2f\n&quot;, p-&gt;ch, p-&gt;ma, p-&gt;en, p-&gt;to, p-&gt;av);
+        p = p-&gt;next;
+    }
+    printf(&quot;%d &quot;, p-&gt;number);
+    cout&lt;&lt;p-&gt;name;
+    printf(&quot; %d %d %d %d %.2f\n&quot;, p-&gt;ch, p-&gt;ma, p-&gt;en, p-&gt;to, p-&gt;av);
+    fclose(stdout);
+    freopen(&quot;CON&quot;, &quot;w&quot;, stdout);
+    cout&lt;&lt;&quot;保存成功\n\n蒟蒻代码，感谢使用\n&quot;;
+    f = 0;
+    return;
+}
+void Data()
+{
+    system(&quot;color 70&quot;);
+    cout&lt;&lt;&quot;是否读取数据?(1 是,0 否):&quot;;
+    cin&gt;&gt;flag;
+    if(flag)
+    {
+        readData();
+        cout&lt;&lt;&quot;读取成功\n&quot;;
+    }
+    else
+        cout&lt;&lt;&quot;未读取数据\n&quot;;
+    system(&quot;pause&quot;);
+    return;
+}
+void readData()
+{
+    freopen(&quot;score.txt&quot;, &quot;r&quot;, stdin);
+    scanf(&quot;%d&quot;, &amp;member);
+    for(int i=1; i&lt;=member; ++i)
+    {
+        scanf(&quot;%d%s%d%d%d%d%f&quot;, &amp;a.number, &amp;a.name, &amp;a.ch, &amp;a.ma, &amp;a.en, &amp;a.to, &amp;a.av);
+        p = new node;
+        p-&gt;number = a.number;
+        strcpy(p-&gt;name, a.name);
+        p-&gt;ch = a.ch;
+        p-&gt;ma = a.ma;
+        p-&gt;en = a.en;
+        p-&gt;to = a.to;
+        p-&gt;av = a.av;
+        p-&gt;next = NULL;
+        r-&gt;next = p;
+        r = p;
+    }
+    fclose(stdin);
+    freopen(&quot;CON&quot;, &quot;r&quot;, stdin);
+    return;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[deepin安装Lemon]]></title>
         <id>https://diego3893.github.io/post/deepin-an-zhuang-lemon/</id>
@@ -185,322 +802,6 @@ ${downspeedgraph wlp3s0 324D23 77B753}
 请安装一个东西：</p>
 <pre><code class="language-shell">sudo apt-get install lm-sensors
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[DeepinV20网速慢的解决方法]]></title>
-        <id>https://diego3893.github.io/post/deepinv20-wang-su-man-de-jie-jue-fang-fa/</id>
-        <link href="https://diego3893.github.io/post/deepinv20-wang-su-man-de-jie-jue-fang-fa/">
-        </link>
-        <updated>2020-09-19T09:58:53.000Z</updated>
-        <summary type="html"><![CDATA[<p>这个可能是beta的小问题</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>这个可能是beta的小问题</p>
-<!--more-->
-<hr>
-<ul>
-<li>终端输入：</li>
-</ul>
-<pre><code class="language-shell">sudo deepin-editor /etc/modprobe.d/iwlwifi.conf
-</code></pre>
-<ul>
-<li>将<code>options iwlwifi 11n_disable=1 bt_coex_active=0 power_save=0 swcrypto=1</code></li>
-</ul>
-<p>中的<code>11n_disable=1</code>修改为<code>11n_disable=0</code></p>
-<ul>
-<li>重启电脑</li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[安利一个Linux第三方QQ音乐]]></title>
-        <id>https://diego3893.github.io/post/an-li-yi-ge-linux-di-san-fang-qq-yin-le/</id>
-        <link href="https://diego3893.github.io/post/an-li-yi-ge-linux-di-san-fang-qq-yin-le/">
-        </link>
-        <updated>2020-09-19T09:58:30.000Z</updated>
-        <summary type="html"><![CDATA[<p>众所周知，Linux没有QQ音乐，wine下的QQ音乐会有各种奇奇怪怪的错误，所以，我们就有了<strong>CocoMusic</strong>!</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>众所周知，Linux没有QQ音乐，wine下的QQ音乐会有各种奇奇怪怪的错误，所以，我们就有了<strong>CocoMusic</strong>!</p>
-<!--more-->
-<hr>
-<h1 id="安装包在此">安装包在此</h1>
-<p><code>https://ww.lanzous.com/ic1v69e</code><br>
-此为最新版</p>
-<h1 id="开始安装">开始安装</h1>
-<p>以deepinv20为例</p>
-<ul>
-<li>双击deb，开始安装，不过会安装失败（莫慌）</li>
-<li>进入终端，输入以下</li>
-</ul>
-<pre><code class="language-sh">sudo apt --fix-broken install
-</code></pre>
-<p>开始享受吧！</p>
-<h1 id="源项目">源项目</h1>
-<gb user="xtuJSer" type="star" count="1" size="1" lang="cn" width="370">
-CoCoMusic
-</gb>]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[我有不一样的Bilibili！]]></title>
-        <id>https://diego3893.github.io/post/wo-you-bu-yi-yang-de-bilibili/</id>
-        <link href="https://diego3893.github.io/post/wo-you-bu-yi-yang-de-bilibili/">
-        </link>
-        <updated>2020-09-19T09:57:52.000Z</updated>
-        <summary type="html"><![CDATA[<p>请先安装油猴，步骤详见：<a href="http://blog.diego.plus:2000/archives/341/">这里</a></p>
-]]></summary>
-        <content type="html"><![CDATA[<p>请先安装油猴，步骤详见：<a href="http://blog.diego.plus:2000/archives/341/">这里</a></p>
-<!--more-->
-<h1 id="开始安装">开始安装</h1>
-<p>访问这个<a href="https://greasyfork.org/zh-CN/scripts/373563-bilibili-evolved">脚本页面</a><br>
-安装</p>
-<h1 id="开始使用">开始使用</h1>
-<p><img src="http://blog.diego.plus:2000/usr/uploads/2020/04/2562318798.png" alt="Snipaste_2020-04-27_23-39-25.png" loading="lazy"><br>
-<img src="http://blog.diego.plus:2000/usr/uploads/2020/04/1188487051.png" alt="Snipaste_2020-04-27_23-38-52.png" loading="lazy"><br>
-开始自定义吧！</p>
-<h1 id="最终效果">最终效果</h1>
-<figure data-type="image" tabindex="1"><img src="http://blog.diego.plus:2000/usr/uploads/2020/04/2752978353.png" alt="Snipaste_2020-04-27_23-45-35.png" loading="lazy"></figure>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google Chrome的扩展安利]]></title>
-        <id>https://diego3893.github.io/post/google-chrome-de-kuo-zhan-an-li/</id>
-        <link href="https://diego3893.github.io/post/google-chrome-de-kuo-zhan-an-li/">
-        </link>
-        <updated>2020-09-19T09:56:38.000Z</updated>
-        <content type="html"><![CDATA[<ul>
-<li>AdBlock
-<ul>
-<li>广告拦截</li>
-</ul>
-</li>
-<li>Astar
-<ul>
-<li>免费高速梯子，够稳</li>
-</ul>
-</li>
-<li>Dmooji 弹幕君
-<ul>
-<li>YouTube弹幕助手</li>
-</ul>
-</li>
-<li>Dualsub
-<ul>
-<li>YouTube双语字幕</li>
-</ul>
-</li>
-<li>IDM Integration Module
-<ul>
-<li>IDM配套插件（要IDM的私信我）</li>
-</ul>
-</li>
-<li>Infinity 新标签页 (Pro)
-<ul>
-<li>美化首页</li>
-</ul>
-</li>
-<li>pakku
-<ul>
-<li>Bilibili弹幕过滤+合并</li>
-</ul>
-</li>
-<li>InstantView for YouTube™
-<ul>
-<li>允许您在弹出窗口中打开YouTube视频</li>
-</ul>
-</li>
-<li>RSSHub Radar
-<ul>
-<li>RSS订阅器</li>
-</ul>
-</li>
-<li>Tampermonkey BETA
-<ul>
-<li>红油猴，程序猿都知道脚本的厉害<s>doge</s>（黑油猴也可以）</li>
-<li>更多脚本请见<code>https://greasyfork.org/zh-CN/</code></li>
-</ul>
-</li>
-<li>哔哩哔哩·猜你喜欢
-<ul>
-<li>如题……</li>
-</ul>
-</li>
-<li>哔哩哔哩助手
-<ul>
-<li>多功能自定义Bilibili</li>
-</ul>
-</li>
-<li>扩展管理器
-<ul>
-<li>如题……</li>
-</ul>
-</li>
-<li>沙拉查词
-<ul>
-<li>划词翻译</li>
-</ul>
-</li>
-<li>Github加速
-<ul>
-<li>最棒的镜像加速</li>
-</ul>
-</li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[用Google Chrome科学上网]]></title>
-        <id>https://diego3893.github.io/post/yong-google-chrome-ke-xue-shang-wang/</id>
-        <link href="https://diego3893.github.io/post/yong-google-chrome-ke-xue-shang-wang/">
-        </link>
-        <updated>2020-09-19T09:56:22.000Z</updated>
-        <summary type="html"><![CDATA[<p>免费畅游墙外世界！</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>免费畅游墙外世界！</p>
-<!--more-->
-<hr>
-<h1 id="先放资源">先放资源</h1>
-<p><a href="http://blog.diego.plus:2000/usr/uploads/2020/04/2314227591.zip">谷歌访问助手.zip</a><br>
-将之下载</p>
-<hr>
-<h1 id="在chrome中添加扩展">在Chrome中添加扩展</h1>
-<p>请先打开<code>开发者模式</code><br>
-<img src="http://blog.diego.plus:2000/usr/uploads/2020/04/570823941.png" alt="2.png" loading="lazy"><br>
-选择<code>加载扩展</code><br>
-<img src="http://blog.diego.plus:2000/usr/uploads/2020/04/1422245035.png" alt="Snipaste_2020-04-27_23-11-28.png" loading="lazy"><br>
-选中刚才下载文件夹中的<code>master</code>分支文件<br>
-<img src="http://blog.diego.plus:2000/usr/uploads/2020/04/1008135653.png" alt="Snipaste_2020-04-27_23-12-14.png" loading="lazy"><br>
-如果出现下图，恭喜！您可以访问<strong>Google</strong>啦！<br>
-<img src="http://blog.diego.plus:2000/usr/uploads/2020/04/3340144554.png" alt="Snipaste_2020-04-27_23-12-33.png" loading="lazy"></p>
-<hr>
-<h1 id="开始挂梯子">开始挂梯子</h1>
-<ul>
-<li>先注册Google账号，此处略过</li>
-<li>点击Chrome收藏栏中的<code>应用</code>，进入商店<br>
-<img src="http://blog.diego.plus:2000/usr/uploads/2020/04/1006592364.png" alt="Snipaste_2020-04-27_23-19-11.png" loading="lazy"></li>
-<li>搜索<code>Astar</code>，安装<br>
-<img src="http://blog.diego.plus:2000/usr/uploads/2020/04/1099050942.png" alt="1.png" loading="lazy"><br>
-梯子就挂好了！</li>
-</ul>
-<hr>
-<h1 id="效果">效果</h1>
-<p>支持<em>美国，日本，加拿大</em>等多个节点<br>
-<img src="http://blog.diego.plus:2000/usr/uploads/2020/04/563054380.png" alt="Snipaste_2020-04-27_23-21-23.png" loading="lazy"><br>
-速度也绝对不慢（下载大文件还是比较恼火的）<br>
-高清YouTube随便看！<br>
-<img src="http://blog.diego.plus:2000/usr/uploads/2020/04/2767463082.png" alt="Snipaste_2020-04-27_23-22-53.png" loading="lazy"></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[[转载]Typecho无插件实现QQ评论回复]]></title>
-        <id>https://diego3893.github.io/post/zhuan-zai-typecho-wu-cha-jian-shi-xian-qq-ping-lun-hui-fu/</id>
-        <link href="https://diego3893.github.io/post/zhuan-zai-typecho-wu-cha-jian-shi-xian-qq-ping-lun-hui-fu/">
-        </link>
-        <updated>2020-09-19T09:55:57.000Z</updated>
-        <content type="html"><![CDATA[<p>作者：奥秘Sir<br>
-原文地址：<code>https://blog.say521.cn/archives/369.html</code></p>
-<hr>
-<ol>
-<li>QQ添加订阅机器人<code>2827803813</code></li>
-<li>订阅自己博客的RSS地址，比如<code>http://blog.diego.plus:2000/feed</code>
-<ul>
-<li>命令为<code>订阅 http://blog.diego.plus:2000/feed</code></li>
-</ul>
-</li>
-<li>订阅评论地址：RSS地址/comments
-<ul>
-<li><code>订阅 http://blog.diego.plus:2000/feed/comments</code></li>
-</ul>
-</li>
-</ol>
-<p>然后就可以使用啦！不过好像推送有些滞后诶……</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[[博主]Cuckoo的更新须知]]></title>
-        <id>https://diego3893.github.io/post/bo-zhu-cuckoo-de-geng-xin-xu-zhi/</id>
-        <link href="https://diego3893.github.io/post/bo-zhu-cuckoo-de-geng-xin-xu-zhi/">
-        </link>
-        <updated>2020-09-19T09:55:34.000Z</updated>
-        <content type="html"><![CDATA[<ul>
-<li>备份后台数据</li>
-<li>备份独立页面模版
-<ul>
-<li>追番</li>
-<li>相册</li>
-</ul>
-</li>
-<li><code>function.php</code>中的代码段
-<ul>
-<li>热门文章</li>
-<li>最新文章</li>
-</ul>
-</li>
-<li><code>sidebar.php</code>中代码段
-<ul>
-<li>热门文章</li>
-<li>最新文章</li>
-</ul>
-</li>
-<li><code>footer.php</code>中的代码段
-<ul>
-<li>notice</li>
-</ul>
-</li>
-<li>CSS样式
-<ul>
-<li>B站视频</li>
-<li>打赏</li>
-</ul>
-</li>
-<li>文章页面
-<ul>
-<li>打赏</li>
-<li>海报</li>
-</ul>
-</li>
-<li>封面图片<code>random</code></li>
-</ul>
-<hr>
-<p>暂时能想起的就这些……</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Typecho不使用插件实现“打赏”按钮]]></title>
-        <id>https://diego3893.github.io/post/typecho-bu-shi-yong-cha-jian-shi-xian-da-shang-an-niu/</id>
-        <link href="https://diego3893.github.io/post/typecho-bu-shi-yong-cha-jian-shi-xian-da-shang-an-niu/">
-        </link>
-        <updated>2020-09-19T09:54:53.000Z</updated>
-        <content type="html"><![CDATA[<p>添加CSS样式到CSS文件或者主题后台的<em>自定义CSS</em>：</p>
-<pre><code class="language-css">#QR{padding-top:20px;}
-#QR a{border:0}
-#QR img{width:180px;max-width:100%;display:inline-block;margin:.8em 2em 0 2em}
-#rewardButton{border:1px solid #ccc;line-height:36px;text-align:center;height:36px;display:block;border-radius:4px;-webkit-transition-duration:.4s;transition-duration:.4s;background-color:#fff;color:#999;margin:0 auto;padding:0 25px}
-</code></pre>
-<p>在<code>post.php</code>中添加如下：</p>
-<pre><code class="language-html">&lt;div style=&quot;padding: 10px 0; margin: 20px auto; width: 100%; font-size:16px; text-align: center;&quot;&gt;
-    &lt;button id=&quot;rewardButton&quot; disable=&quot;enable&quot; onclick=&quot;var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}&quot;&gt;
-    &lt;span&gt;打赏&lt;/span&gt;
-    &lt;/button&gt;
-    &lt;div id=&quot;QR&quot; style=&quot;display: none;&quot;&gt;
-        &lt;div id=&quot;wechat&quot; style=&quot;display: inline-block&quot;&gt;
-            &lt;a class=&quot;fancybox&quot; rel=&quot;group&quot;&gt;&lt;img id=&quot;wechat_qr&quot; src=&quot;http://blog.diego.plus:2000/images/pay/wx.png&quot; alt=&quot;Diego -&gt; WeChat Pay&quot;&gt;&lt;/a&gt;
-            &lt;p&gt;
-                微信打赏
-            &lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div id=&quot;alipay&quot; style=&quot;display: inline-block&quot;&gt;
-            &lt;a class=&quot;fancybox&quot; rel=&quot;group&quot;&gt;&lt;img id=&quot;alipay_qr&quot; src=&quot;http://blog.diego.plus:2000/images/pay/ali.jpg&quot; alt=&quot;Diego -&gt; Alipay&quot;&gt;&lt;/a&gt;
-            &lt;p&gt;
-                支付宝打赏
-            &lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-<ul>
-<li>至于怎么获取付款码，自行百度</li>
-<li>代码不会改的，下方留言</li>
-</ul>
 ]]></content>
     </entry>
 </feed>
