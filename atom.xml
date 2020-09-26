@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://diego3893.github.io</id>
     <title>Diego&apos;s Blog</title>
-    <updated>2020-09-21T16:13:17.276Z</updated>
+    <updated>2020-09-26T15:58:45.890Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://diego3893.github.io"/>
     <link rel="self" href="https://diego3893.github.io/atom.xml"/>
@@ -10,6 +10,141 @@
     <logo>https://diego3893.github.io/images/avatar.png</logo>
     <icon>https://diego3893.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Diego&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[QduOJ安装指南]]></title>
+        <id>https://diego3893.github.io/post/qduoj-an-zhuang-zhi-nan/</id>
+        <link href="https://diego3893.github.io/post/qduoj-an-zhuang-zhi-nan/">
+        </link>
+        <updated>2020-09-26T15:57:25.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="1-安装环境">1 安装环境</h2>
+<ul>
+<li>Ubuntu20.04Server</li>
+<li>本校服务器</li>
+</ul>
+<hr>
+<h2 id="2-前置加速">2 前置加速</h2>
+<h3 id="21-更换apt源">2.1 更换apt源</h3>
+<p><strong><code>p.s.</code> vi/vim进入Insert模式开始编辑：<code>i</code>，退出Insert模式进入Normal模式：<code>Esc</code>，Normal模式下保存并退出：<code>:wq</code></strong></p>
+<pre><code class="language-shell">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak # 备份源文件
+sudo vi /etc/apt/sources.list  # 编辑apt源的列表文件
+</code></pre>
+<p>把文件内容全部删除后输入以下内容：</p>
+<pre><code>deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal universe
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates universe
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security universe
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security multiverse
+</code></pre>
+<p>保存退出后输入：</p>
+<pre><code class="language-shell">sudo apt update  # 更新源列表
+sudo apt upgrade # 更新系统
+sudo apt install vim # 安装vim
+</code></pre>
+<h3 id="22-加速pip">2.2 加速pip</h3>
+<pre><code class="language-shell">cd # 回到~目录
+mkdir .pip &amp;&amp;　cd .pip # 创建.pip文件夹并进入其子目录
+vim pip.conf # 新建文件pip.conf并编辑
+</code></pre>
+<p>进入<code>Insert</code>模式输入以下：</p>
+<pre><code>[global]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+</code></pre>
+<p><code>:wq</code>保存退出</p>
+<h3 id="23-加速docker">2.3 加速docker</h3>
+<pre><code class="language-shell">sudo vim /etc/docker/daemon.json
+</code></pre>
+<p>输入以下：</p>
+<pre><code class="language-json">{
+  &quot;registry-mirrors&quot;: [&quot;https://registry.docker-cn.com&quot;]
+}
+</code></pre>
+<p>保存并退出</p>
+<h3 id="24-修改hosts以加速github可选">2.4 修改hosts以加速github（可选）</h3>
+<pre><code class="language-shell">sudo vim /etc/hosts
+</code></pre>
+<p>输入以下：</p>
+<pre><code>151.101.72.249 github.global.ssl.fastly.net  
+192.30.253.112 github.com
+</code></pre>
+<p>保存并退出</p>
+<hr>
+<h2 id="3-开始安装">3 开始安装</h2>
+<h3 id="31-设置root用户">3.1 设置<code>root</code>用户</h3>
+<pre><code class="language-shell"># 确认是否有root用户
+su  # 切换至root
+# 如果提示密码不对或无用户，进行以下，否则略过之
+sudo passwd root  # 创建root，接下来自己设定密码
+
+# 设置完成后
+su # 进入root，接下来请始终保持在root中
+</code></pre>
+<h3 id="32-安装依赖">3.2 安装依赖</h3>
+<pre><code class="language-shell">apt-get update &amp;&amp; sudo apt-get install -y vim python3-pip curl git
+pip3 install --upgrade pip
+pip install docker-compose
+</code></pre>
+<h3 id="33-安装docker">3.3 安装docker</h3>
+<p>国内请使用：<code>sudo curl -sSL https://get.daocloud.io/docker | sh</code></p>
+<p>国外请使用：<code>sudo curl -sSL get.docker.com | sh</code></p>
+<p>附上docker官方文档：<a href="https://docs.docker.com/get-docker/">传送门</a></p>
+<p><strong><code>p.s.</code> 此处可能耗时较长</strong></p>
+<h3 id="34-部署oj">3.4 部署OJ</h3>
+<pre><code class="language-shell">cd /home # 回到~目录
+git clone -b 2.0 https://github.com/Harry-zklcdc/OnlineJudgeDeploy.git &amp;&amp; cd OnlineJudgeDeploy # 克隆项目
+docker-compose up -d # 部署项目
+</code></pre>
+<h3 id="35-检查部署是否成功">3.5 检查部署是否成功</h3>
+<pre><code class="language-shell">docker ps -a 
+</code></pre>
+<p>当看到所有的容器的状态没有 <code>unhealthy</code> 或 <code>Exited (x) xxx</code> 就代表 OJ 已经启动成功</p>
+<h3 id="36-oj登入设置">3.6 OJ登入设置</h3>
+<p><strong>初始用户</strong>：<code>root</code></p>
+<p><strong>密码</strong>：<code>rootroot</code></p>
+<hr>
+<h2 id="4-修改美化">4 修改&amp;美化</h2>
+<h3 id="41-修改端口">4.1 修改端口</h3>
+<p>修改<code>/home/OnlineJudgeDeploy/</code>中的<code>docker-compose.yml</code></p>
+<p>在<code>ports</code>关键词下，大约<code>85</code>行左右</p>
+<pre><code class="language-dockerfile"># 原配置
+    ports:
+      - &quot;0.0.0.0:80:8000&quot;  # http
+      - &quot;0.0.0.0:443:1443&quot; # https
+# 更改后
+    ports:
+      - &quot;0.0.0.0:81:8000&quot;
+      - &quot;0.0.0.0:443:1443&quot;
+</code></pre>
+<p>然后再次</p>
+<pre><code class="language-shell">su
+docker-compose up -d
+</code></pre>
+<p>即可</p>
+<h3 id="42-使用看板娘可选">4.2 使用看板娘（可选）</h3>
+<pre><code class="language-shell">cd /home/OnlineJudgeDeploy/data/forum/api/live2d/model/
+git clone https://gitee.com/zklcdc/live2d_models.git &amp;&amp; cd live2d_models # 克隆模型到本地
+cp -r * ../ # 将所有文件复制到上级文件夹
+cd ../ &amp;&amp; cp model_list.json ../ # 把列表文件复制到live2d文件夹中
+</code></pre>
+<p>打开网页，<code>just enjoy</code></p>
+<h3 id="43-修改网页icon">4.3 修改网页icon</h3>
+<p>在<code>/home/OnlineJudgeDeploy/data/backend/public/website/</code>中，用自己的图片替换<code>favicon.ico</code>即可</p>
+<h3 id="44-修改默认头像">4.4 修改默认头像</h3>
+<p>在<code>/home/OnlineJudgeDeploy/data/backend/public/avatar/</code>中，用自己的图片替换<code>default.png</code>即可</p>
+<hr>
+<h2 id="5-参考项目">5 参考项目</h2>
+<ul>
+<li><a href="https://github.com/Harry-zklcdc/OnlineJudgeDeploy">Harry-zklcdc/OnlineJudgeDeploy</a></li>
+<li><a href="https://github.com/QingdaoU/OnlineJudgeDeploy">QingdaoU/OnlineJudgeDeploy</a></li>
+<li><a href="https://docs.onlinejudge.me/#/">QduOJ用户文档</a></li>
+<li><a href="https://yzoj.tk/">山东省桓台第一中学OJ</a></li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[题解 P1135 【奇怪的电梯】]]></title>
         <id>https://diego3893.github.io/post/ti-jie-p1135-qi-guai-de-dian-ti/</id>
@@ -667,141 +802,6 @@ sudo cp lemon /usr/bin
 </code></pre>
 <h1 id="效果">效果</h1>
 <figure data-type="image" tabindex="1"><img src="http://blog.diego.plus:2000/usr/uploads/2020/05/2417492455.png" alt="Snipaste_2020-05-01_20-10-49.png" loading="lazy"></figure>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Deepin美化笔记]]></title>
-        <id>https://diego3893.github.io/post/deepin-mei-hua-bi-ji/</id>
-        <link href="https://diego3893.github.io/post/deepin-mei-hua-bi-ji/">
-        </link>
-        <updated>2020-09-19T09:59:16.000Z</updated>
-        <summary type="html"><![CDATA[<p>deepin已经很好看了，但还可以美化！<br>
-Conky参上！</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>deepin已经很好看了，但还可以美化！<br>
-Conky参上！</p>
-<!--more-->
-<hr>
-<h1 id="安装conky">安装Conky</h1>
-<ul>
-<li>安装Conky组件</li>
-</ul>
-<pre><code class="language-sh">sudo apt-get install conky-all
-</code></pre>
-<ul>
-<li>安装Conky管理器</li>
-</ul>
-<pre><code class="language-bash">wget --no-check-certificate https://github.com/teejee2008/conky-manager/releases/download/v2.4/conky-manager-v2.4-amd64.run
-</code></pre>
-<p>或者在这里下载<a href="http://blog.diego.plus:2000/usr/uploads/2020/04/1960381472.run">conky-manager-v2.4-amd64.run</a>，重命名为<code>conky-manager-v2.4-amd64.run</code><br>
-- 给予权限</p>
-<pre><code class="language-sh">chmod +x ./conky-manager-v2.4-amd64.run
-</code></pre>
-<pre><code>- 安装
-</code></pre>
-<pre><code class="language-shell">sudo ./conky-manager-v2.4-amd64.run
-</code></pre>
-<h1 id="创建组件">创建组件</h1>
-<p>到<code>.conky</code>目录下，新建组件文件</p>
-<pre><code class="language-shell">cd ~/.conky
-sudo touch deepin_conky
-sudo deepin-editor deepin_conky
-</code></pre>
-<p>设置组件，将以下内容复制到deepin_conky中并保存</p>
-<pre><code>default_color white
-double_buffer yes
-no_buffers yes
-update_interval 1.0
-total_run_times 0
-own_window yes
-own_window_type normal
-own_window_transparent yes
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
- 
-own_window_colour 000000
-own_window_argb_visual yes
-own_window_argb_value 0
- 
-double_buffer yes
-draw_shades yes
-draw_outline no
-draw_borders no
-draw_graph_borders n0
-minimum_size 300 1
-maximum_width 406
-default_color ffffff
-default_shade_color 000000
-default_outline_color 000000
-alignment top_right
-gap_x 6
-gap_y 5
-cpu_avg_samples 2
-override_utf8_locale no
-uppercase no # set to yes if you want all text to be in uppercase
-use_spacer no
-use_xft yes
-xftfont WenQuanYi Zen Hei:pixelsize=12
-override_utf8_locale yes
-use_spacer no
-minimum_size 300 1
-TEXT
-${font LCD:style=Bold:pixelsize=40}${alignc}${time %I:%M:%S}
-${font LCD:style=Bold:pixelsize=20}${time %Y年%b%d日 星期%a}${alignc}
-${font WenQuanYi Zen Hei:pixelsize=14}
- 
-${color #98c2c7}姓名:  ${color}$alignr Diego
-${color #98c2c7}邮箱:  ${color}$alignr 3013006997@qq.com
-${color #98c2c7}内核:  ${color}$alignr$kernel
-${color #98c2c7}已开机: ${color}$alignr$uptime
- 
- 
-${color #98c2c7}CPU使用率: ${color}$cpu%
- 
-$cpubar
- 
- CPU1 温度:  $alignr${exec sensors | grep 'Core 0' | cut -c17-25}
- CPU2 温度: $alignr${exec sensors | grep 'Core 1' | cut -c17-25}
- 
-${color #98c2c7}CPU占用:${color}
- 
- ${top name 1} ${alignr}${top cpu 1} 
- ${top name 2} ${alignr}${top cpu 2} 
- ${top name 3} ${alignr}${top cpu 3} 
- ${top name 4} ${alignr}${top cpu 4} 
- ${top name 5} ${alignr}${top cpu 5} 
- ${top name 6} ${alignr}${top cpu 6} 
- 
-${color #98c2c7}物理内存：${color}${alignr}$mem / $memmax
- 
-${membar}
- 
-${color #98c2c7}根分区: ${color}${alignr}${fs_free /} / ${fs_size /}
- 
-${fs_bar 4 /}
- 
-${color #98c2c7}Home分区: ${color}${alignr}${fs_free /home} / ${fs_size /home}
- 
-${fs_bar 4 /home}
- 
-${color #98c2c7}网络使用:${color}
- 
-下载速度:$alignr${downspeed wlp3s0} k/s
-上传速度:$alignr${upspeed wlp3s0} k/s
-${downspeedgraph wlp3s0 324D23 77B753}
-</code></pre>
-<p>在管理器勾选即可<br>
-<img src="http://blog.diego.plus:2000/usr/uploads/2020/04/3796045765.png" alt="截图录屏_conky-manager_20200429221826.png" loading="lazy"></p>
-<h1 id="设置开机自启">设置开机自启</h1>
-<p><img src="http://blog.diego.plus:2000/usr/uploads/2020/04/1855242712.png" alt="截图录屏_conky-manager_20200430231012.png" loading="lazy"><br>
-<img src="http://blog.diego.plus:2000/usr/uploads/2020/04/61264178.png" alt="截图录屏_conky-manager_20200430231027.png" loading="lazy"><br>
-打开第一个选项即可</p>
-<h1 id="为什么这么麻烦">为什么这么麻烦？</h1>
-<p>Conky原生的组件对deepin并不友好，所以……</p>
-<h1 id="问题修复">问题修复</h1>
-<p>如果<strong>CPU温度</strong>无法显示<br>
-请安装一个东西：</p>
-<pre><code class="language-shell">sudo apt-get install lm-sensors
-</code></pre>
 ]]></content>
     </entry>
 </feed>

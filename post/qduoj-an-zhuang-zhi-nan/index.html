@@ -274,45 +274,229 @@
 </header>
         <div id="main">
             <div id="main-part">
-                <ul class="posts-list">
-                    <li class="lite-item">
-                        <article class="post post-type">
-                            <div class="post-main post-type-main">
-                                <div class="post-content">
-                                    <div class="post-content-real">
+                <div class="lite-item">
+                    <article class="post post-type real-post">
+                        <header class="post-type-header">
+                            
+                                    <div class="thumbnail-link" style="background-color: transparent;"></div>
+                                    
+                                        <div class="thumbnail-shadow">
+                                            <h1 class="post-title">
+                                                QduOJ安装指南
+                                            </h1>
+                                            <div class="post-info">
+                                                <span class="post-category"><i class="Card Card-novel"></i>
                                         
-                                            
-                                                <h3>
-                                                    2020
-                                                </h3>
+                                            <span onclick="javascript:top.location='https://diego3893.github.io/tag/h6HytAKAH/'">折腾笔记</span>
                                                 
+                                                    </span>
+                                                    <span class="post-view">
                                                     
-
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://diego3893.github.io/post/kuai-su-mi/">
-                                                                快速幂
-                                                            </a>
-                                                            <span class="archive-item-date">2020-02-28 </span>
-                                                        </article>
+                                                        &nbsp;•&nbsp;
+                                                        <span class="post-meta-item-text"><i class="Card Card-view"></i>&nbsp;阅读量&nbsp;</span>
+                                                        <span data-hk-page="current"> - </span>
                                                         
-                                                            
-                                                                
-                                    </div>
-                                    <div class="pagination-container">
-                                        
-                                                                
-                                                                        
-                                                                                
-                                    </div>
+                                                            </span>&nbsp;•&nbsp;
+
+                                                            <span class="post-readtime">阅读时间:
+                                            4.2分</span>
+                                                            <span class="post-edit"></span></div>
+                                        </div>
+                                        <div class="post-relative">
+                                            <img alt="Diego&#39;s Blog" src="https://diego3893.github.io/images/avatar.png?v=1601135922981" srcset="https://diego3893.github.io/images/avatar.png?v=1601135922981" class="avatar avatar-100 photo" width="100" height="100">
+                                            <span class="post-type-author"><a href="https://diego3893.github.io" title="由Diego&#39;s Blog发布" rel="author">Diego&#39;s Blog<i class="Card Card-certify"></i></a></span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2020-09-26</span>
+                                        </div>
+                        </header>
+                        <div class="post-main post-type-main">
+                            <div class="post-content">
+                                <div class="post-content-real">
+                                    <h2 id="1-安装环境">1 安装环境</h2>
+<ul>
+<li>Ubuntu20.04Server</li>
+<li>本校服务器</li>
+</ul>
+<hr>
+<h2 id="2-前置加速">2 前置加速</h2>
+<h3 id="21-更换apt源">2.1 更换apt源</h3>
+<p><strong><code>p.s.</code> vi/vim进入Insert模式开始编辑：<code>i</code>，退出Insert模式进入Normal模式：<code>Esc</code>，Normal模式下保存并退出：<code>:wq</code></strong></p>
+<pre><code class="language-shell">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak # 备份源文件
+sudo vi /etc/apt/sources.list  # 编辑apt源的列表文件
+</code></pre>
+<p>把文件内容全部删除后输入以下内容：</p>
+<pre><code>deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal universe
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates universe
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security universe
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security multiverse
+</code></pre>
+<p>保存退出后输入：</p>
+<pre><code class="language-shell">sudo apt update  # 更新源列表
+sudo apt upgrade # 更新系统
+sudo apt install vim # 安装vim
+</code></pre>
+<h3 id="22-加速pip">2.2 加速pip</h3>
+<pre><code class="language-shell">cd # 回到~目录
+mkdir .pip &amp;&amp;　cd .pip # 创建.pip文件夹并进入其子目录
+vim pip.conf # 新建文件pip.conf并编辑
+</code></pre>
+<p>进入<code>Insert</code>模式输入以下：</p>
+<pre><code>[global]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+</code></pre>
+<p><code>:wq</code>保存退出</p>
+<h3 id="23-加速docker">2.3 加速docker</h3>
+<pre><code class="language-shell">sudo vim /etc/docker/daemon.json
+</code></pre>
+<p>输入以下：</p>
+<pre><code class="language-json">{
+  &quot;registry-mirrors&quot;: [&quot;https://registry.docker-cn.com&quot;]
+}
+</code></pre>
+<p>保存并退出</p>
+<h3 id="24-修改hosts以加速github可选">2.4 修改hosts以加速github（可选）</h3>
+<pre><code class="language-shell">sudo vim /etc/hosts
+</code></pre>
+<p>输入以下：</p>
+<pre><code>151.101.72.249 github.global.ssl.fastly.net  
+192.30.253.112 github.com
+</code></pre>
+<p>保存并退出</p>
+<hr>
+<h2 id="3-开始安装">3 开始安装</h2>
+<h3 id="31-设置root用户">3.1 设置<code>root</code>用户</h3>
+<pre><code class="language-shell"># 确认是否有root用户
+su  # 切换至root
+# 如果提示密码不对或无用户，进行以下，否则略过之
+sudo passwd root  # 创建root，接下来自己设定密码
+
+# 设置完成后
+su # 进入root，接下来请始终保持在root中
+</code></pre>
+<h3 id="32-安装依赖">3.2 安装依赖</h3>
+<pre><code class="language-shell">apt-get update &amp;&amp; sudo apt-get install -y vim python3-pip curl git
+pip3 install --upgrade pip
+pip install docker-compose
+</code></pre>
+<h3 id="33-安装docker">3.3 安装docker</h3>
+<p>国内请使用：<code>sudo curl -sSL https://get.daocloud.io/docker | sh</code></p>
+<p>国外请使用：<code>sudo curl -sSL get.docker.com | sh</code></p>
+<p>附上docker官方文档：<a href="https://docs.docker.com/get-docker/">传送门</a></p>
+<p><strong><code>p.s.</code> 此处可能耗时较长</strong></p>
+<h3 id="34-部署oj">3.4 部署OJ</h3>
+<pre><code class="language-shell">cd /home # 回到~目录
+git clone -b 2.0 https://github.com/Harry-zklcdc/OnlineJudgeDeploy.git &amp;&amp; cd OnlineJudgeDeploy # 克隆项目
+docker-compose up -d # 部署项目
+</code></pre>
+<h3 id="35-检查部署是否成功">3.5 检查部署是否成功</h3>
+<pre><code class="language-shell">docker ps -a 
+</code></pre>
+<p>当看到所有的容器的状态没有 <code>unhealthy</code> 或 <code>Exited (x) xxx</code> 就代表 OJ 已经启动成功</p>
+<h3 id="36-oj登入设置">3.6 OJ登入设置</h3>
+<p><strong>初始用户</strong>：<code>root</code></p>
+<p><strong>密码</strong>：<code>rootroot</code></p>
+<hr>
+<h2 id="4-修改美化">4 修改&amp;美化</h2>
+<h3 id="41-修改端口">4.1 修改端口</h3>
+<p>修改<code>/home/OnlineJudgeDeploy/</code>中的<code>docker-compose.yml</code></p>
+<p>在<code>ports</code>关键词下，大约<code>85</code>行左右</p>
+<pre><code class="language-dockerfile"># 原配置
+    ports:
+      - &quot;0.0.0.0:80:8000&quot;  # http
+      - &quot;0.0.0.0:443:1443&quot; # https
+# 更改后
+    ports:
+      - &quot;0.0.0.0:81:8000&quot;
+      - &quot;0.0.0.0:443:1443&quot;
+</code></pre>
+<p>然后再次</p>
+<pre><code class="language-shell">su
+docker-compose up -d
+</code></pre>
+<p>即可</p>
+<h3 id="42-使用看板娘可选">4.2 使用看板娘（可选）</h3>
+<pre><code class="language-shell">cd /home/OnlineJudgeDeploy/data/forum/api/live2d/model/
+git clone https://gitee.com/zklcdc/live2d_models.git &amp;&amp; cd live2d_models # 克隆模型到本地
+cp -r * ../ # 将所有文件复制到上级文件夹
+cd ../ &amp;&amp; cp model_list.json ../ # 把列表文件复制到live2d文件夹中
+</code></pre>
+<p>打开网页，<code>just enjoy</code></p>
+<h3 id="43-修改网页icon">4.3 修改网页icon</h3>
+<p>在<code>/home/OnlineJudgeDeploy/data/backend/public/website/</code>中，用自己的图片替换<code>favicon.ico</code>即可</p>
+<h3 id="44-修改默认头像">4.4 修改默认头像</h3>
+<p>在<code>/home/OnlineJudgeDeploy/data/backend/public/avatar/</code>中，用自己的图片替换<code>default.png</code>即可</p>
+<hr>
+<h2 id="5-参考项目">5 参考项目</h2>
+<ul>
+<li><a href="https://github.com/Harry-zklcdc/OnlineJudgeDeploy">Harry-zklcdc/OnlineJudgeDeploy</a></li>
+<li><a href="https://github.com/QingdaoU/OnlineJudgeDeploy">QingdaoU/OnlineJudgeDeploy</a></li>
+<li><a href="https://docs.onlinejudge.me/#/">QduOJ用户文档</a></li>
+<li><a href="https://yzoj.tk/">山东省桓台第一中学OJ</a></li>
+</ul>
+
                                 </div>
                             </div>
-                            <div class="post-footer">
+                            
+                                <div class="reward ">
+                                    <div class="reward-button ">&yen;
+                                        <span class="reward-code "> 
+                                            <span class="alipay-code "> <img class="alipay-img " alt = "support " src="https://blog.itjoker.cn/alipay.jpg"><b>Alipay</b>                                                            </span>
+                                        <span class="wechat-code "> <img alt ="support " class="wechat-img " src="https://blog.itjoker.cn/wechat.jpg"><b>Wechat</b> </span> </span>
+                                    </div>
+                                </div>
                                 
-                                        
+                        </div>
+                        <div class="post-footer">
+                            <div class="post-copyright">
+                                作者:
+                                Diego&#39;s Blog<br>永久链接:
+                                    <a href="https://diego3893.github.io/post/qduoj-an-zhuang-zhi-nan/" title="QduOJ安装指南">
+                                        https://diego3893.github.io/post/qduoj-an-zhuang-zhi-nan/
+                                    </a><br> 协议: MIT License
                             </div>
-                        </article>
-                    </li>
-                </ul>
+                        </div>
+                    </article>
+                </div>
+                <style>
+                    .prev:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                    
+                    .next:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                </style>
+                <div class="lite-item nearby-article">
+                    
+                            
+                                <div class="nearby-article-right" style="padding: 10px;">
+                                    <a class="next" rel="next" href="https://diego3893.github.io/post/ti-jie-p1135-qi-guai-de-dian-ti/">
+                                        题解 P1135 【奇怪的电梯】<i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                                
+                </div>
+                <!--Share-->
+                <span style="margin-right:15px">
+    <i class="post-share"></i>
+    <span>&#x5206;&#x4EAB;:</span>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/qduoj-an-zhuang-zhi-nan/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://diego3893.github.io/post/qduoj-an-zhuang-zhi-nan/&sharesource=qzone&title=QduOJ安装指南&pics=https://diego3893.github.io/images/avatar.png?v=1601135922981&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://diego3893.github.io/post/qduoj-an-zhuang-zhi-nan/&sharesource=weibo&title=QduOJ安装指南 + " - " + &pic="https://diego3893.github.io/images/avatar.png?v=1601135922981"><i class="fa fa-weibo "></i></a>
+                </span>
+                
+                                            
             </div>
             <div id="sidebar">
     <ul>
@@ -601,6 +785,7 @@
     </ul>
 </div>
         </div>
+
 </body>
 <footer id="foot">
     <a class="back-to-top" href="#"><i class="Card Card-top" ></i><span class="back-to-top-text">0%</span></a>
@@ -666,5 +851,18 @@
         );
     </script>
 </footer>
+    <script>
+        renderMathInElement(document.body, {
+            delimiters: [{
+                left: "$$",
+                right: "$$",
+                display: true
+            }, {
+                left: "$",
+                right: "$",
+                display: false
+            }]
+        });
+    </script>
 
 </html>
