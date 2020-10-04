@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://diego3893.github.io</id>
     <title>Diego&apos;s Blog</title>
-    <updated>2020-09-26T16:59:47.463Z</updated>
+    <updated>2020-10-04T08:17:04.844Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://diego3893.github.io"/>
     <link rel="self" href="https://diego3893.github.io/atom.xml"/>
@@ -10,6 +10,37 @@
     <logo>https://diego3893.github.io/images/avatar.png</logo>
     <icon>https://diego3893.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Diego&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Windows中的Linux]]></title>
+        <id>https://diego3893.github.io/post/windows-zhong-de-linux/</id>
+        <link href="https://diego3893.github.io/post/windows-zhong-de-linux/">
+        </link>
+        <updated>2020-10-04T08:16:30.000Z</updated>
+        <summary type="html"><![CDATA[<p>Linux子系统似乎是虚拟机的完美替代方案！</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Linux子系统似乎是虚拟机的完美替代方案！</p>
+<!--more-->
+<h1 id="1-开启wsl支持">1 开启WSL支持</h1>
+<ul>
+<li>在控制面板进入<strong>程序</strong></li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="https://cdn.jsdelivr.net/gh/diego3893/Image/20201004155709.png" alt="111" loading="lazy"></figure>
+<ul>
+<li>进入<strong>启用或关闭Windows功能</strong></li>
+</ul>
+<figure data-type="image" tabindex="2"><img src="https://gitee.com/oierzcx/image/raw/master/img/20201004160607.png" alt="222" loading="lazy"></figure>
+<ul>
+<li>打开<strong>适用于Linux的Windows子系统</strong>并重启电脑</li>
+</ul>
+<figure data-type="image" tabindex="3"><img src="https://cdn.jsdelivr.net/gh/diego3893/Image/20201004155410.png" alt="333" loading="lazy"></figure>
+<hr>
+<h1 id="2-下载linux子系统">2 下载Linux子系统</h1>
+<p>在<strong>Windows Store</strong>中安装Ubuntu 20.04 LTS</p>
+<figure data-type="image" tabindex="4"><img src="https://gitee.com/oierzcx/image/raw/master/img/20201004161422.png" alt="444" loading="lazy"></figure>
+<h1 id="3-安装完成后开始使用">3 安装完成后开始使用</h1>
+<figure data-type="image" tabindex="5"><img src="https://gitee.com/oierzcx/image/raw/master/img/20201004161428.png" alt="555" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[QduOJ安装指南]]></title>
         <id>https://diego3893.github.io/post/qduoj-an-zhuang-zhi-nan/</id>
@@ -760,48 +791,6 @@ void readData()
     return;
 }
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[deepin安装Lemon]]></title>
-        <id>https://diego3893.github.io/post/deepin-an-zhuang-lemon/</id>
-        <link href="https://diego3893.github.io/post/deepin-an-zhuang-lemon/">
-        </link>
-        <updated>2020-09-19T09:59:50.000Z</updated>
-        <summary type="html"><![CDATA[<p>测评机乃OI之神器也！于Linux安装之实属重要！</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>测评机乃OI之神器也！于Linux安装之实属重要！</p>
-<!--more-->
-<h1 id="下载资源">下载资源</h1>
-<p>原项目：<br>
-<gb user="iotang" type="star" count="1" size="1" width="200">Project_LemonLime</gb><br>
-也可以在码云下载：<br>
-<code>https://gitee.com/oierzcx/Project_LemonLime</code></p>
-<hr>
-<h1 id="本教程有视频">本教程有视频</h1>
-<p>本人<s>辛苦录制11分钟的</s>教学视频：<br>
-<code>https://www.bilibili.com/video/BV1ei4y1t7yR</code></p>
-<h1 id="安装">安装</h1>
-<h2 id="安装依赖">安装依赖</h2>
-<pre><code class="language-shell">sudo apt install qt5-default build-essential
-sudo apt install git
-sudo apt install g++
-</code></pre>
-<h2 id="编译">编译</h2>
-<pre><code class="language-shell">cd 源码目录
-g++ watcher_unix.cpp -o watcher_unix -O2
-qmake lemon.pro
-make
-</code></pre>
-<h2 id="似乎可装可不装">似乎可装可不装</h2>
-<pre><code class="language-shell">sudo apt install qtcreator
-</code></pre>
-<h2 id="设置全局开启">设置全局开启</h2>
-<pre><code class="language-shell">cd 源码目录
-sudo cp lemon /usr/bin
-</code></pre>
-<h1 id="效果">效果</h1>
-<figure data-type="image" tabindex="1"><img src="http://blog.diego.plus:2000/usr/uploads/2020/05/2417492455.png" alt="Snipaste_2020-05-01_20-10-49.png" loading="lazy"></figure>
 ]]></content>
     </entry>
 </feed>
