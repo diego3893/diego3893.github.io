@@ -1,731 +1,716 @@
 <!DOCTYPE html>
-<html id="bg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://diego3893.github.io/media/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/live2d.css">
+<link rel="stylesheet" href="https://diego3893.github.io/styles/main.css">
+<link rel="stylesheet" href="https://diego3893.github.io/media/css/font-awesome.css">
+<title>Diego's Blog</title>
 
-<head>
-    <meta charset="utf-8" />
-<!--
-    * @Theme Card
-    *
-    * @author admin@itjoker.cn
-    * @link https://blog.itjoker.cn
--->
-
-<title>
-    Diego&#39;s Blog
-</title>
-<!--[if lt IE 9]><script src="//cdn.bootcss.com/html5shiv/r29/html5.js"></script><![endif]-->
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-<meta http-equiv="x-dns-prefetch-control" content="on">
-<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-<meta name="author" content="Diego&#39;s Blog">
-<meta name="description" content="Stay hungry, Stay foolish">
-<meta name="keywords" content="OIer,蒟蒻,沉迷学习">
-<meta name="gridea-theme" content="Card">
-<meta name="spider" content="https://nmsl.sbjxw.网址">
-<meta name="UpdateTime" content="1601804874768">
-<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/jquery@3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/Card/prism.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/css/Card/prism.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css">
-<script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/contrib/auto-render.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
-<!--<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/js/Card/script.min.js"></script>-->
-<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/css/Card/main.min.css" />-->
-<script src="https://diego3893.github.io/media/js/script.min.js"></script>
-<link rel="stylesheet" href="https://diego3893.github.io/media/css/main.min.css" />
-<link rel="stylesheet" href="https://diego3893.github.io/styles/main.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/css/Card/iconfont.css" />
-<!--link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_410989_wuhl0k5ojvf.css" /-->
-<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/js/love.min.js"></script>
-<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
-<script>
-    $().ready(
-        function() {
-            var themeIcon = document.getElementById("themeIcon");
-            var currentTheme = window.localStorage.getItem('theme');
-            if (currentTheme == 'dark') {
-                document.getElementsByTagName('html')[0].classList.add('theme-dark');
-                themeIcon.classList.remove('Card-moon');
-                themeIcon.classList.add('Card-sun');
-            } else {
-                document.getElementsByTagName('html')[0].classList.remove('theme-dark');
-                themeIcon.classList.remove('Card-sun');
-                themeIcon.classList.add('Card-moon');
-            }
-        }
-    )
-</script>
-
-    <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/hit-kounter-lc-0.3.0.js"></script>
-    
-        
-            <script>
-                (function() {
-                    var bp = document.createElement('script');
-                    var curProtocol = window.location.protocol.split(':')[0];
-                    if (curProtocol === 'https') {
-                        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-                    } else {
-                        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-                    }
-                    var s = document.getElementsByTagName("script")[0];
-                    s.parentNode.insertBefore(bp, s);
-                })();
-            </script>
-            
-                    <style>
-                        .Card-certify {
-                            color: #0091e4 !important;
-                        }
-                        
-                        #foot {
-                            color: #666666;
-                        }
-                        
-                        #menu-item:hover {
-                            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-                            border-bottom-color: rgba(0, 0, 0, .6);
-                        }
-                        
-                        .gray {
-                            -webkit-filter: grayscale(100%);
-                            /* webkit */
-                            -moz-filter: grayscale(100%);
-                            /*firefox*/
-                            -ms-filter: grayscale(100%);
-                            /*ie9*/
-                            -o-filter: grayscale(100%);
-                            /*opera*/
-                            filter: grayscale(100%);
-                            filter: progid: DXImageTransform.Microsoft.BasicImage(grayscale=1);
-                            filter: gray;
-                            /*ie9- */
-                        }
-                        
-                        .lite-item,
-                        #header {
-                            opacity: 1;
-                        }
-                        
-                        .lite-item {
-                            background-color: #fafafa;
-                        }
-                        
-                        #spnBtn:hover {
-                            transition: all .3s ease;
-                            color: #fff;
-                            background-color: #6b6b6b;
-                            /*#0092ee*/
-                            /*linear-gradient( rgb(138, 160, 255) 30%, rgb(90, 140, 250) 70%);*/
-                        }
-                        
-                        #spnBtn {
-                            background-color: #efefef;
-                            font-size: 14px;
-                            transition: all .3s ease;
-                        }
-                        
-                        .link_a:hover {
-                            margin-top: 10px;
-                            margin-bottom: 10px;
-                            color: #fff;
-                            border-left: 8px solid #6b6b6b;
-                            padding: 5px;
-                            transition: all .3s ease;
-                        }
-                        
-                        html {
-                            width: 100%;
-                            height: 100%;
-                            background-attachment: fixed;
-                            background-repeat: no-repeat;
-                        }
-                    </style>
-</head>
 
 <body>
-    <header id="header">
-
-    <div id="pc-menu">
-        <a id="menu-bar" class="Card Card-menu"></a>
-        <a id="menu-title" href="https://diego3893.github.io">
-            Diego&#39;s Blog
+    <!-- 响应式布局，针对PC端内容显示 -->
+    <div id="content">
+        <div class="nav-large">
+            <div class="row">
+                
+                <div class="side"><body>
+    
+    <div id=side>
+        <div class="avatar-border">
+            <img src="https://diego3893.github.io/images/avatar.png?v=1602928818744" class="avatar">
+        </div>
+        <div class="sitename">Diego&#39;s Blog</div>
+        <span class="describtion" data-text='["Stay hungry, Stay foolish"]'>&nbsp;</span>
+        
+        <div class="search">
+            <!-- <input type="text" class="search-input" placeholder="标题搜索(●'◡'●)" /> -->
+            <input type="text" class="search-input" placeholder="标题搜索 ⚆_⚆ つ♡">
+            <div class="search-results"></div>
+        </div>
+        
+    <div class="share-button">
+        <span>社交按钮</span>
+        
+        <a href="https://github.com/diego3893" target="_blank"><i style="font-size: 20px;"><img class="icon"
+                    src="https://diego3893.github.io/media/images/github.png" alt=""></i></a>
+        
+        
+        <a onclick="showqq()"><i style="font-size: 20px;"><img class="icon" src="https://diego3893.github.io/media/images/QQ.png" alt=""></i></a>
+        
+        
+        
+        <a href="https://space.bilibili.com/454077332" target="_blank"><i style="font-size: 20px;"><img class="icon"
+                    src="https://diego3893.github.io/media/images/bilibili.png" alt=""></i></a>
+        
+        
+        
+    </div>
+    <div id="qq" style="display:none">3013006997</div>
+    
+    
+    <div class="mchocie describtion">
+        <a href="/" class="menubutton">
+            🎈首页
         </a>
-        <nav id="menu-main" class="menu-main">
-            <ul>
-                
-                    <li id="menu-item" class="menu-item">
-                        <a href="/">
-                            🎈首页
-                        </a>
-                    </li>
-                    
-                    <li id="menu-item" class="menu-item">
-                        <a href="/posts">
-                            📝文章列表
-                        </a>
-                    </li>
-                    
-                    <li id="menu-item" class="menu-item">
-                        <a href="/archives">
-                            📜归档
-                        </a>
-                    </li>
-                    
-                    <li id="menu-item" class="menu-item">
-                        <a href="/tags">
-                            🔖标签
-                        </a>
-                    </li>
-                    
-                    <li id="menu-item" class="menu-item">
-                        <a href="/friends">
-                            🤝友链
-                        </a>
-                    </li>
-                    
-                    <li id="menu-item" class="menu-item">
-                        <a href="/photos">
-                            📌图墙
-                        </a>
-                    </li>
-                    
-                    <li id="menu-item" class="menu-item">
-                        <a href="https://travellings.now.sh/">
-                            🚀开往
-                        </a>
-                    </li>
-                    
-                    <li id="menu-item" class="menu-item">
-                        <a href="/post/about">
-                            🏳️‍🌈关于
-                        </a>
-                    </li>
-                    
-            </ul>
-        </nav>
-        <form id="gridea-search-form" class="searchform" data-update="1601804874768" action="/search/index.html">
-            <i class="Card Card-search"></i>
-            <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
-        </form>
     </div>
-    <div id="mobile-menu">
-        <form id="gridea-search-form" class="mobile-searchform" data-update="1601804874768" action="/search/index.html">
-            <i class="Card Card-search"></i>
-            <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
-        </form>
-        <nav class="menu">
-            <ul style="list-style: none;">
-                
-                    <li class="page_item page-item-2">
-                        <a href="/">
-                            🎈首页
-                        </a>
-                    </li>
-                    
-                    <li class="page_item page-item-2">
-                        <a href="/posts">
-                            📝文章列表
-                        </a>
-                    </li>
-                    
-                    <li class="page_item page-item-2">
-                        <a href="/archives">
-                            📜归档
-                        </a>
-                    </li>
-                    
-                    <li class="page_item page-item-2">
-                        <a href="/tags">
-                            🔖标签
-                        </a>
-                    </li>
-                    
-                    <li class="page_item page-item-2">
-                        <a href="/friends">
-                            🤝友链
-                        </a>
-                    </li>
-                    
-                    <li class="page_item page-item-2">
-                        <a href="/photos">
-                            📌图墙
-                        </a>
-                    </li>
-                    
-                    <li class="page_item page-item-2">
-                        <a href="https://travellings.now.sh/">
-                            🚀开往
-                        </a>
-                    </li>
-                    
-                    <li class="page_item page-item-2">
-                        <a href="/post/about">
-                            🏳️‍🌈关于
-                        </a>
-                    </li>
-                    
-            </ul>
-        </nav>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/archives" class="menubutton">
+            📜归档
+        </a>
     </div>
-    <a id="theme-btn" class="theme-btn" onclick="App.changeTheme()"><i id="themeIcon" class="Card Card-moon"></i></a>
-</header>
-        <div id="main">
-            <div id="main-part">
-                <ul class="posts-list">
-                    <li class="lite-item">
-                        <article class="post post-type">
-                            <div class="post-main post-type-main">
-                                <div class="post-content">
-                                    <div class="post-content-real">
-                                        
-                                            
-                                                <h3>
-                                                    2020
-                                                </h3>
-                                                
-                                                    
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/tags" class="menubutton">
+            🔖标签
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/photos" class="menubutton">
+            📌图墙
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://travellings.now.sh/" class="menubutton">
+            🚀开往
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/post/about" class="menubutton">
+            🏳️‍🌈关于
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://diego3893.github.io/talk" class="menubutton">🔖说说</a>
+    </div>
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://diego3893.github.io/friends" class="menubutton">🤝友人帐</a>
+    </div>
+    
+    <hr>
+    <div id="footinfo">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> & <a href="https://github.com/diego3893/diego3893.github.io" target="_blank" > Diego </a> | Theme: <a
+        href="https://github.com/850552586/gridea-theme-fog">Fog</a></div>
+    
+    <div class="sitetime"><div id="sitegotimeDate">载入天数...</div>
+    <div id="sitegotimes">载入时分秒...</div></div>
+    <div id="cussitetime" style="display:none">02/13/2020</div>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/busuanzi.pure.mini.js"></script>
+    <div id="vistornum">
+        <span id="busuanzi_container_site_uv">
+            <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i> 总访问量:<span id="busuanzi_value_site_pv"></span>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fa fa-user-o" aria-hidden="true"></i> 访问人数:<span id="busuanzi_value_site_uv"></span>
+        </span>
+    </div>
+    <div style="color:white">Copyright © 2020</div>
+    
+    </div>
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://diego3893.github.io/post/gridea-jing-tai-bo-ke-shi-yong-cname-yi-ji-xiang-guan-pei-zhi/">
-                                                                Gridea静态博客使用CNAME以及相关配置
-                                                            </a>
-                                                            <span class="archive-item-date">2020-03-05 </span>
-                                                        </article>
-                                                        
-                                                            
-                                                    
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://diego3893.github.io/post/github-gridea-mian-fei-da-jian-jing-tai-bo-ke/">
-                                                                github + Gridea免费搭建静态博客
-                                                            </a>
-                                                            <span class="archive-item-date">2020-02-28 </span>
-                                                        </article>
-                                                        
-                                                            
-                                                    
-                                                            
-                                                                
-                                                <h3>
-                                                    2018
-                                                </h3>
-                                                
-                                                    
-                                                            
-                                                    
-                                                            
-                                                    
+<script src="https://diego3893.github.io/media/js/wordshow.js"></script>
+    
+    <script>
+        //----------------------站点运行时间
+        var now = new Date();
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://diego3893.github.io/post/hello-gridea/">
-                                                                Hello Gridea
-                                                            </a>
-                                                            <span class="archive-item-date">2018-12-12 </span>
-                                                        </article>
-                                                        
-                                                            
-                                                                
-                                    </div>
-                                    <div class="pagination-container">
-                                        
-                                                                
-                                                                        
-                                                                                
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-footer">
-                                
-                                        
-                            </div>
-                        </article>
-                    </li>
-                </ul>
+        function createtime() {
+            var sitegotime = document.getElementById("cussitetime").innerHTML + " 00:00:00";
+            var grt = new Date(sitegotime); //此处修改你的建站时间或者网站上线时间
+            now.setTime(now.getTime() + 250);
+            days = (now - grt) / 1000 / 60 / 60 / 24;
+            dnum = Math.floor(days);
+            hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+            hnum = Math.floor(hours);
+            if (String(hnum).length == 1) {
+                hnum = "0" + hnum;
+            }
+            minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+            mnum = Math.floor(minutes);
+            if (String(mnum).length == 1) {
+                mnum = "0" + mnum;
+            }
+            seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+            snum = Math.round(seconds);
+            if (String(snum).length == 1) {
+                snum = "0" + snum;
+            }
+            document.getElementById("sitegotimeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+            document.getElementById("sitegotimes").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+        }
+        setInterval("createtime()", 250);
+    </script>
+    
+
+
+
+
+    
+</body>
+<script>
+    //-------------------------------------------------搜索
+    // 获取搜索框、搜索按钮、清空搜索、结果输出对应的元素
+    var searchInput = document.querySelector('.search-input');
+    var searchResults = document.querySelector('.search-results');
+
+    // 申明保存文章的标题、链接、内容的数组变量
+    var searchValue = '',
+        arrItems = [],
+        arrLinks = [],
+        arrTitles = [],
+        arrResults = [],
+        indexItem = [],
+        itemLength = 0;
+    var tmpDiv = document.createElement('div');
+    tmpDiv.className = 'result-item';
+
+    // ajax 的兼容写法
+    var xhr = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            xml = xhr.responseXML;
+            arrItems = xml.getElementsByTagName('entry');
+            itemLength = arrItems.length;
+            // 遍历并保存所有文章对应的标题、链接、内容到对应的数组中
+            // 同时过滤掉 HTML 标签
+            for (i = 0; i < itemLength; i++) {
+                var link = arrItems[i].getElementsByTagName('link')[0];
+                arrLinks[i] = link.getAttribute("href");
+                arrTitles[i] = arrItems[i].getElementsByTagName('title')[0].
+                childNodes[0].nodeValue.replace(/<.*?>/g, '');
+            }
+        }
+    }
+
+    // 开始获取根目录下 feed.xml 文件内的数据
+    xhr.open('get', '/atom.xml', true);
+    xhr.send();
+
+
+
+    // 输入框内容变化后就开始匹配，可以不用点按钮
+    // 经测试，onkeydown, onchange 等方法效果不太理想，
+    // 存在输入延迟等问题，最后发现触发 input 事件最理想，
+    // 并且可以处理中文输入法拼写的变化
+    searchInput.oninput = function () {
+        setTimeout(searchConfirm, 0);
+    }
+    searchInput.onfocus = function () {
+        searchResults.style.display = 'block';
+    }
+
+    function searchConfirm() {
+        if (searchInput.value == '') {
+            searchResults.style.display = 'none';
+        } else if (searchInput.value.search(/^\s+$/) >= 0) {
+            // 检测输入值全是空白的情况
+            searchInit();
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '请输入有效内容...';
+            searchResults.appendChild(itemDiv);
+        } else {
+            // 合法输入值的情况
+            searchInit();
+            searchValue = searchInput.value;
+            // 在标题、内容中查找
+            searchMatching(arrTitles, searchValue);
+        }
+    }
+
+    // 每次搜索完成后的初始化
+    function searchInit() {
+        arrResults = [];
+        indexItem = [];
+        searchResults.innerHTML = '';
+        searchResults.style.display = 'block';
+    }
+
+    function searchMatching(arr1, input) {
+        // 忽略输入大小写
+        input = new RegExp(input, 'i');
+        // 在所有文章标题、内容中匹配查询值
+        for (i = 0; i < itemLength; i++) {
+            if (arr1[i].search(input) !== -1) {
+                var arr = arr1;
+                indexItem.push(i); // 保存匹配值的索引
+                var indexContent = arr[i].search(input);
+                // 此时 input 为 RegExp 格式 /input/i，转换为原 input 字符串长度
+                var l = input.toString().length - 3;
+                var step = 10;
+
+                // 将匹配到内容的地方进行黄色标记，并包括周围一定数量的文本
+                arrResults.push(arr[i].slice(indexContent - step, indexContent));
+            }
+        }
+
+        // 输出总共匹配到的数目
+        var totalDiv = tmpDiv.cloneNode(true);
+        totalDiv.innerHTML = '<b>总匹配：' + indexItem.length + ' 项<hr></b>';
+        searchResults.appendChild(totalDiv);
+
+        // 未匹配到内容的情况
+        if (indexItem.length == 0) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '未匹配到内容...';
+            searchResults.appendChild(itemDiv);
+        }
+
+        // 将所有匹配内容进行组合
+        for (i = 0; i < arrResults.length; i++) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerHTML = '<b>[' + arrTitles[indexItem[i]] +
+                ']</b><p>' + arrResults[i] + "</p><hr />";
+            itemDiv.setAttribute('onclick', 'changeHref(arrLinks[indexItem[' + i + ']])');
+            searchResults.appendChild(itemDiv);
+        }
+    }
+
+    function changeHref(href) {
+        location.href = href;
+    }
+
+    function showqq() {
+        var qq = document.getElementById("qq").innerHTML;
+        if (qq != '')
+            window.location.href = "tencent://message/?uin=" + qq + "&Site=&Menu=yes";
+        else
+            alert("博主暂未设置QQ联系方式");
+    }
+</script>
+</div>
+                <div class="col-md-1 col-lg-3"></div>
+                <div id="main" class="col-xs-12 col-sm-12 col-md-10 col-lg-7">
+                    <link rel="stylesheet" href="https://diego3893.github.io/media/css/font-awesome.css">
+<div class="tag-container">
+    
+    <div class="postshow">
+        
+        <div id="post" style="width:100%">
+            <img src="https://s2.ax1x.com/2020/03/07/3vpPIJ.jpg" class="postimage"
+                onclick="window.location.href= 'https://diego3893.github.io/post/gridea-jing-tai-bo-ke-shi-yong-cname-yi-ji-xiang-guan-pei-zhi/';return false">
+            <div class="posttitlebox">
+                <div class="posttitle" onclick="window.location.href= 'https://diego3893.github.io/post/gridea-jing-tai-bo-ke-shi-yong-cname-yi-ji-xiang-guan-pei-zhi/';return false">
+                    Gridea静态博客使用CNAME以及相关配置
+                </div>
             </div>
-            <div id="sidebar">
+        </div>
+        <div class="postinfo">
+            <div class="postdate"><i class="fa fa-calendar"></i>2020-03-05</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 2 min read</div>
+            <div class="posttag">
+                
+                <a href="https://diego3893.github.io/tag/h6HytAKAH/" class="postlink">
+                    <i class="fa fa-tag"></i> 折腾笔记
+                </a>
+                
+                <a href="https://diego3893.github.io/tag/4X9N1ZDzg/" class="postlink">
+                    <i class="fa fa-tag"></i> Gridea
+                </a>
+                
+            </div>
+        </div>
+        
+</div>
+
+    <div class="postshow">
+        
+        <div id="post" style="width:100%">
+            <img src="https://s2.ax1x.com/2020/02/28/3BRsHO.jpg" class="postimage"
+                onclick="window.location.href= 'https://diego3893.github.io/post/github-gridea-mian-fei-da-jian-jing-tai-bo-ke/';return false">
+            <div class="posttitlebox">
+                <div class="posttitle" onclick="window.location.href= 'https://diego3893.github.io/post/github-gridea-mian-fei-da-jian-jing-tai-bo-ke/';return false">
+                    github + Gridea免费搭建静态博客
+                </div>
+            </div>
+        </div>
+        <div class="postinfo">
+            <div class="postdate"><i class="fa fa-calendar"></i>2020-02-28</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 3 min read</div>
+            <div class="posttag">
+                
+                <a href="https://diego3893.github.io/tag/h6HytAKAH/" class="postlink">
+                    <i class="fa fa-tag"></i> 折腾笔记
+                </a>
+                
+                <a href="https://diego3893.github.io/tag/4X9N1ZDzg/" class="postlink">
+                    <i class="fa fa-tag"></i> Gridea
+                </a>
+                
+            </div>
+        </div>
+        
+</div>
+
+    <div class="postshow">
+        
+        <div id="post" style="width:100%">
+            <img src="https://diego3893.github.io/post-images/hello-gridea.png" class="postimage"
+                onclick="window.location.href= 'https://diego3893.github.io/post/hello-gridea/';return false">
+            <div class="posttitlebox">
+                <div class="posttitle" onclick="window.location.href= 'https://diego3893.github.io/post/hello-gridea/';return false">
+                    Hello Gridea
+                </div>
+            </div>
+        </div>
+        <div class="postinfo">
+            <div class="postdate"><i class="fa fa-calendar"></i>2018-12-12</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 2 min read</div>
+            <div class="posttag">
+                
+                <a href="https://diego3893.github.io/tag/4X9N1ZDzg/" class="postlink">
+                    <i class="fa fa-tag"></i> Gridea
+                </a>
+                
+            </div>
+        </div>
+        
+</div>
+
+</div>
+                    <div>
+                        <div class="pagi">
     <ul>
         
-            <li class="lite-item">
-                <header class="lite-item-header">
-                    <h3 class="lite-item-title"><i class="Card Card-hitokoto"></i>&nbsp;&#x4E00;&#x8A00;</h3>
-                </header>
-                <div class="textwidget">
-                    <p>
-                        <b id="hitokoto"></b>
-                    </p>
-                </div>
-            </li>
-            
-                <!--
-                <li class="lite-item">
-                    <header class="lite-item-header">
-                        <h3 class="lite-item-title"><i class="Card Card-tags">&#x6807;&#x7B7E;</i></h3>
-                    </header>
-                    <div class="textwidget">
-                        
-                            <a href="" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
-                                <i class="fa fa-tags" aria-hidden="true"></i>
-                            </a>
-                            
-                    </div>
-                </li>-->
-                <li class="lite-item">
-                    <header class="lite-item-header">
-                        <h3 class="lite-item-title"><i class="Card Card-tags">&#x6807;&#x7B7E;</i></h3>
-                    </header>
-                    <div class="textwidget">
-                        <div id='tags' style="height: auto;width: 360;"></div>
-                        <script src="https://diego3893.github.io/media/js/svg3dtagcloud.min.js"></script>
-                        <script>
-                            $(document).ready(function() {
-                                var entries = ([
-                                    
-                                     {
-                                        label: '🏷折腾笔记',
-                                        url: 'https://diego3893.github.io/tag/h6HytAKAH/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷洛谷题解',
-                                        url: 'https://diego3893.github.io/tag/3nyqwG4IY/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷技术宅',
-                                        url: 'https://diego3893.github.io/tag/jsIDxauOd/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷数据结构',
-                                        url: 'https://diego3893.github.io/tag/4-8y6NRl-/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷安利',
-                                        url: 'https://diego3893.github.io/tag/G1eM_Hyfm/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷转载',
-                                        url: 'https://diego3893.github.io/tag/89WnJ3Arn/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷打卡模版',
-                                        url: 'https://diego3893.github.io/tag/rAwVgYtMd/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷字符串',
-                                        url: 'https://diego3893.github.io/tag/a9JlscXkj/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷算法',
-                                        url: 'https://diego3893.github.io/tag/dJ3WAsaqR/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷提高组笔记',
-                                        url: 'https://diego3893.github.io/tag/Gr5YErY6j/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷备忘',
-                                        url: 'https://diego3893.github.io/tag/qQcrTcB4k/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷图/树论',
-                                        url: 'https://diego3893.github.io/tag/Hc21XFSes/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷Gridea',
-                                        url: 'https://diego3893.github.io/tag/4X9N1ZDzg/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷STL',
-                                        url: 'https://diego3893.github.io/tag/c3jkatgC-/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷趣味',
-                                        url: 'https://diego3893.github.io/tag/bunbgwXDf/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷数学',
-                                        url: 'https://diego3893.github.io/tag/Nnc60LLfD/',
-                                        target: '_button'
-                                    }
-                                    
-                                    
-                                ]);
-                                var settings = {
-                                    entries: entries, //数据
-                                    width: 300, //宽度
-                                    height: 300, //高度
-                                    radius: '50%',
-                                    radiusMin: 50,
-                                    bgDraw: false, //是否显示背景
-                                    bgColor: '#fff', //背景颜色
-                                    opacityOver: 1.00,
-                                    opacityOut: 0.05,
-                                    opacitySpeed: 6,
-                                    fov: 360,
-                                    speed: 0.3, //旋转的速度
-                                    fontFamily: 'Oswald, Arial, sans-serif',
-                                    fontSize: '18', //默认字体大小
-                                    fontColor: '#666', //默认字体颜色
-                                    fontWeight: 'normal', //bold
-                                    fontStyle: 'normal', //italic 
-                                    fontStretch: 'normal', //wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
-                                    fontToUpperCase: true,
-                                    tooltipFontFamily: 'Oswald, Arial, sans-serif',
-                                    tooltipFontSize: '16',
-                                    tooltipFontColor: 'red',
-                                    tooltipFontWeight: 'normal', //bold
-                                    tooltipFontStyle: 'normal', //italic 
-                                    tooltipFontStretch: 'normal', //wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
-                                    tooltipFontToUpperCase: false,
-                                    tooltipTextAnchor: 'left',
-                                    tooltipDiffX: 0,
-                                    tooltipDiffY: 5
-
-                                };
-
-                                //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
-                                $('#tags').svg3DTagCloud(settings);
-                            });
-                        </script>
-                    </div>
-                </li>
+        <li><a style="width:100px">&nbsp;</a></li>
+        
+                <li><a id="page1">1</a></li>
+                <li><a id="page2" class="active">2</a></li>
+                <li><a id="page3">3</a></li>
                 
-                    <script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/APlayer.min.js"></script>
-                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
-                    <div id="player"></div>
-                    
-                        <li class="lite-item">
-                            <header class="lite-item-header">
-                                <h3 class="lite-item-title">
-                                    &#x1F3B5;&#x97F3;&#x4E50;
-                                </h3>
-                            </header>
-                            <div class="textwidget">
-                                <p>
-                                    <div id="playerbox"></div>
-                                </p>
-                            </div>
-                        </li>
-                        
-                            <script>
-                                function LoadPlayer() {
-                                    var music_array = [];
-                                    
-                                    music_array.push({
-                                        name: 'Sold Out',
-                                        url: ' http://music.163.com/song/media/outer/url?id=31010566.mp3',
-                                        artist: 'Hawk Nelson',
-                                        cover: 'https://s2.ax1x.com/2020/03/02/3RRXAs.jpg',
-                                    });
-                                    
-                                    music_array.push({
-                                        name: 'Señorita',
-                                        url: 'http://music.163.com/song/media/outer/url?id=1373168742.mp3',
-                                        artist: 'Shawn Mendes / Camila Cabello',
-                                        cover: 'https://s2.ax1x.com/2020/03/03/3hZL6J.jpg',
-                                    });
-                                    
-                                    music_array.push({
-                                        name: 'Into You',
-                                        url: 'http://music.163.com/song/media/outer/url?id=523042017.mp3',
-                                        artist: 'Matisse &amp; Sadko / Hanne Mjøen',
-                                        cover: 'https://s2.ax1x.com/2020/03/03/3heru9.jpg',
-                                    });
-                                    
-                                    music_array.push({
-                                        name: 'Wolves',
-                                        url: 'http://music.163.com/song/media/outer/url?id=515269424.mp3',
-                                        artist: 'Selena Gomez / Marshmello',
-                                        cover: 'https://s2.ax1x.com/2020/03/03/3heHEt.jpg',
-                                    });
-                                    
-                                    
-                                    const ap = new APlayer({
-                                        container: document.getElementById('playerbox'),
-                                        audio: music_array
-                                    });
-                                    
-                                }
-                                LoadPlayer();
-                            </script>
-                            
-                                
-                                    <script>
-                                        App.weather();
-                                    </script>
-                                    <li class="lite-item">
-                                        <header class="lite-item-header">
-                                            <h3 class="lite-item-title">&#x26C5;&#x5929;&#x6C14;</h3>
-                                        </header>
-                                        <div class="textwidget">
-                                            <div id="tp-weather-widget"></div>
-                                        </div>
-                                    </li>
-                                    
-                                        
-                                            
-                                                
-                                                    <li class="lite-item">
-                                                        <header class="lite-item-header">
-                                                            <h3 class="lite-item-title">
-                                                                本站视频教程位于哔哩哔哩！
-                                                            </h3>
-                                                        </header>
-                                                        <div class="textwidget">
-                                                            <div id="textwidget-box" style="width:100%; height:auto;">
-                                                                欢迎来到站长的个人空间：https://space.bilibili.com/454077332
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    
-                                                        
-                                                            <li class="lite-item">
-                                                                <header class="lite-item-header">
-                                                                    <h3 class="lite-item-title">&#x1F468;&#x200D;&#x1F4BB;&#x53CB;&#x94FE;</h3>
-                                                                </header>
-                                                                <div class="textwidget">
-                                                                    
-                                                                        
-                                                                            <p onclick="javascript:top.location='https://blog.itjoker.cn'"><span class="link_a"><a href="https://blog.itjoker.cn" alt="ITJoker ">ITJoker -ITJoker&#39;s Blog</a></span></p>
-
-                                                                            
-                                                                            <p onclick="javascript:top.location='http://acg17.com'"><span class="link_a"><a href="http://acg17.com" alt="ACG17 ">ACG17 -日常找图</a></span></p>
-
-                                                                            
-                                                                            <p onclick="javascript:top.location='https://lxxs.xyz/'"><span class="link_a"><a href="https://lxxs.xyz/" alt="路迅先生的小屋 ">路迅先生的小屋 -I pray to myself.</a></span></p>
-
-                                                                            
-                                                                            <p onclick="javascript:top.location='https://qqdie.com'"><span class="link_a"><a href="https://qqdie.com" alt="QQ爹的博客 ">QQ爹的博客 -Tyepcho爱好者，资源站</a></span></p>
-
-                                                                            
-                                                                            <p onclick="javascript:top.location='https://www.wubin.design'"><span class="link_a"><a href="https://www.wubin.design" alt="BruceWu   ">BruceWu   -UX Design一枚</a></span></p>
-
-                                                                            
-                                                                            <p onclick="javascript:top.location='https://tangkaichuan.cn '"><span class="link_a"><a href="https://tangkaichuan.cn " alt="I&#39;m KT  ">I&#39;m KT  -Keep Coding and Writing</a></span></p>
-
-                                                                            
-                                                                            <p onclick="javascript:top.location='https://winterstarhu.github.io'"><span class="link_a"><a href="https://winterstarhu.github.io" alt="WinterStar&#39;s Blog   ">WinterStar&#39;s Blog   -分享一些学习或生活上的东西</a></span></p>
-
-                                                                            
-                                                                            <p onclick="javascript:top.location='https://iboy66lee.club'"><span class="link_a"><a href="https://iboy66lee.club" alt="iBoy&#39;s Blog ">iBoy&#39;s Blog -iboy的杂货铺</a></span></p>
-
-                                                                            
-                                                                                
-                                                                </div>
-                                                            </li>
-    </ul>
+        <li><a style="width:100px">&nbsp;</a></li>
+        
+            </ul>
 </div>
-        </div>
-</body>
-<footer id="foot">
-    <a class="back-to-top" href="#"><i class="Card Card-top" ></i><span class="back-to-top-text">0%</span></a>
-    <div class="copyright">
-        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> & <a href="https://github.com/diego3893/diego3893.github.io" target="_blank" > Diego </a>
+
+<div id="pagination-prev" style="display:none"> 
+</div>
+<div id="pagination-next" style="display:none"> </div>
+
+
+<script>
+    var prevstr = document.getElementById("pagination-prev").innerHTML;
+    var nextstr = document.getElementById("pagination-next").innerHTML;
+    var page1 = document.getElementById("page1");
+    var page2 = document.getElementById("page2");
+    var page3 = document.getElementById("page3");
+    page1.innerHTML = '-';
+    page2.innerHTML = '1';
+    page3.innerHTML = '-';
+    if (prevstr.length > 5) {
+        if (prevstr.indexOf("page/") != -1) {
+            var prevnum = parseInt(prevstr.split("page/")[1]);
+            page1.innerHTML = prevnum;
+            page2.innerHTML = prevnum + 1;
+        } else {
+            page1.innerHTML = 1;
+            page2.innerHTML = 2;
+        }
+    }
+    if (nextstr.indexOf("page/") != -1) {
+        var nextnum = parseInt(nextstr.split("page/")[1]);
+        page3.innerHTML = nextnum;
+        page2.innerHTML = nextnum - 1;
+    }
+</script>
+                        <div style="padding-bottom:10%"></div>
+                    </div>
+                </div>
+                <div class="col-md-1 col-lg-2"></div>
+                
+            </div>
             
-                    
-
-                        <div style="font-size:12px">
-                            
-                                        已经建站 <b id='build_time'></b>
-                        </div>
-                        <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/time.min.js"></script>
-                        <script>
-                            buildTime = '2020-02-13'
-                            setInterval(show_date_time, 1000, buildTime);
-                        </script>
-                        
-                            &#x7248;&#x6743;&#x6240;&#x6709; &copy;
-                            <script>
-                                var date = new Date();
-                                data2 = new Date(buildTime.replace(/-/g, "/"));
-                                nowYear = date.getFullYear().toString()
-                                buildYear = data2.getFullYear().toString();
-                                if (buildYear == nowYear) {
-                                    document.write('<span class="my-face">' + nowYear + '</span>');
-                                } else {
-                                    document.write(buildYear + '-<span class="my-face">' + nowYear + '</span>');
-                                }
-                            </script>
-
-                            <a href="https://diego3893.github.io">
-                                Diego&#39;s Blog
-                            </a>&nbsp;|&nbsp;Powered by
-                            <a href="https://github.com" target="_blank">
-                                Github
-                            </a>
+        </div>
+        <div id="bg">
+        </div>
+        <div id="bgchoice" style="display: none">link
+            </div>
+            
+            <div id="bgurl" style="display:none">https://gitee.com/oierzcx/image/raw/master/img/20201017173808.jpg</div>
+               
     </div>
-    <script>
-        let back2TopText = document.querySelector('.back-to-top-text')
-        window.addEventListener('scroll', function(e) {
-            let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
-            if (back2TopText) {
-                back2TopText.textContent = Math.floor(percent).toString() + '%';
-            }
-        });
-        var titleTime;
-        document.addEventListener("visibilitychange", function() {
-            document.hidden ? (document.title = "\uD83D\uDE25" + OriginTitile, clearTimeout(titleTime)) : (document.title = "\uD83D\uDE1D" + OriginTitile, titleTime = setTimeout(function() {
-                document.title = OriginTitile
-            }, 2E3))
-        });
-        var OriginTitile = document.title;
+
+
+    <!-- 响应式布局，针对手机端内容显示 -->
+    <div class="nav-small">
+        <head>
+  <!-- 引入Bootstrap核心样式文件 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/bootstrap.min.css">
+</head>
+<style>
+  @media screen and (max-width:1200px) and (min-width: 768px) {
+    @media (min-width: 768px) {
+      .navbar-nav {
+        float: right;
+        margin: 0;
+      }
+    }
+  }
+  @media screen and (max-width:768px){
+    .mbapspan{
+      padding: 0;
+    }
+  }
+</style>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barmenu"
+          aria-expanded="false" id="barbutton">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="https://diego3893.github.io">Diego&#39;s Blog&nbsp;&nbsp;|</a>
+        <span class="navbar-brand mbapspan"><i id="mbaplayer" class="fa fa-play-circle-o" aria-hidden="true"
+            style="font-size: 28px;top: 12px;position: absolute;" onclick="aplayerPlay();"></i></span>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="barmenu">
+        <ul class="nav navbar-nav">
+          
+          
+          <li>
+            <a href="/">
+              🎈首页
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archives">
+              📜归档
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags">
+              🔖标签
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/photos">
+              📌图墙
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="https://travellings.now.sh/">
+              🚀开往
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/post/about">
+              🏳️‍🌈关于
+            </a>
+          </li>
+          
+          
+          
+          <li><a href="https://diego3893.github.io/talk">说说</a></li>
+          
+          
+          <li><a href="https://diego3893.github.io/friends">友链</a></li>
+
+          
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+  <!-- 引入jQuery核心js文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+  <script>
+  var btstate = false;
+  var bt = $("#barbutton");
+  var bm = $("#barmenu");
+  bt.click(function(){
+    dropdown();
+  })
+  function dropdown(){
+    console.log(btstate);
+    //下拉
+    if(btstate==false){
+      bt.removeClass("collapsed");
+      bt.attr("aria-expanded","true");
+      bm.attr("aria-expanded","true")
+      bm.fadeIn(700);
+      btstate = true;
+    }
+    else{
+      bt.addClass("collapsed");
+      bt.attr("aria-expanded","false");
+      bm.removeClass("in");
+      bm.hide();
+      bm.attr("aria-expanded","false");
+      btstate = false;
+    }
+  }
+  </script> 
+</body>
+            <div style="margin-top:50px"></div>
+            <link rel="stylesheet" href="https://diego3893.github.io/media/css/font-awesome.css">
+<div class="tag-container">
+    
+    <div class="postshow">
         
-        App.hitokoto();
+        <div id="post" style="width:100%">
+            <img src="https://s2.ax1x.com/2020/03/07/3vpPIJ.jpg" class="postimage"
+                onclick="window.location.href= 'https://diego3893.github.io/post/gridea-jing-tai-bo-ke-shi-yong-cname-yi-ji-xiang-guan-pei-zhi/';return false">
+            <div class="posttitlebox">
+                <div class="posttitle" onclick="window.location.href= 'https://diego3893.github.io/post/gridea-jing-tai-bo-ke-shi-yong-cname-yi-ji-xiang-guan-pei-zhi/';return false">
+                    Gridea静态博客使用CNAME以及相关配置
+                </div>
+            </div>
+        </div>
+        <div class="postinfo">
+            <div class="postdate"><i class="fa fa-calendar"></i>2020-03-05</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 2 min read</div>
+            <div class="posttag">
+                
+                <a href="https://diego3893.github.io/tag/h6HytAKAH/" class="postlink">
+                    <i class="fa fa-tag"></i> 折腾笔记
+                </a>
+                
+                <a href="https://diego3893.github.io/tag/4X9N1ZDzg/" class="postlink">
+                    <i class="fa fa-tag"></i> Gridea
+                </a>
+                
+            </div>
+        </div>
         
-        App.clearLog();
-        App.outputlog();
-        var logo = '%cDiego&#39;s Blog\'%cBlog';
-        console.info(
-            logo,
-            'color: #ffffff; background: #000000; padding:5px 10px 5px 10px;font-size:40px;border-radius:12px 0 0 12px;', 'color: #000000; background: #FE9A00; padding:5px 10px;font-size:40px;border-radius:0 12px 12px 0;'
-        );
-    </script>
-</footer>
+</div>
+
+    <div class="postshow">
+        
+        <div id="post" style="width:100%">
+            <img src="https://s2.ax1x.com/2020/02/28/3BRsHO.jpg" class="postimage"
+                onclick="window.location.href= 'https://diego3893.github.io/post/github-gridea-mian-fei-da-jian-jing-tai-bo-ke/';return false">
+            <div class="posttitlebox">
+                <div class="posttitle" onclick="window.location.href= 'https://diego3893.github.io/post/github-gridea-mian-fei-da-jian-jing-tai-bo-ke/';return false">
+                    github + Gridea免费搭建静态博客
+                </div>
+            </div>
+        </div>
+        <div class="postinfo">
+            <div class="postdate"><i class="fa fa-calendar"></i>2020-02-28</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 3 min read</div>
+            <div class="posttag">
+                
+                <a href="https://diego3893.github.io/tag/h6HytAKAH/" class="postlink">
+                    <i class="fa fa-tag"></i> 折腾笔记
+                </a>
+                
+                <a href="https://diego3893.github.io/tag/4X9N1ZDzg/" class="postlink">
+                    <i class="fa fa-tag"></i> Gridea
+                </a>
+                
+            </div>
+        </div>
+        
+</div>
+
+    <div class="postshow">
+        
+        <div id="post" style="width:100%">
+            <img src="https://diego3893.github.io/post-images/hello-gridea.png" class="postimage"
+                onclick="window.location.href= 'https://diego3893.github.io/post/hello-gridea/';return false">
+            <div class="posttitlebox">
+                <div class="posttitle" onclick="window.location.href= 'https://diego3893.github.io/post/hello-gridea/';return false">
+                    Hello Gridea
+                </div>
+            </div>
+        </div>
+        <div class="postinfo">
+            <div class="postdate"><i class="fa fa-calendar"></i>2018-12-12</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 2 min read</div>
+            <div class="posttag">
+                
+                <a href="https://diego3893.github.io/tag/4X9N1ZDzg/" class="postlink">
+                    <i class="fa fa-tag"></i> Gridea
+                </a>
+                
+            </div>
+        </div>
+        
+</div>
+
+</div>
+            <div class="pagination-container">
+                
+                
+            </div>
+        </div>
+        <div id="landlord">
+            <div class="message" style="opacity:0"></div>
+            <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+        </div>
+        <div id="domainname" style="display:none">https://diego3893.github.io</div>
+</body>
 
 </html>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = document.getElementById("domainname").innerHTML + "/"; //此处修改为你的域名，必须带斜杠
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/live2d.js"></script>
+<script type="text/javascript" src="https://diego3893.github.io/media/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "https://diego3893.github.io/media/live2d/assets/tororo.model.json");
+</script>
+
+
+<script>
+        var bgchoice=$('#bgchoice').html();
+        var bg = $('#bg');
+        var bgurl = document.getElementById("bgurl").innerHTML;
+        if(bgchoice=='default')
+            for (var i = 0; i < 3; i++)
+                bgurl = bgurl.replace("\\", "/");
+        bg.css("background", "url('" + bgurl + "')");
+
+        window.onload = function(){
+            aplayerbtnInit();
+        }
+</script>
+
+<script src="https://diego3893.github.io/media/js/index.js"></script>

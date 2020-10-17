@@ -1,320 +1,542 @@
-<!DOCTYPE html>
-<html id="bg">
-
 <head>
-    <meta charset="utf-8" />
-<!--
-    * @Theme Card
-    *
-    * @author admin@itjoker.cn
-    * @link https://blog.itjoker.cn
--->
-
-<title>
-    Diego&#39;s Blog
-</title>
-<!--[if lt IE 9]><script src="//cdn.bootcss.com/html5shiv/r29/html5.js"></script><![endif]-->
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-<meta http-equiv="x-dns-prefetch-control" content="on">
-<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-<meta name="author" content="Diego&#39;s Blog">
-<meta name="description" content="Stay hungry, Stay foolish">
-<meta name="keywords" content="OIer,蒟蒻,沉迷学习">
-<meta name="gridea-theme" content="Card">
-<meta name="spider" content="https://nmsl.sbjxw.网址">
-<meta name="UpdateTime" content="1601804874768">
-<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/jquery@3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/Card/prism.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/css/Card/prism.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css">
-<script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/contrib/auto-render.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
-<!--<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/js/Card/script.min.js"></script>-->
-<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/css/Card/main.min.css" />-->
-<script src="https://diego3893.github.io/media/js/script.min.js"></script>
-<link rel="stylesheet" href="https://diego3893.github.io/media/css/main.min.css" />
-<link rel="stylesheet" href="https://diego3893.github.io/styles/main.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/css/Card/iconfont.css" />
-<!--link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_410989_wuhl0k5ojvf.css" /-->
-<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/js/love.min.js"></script>
-<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
-<script>
-    $().ready(
-        function() {
-            var themeIcon = document.getElementById("themeIcon");
-            var currentTheme = window.localStorage.getItem('theme');
-            if (currentTheme == 'dark') {
-                document.getElementsByTagName('html')[0].classList.add('theme-dark');
-                themeIcon.classList.remove('Card-moon');
-                themeIcon.classList.add('Card-sun');
-            } else {
-                document.getElementsByTagName('html')[0].classList.remove('theme-dark');
-                themeIcon.classList.remove('Card-sun');
-                themeIcon.classList.add('Card-moon');
-            }
-        }
-    )
-</script>
-
-    <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/hit-kounter-lc-0.3.0.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="description" content="这道题其实很水，用一个整形数组存放每个字母的按键次数即可
+附代码：
+#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+using namespace std;
+int l[26] = {1,2,3..." />
+    <meta name="keywords" content="洛谷题解" />
+    <link rel="stylesheet" href="https://diego3893.github.io/media/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://diego3893.github.io/styles/main.css">
     
-        
-            <script>
-                (function() {
-                    var bp = document.createElement('script');
-                    var curProtocol = window.location.protocol.split(':')[0];
-                    if (curProtocol === 'https') {
-                        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-                    } else {
-                        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-                    }
-                    var s = document.getElementsByTagName("script")[0];
-                    s.parentNode.insertBefore(bp, s);
-                })();
-            </script>
-            
-                    <style>
-                        .Card-certify {
-                            color: #0091e4 !important;
-                        }
-                        
-                        #foot {
-                            color: #666666;
-                        }
-                        
-                        #menu-item:hover {
-                            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-                            border-bottom-color: rgba(0, 0, 0, .6);
-                        }
-                        
-                        .gray {
-                            -webkit-filter: grayscale(100%);
-                            /* webkit */
-                            -moz-filter: grayscale(100%);
-                            /*firefox*/
-                            -ms-filter: grayscale(100%);
-                            /*ie9*/
-                            -o-filter: grayscale(100%);
-                            /*opera*/
-                            filter: grayscale(100%);
-                            filter: progid: DXImageTransform.Microsoft.BasicImage(grayscale=1);
-                            filter: gray;
-                            /*ie9- */
-                        }
-                        
-                        .lite-item,
-                        #header {
-                            opacity: 1;
-                        }
-                        
-                        .lite-item {
-                            background-color: #fafafa;
-                        }
-                        
-                        #spnBtn:hover {
-                            transition: all .3s ease;
-                            color: #fff;
-                            background-color: #6b6b6b;
-                            /*#0092ee*/
-                            /*linear-gradient( rgb(138, 160, 255) 30%, rgb(90, 140, 250) 70%);*/
-                        }
-                        
-                        #spnBtn {
-                            background-color: #efefef;
-                            font-size: 14px;
-                            transition: all .3s ease;
-                        }
-                        
-                        .link_a:hover {
-                            margin-top: 10px;
-                            margin-bottom: 10px;
-                            color: #fff;
-                            border-left: 8px solid #6b6b6b;
-                            padding: 5px;
-                            transition: all .3s ease;
-                        }
-                        
-                        html {
-                            width: 100%;
-                            height: 100%;
-                            background-attachment: fixed;
-                            background-repeat: no-repeat;
-                        }
-                    </style>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/vs2015.min.css">
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/clipboard.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/live2d.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <!-- 数学公式 -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css"
+        integrity="sha384-9tPv11A+glH/on/wEu99NVwDPwkMQESOocs/ZGXPoIiLE8MU/qkqUcZ3zzL+6DuH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.js"
+        integrity="sha384-U8Vrjwb8fuHMt6ewaCy8uqeUXv4oitYACKdB0VziCerzt011iQ/0TqlSlv8MReCm" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/contrib/auto-render.min.js"
+        integrity="sha384-aGfk5kvhIq5x1x5YdvCp4upKZYnA8ckafviDpmWEKp4afOZEqOli7gqSnh8I6enH" crossorigin="anonymous">
+    </script>
+    <script>
+        renderMathInElement(document.body, {
+            delimiters: [{
+                    left: "$$",
+                    right: "$$",
+                    display: true
+                },
+                {
+                    left: "$",
+                    right: "$",
+                    display: false
+                }
+            ]
+        });
+    </script>
+
+    
+    <title>Diego's Blog</title>
+    
+    <style>
+        .markdownIt-TOC {
+            margin-left: 28%;
+            padding-left: 2px;
+            width: 80%;
+        }
+
+        .markdownIt-TOC li {
+            padding-left: 8%;
+        }
+    </style>
+    
 </head>
 
 <body>
-    <header id="header">
+    <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+    </div>
+    <div id="codeCopyText" style="display: none">代码复制成功了哦</div>
+    <div id="domainname" style="display:none">https://diego3893.github.io</div>
+    <!-- 响应式布局，针对PC端内容显示 -->
+    <div id="content">
+        <div>
+            <div id="bar">
+                <head>
+  <!-- 引入Bootstrap核心样式文件 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/bootstrap.min.css">
+</head>
+<style>
+  @media screen and (max-width:1200px) and (min-width: 768px) {
+    @media (min-width: 768px) {
+      .navbar-nav {
+        float: right;
+        margin: 0;
+      }
+    }
+  }
+  @media screen and (max-width:768px){
+    .mbapspan{
+      padding: 0;
+    }
+  }
+</style>
 
-    <div id="pc-menu">
-        <a id="menu-bar" class="Card Card-menu"></a>
-        <a id="menu-title" href="https://diego3893.github.io">
-            Diego&#39;s Blog
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barmenu"
+          aria-expanded="false" id="barbutton">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="https://diego3893.github.io">Diego&#39;s Blog&nbsp;&nbsp;|</a>
+        <span class="navbar-brand mbapspan"><i id="mbaplayer" class="fa fa-play-circle-o" aria-hidden="true"
+            style="font-size: 28px;top: 12px;position: absolute;" onclick="aplayerPlay();"></i></span>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="barmenu">
+        <ul class="nav navbar-nav">
+          
+          
+          <li>
+            <a href="/">
+              🎈首页
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archives">
+              📜归档
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags">
+              🔖标签
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/photos">
+              📌图墙
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="https://travellings.now.sh/">
+              🚀开往
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/post/about">
+              🏳️‍🌈关于
+            </a>
+          </li>
+          
+          
+          
+          <li><a href="https://diego3893.github.io/talk">说说</a></li>
+          
+          
+          <li><a href="https://diego3893.github.io/friends">友链</a></li>
+
+          
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+  <!-- 引入jQuery核心js文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+  <script>
+  var btstate = false;
+  var bt = $("#barbutton");
+  var bm = $("#barmenu");
+  bt.click(function(){
+    dropdown();
+  })
+  function dropdown(){
+    console.log(btstate);
+    //下拉
+    if(btstate==false){
+      bt.removeClass("collapsed");
+      bt.attr("aria-expanded","true");
+      bm.attr("aria-expanded","true")
+      bm.fadeIn(700);
+      btstate = true;
+    }
+    else{
+      bt.addClass("collapsed");
+      bt.attr("aria-expanded","false");
+      bm.removeClass("in");
+      bm.hide();
+      bm.attr("aria-expanded","false");
+      btstate = false;
+    }
+  }
+  </script> 
+</body>
+            </div>
+            <div class="row">
+                <div class="side"><body>
+    
+    <div id=side>
+        <div class="avatar-border">
+            <img src="https://diego3893.github.io/images/avatar.png?v=1602928818744" class="avatar">
+        </div>
+        <div class="sitename">Diego&#39;s Blog</div>
+        <span class="describtion" data-text='["Stay hungry, Stay foolish"]'>&nbsp;</span>
+        
+        <div class="search">
+            <!-- <input type="text" class="search-input" placeholder="标题搜索(●'◡'●)" /> -->
+            <input type="text" class="search-input" placeholder="标题搜索 ⚆_⚆ つ♡">
+            <div class="search-results"></div>
+        </div>
+        
+    <div class="share-button">
+        <span>社交按钮</span>
+        
+        <a href="https://github.com/diego3893" target="_blank"><i style="font-size: 20px;"><img class="icon"
+                    src="https://diego3893.github.io/media/images/github.png" alt=""></i></a>
+        
+        
+        <a onclick="showqq()"><i style="font-size: 20px;"><img class="icon" src="https://diego3893.github.io/media/images/QQ.png" alt=""></i></a>
+        
+        
+        
+        <a href="https://space.bilibili.com/454077332" target="_blank"><i style="font-size: 20px;"><img class="icon"
+                    src="https://diego3893.github.io/media/images/bilibili.png" alt=""></i></a>
+        
+        
+        
+    </div>
+    <div id="qq" style="display:none">3013006997</div>
+    
+    
+    <div class="mchocie describtion">
+        <a href="/" class="menubutton">
+            🎈首页
         </a>
-        <nav id="menu-main" class="menu-main">
-            <ul>
-                
-                    <li id="menu-item" class="menu-item">
-                        <a href="/">
-                            🎈首页
-                        </a>
-                    </li>
-                    
-                    <li id="menu-item" class="menu-item">
-                        <a href="/posts">
-                            📝文章列表
-                        </a>
-                    </li>
-                    
-                    <li id="menu-item" class="menu-item">
-                        <a href="/archives">
-                            📜归档
-                        </a>
-                    </li>
-                    
-                    <li id="menu-item" class="menu-item">
-                        <a href="/tags">
-                            🔖标签
-                        </a>
-                    </li>
-                    
-                    <li id="menu-item" class="menu-item">
-                        <a href="/friends">
-                            🤝友链
-                        </a>
-                    </li>
-                    
-                    <li id="menu-item" class="menu-item">
-                        <a href="/photos">
-                            📌图墙
-                        </a>
-                    </li>
-                    
-                    <li id="menu-item" class="menu-item">
-                        <a href="https://travellings.now.sh/">
-                            🚀开往
-                        </a>
-                    </li>
-                    
-                    <li id="menu-item" class="menu-item">
-                        <a href="/post/about">
-                            🏳️‍🌈关于
-                        </a>
-                    </li>
-                    
-            </ul>
-        </nav>
-        <form id="gridea-search-form" class="searchform" data-update="1601804874768" action="/search/index.html">
-            <i class="Card Card-search"></i>
-            <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
-        </form>
     </div>
-    <div id="mobile-menu">
-        <form id="gridea-search-form" class="mobile-searchform" data-update="1601804874768" action="/search/index.html">
-            <i class="Card Card-search"></i>
-            <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
-        </form>
-        <nav class="menu">
-            <ul style="list-style: none;">
-                
-                    <li class="page_item page-item-2">
-                        <a href="/">
-                            🎈首页
-                        </a>
-                    </li>
-                    
-                    <li class="page_item page-item-2">
-                        <a href="/posts">
-                            📝文章列表
-                        </a>
-                    </li>
-                    
-                    <li class="page_item page-item-2">
-                        <a href="/archives">
-                            📜归档
-                        </a>
-                    </li>
-                    
-                    <li class="page_item page-item-2">
-                        <a href="/tags">
-                            🔖标签
-                        </a>
-                    </li>
-                    
-                    <li class="page_item page-item-2">
-                        <a href="/friends">
-                            🤝友链
-                        </a>
-                    </li>
-                    
-                    <li class="page_item page-item-2">
-                        <a href="/photos">
-                            📌图墙
-                        </a>
-                    </li>
-                    
-                    <li class="page_item page-item-2">
-                        <a href="https://travellings.now.sh/">
-                            🚀开往
-                        </a>
-                    </li>
-                    
-                    <li class="page_item page-item-2">
-                        <a href="/post/about">
-                            🏳️‍🌈关于
-                        </a>
-                    </li>
-                    
-            </ul>
-        </nav>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/archives" class="menubutton">
+            📜归档
+        </a>
     </div>
-    <a id="theme-btn" class="theme-btn" onclick="App.changeTheme()"><i id="themeIcon" class="Card Card-moon"></i></a>
-</header>
-        <div id="main">
-            <div id="main-part">
-                <div class="lite-item">
-                    <article class="post post-type real-post">
-                        <header class="post-type-header">
-                            
-                                    <div class="thumbnail-link" style="background-color: transparent;"></div>
-                                    
-                                        <div class="thumbnail-shadow">
-                                            <h1 class="post-title">
-                                                题解 P1765 【手机_NOI导刊2010普及（10）】
-                                            </h1>
-                                            <div class="post-info">
-                                                <span class="post-category"><i class="Card Card-novel"></i>
-                                        
-                                            <span onclick="javascript:top.location='https://diego3893.github.io/tag/3nyqwG4IY/'">洛谷题解</span>
-                                                
-                                                    </span>
-                                                    <span class="post-view">
-                                                    
-                                                        &nbsp;•&nbsp;
-                                                    <span id="/post/ti-jie-p1765-shou-ji-_noi-dao-kan-2010-pu-ji-10/" class="leancloud_visitors" data-flag-title="题解 P1765 【手机_NOI导刊2010普及（10）】">
-                                                <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
-                                                <i class="leancloud-visitors-count">0</i>
-                                            </span>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/tags" class="menubutton">
+            🔖标签
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/photos" class="menubutton">
+            📌图墙
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://travellings.now.sh/" class="menubutton">
+            🚀开往
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/post/about" class="menubutton">
+            🏳️‍🌈关于
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://diego3893.github.io/talk" class="menubutton">🔖说说</a>
+    </div>
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://diego3893.github.io/friends" class="menubutton">🤝友人帐</a>
+    </div>
+    
+    <hr>
+    <div id="footinfo">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> & <a href="https://github.com/diego3893/diego3893.github.io" target="_blank" > Diego </a> | Theme: <a
+        href="https://github.com/850552586/gridea-theme-fog">Fog</a></div>
+    
+    <div class="sitetime"><div id="sitegotimeDate">载入天数...</div>
+    <div id="sitegotimes">载入时分秒...</div></div>
+    <div id="cussitetime" style="display:none">02/13/2020</div>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/busuanzi.pure.mini.js"></script>
+    <div id="vistornum">
+        <span id="busuanzi_container_site_uv">
+            <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i> 总访问量:<span id="busuanzi_value_site_pv"></span>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fa fa-user-o" aria-hidden="true"></i> 访问人数:<span id="busuanzi_value_site_uv"></span>
+        </span>
+    </div>
+    <div style="color:white">Copyright © 2020</div>
+    
+    </div>
 
-                                                    
-                                                            </span>&nbsp;•&nbsp;
 
-                                                            <span class="post-readtime">阅读时间:
-                                            0.9分</span>
-                                                            <span class="post-edit"></span></div>
-                                        </div>
-                                        <div class="post-relative">
-                                            <img alt="Diego&#39;s Blog" src="https://diego3893.github.io/images/avatar.png?v=1601804874768" srcset="https://diego3893.github.io/images/avatar.png?v=1601804874768" class="avatar avatar-100 photo" width="100" height="100">
-                                            <span class="post-type-author"><a href="https://diego3893.github.io" title="由Diego&#39;s Blog发布" rel="author">Diego&#39;s Blog<i class="Card Card-certify"></i></a></span>
-                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2020-09-22</span>
-                                        </div>
-                        </header>
-                        <div class="post-main post-type-main">
-                            <div class="post-content">
-                                <div class="post-content-real">
-                                    <p>这道题<s>其实很水</s>，用一个整形数组存放每个字母的按键次数即可<br>
+<script src="https://diego3893.github.io/media/js/wordshow.js"></script>
+    
+    <script>
+        //----------------------站点运行时间
+        var now = new Date();
+
+        function createtime() {
+            var sitegotime = document.getElementById("cussitetime").innerHTML + " 00:00:00";
+            var grt = new Date(sitegotime); //此处修改你的建站时间或者网站上线时间
+            now.setTime(now.getTime() + 250);
+            days = (now - grt) / 1000 / 60 / 60 / 24;
+            dnum = Math.floor(days);
+            hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+            hnum = Math.floor(hours);
+            if (String(hnum).length == 1) {
+                hnum = "0" + hnum;
+            }
+            minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+            mnum = Math.floor(minutes);
+            if (String(mnum).length == 1) {
+                mnum = "0" + mnum;
+            }
+            seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+            snum = Math.round(seconds);
+            if (String(snum).length == 1) {
+                snum = "0" + snum;
+            }
+            document.getElementById("sitegotimeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+            document.getElementById("sitegotimes").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+        }
+        setInterval("createtime()", 250);
+    </script>
+    
+
+
+
+
+    
+</body>
+<script>
+    //-------------------------------------------------搜索
+    // 获取搜索框、搜索按钮、清空搜索、结果输出对应的元素
+    var searchInput = document.querySelector('.search-input');
+    var searchResults = document.querySelector('.search-results');
+
+    // 申明保存文章的标题、链接、内容的数组变量
+    var searchValue = '',
+        arrItems = [],
+        arrLinks = [],
+        arrTitles = [],
+        arrResults = [],
+        indexItem = [],
+        itemLength = 0;
+    var tmpDiv = document.createElement('div');
+    tmpDiv.className = 'result-item';
+
+    // ajax 的兼容写法
+    var xhr = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            xml = xhr.responseXML;
+            arrItems = xml.getElementsByTagName('entry');
+            itemLength = arrItems.length;
+            // 遍历并保存所有文章对应的标题、链接、内容到对应的数组中
+            // 同时过滤掉 HTML 标签
+            for (i = 0; i < itemLength; i++) {
+                var link = arrItems[i].getElementsByTagName('link')[0];
+                arrLinks[i] = link.getAttribute("href");
+                arrTitles[i] = arrItems[i].getElementsByTagName('title')[0].
+                childNodes[0].nodeValue.replace(/<.*?>/g, '');
+            }
+        }
+    }
+
+    // 开始获取根目录下 feed.xml 文件内的数据
+    xhr.open('get', '/atom.xml', true);
+    xhr.send();
+
+
+
+    // 输入框内容变化后就开始匹配，可以不用点按钮
+    // 经测试，onkeydown, onchange 等方法效果不太理想，
+    // 存在输入延迟等问题，最后发现触发 input 事件最理想，
+    // 并且可以处理中文输入法拼写的变化
+    searchInput.oninput = function () {
+        setTimeout(searchConfirm, 0);
+    }
+    searchInput.onfocus = function () {
+        searchResults.style.display = 'block';
+    }
+
+    function searchConfirm() {
+        if (searchInput.value == '') {
+            searchResults.style.display = 'none';
+        } else if (searchInput.value.search(/^\s+$/) >= 0) {
+            // 检测输入值全是空白的情况
+            searchInit();
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '请输入有效内容...';
+            searchResults.appendChild(itemDiv);
+        } else {
+            // 合法输入值的情况
+            searchInit();
+            searchValue = searchInput.value;
+            // 在标题、内容中查找
+            searchMatching(arrTitles, searchValue);
+        }
+    }
+
+    // 每次搜索完成后的初始化
+    function searchInit() {
+        arrResults = [];
+        indexItem = [];
+        searchResults.innerHTML = '';
+        searchResults.style.display = 'block';
+    }
+
+    function searchMatching(arr1, input) {
+        // 忽略输入大小写
+        input = new RegExp(input, 'i');
+        // 在所有文章标题、内容中匹配查询值
+        for (i = 0; i < itemLength; i++) {
+            if (arr1[i].search(input) !== -1) {
+                var arr = arr1;
+                indexItem.push(i); // 保存匹配值的索引
+                var indexContent = arr[i].search(input);
+                // 此时 input 为 RegExp 格式 /input/i，转换为原 input 字符串长度
+                var l = input.toString().length - 3;
+                var step = 10;
+
+                // 将匹配到内容的地方进行黄色标记，并包括周围一定数量的文本
+                arrResults.push(arr[i].slice(indexContent - step, indexContent));
+            }
+        }
+
+        // 输出总共匹配到的数目
+        var totalDiv = tmpDiv.cloneNode(true);
+        totalDiv.innerHTML = '<b>总匹配：' + indexItem.length + ' 项<hr></b>';
+        searchResults.appendChild(totalDiv);
+
+        // 未匹配到内容的情况
+        if (indexItem.length == 0) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '未匹配到内容...';
+            searchResults.appendChild(itemDiv);
+        }
+
+        // 将所有匹配内容进行组合
+        for (i = 0; i < arrResults.length; i++) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerHTML = '<b>[' + arrTitles[indexItem[i]] +
+                ']</b><p>' + arrResults[i] + "</p><hr />";
+            itemDiv.setAttribute('onclick', 'changeHref(arrLinks[indexItem[' + i + ']])');
+            searchResults.appendChild(itemDiv);
+        }
+    }
+
+    function changeHref(href) {
+        location.href = href;
+    }
+
+    function showqq() {
+        var qq = document.getElementById("qq").innerHTML;
+        if (qq != '')
+            window.location.href = "tencent://message/?uin=" + qq + "&Site=&Menu=yes";
+        else
+            alert("博主暂未设置QQ联系方式");
+    }
+</script>
+</div>
+                
+                <div id="tab1" class="tab">
+                    <div class="bars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="close"></div>
+                </div>
+                <div class="col-md-1 col-lg-3"></div>
+                <div id="main" class="col-xs-12 col-sm-12 col-md-10 col-lg-7">
+                    <link rel="stylesheet" href="https://diego3893.github.io/media/css/font-awesome.css">
+
+<body>
+    <div class="allcontent" id="postdetail">
+        <div class="postshow" style="padding-bottom: 0;">
+            
+            <div class="postdetailimg" style="width:100%;overflow: hidden;">
+                
+                <img src="https://gitee.com/oierzcx/image/raw/master/img/20201017161108.jpg" class="postimage">
+                
+            </div>
+            <div class="postinfo-detail">
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-09-22</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
+            <div class="posttag">
+                
+                <a href="https://diego3893.github.io/tag/3nyqwG4IY/" class="postlink">
+                    <i class="fa fa-tag"></i> 洛谷题解
+                </a>
+                
+            </div>
+        </div>
+        
+        <div id="articlecontent">
+            <div id="texttitle" style="text-align: center">
+                <h2>题解 P1765 【手机_NOI导刊2010普及（10）】</h2>
+                <!-- id 将作为查询条件 -->
+                <div id="pl" style="display:none">https://diego3893.github.io/post/ti-jie-p1765-shou-ji-_noi-dao-kan-2010-pu-ji-10/</div>
+                <div id="rootaddr" style="display:none">https://diego3893.github.io</div>
+                <span id="hotnum">
+                    <h4><i class="fa fa-eye" aria-hidden="true" style="color: #FF8C00;"></i>&nbsp;&nbsp;热度</i>: <i
+                            class="hotnum">loading...</i></h4>
+                </span>
+            </div>
+            <div class="text ">
+                <p>这道题<s>其实很水</s>，用一个整形数组存放每个字母的按键次数即可<br>
 附代码：</p>
 <pre><code class="language-cpp">#include&lt;cstdio&gt;
 #include&lt;cstring&gt;
@@ -339,475 +561,414 @@ int main()
 }
 </code></pre>
 
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="post-footer">
-                            <div class="post-copyright">
-                                作者:
-                                Diego&#39;s Blog<br>永久链接:
-                                    <a href="https://diego3893.github.io/post/ti-jie-p1765-shou-ji-_noi-dao-kan-2010-pu-ji-10/" title="题解 P1765 【手机_NOI导刊2010普及（10）】">
-                                        https://diego3893.github.io/post/ti-jie-p1765-shou-ji-_noi-dao-kan-2010-pu-ji-10/
-                                    </a><br> 协议: MIT License
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <style>
-                    .prev:hover {
-                        color: #2d96bd;
-                        text-decoration: none;
-                        text-align: center;
-                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-                    }
-                    
-                    .next:hover {
-                        color: #2d96bd;
-                        text-decoration: none;
-                        text-align: center;
-                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-                    }
-                </style>
-                <div class="lite-item nearby-article">
-                    
-                        <div class="nearby-article-left" style="padding: 10px;">
-                            <a class="prev" rel="prev" href="https://diego3893.github.io/post/ti-jie-p1164-xiao-a-dian-cai/">
-                                <i class="fa fa-chevron-left"></i>
-                                题解 P1164 【小A点菜】
-                            </a>
-                        </div>
-                        
-                            
-                                <div class="nearby-article-right" style="padding: 10px;">
-                                    <a class="next" rel="next" href="https://diego3893.github.io/post/ti-jie-p4414-coci2006-20072-abc/">
-                                        题解 P4414 【[COCI2006-2007#2] ABC】<i class="fa fa-chevron-right"></i>
-                                    </a>
-                                </div>
-                                
-                </div>
-                <!--Share-->
-                <span style="margin-right:15px">
-    <i class="post-share"></i>
-    <span>&#x5206;&#x4EAB;:</span>
-                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://diego3893.github.io/post/ti-jie-p1765-shou-ji-_noi-dao-kan-2010-pu-ji-10/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://diego3893.github.io/post/ti-jie-p1765-shou-ji-_noi-dao-kan-2010-pu-ji-10/&sharesource=qzone&title=题解 P1765 【手机_NOI导刊2010普及（10）】&pics=https://diego3893.github.io/images/avatar.png?v=1601804874768&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://diego3893.github.io/post/ti-jie-p1765-shou-ji-_noi-dao-kan-2010-pu-ji-10/&sharesource=weibo&title=题解 P1765 【手机_NOI导刊2010普及（10）】 + " - " + &pic="https://diego3893.github.io/images/avatar.png?v=1601804874768"><i class="fa fa-weibo "></i></a>
-                </span>
-                
-                                            
-                                                <script type="application/javascript" src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
-<div id="vlaine-comment"></div>
-<script type="application/javascript">
-    new Valine({
-        el: '#vlaine-comment',
-        appId: 'Vs9HajoWOqzzn7MR5R09X8sU-gzGzoHsz',
-        appKey: 'twuGD8G2X8bLhyet9rrIqavh',
-        pageSize: 10,
-        avatar: 'mp',
-        placeholder: '来都来了，不妨评论一下',
-        visitor: true,
-        highlight: true,
-        recordIP: true,
-    })
-</script>
-                                                    
             </div>
-            <div id="sidebar">
-    <ul>
-        
-            <li class="lite-item">
-                <header class="lite-item-header">
-                    <h3 class="lite-item-title"><i class="Card Card-hitokoto"></i>&nbsp;&#x4E00;&#x8A00;</h3>
-                </header>
-                <div class="textwidget">
-                    <p>
-                        <b id="hitokoto"></b>
-                    </p>
-                </div>
-            </li>
+            <hr style="width: 80%;">
             
-                <!--
-                <li class="lite-item">
-                    <header class="lite-item-header">
-                        <h3 class="lite-item-title"><i class="Card Card-tags">&#x6807;&#x7B7E;</i></h3>
-                    </header>
-                    <div class="textwidget">
-                        
-                            <a href="" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
-                                <i class="fa fa-tags" aria-hidden="true"></i>
-                            </a>
-                            
-                    </div>
-                </li>-->
-                <li class="lite-item">
-                    <header class="lite-item-header">
-                        <h3 class="lite-item-title"><i class="Card Card-tags">&#x6807;&#x7B7E;</i></h3>
-                    </header>
-                    <div class="textwidget">
-                        <div id='tags' style="height: auto;width: 360;"></div>
-                        <script src="https://diego3893.github.io/media/js/svg3dtagcloud.min.js"></script>
-                        <script>
-                            $(document).ready(function() {
-                                var entries = ([
-                                    
-                                     {
-                                        label: '🏷折腾笔记',
-                                        url: 'https://diego3893.github.io/tag/h6HytAKAH/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷洛谷题解',
-                                        url: 'https://diego3893.github.io/tag/3nyqwG4IY/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷技术宅',
-                                        url: 'https://diego3893.github.io/tag/jsIDxauOd/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷数据结构',
-                                        url: 'https://diego3893.github.io/tag/4-8y6NRl-/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷安利',
-                                        url: 'https://diego3893.github.io/tag/G1eM_Hyfm/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷转载',
-                                        url: 'https://diego3893.github.io/tag/89WnJ3Arn/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷打卡模版',
-                                        url: 'https://diego3893.github.io/tag/rAwVgYtMd/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷字符串',
-                                        url: 'https://diego3893.github.io/tag/a9JlscXkj/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷算法',
-                                        url: 'https://diego3893.github.io/tag/dJ3WAsaqR/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷提高组笔记',
-                                        url: 'https://diego3893.github.io/tag/Gr5YErY6j/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷备忘',
-                                        url: 'https://diego3893.github.io/tag/qQcrTcB4k/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷图/树论',
-                                        url: 'https://diego3893.github.io/tag/Hc21XFSes/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷Gridea',
-                                        url: 'https://diego3893.github.io/tag/4X9N1ZDzg/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷STL',
-                                        url: 'https://diego3893.github.io/tag/c3jkatgC-/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷趣味',
-                                        url: 'https://diego3893.github.io/tag/bunbgwXDf/',
-                                        target: '_button'
-                                    },
-                                    
-                                    
-                                     {
-                                        label: '🏷数学',
-                                        url: 'https://diego3893.github.io/tag/Nnc60LLfD/',
-                                        target: '_button'
-                                    }
-                                    
-                                    
-                                ]);
-                                var settings = {
-                                    entries: entries, //数据
-                                    width: 300, //宽度
-                                    height: 300, //高度
-                                    radius: '50%',
-                                    radiusMin: 50,
-                                    bgDraw: false, //是否显示背景
-                                    bgColor: '#fff', //背景颜色
-                                    opacityOver: 1.00,
-                                    opacityOut: 0.05,
-                                    opacitySpeed: 6,
-                                    fov: 360,
-                                    speed: 0.3, //旋转的速度
-                                    fontFamily: 'Oswald, Arial, sans-serif',
-                                    fontSize: '18', //默认字体大小
-                                    fontColor: '#666', //默认字体颜色
-                                    fontWeight: 'normal', //bold
-                                    fontStyle: 'normal', //italic 
-                                    fontStretch: 'normal', //wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
-                                    fontToUpperCase: true,
-                                    tooltipFontFamily: 'Oswald, Arial, sans-serif',
-                                    tooltipFontSize: '16',
-                                    tooltipFontColor: 'red',
-                                    tooltipFontWeight: 'normal', //bold
-                                    tooltipFontStyle: 'normal', //italic 
-                                    tooltipFontStretch: 'normal', //wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
-                                    tooltipFontToUpperCase: false,
-                                    tooltipTextAnchor: 'left',
-                                    tooltipDiffX: 0,
-                                    tooltipDiffY: 5
-
-                                };
-
-                                //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
-                                $('#tags').svg3DTagCloud(settings);
-                            });
-                        </script>
-                    </div>
-                </li>
-                
-                    <script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/APlayer.min.js"></script>
-                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
-                    <div id="player"></div>
-                    
-                        <li class="lite-item">
-                            <header class="lite-item-header">
-                                <h3 class="lite-item-title">
-                                    &#x1F3B5;&#x97F3;&#x4E50;
-                                </h3>
-                            </header>
-                            <div class="textwidget">
-                                <p>
-                                    <div id="playerbox"></div>
-                                </p>
-                            </div>
-                        </li>
-                        
-                            <script>
-                                function LoadPlayer() {
-                                    var music_array = [];
-                                    
-                                    music_array.push({
-                                        name: 'Sold Out',
-                                        url: ' http://music.163.com/song/media/outer/url?id=31010566.mp3',
-                                        artist: 'Hawk Nelson',
-                                        cover: 'https://s2.ax1x.com/2020/03/02/3RRXAs.jpg',
-                                    });
-                                    
-                                    music_array.push({
-                                        name: 'Señorita',
-                                        url: 'http://music.163.com/song/media/outer/url?id=1373168742.mp3',
-                                        artist: 'Shawn Mendes / Camila Cabello',
-                                        cover: 'https://s2.ax1x.com/2020/03/03/3hZL6J.jpg',
-                                    });
-                                    
-                                    music_array.push({
-                                        name: 'Into You',
-                                        url: 'http://music.163.com/song/media/outer/url?id=523042017.mp3',
-                                        artist: 'Matisse &amp; Sadko / Hanne Mjøen',
-                                        cover: 'https://s2.ax1x.com/2020/03/03/3heru9.jpg',
-                                    });
-                                    
-                                    music_array.push({
-                                        name: 'Wolves',
-                                        url: 'http://music.163.com/song/media/outer/url?id=515269424.mp3',
-                                        artist: 'Selena Gomez / Marshmello',
-                                        cover: 'https://s2.ax1x.com/2020/03/03/3heHEt.jpg',
-                                    });
-                                    
-                                    
-                                    const ap = new APlayer({
-                                        container: document.getElementById('playerbox'),
-                                        audio: music_array
-                                    });
-                                    
-                                }
-                                LoadPlayer();
-                            </script>
-                            
-                                
-                                    <script>
-                                        App.weather();
-                                    </script>
-                                    <li class="lite-item">
-                                        <header class="lite-item-header">
-                                            <h3 class="lite-item-title">&#x26C5;&#x5929;&#x6C14;</h3>
-                                        </header>
-                                        <div class="textwidget">
-                                            <div id="tp-weather-widget"></div>
-                                        </div>
-                                    </li>
-                                    
-                                        
-                                            
-                                                
-                                                    <li class="lite-item">
-                                                        <header class="lite-item-header">
-                                                            <h3 class="lite-item-title">
-                                                                本站视频教程位于哔哩哔哩！
-                                                            </h3>
-                                                        </header>
-                                                        <div class="textwidget">
-                                                            <div id="textwidget-box" style="width:100%; height:auto;">
-                                                                欢迎来到站长的个人空间：https://space.bilibili.com/454077332
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    
-                                                        
-                                                            <li class="lite-item">
-                                                                <header class="lite-item-header">
-                                                                    <h3 class="lite-item-title">&#x1F468;&#x200D;&#x1F4BB;&#x53CB;&#x94FE;</h3>
-                                                                </header>
-                                                                <div class="textwidget">
-                                                                    
-                                                                        
-                                                                            <p onclick="javascript:top.location='https://blog.itjoker.cn'"><span class="link_a"><a href="https://blog.itjoker.cn" alt="ITJoker ">ITJoker -ITJoker&#39;s Blog</a></span></p>
-
-                                                                            
-                                                                            <p onclick="javascript:top.location='http://acg17.com'"><span class="link_a"><a href="http://acg17.com" alt="ACG17 ">ACG17 -日常找图</a></span></p>
-
-                                                                            
-                                                                            <p onclick="javascript:top.location='https://lxxs.xyz/'"><span class="link_a"><a href="https://lxxs.xyz/" alt="路迅先生的小屋 ">路迅先生的小屋 -I pray to myself.</a></span></p>
-
-                                                                            
-                                                                            <p onclick="javascript:top.location='https://qqdie.com'"><span class="link_a"><a href="https://qqdie.com" alt="QQ爹的博客 ">QQ爹的博客 -Tyepcho爱好者，资源站</a></span></p>
-
-                                                                            
-                                                                            <p onclick="javascript:top.location='https://www.wubin.design'"><span class="link_a"><a href="https://www.wubin.design" alt="BruceWu   ">BruceWu   -UX Design一枚</a></span></p>
-
-                                                                            
-                                                                            <p onclick="javascript:top.location='https://tangkaichuan.cn '"><span class="link_a"><a href="https://tangkaichuan.cn " alt="I&#39;m KT  ">I&#39;m KT  -Keep Coding and Writing</a></span></p>
-
-                                                                            
-                                                                            <p onclick="javascript:top.location='https://winterstarhu.github.io'"><span class="link_a"><a href="https://winterstarhu.github.io" alt="WinterStar&#39;s Blog   ">WinterStar&#39;s Blog   -分享一些学习或生活上的东西</a></span></p>
-
-                                                                            
-                                                                            <p onclick="javascript:top.location='https://iboy66lee.club'"><span class="link_a"><a href="https://iboy66lee.club" alt="iBoy&#39;s Blog ">iBoy&#39;s Blog -iboy的杂货铺</a></span></p>
-
-                                                                            
-                                                                                
-                                                                </div>
-                                                            </li>
-    </ul>
-</div>
+            <div class="sharebtnContainer">
+                <button type="button" class="sharebtn">转载分享</button>
+            </div>
+            <div class="shareContainer">
+                <div class="share" style="height:30px;background: white;">
+                    <a class="qq" href=""><i><img class="shareicon"
+                                src="https://diego3893.github.io/media/images/QQ.png" alt=""></i></a>
+                    <a class="wechat" href=""><i><img class="shareicon"
+                                src="https://diego3893.github.io/media/images/wechat.png" alt=""></i></a>
+                    <a class="weibo" href=""><i><img class="shareicon"
+                                src="https://diego3893.github.io/media/images/weibo.png" alt=""></i></a>
+                    <a class="qzone" href=""><i><img class="shareicon"
+                                src="https://diego3893.github.io/media/images/qzone.png" alt=""></i></a>
+                    <a class="douban" href=""><i><img class="shareicon"
+                                src="https://diego3893.github.io/media/images/douban.png" alt=""></i></a>
+                    <a class="facebook" href=""><i><img class="shareicon"
+                                src="https://diego3893.github.io/media/images/facebook.png" alt=""></i></a>
+                    <a class="twitter" href=""><i><img class="shareicon"
+                                src="https://diego3893.github.io/media/images/twitter.png" alt=""></i></a>
+                </div>
+            </div>
+            
+            
+            <div class="donateContainer">
+                <img src="https://diego3893.github.io/media/images/donate.png" alt="" class="donateImg">
+            </div>
+            <div class="donateContainer">
+                <img src="" alt="" class="donate">
+            </div>
+            
+            <div class="postfooter">
+                <ul class="post-copyright">
+                    <li><strong>文章作者：</strong>OIerDIE</li>
+            <li><strong>原文链接：</strong>https://diego3893.github.io/post/ti-jie-p1765-shou-ji-_noi-dao-kan-2010-pu-ji-10/</li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用<i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA
+                许可协议。转载请注明出处！</li>
+            </ul>
         </div>
+        <div id="otherpost">
+            
+            <div class="prev-post-pc">
+                <div id="ppcontainer" onclick="window.location.href= 'https://diego3893.github.io/post/ti-jie-p1164-xiao-a-dian-cai/';return false">
+                    
+                    
+                    <img src="https://gitee.com/oierzcx/image/raw/master/img/20201017161108.jpg" style="width: 100%;" class="opimg">
+                    
+                    
+                    <h4 class="optitle">题解 P1164 【小A点菜】</h4>
+                </div>
+            </div>
+            <div class="prev-post">
+                上一篇 <a href="https://diego3893.github.io/post/ti-jie-p1164-xiao-a-dian-cai/">题解 P1164 【小A点菜】</a>
+            </div>
+            
+            
+            <div class="next-post-pc">
+                <div id="npcontainer" onclick="window.location.href= 'https://diego3893.github.io/post/ti-jie-p4414-coci2006-20072-abc/';return false">
+                    
+                    
+                    <img src="https://gitee.com/oierzcx/image/raw/master/img/20201017161108.jpg" style="width: 100%;" class="opimg">
+                    
+                        
+                    <h4 class="optitle">题解 P4414 【[COCI2006-2007#2] ABC】</h4>
+                </div>
+            </div>
+            <div class="next-post">
+                下一篇 <a href="https://diego3893.github.io/post/ti-jie-p4414-coci2006-20072-abc/">题解 P4414 【[COCI2006-2007#2] ABC】</a>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+    </div>
 
 </body>
-<footer id="foot">
-    <a class="back-to-top" href="#"><i class="Card Card-top" ></i><span class="back-to-top-text">0%</span></a>
-    <div class="copyright">
-        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> & <a href="https://github.com/diego3893/diego3893.github.io" target="_blank" > Diego </a>
-            
-                    
-
-                        <div style="font-size:12px">
-                            
-                                        已经建站 <b id='build_time'></b>
-                        </div>
-                        <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/time.min.js"></script>
-                        <script>
-                            buildTime = '2020-02-13'
-                            setInterval(show_date_time, 1000, buildTime);
-                        </script>
+<script>
+    //文章阅读热度
+    var pl = $("#pl").html();
+    var rootaddr = $("#rootaddr").html();
+    pl = pl.replace(rootaddr, "");
+    $("#hotnum").attr('id', pl);
+</script>
+                <div id="comment"  class="comment" style="background: white">
+                    <div class="commentcontainer">
                         
-                            &#x7248;&#x6743;&#x6240;&#x6709; &copy;
-                            <script>
-                                var date = new Date();
-                                data2 = new Date(buildTime.replace(/-/g, "/"));
-                                nowYear = date.getFullYear().toString()
-                                buildYear = data2.getFullYear().toString();
-                                if (buildYear == nowYear) {
-                                    document.write('<span class="my-face">' + nowYear + '</span>');
-                                } else {
-                                    document.write(buildYear + '-<span class="my-face">' + nowYear + '</span>');
-                                }
-                            </script>
+                        <style>
 
-                            <a href="https://diego3893.github.io">
-                                Diego&#39;s Blog
-                            </a>&nbsp;|&nbsp;Powered by
-                            <a href="https://github.com" target="_blank">
-                                Github
-                            </a>
+
+    @media screen and (min-width: 1300px) {
+        .veditor::placeholder {
+            color: #b3b3b3;
+            font-size: 18px;
+            text-align: center;
+            line-height: 3rem;
+            font-family: kaiti;
+        }
+    }
+</style>
+
+<body>
+    <div id="vcomments">
     </div>
+    <script src="https://diego3893.github.io/media/js/valine.min.js"></script>
+    <!-- <script src="https://unpkg.com/valine/dist/Valine.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
     <script>
-        let back2TopText = document.querySelector('.back-to-top-text')
-        window.addEventListener('scroll', function(e) {
-            let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
-            if (back2TopText) {
-                back2TopText.textContent = Math.floor(percent).toString() + '%';
+        new Valine({
+            el: '#vcomments',
+            appId: 'Vs9HajoWOqzzn7MR5R09X8sU-gzGzoHsz',
+            appKey: 'twuGD8G2X8bLhyet9rrIqavh',
+            notify: true,
+            verify: false,
+            avatar: 'retro',
+            pageSize: 10,
+            placeholder: '既然来了，何不畅所欲言呢？',
+            visitor: true, // 阅读量统计
+        });
+    </script>
+    <script type="text/javascript">
+        // jinrishici.load(function (result) {
+        //     var jrsc_plac = result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin
+        //         .dynasty + " · " + result.data.origin.author;
+        //     if (jrsc_plac != undefined)
+        //         document.getElementById("veditor").setAttribute("placeholder", jrsc_plac);
+        // 
+        var jrsc = '既然来了，何不畅所欲言呢？';
+        jinrishici.load(function (result) {
+                // 自己的处理逻辑
+                jrsc = result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin
+                 .dynasty + " · " + result.data.origin.author;
+            });
+    </script> 
+    
+</body>
+                        <div class="clear"></div>
+                        
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-1 col-lg-2"></div>
+                <div id="bg">
+                </div>
+            </div>
+            
+        
+        <div class="toc-container">
+            
+    </div>
+    </div>
+    </div>
+    <div class="tog">
+        <div class="toggleContainer">
+            <div class="toggle">
+                <i class="fas fa-angle-double-up"></i>
+            </div>
+        </div>
+    </div>
+    <div id="bgchoice" style="display: none">link</div>
+    
+    <div id="bgurl" style="display:none">https://gitee.com/oierzcx/image/raw/master/img/20201017173808.jpg</div>
+    
+    </div>
+</body>
+<script>
+    var img = $("img");
+    for (var i = 0; i < img.length; i++) {
+        if (img.eq(i).attr("class") == undefined) {
+            img.eq(i).attr("class", "lazyload");
+            var imgsrc = img.eq(i).attr("src");
+            img.eq(i).attr("data-original", imgsrc);
+            img.eq(i).attr("src", "");
+            img.eq(i).hide();
+        }
+    }
+</script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script>
+    //寻找所有code标签，加复制按钮鸭！(行内代码除外)
+    var codes = document.getElementsByTagName('code');
+    if (codes.length) {
+        for (var i = 0; i < codes.length; i++) {
+            //高度/行高=文本行数
+            // var rowNum=Math.round(codes[i].height()/parseFloat(codes[i].css('line-height')));
+            // console.log("当前有"+rowNum+"行");
+            var code_id = "code_id_" + i;
+            codes[i].setAttribute("id", code_id);
+            var ci = "#" + code_id;
+            var codedot = $(ci);
+            var rowNum = Math.round(codedot.height() / parseFloat(codedot.css('line-height')));
+            if (rowNum <= 1) continue;
+            var btn = document.createElement("button");
+            btn.setAttribute("class", "copybt");
+            btn.setAttribute("data-clipboard-target", "#" + code_id);
+            btn.innerHTML = '复制代码';
+            codes[i].parentNode.insertBefore(btn, codes[i]);
+        }
+    };
+    var cop = new ClipboardJS('.copybt');
+    var codeCopyText = $("#codeCopyText").html();
+    cop.on('success', function (e) {
+        alert(codeCopyText);
+        e.clearSelection();
+    });
+    cop.on('error', function (e) {
+        alert("矮油，复制失败了...手动复制吧勇士！");
+        e.clearSelection();
+    });
+</script>
+
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = document.getElementById("domainname").innerHTML + "/"; //此处修改为你的域名，必须带斜杠
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/live2d.js"></script>
+<script type="text/javascript" src="https://diego3893.github.io/media/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "https://diego3893.github.io/media/live2d/assets/tororo.model.json");
+</script>
+
+<script>
+    $(function () {
+        $('.toggleContainer').click(function () {
+            $('html,body').animate({
+                scrollTop: '0px'
+            }, 800);
+        });
+        $(window).scroll(function () {
+            var st = $(window).scrollTop();
+            if (st > 30) {
+                $(".toggleContainer").fadeIn(400);
+            } else {
+                $(".toggleContainer").fadeOut(100);
             }
         });
-        var titleTime;
-        document.addEventListener("visibilitychange", function() {
-            document.hidden ? (document.title = "\uD83D\uDE25" + OriginTitile, clearTimeout(titleTime)) : (document.title = "\uD83D\uDE1D" + OriginTitile, titleTime = setTimeout(function() {
-                document.title = OriginTitile
-            }, 2E3))
-        });
-        var OriginTitile = document.title;
-        
-        App.hitokoto();
-        
-        App.clearLog();
-        App.outputlog();
-        var logo = '%cDiego&#39;s Blog\'%cBlog';
-        console.info(
-            logo,
-            'color: #ffffff; background: #000000; padding:5px 10px 5px 10px;font-size:40px;border-radius:12px 0 0 12px;', 'color: #000000; background: #FE9A00; padding:5px 10px;font-size:40px;border-radius:0 12px 12px 0;'
-        );
-    </script>
-</footer>
-    <script>
-        renderMathInElement(document.body, {
-            delimiters: [{
-                left: "$$",
-                right: "$$",
-                display: true
-            }, {
-                left: "$",
-                right: "$",
-                display: false
-            }]
-        });
-    </script>
+    });
+</script>
 
-</html>
+<script>
+    var bgchoice = $('#bgchoice').html();
+    var bg = $('#bg');
+    var bgurl = document.getElementById("bgurl").innerHTML;
+    if (bgchoice == 'default')
+        for (var i = 0; i < 3; i++)
+            bgurl = bgurl.replace("\\", "/");
+    bg.css("background", "url('" + bgurl + "')");
+</script>
+
+
+<script src="https://diego3893.github.io/media/js/index.js"></script>
+
+
+
+<!-- 动态更改上(下)一篇博客图片框长宽 -->
+<script>
+    npcontainer = document.querySelector('#npcontainer');
+    npstyle = window.getComputedStyle(npcontainer, null);
+    npwidth = npstyle.width;
+    npheight = 0.6 * Number(npwidth.replace("px", ""));
+    npheight = npheight.toString() + "px";
+    var op = $(".opimg");
+    op.css("height", npheight);
+</script>
+
+<script src="https://diego3893.github.io/media/share/dist/Share.js"></script>
+
+<script>
+    var avatarSrc = $(".avatar").attr("src");
+    var dp = document.getElementsByClassName("describtion")[0].innerHTML;
+</script>
+
+
+<script>
+    var title = document.getElementById("texttitle").getElementsByTagName("h2");
+    
+    var share = new Share('.share', {
+        title: title[0].innerHTML,
+        initialized: true,
+        //默认获取网站描述
+        description: dp,
+        //网站图片默认获取的是设置的用户头像
+        image: avatarSrc,
+        //激活的分享网站
+        sites: ["weibo", "qq", "wechat", "douban", "qzone", "facebook", "twitter", "google"],
+        //微信分享PC端会生成二维码分享,移动端如果可以唤起微信最好
+        wechatQrcodeTitle: "微信扫一扫：分享", // 微信二维码提示文字
+        wechatQrcodeHelper: '<p>微信里扫一下二维码</p><p>便可将本文分享至朋友圈。</p>',
+        //关闭的网站分享
+        disabled: ['google', 'linkedin'],
+        wechatQrcodePosition: 'bottom'
+    });
+
+    //点击分享按钮展现出分享icons
+    var sharebtnTag = false;
+    $(".sharebtn").click(function () {
+        if(!sharebtnTag)
+        {
+            $(".share").show();
+            sharebtnTag = true;
+        }
+        else
+        {
+            $(".share").hide();
+            sharebtnTag = false;
+        }
+    })
+
+    var donatebtnTag = false;
+    $(".donateImg").click(function () {
+        if(!donatebtnTag)
+        {
+            $(".donate").show();
+            donatebtnTag = true;
+        }
+        else{
+            $(".donate").hide();
+            donatebtnTag = false;
+        }
+    })
+
+    //加载后的事件同步（阅读量、移动端评论等
+    window.onload=function(){
+        getHotnum();
+        var sharepc = $(".share").eq(0).html();
+        $(".share").eq(1).html(sharepc);
+        document.getElementById("veditor").setAttribute("placeholder", jrsc);
+        aplayerbtnInit();
+    }
+</script>
+
+
+<script>
+    jQuery(document).ready(function ($) {
+        function lazyload() {
+            var oLazyload = $("img.lazyload"),
+                fLazyload = function (hLazyload) {
+                    var nLazyload = $(window).height() + $(document).scrollTop();
+                    oLazyload.each(function () {
+                        $(this).offset().top < nLazyload && ($(this).trigger("appear"), oLazyload =
+                            oLazyload.not(this));
+                    }), 0 == oLazyload.length && $(window).unbind("scroll", fLazyload);
+                };
+            oLazyload.each(function () {
+                $(this).one("appear", function () {
+                    $(this).attr("src", $(this).attr("data-original"));
+                    $(this).fadeIn(500);
+                });
+            }), $(window).bind("scroll", fLazyload), fLazyload();
+        }
+        lazyload();
+    });
+</script>
+
+<!-- <script src="https://diego3893.github.io/media/js/av-min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@3.13.0/dist/av-min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-live-query-min.js"></script> -->
+
+<script>
+    function getHotnum() {
+        //文章阅读热度（重构，利用leancloud原生api）
+        var pl = $("#pl").html();
+        var rootaddr = $("#rootaddr").html();
+        pl = pl.replace(rootaddr, "");
+
+        var appid = 'Vs9HajoWOqzzn7MR5R09X8sU-gzGzoHsz';
+        var appkey = 'twuGD8G2X8bLhyet9rrIqavh';
+        console.log(appid, appkey)
+        if(AV==undefined)
+            AV.init({
+                appId: appid,
+                appKey: appkey
+            });
+        const query = new AV.Query('Counter');
+        query.equalTo('url', pl);
+        var time = 'Loading...';
+        query.find().then(function (results) {
+            console.log(results)
+            if (results.length == 0) {
+                console.log("0")
+                var NewCounter = AV.Object.extend('Counter');
+                var nc = new NewCounter();
+                nc.save({
+                    time: 1,
+                    title: "题解 P1765 【手机_NOI导刊2010普及（10）】",
+                    url: pl,
+                    xid: pl,
+                }).then(function (object) {
+                    $(".hotnum").eq(0).html(1);
+                    $(".hotnum").eq(1).html(1);
+                });
+            } else {
+                id = results[0].id;
+                var todo = AV.Object.createWithoutData('Counter', id);
+                time = results[0].attributes.time + 1;
+                todo.set("time", time);
+                todo.save();
+                console.log(todo);
+                $(".hotnum").eq(0).html(time);
+                $(".hotnum").eq(1).html(time);
+            }
+
+        }, function (error) {
+            console.log(error)
+        });
+    }
+</script>
