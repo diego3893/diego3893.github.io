@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://diego3893.github.io</id>
+    <id>http://diego3893.github.io</id>
     <title>Diego&apos;s Blog</title>
-    <updated>2021-07-09T10:44:40.638Z</updated>
+    <updated>2021-07-09T10:46:59.336Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://diego3893.github.io"/>
-    <link rel="self" href="https://diego3893.github.io/atom.xml"/>
+    <link rel="alternate" href="http://diego3893.github.io"/>
+    <link rel="self" href="http://diego3893.github.io/atom.xml"/>
     <subtitle>Stay hungry, Stay foolish</subtitle>
-    <logo>https://diego3893.github.io/images/avatar.png</logo>
-    <icon>https://diego3893.github.io/favicon.ico</icon>
+    <logo>http://diego3893.github.io/images/avatar.png</logo>
+    <icon>http://diego3893.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Diego&apos;s Blog</rights>
     <entry>
         <title type="html"><![CDATA[Windows中的Linux]]></title>
-        <id>https://diego3893.github.io/post/windows-zhong-de-linux/</id>
-        <link href="https://diego3893.github.io/post/windows-zhong-de-linux/">
+        <id>http://diego3893.github.io/post/windows-zhong-de-linux/</id>
+        <link href="http://diego3893.github.io/post/windows-zhong-de-linux/">
         </link>
         <updated>2020-10-04T08:16:30.000Z</updated>
         <summary type="html"><![CDATA[<p>Linux子系统似乎是虚拟机的完美替代方案！</p>
@@ -43,8 +43,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[QduOJ安装指南]]></title>
-        <id>https://diego3893.github.io/post/qduoj-an-zhuang-zhi-nan/</id>
-        <link href="https://diego3893.github.io/post/qduoj-an-zhuang-zhi-nan/">
+        <id>http://diego3893.github.io/post/qduoj-an-zhuang-zhi-nan/</id>
+        <link href="http://diego3893.github.io/post/qduoj-an-zhuang-zhi-nan/">
         </link>
         <updated>2020-09-26T15:57:25.000Z</updated>
         <content type="html"><![CDATA[<h2 id="1-安装环境">1 安装环境</h2>
@@ -178,8 +178,8 @@ cd ../ &amp;&amp; cp model_list.json ../ # 把列表文件复制到live2d文件�
     </entry>
     <entry>
         <title type="html"><![CDATA[题解 P1135 【奇怪的电梯】]]></title>
-        <id>https://diego3893.github.io/post/ti-jie-p1135-qi-guai-de-dian-ti/</id>
-        <link href="https://diego3893.github.io/post/ti-jie-p1135-qi-guai-de-dian-ti/">
+        <id>http://diego3893.github.io/post/ti-jie-p1135-qi-guai-de-dian-ti/</id>
+        <link href="http://diego3893.github.io/post/ti-jie-p1135-qi-guai-de-dian-ti/">
         </link>
         <updated>2020-09-21T16:11:23.000Z</updated>
         <content type="html"><![CDATA[<p>典型的BFS题</p>
@@ -252,8 +252,8 @@ int main()
     </entry>
     <entry>
         <title type="html"><![CDATA[题解 P1164 【小A点菜】]]></title>
-        <id>https://diego3893.github.io/post/ti-jie-p1164-xiao-a-dian-cai/</id>
-        <link href="https://diego3893.github.io/post/ti-jie-p1164-xiao-a-dian-cai/">
+        <id>http://diego3893.github.io/post/ti-jie-p1164-xiao-a-dian-cai/</id>
+        <link href="http://diego3893.github.io/post/ti-jie-p1164-xiao-a-dian-cai/">
         </link>
         <updated>2020-09-21T16:10:35.000Z</updated>
         <content type="html"><![CDATA[<p>这是一道<s>很水的</s>dp题，但作为第一天学动态规划的蒟蒻还是提交了两遍/捂脸/</p>
@@ -292,8 +292,8 @@ int main()
     </entry>
     <entry>
         <title type="html"><![CDATA[题解 P1765 【手机_NOI导刊2010普及（10）】]]></title>
-        <id>https://diego3893.github.io/post/ti-jie-p1765-shou-ji-_noi-dao-kan-2010-pu-ji-10/</id>
-        <link href="https://diego3893.github.io/post/ti-jie-p1765-shou-ji-_noi-dao-kan-2010-pu-ji-10/">
+        <id>http://diego3893.github.io/post/ti-jie-p1765-shou-ji-_noi-dao-kan-2010-pu-ji-10/</id>
+        <link href="http://diego3893.github.io/post/ti-jie-p1765-shou-ji-_noi-dao-kan-2010-pu-ji-10/">
         </link>
         <updated>2020-09-21T16:09:56.000Z</updated>
         <content type="html"><![CDATA[<p>这道题<s>其实很水</s>，用一个整形数组存放每个字母的按键次数即可<br>
@@ -324,8 +324,8 @@ int main()
     </entry>
     <entry>
         <title type="html"><![CDATA[题解 P4414 【[COCI2006-2007#2] ABC】]]></title>
-        <id>https://diego3893.github.io/post/ti-jie-p4414-coci2006-20072-abc/</id>
-        <link href="https://diego3893.github.io/post/ti-jie-p4414-coci2006-20072-abc/">
+        <id>http://diego3893.github.io/post/ti-jie-p4414-coci2006-20072-abc/</id>
+        <link href="http://diego3893.github.io/post/ti-jie-p4414-coci2006-20072-abc/">
         </link>
         <updated>2020-09-21T16:09:16.000Z</updated>
         <content type="html"><![CDATA[<p>用简化的桶排序，再用if判断输出就行<br>
@@ -378,8 +378,8 @@ int main()
     </entry>
     <entry>
         <title type="html"><![CDATA[题解 P1059 【明明的随机数】]]></title>
-        <id>https://diego3893.github.io/post/ti-jie-p1059-ming-ming-de-sui-ji-shu/</id>
-        <link href="https://diego3893.github.io/post/ti-jie-p1059-ming-ming-de-sui-ji-shu/">
+        <id>http://diego3893.github.io/post/ti-jie-p1059-ming-ming-de-sui-ji-shu/</id>
+        <link href="http://diego3893.github.io/post/ti-jie-p1059-ming-ming-de-sui-ji-shu/">
         </link>
         <updated>2020-09-21T16:08:28.000Z</updated>
         <content type="html"><![CDATA[<p>看到去重+排序（数据范围不是很大）直接用桶排序<br>
@@ -411,8 +411,8 @@ int main()
     </entry>
     <entry>
         <title type="html"><![CDATA[题解 P1150 【Peter的烟】]]></title>
-        <id>https://diego3893.github.io/post/ti-jie-p1150-peter-de-yan/</id>
-        <link href="https://diego3893.github.io/post/ti-jie-p1150-peter-de-yan/">
+        <id>http://diego3893.github.io/post/ti-jie-p1150-peter-de-yan/</id>
+        <link href="http://diego3893.github.io/post/ti-jie-p1150-peter-de-yan/">
         </link>
         <updated>2020-09-21T16:07:52.000Z</updated>
         <content type="html"><![CDATA[<p>直接上AC代码：</p>
@@ -437,8 +437,8 @@ int main()
     </entry>
     <entry>
         <title type="html"><![CDATA[题解 P3742  【umi的函数】]]></title>
-        <id>https://diego3893.github.io/post/ti-jie-p3742-umi-de-han-shu/</id>
-        <link href="https://diego3893.github.io/post/ti-jie-p3742-umi-de-han-shu/">
+        <id>http://diego3893.github.io/post/ti-jie-p3742-umi-de-han-shu/</id>
+        <link href="http://diego3893.github.io/post/ti-jie-p3742-umi-de-han-shu/">
         </link>
         <updated>2020-09-21T16:06:43.000Z</updated>
         <content type="html"><![CDATA[<p>AC代码：</p>
@@ -477,8 +477,8 @@ int main()
     </entry>
     <entry>
         <title type="html"><![CDATA[单链表实现----学生成绩查询系统]]></title>
-        <id>https://diego3893.github.io/post/dan-lian-biao-shi-xian-xue-sheng-cheng-ji-cha-xun-xi-tong/</id>
-        <link href="https://diego3893.github.io/post/dan-lian-biao-shi-xian-xue-sheng-cheng-ji-cha-xun-xi-tong/">
+        <id>http://diego3893.github.io/post/dan-lian-biao-shi-xian-xue-sheng-cheng-ji-cha-xun-xi-tong/</id>
+        <link href="http://diego3893.github.io/post/dan-lian-biao-shi-xian-xue-sheng-cheng-ji-cha-xun-xi-tong/">
         </link>
         <updated>2020-09-21T16:04:46.000Z</updated>
         <content type="html"><![CDATA[<p>代码注释较少，若给各位的阅读带来不便，请谅解<br>
