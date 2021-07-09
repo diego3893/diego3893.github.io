@@ -5,9 +5,8 @@
     <meta charset="utf-8" />
 <!--
     * @Theme Card
-    *
-    * @author admin@itjoker.cn
-    * @link https://blog.itjoker.cn
+    * @Author admin@itjoker.cn
+    * @Link https://blog.itjoker.cn
 -->
 
 <title>
@@ -22,19 +21,21 @@
 <meta name="keywords" content="OIer,蒟蒻,沉迷学习">
 <meta name="gridea-theme" content="Card">
 <meta name="spider" content="https://nmsl.sbjxw.网址">
-<meta name="UpdateTime" content="1625827617648">
+<meta name="UpdateTime" content="1625827923493">
 <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/jquery@3.4.1.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/Card/prism.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/css/Card/prism.min.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css">
 <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/contrib/auto-render.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
-<!--<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/js/Card/script.min.js"></script>-->
-<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/css/Card/main.min.css" />-->
-<script src="http://diego3893.github.io/media/js/script.min.js"></script>
-<link rel="stylesheet" href="http://diego3893.github.io/media/css/main.min.css" />
-<link rel="stylesheet" href="http://diego3893.github.io/styles/main.css" />
+<!--<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/js/Card/script.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/css/Card/main.min.css" />-->
+<script src="https://diego3893.github.io/media/js/script.min.js"></script>
+<link rel="stylesheet" href="https://diego3893.github.io/media/css/main.min.css" />
+<link rel="stylesheet" href="https://diego3893.github.io/styles/main.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/css/Card/iconfont.css" />
 <!--link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_410989_wuhl0k5ojvf.css" /-->
 <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -43,14 +44,29 @@
 <script>
     $().ready(
         function() {
+            if (window.localStorage.getItem('first_visit') != 1) {
+                window.localStorage.setItem('theme', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                window.localStorage.setItem('first_visit', 1);
+            }
             var themeIcon = document.getElementById("themeIcon");
             var currentTheme = window.localStorage.getItem('theme');
             if (currentTheme == 'dark') {
-                document.getElementsByTagName('html')[0].classList.add('theme-dark');
+                imgList = document.getElementsByTagName('img');
+                for (let i = 0; i < imgList.length; i++) {
+                    imgList[i].style.cssText = mediaCssText;
+                }
+                document.documentElement.style.cssText = cssText;
+                document.getElementsByClassName('card-bg')[0].style.cssText = mediaCssText;
                 themeIcon.classList.remove('Card-moon');
                 themeIcon.classList.add('Card-sun');
             } else {
-                document.getElementsByTagName('html')[0].classList.remove('theme-dark');
+                imgList = document.getElementsByTagName('img');
+                for (let i = 0; i < imgList.length; i++) {
+                    imgList[i].style.cssText = '';
+                }
+                document.documentElement.style.cssText = '';
+                document.getElementsByClassName('card-bg')[0].style.cssText = '';
+                document.getElementsByTagName('html')[0].setAttribute('id', 'bg');
                 themeIcon.classList.remove('Card-sun');
                 themeIcon.classList.add('Card-moon');
             }
@@ -113,16 +129,17 @@
                             background-color: #fafafa;
                         }
                         
-                        #spnBtn:hover {
+                        #btnStyle:hover {
                             transition: all .3s ease;
-                            color: #fff;
-                            background-color: #6b6b6b;
+                            /*color: #fff;*/
+                            /*background-color: #6b6b6b;*/
+                            background-color: #eaeaea;
                             /*#0092ee*/
                             /*linear-gradient( rgb(138, 160, 255) 30%, rgb(90, 140, 250) 70%);*/
                         }
                         
-                        #spnBtn {
-                            background-color: #efefef;
+                        #btnStyle {
+                            /*background-color: #efefef;*/
                             font-size: 14px;
                             transition: all .3s ease;
                         }
@@ -150,11 +167,14 @@
 
     <div id="pc-menu">
         <a id="menu-bar" class="Card Card-menu"></a>
-        <a id="menu-title" href="http://diego3893.github.io">
+        <a id="menu-title" href="https://diego3893.github.io">
             Diego&#39;s Blog
         </a>
         <nav id="menu-main" class="menu-main">
             <ul>
+                <li id="menu-item" class="menu-item">
+                    <div id="tp-weather-widget"></div>
+                </li>
                 
                     <li id="menu-item" class="menu-item">
                         <a href="/">
@@ -200,13 +220,13 @@
                     
             </ul>
         </nav>
-        <form id="gridea-search-form" class="searchform" data-update="1625827617648" action="/search/index.html">
+        <form id="gridea-search-form" class="searchform" data-update="1625827923493" action="/search/index.html">
             <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
     </div>
     <div id="mobile-menu">
-        <form id="gridea-search-form" class="mobile-searchform" data-update="1625827617648" action="/search/index.html">
+        <form id="gridea-search-form" class="mobile-searchform" data-update="1625827923493" action="/search/index.html">
             <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
@@ -277,7 +297,7 @@
                                                     
 
                                                         <article class="archive-item">
-                                                            <a class="archive-item-link" href="http://diego3893.github.io/post/kuai-su-mi/">
+                                                            <a class="archive-item-link" href="https://diego3893.github.io/post/kuai-su-mi/">
                                                                 快速幂
                                                             </a>
                                                             <span class="archive-item-date">2020-02-28 </span>
@@ -335,119 +355,119 @@
                     </header>
                     <div class="textwidget">
                         <div id='tags' style="height: auto;width: 360;"></div>
-                        <script src="http://diego3893.github.io/media/js/svg3dtagcloud.min.js"></script>
+                        <script src="https://diego3893.github.io/media/js/svg3dtagcloud.min.js"></script>
                         <script>
                             $(document).ready(function() {
                                 var entries = ([
                                     
                                      {
                                         label: '🏷折腾笔记',
-                                        url: 'http://diego3893.github.io/tag/h6HytAKAH/',
+                                        url: 'https://diego3893.github.io/tag/h6HytAKAH/',
                                         target: '_button'
                                     },
                                     
                                     
                                      {
                                         label: '🏷洛谷题解',
-                                        url: 'http://diego3893.github.io/tag/3nyqwG4IY/',
+                                        url: 'https://diego3893.github.io/tag/3nyqwG4IY/',
                                         target: '_button'
                                     },
                                     
                                     
                                      {
                                         label: '🏷技术宅',
-                                        url: 'http://diego3893.github.io/tag/jsIDxauOd/',
+                                        url: 'https://diego3893.github.io/tag/jsIDxauOd/',
                                         target: '_button'
                                     },
                                     
                                     
                                      {
                                         label: '🏷数据结构',
-                                        url: 'http://diego3893.github.io/tag/4-8y6NRl-/',
+                                        url: 'https://diego3893.github.io/tag/4-8y6NRl-/',
                                         target: '_button'
                                     },
                                     
                                     
                                      {
                                         label: '🏷安利',
-                                        url: 'http://diego3893.github.io/tag/G1eM_Hyfm/',
+                                        url: 'https://diego3893.github.io/tag/G1eM_Hyfm/',
                                         target: '_button'
                                     },
                                     
                                     
                                      {
                                         label: '🏷转载',
-                                        url: 'http://diego3893.github.io/tag/89WnJ3Arn/',
+                                        url: 'https://diego3893.github.io/tag/89WnJ3Arn/',
                                         target: '_button'
                                     },
                                     
                                     
                                      {
                                         label: '🏷打卡模版',
-                                        url: 'http://diego3893.github.io/tag/rAwVgYtMd/',
+                                        url: 'https://diego3893.github.io/tag/rAwVgYtMd/',
                                         target: '_button'
                                     },
                                     
                                     
                                      {
                                         label: '🏷字符串',
-                                        url: 'http://diego3893.github.io/tag/a9JlscXkj/',
+                                        url: 'https://diego3893.github.io/tag/a9JlscXkj/',
                                         target: '_button'
                                     },
                                     
                                     
                                      {
                                         label: '🏷算法',
-                                        url: 'http://diego3893.github.io/tag/dJ3WAsaqR/',
+                                        url: 'https://diego3893.github.io/tag/dJ3WAsaqR/',
                                         target: '_button'
                                     },
                                     
                                     
                                      {
                                         label: '🏷提高组笔记',
-                                        url: 'http://diego3893.github.io/tag/Gr5YErY6j/',
+                                        url: 'https://diego3893.github.io/tag/Gr5YErY6j/',
                                         target: '_button'
                                     },
                                     
                                     
                                      {
                                         label: '🏷备忘',
-                                        url: 'http://diego3893.github.io/tag/qQcrTcB4k/',
+                                        url: 'https://diego3893.github.io/tag/qQcrTcB4k/',
                                         target: '_button'
                                     },
                                     
                                     
                                      {
                                         label: '🏷图/树论',
-                                        url: 'http://diego3893.github.io/tag/Hc21XFSes/',
+                                        url: 'https://diego3893.github.io/tag/Hc21XFSes/',
                                         target: '_button'
                                     },
                                     
                                     
                                      {
                                         label: '🏷Gridea',
-                                        url: 'http://diego3893.github.io/tag/4X9N1ZDzg/',
+                                        url: 'https://diego3893.github.io/tag/4X9N1ZDzg/',
                                         target: '_button'
                                     },
                                     
                                     
                                      {
                                         label: '🏷STL',
-                                        url: 'http://diego3893.github.io/tag/c3jkatgC-/',
+                                        url: 'https://diego3893.github.io/tag/c3jkatgC-/',
                                         target: '_button'
                                     },
                                     
                                     
                                      {
                                         label: '🏷趣味',
-                                        url: 'http://diego3893.github.io/tag/bunbgwXDf/',
+                                        url: 'https://diego3893.github.io/tag/bunbgwXDf/',
                                         target: '_button'
                                     },
                                     
                                     
                                      {
                                         label: '🏷数学',
-                                        url: 'http://diego3893.github.io/tag/Nnc60LLfD/',
+                                        url: 'https://diego3893.github.io/tag/Nnc60LLfD/',
                                         target: '_button'
                                     }
                                     
@@ -553,69 +573,56 @@
                             </script>
                             
                                 
-                                    <script>
-                                        App.weather();
-                                    </script>
-                                    <li class="lite-item">
-                                        <header class="lite-item-header">
-                                            <h3 class="lite-item-title">&#x26C5;&#x5929;&#x6C14;</h3>
-                                        </header>
-                                        <div class="textwidget">
-                                            <div id="tp-weather-widget"></div>
-                                        </div>
-                                    </li>
                                     
                                         
+                                            <li class="lite-item">
+                                                <header class="lite-item-header">
+                                                    <h3 class="lite-item-title">
+                                                        本站视频教程位于哔哩哔哩！
+                                                    </h3>
+                                                </header>
+                                                <div class="textwidget">
+                                                    <div id="textwidget-box" style="width:100%; height:auto;">
+                                                        欢迎来到站长的个人空间：https://space.bilibili.com/454077332
+                                                    </div>
+                                                </div>
+                                            </li>
                                             
                                                 
                                                     <li class="lite-item">
                                                         <header class="lite-item-header">
-                                                            <h3 class="lite-item-title">
-                                                                本站视频教程位于哔哩哔哩！
-                                                            </h3>
+                                                            <h3 class="lite-item-title">&#x1F468;&#x200D;&#x1F4BB;&#x53CB;&#x94FE;</h3>
                                                         </header>
                                                         <div class="textwidget">
-                                                            <div id="textwidget-box" style="width:100%; height:auto;">
-                                                                欢迎来到站长的个人空间：https://space.bilibili.com/454077332
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    
-                                                        
-                                                            <li class="lite-item">
-                                                                <header class="lite-item-header">
-                                                                    <h3 class="lite-item-title">&#x1F468;&#x200D;&#x1F4BB;&#x53CB;&#x94FE;</h3>
-                                                                </header>
-                                                                <div class="textwidget">
+                                                            
+                                                                
+                                                                    <p onclick="javascript:top.location='https://blog.itjoker.cn'"><span class="link_a"><a href="https://blog.itjoker.cn" alt="ITJoker ">ITJoker -ITJoker&#39;s Blog</a></span></p>
+
+                                                                    
+                                                                    <p onclick="javascript:top.location='http://acg17.com'"><span class="link_a"><a href="http://acg17.com" alt="ACG17 ">ACG17 -日常找图</a></span></p>
+
+                                                                    
+                                                                    <p onclick="javascript:top.location='https://lxxs.xyz/'"><span class="link_a"><a href="https://lxxs.xyz/" alt="路迅先生的小屋 ">路迅先生的小屋 -I pray to myself.</a></span></p>
+
+                                                                    
+                                                                    <p onclick="javascript:top.location='https://qqdie.com'"><span class="link_a"><a href="https://qqdie.com" alt="QQ爹的博客 ">QQ爹的博客 -Tyepcho爱好者，资源站</a></span></p>
+
+                                                                    
+                                                                    <p onclick="javascript:top.location='https://www.wubin.design'"><span class="link_a"><a href="https://www.wubin.design" alt="BruceWu   ">BruceWu   -UX Design一枚</a></span></p>
+
+                                                                    
+                                                                    <p onclick="javascript:top.location='https://tangkaichuan.cn '"><span class="link_a"><a href="https://tangkaichuan.cn " alt="I&#39;m KT  ">I&#39;m KT  -Keep Coding and Writing</a></span></p>
+
+                                                                    
+                                                                    <p onclick="javascript:top.location='https://winterstarhu.github.io'"><span class="link_a"><a href="https://winterstarhu.github.io" alt="WinterStar&#39;s Blog   ">WinterStar&#39;s Blog   -分享一些学习或生活上的东西</a></span></p>
+
+                                                                    
+                                                                    <p onclick="javascript:top.location='https://iboy66lee.club'"><span class="link_a"><a href="https://iboy66lee.club" alt="iBoy&#39;s Blog ">iBoy&#39;s Blog -iboy的杂货铺</a></span></p>
+
                                                                     
                                                                         
-                                                                            <p onclick="javascript:top.location='https://blog.itjoker.cn'"><span class="link_a"><a href="https://blog.itjoker.cn" alt="ITJoker ">ITJoker -ITJoker&#39;s Blog</a></span></p>
-
-                                                                            
-                                                                            <p onclick="javascript:top.location='http://acg17.com'"><span class="link_a"><a href="http://acg17.com" alt="ACG17 ">ACG17 -日常找图</a></span></p>
-
-                                                                            
-                                                                            <p onclick="javascript:top.location='https://lxxs.xyz/'"><span class="link_a"><a href="https://lxxs.xyz/" alt="路迅先生的小屋 ">路迅先生的小屋 -I pray to myself.</a></span></p>
-
-                                                                            
-                                                                            <p onclick="javascript:top.location='https://qqdie.com'"><span class="link_a"><a href="https://qqdie.com" alt="QQ爹的博客 ">QQ爹的博客 -Tyepcho爱好者，资源站</a></span></p>
-
-                                                                            
-                                                                            <p onclick="javascript:top.location='https://www.wubin.design'"><span class="link_a"><a href="https://www.wubin.design" alt="BruceWu   ">BruceWu   -UX Design一枚</a></span></p>
-
-                                                                            
-                                                                            <p onclick="javascript:top.location='https://tangkaichuan.cn '"><span class="link_a"><a href="https://tangkaichuan.cn " alt="I&#39;m KT  ">I&#39;m KT  -Keep Coding and Writing</a></span></p>
-
-                                                                            
-                                                                            <p onclick="javascript:top.location='https://winterstarhu.github.io'"><span class="link_a"><a href="https://winterstarhu.github.io" alt="WinterStar&#39;s Blog   ">WinterStar&#39;s Blog   -分享一些学习或生活上的东西</a></span></p>
-
-                                                                            
-                                                                            <p onclick="javascript:top.location='https://iboy66lee.club'"><span class="link_a"><a href="https://iboy66lee.club" alt="iBoy&#39;s Blog ">iBoy&#39;s Blog -iboy的杂货铺</a></span></p>
-
-                                                                            
-                                                                                
-                                                                </div>
-                                                            </li>
+                                                        </div>
+                                                    </li>
     </ul>
 </div>
         </div>
@@ -637,7 +644,9 @@
                             setInterval(show_date_time, 1000, buildTime);
                         </script>
                         
-                            &#x7248;&#x6743;&#x6240;&#x6709; &copy;
+                            <a href="https://blog.itjoker.cn">
+                                Theme - Card
+                            </a>&nbsp;|&nbsp; &#x7248;&#x6743;&#x6240;&#x6709; &copy;
                             <script>
                                 var date = new Date();
                                 data2 = new Date(buildTime.replace(/-/g, "/"));
@@ -650,7 +659,7 @@
                                 }
                             </script>
 
-                            <a href="http://diego3893.github.io">
+                            <a href="https://diego3893.github.io">
                                 Diego&#39;s Blog
                             </a>&nbsp;|&nbsp;Powered by
                             <a href="https://github.com" target="_blank">
@@ -675,6 +684,11 @@
         
         App.hitokoto();
         
+        
+        App.weather();
+        
+        var themeIcon = document.getElementById("themeIcon");
+        const currentTheme = window.localStorage.getItem('theme');
         App.clearLog();
         App.outputlog();
         var logo = '%cDiego&#39;s Blog\'%cBlog';
@@ -682,6 +696,7 @@
             logo,
             'color: #ffffff; background: #000000; padding:5px 10px 5px 10px;font-size:40px;border-radius:12px 0 0 12px;', 'color: #000000; background: #FE9A00; padding:5px 10px;font-size:40px;border-radius:0 12px 12px 0;'
         );
+        $('img').attr('data-fancybox', 'images');
     </script>
 </footer>
 
